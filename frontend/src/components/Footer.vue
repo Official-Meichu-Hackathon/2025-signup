@@ -1,7 +1,5 @@
 <template>
-  <footer
-    class="footer-gradient w-full py-6 flex flex-col items-center justify-center"
-  >
+  <footer class="footer-gradient w-full py-6 flex flex-col items-center justify-center">
     <div class="flex gap-8 mb-2">
       <a
         href="https://www.facebook.com/HackMeiChu"
@@ -9,12 +7,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img
-          src="../assets/Footer/facebook.svg"
-          alt="Facebook"
-          width="50"
-          height="50"
-        />
+        <img src="../assets/Footer/facebook.svg" alt="Facebook" width="50" height="50" />
       </a>
       <a
         href="https://www.instagram.com/mc_hackathon"
@@ -22,12 +15,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img
-          src="../assets/Footer/instagram.svg"
-          alt="Instagram"
-          width="50"
-          height="50"
-        />
+        <img src="../assets/Footer/instagram.svg" alt="Instagram" width="50" height="50" />
       </a>
       <a
         href="mailto:2025mchackathon@gmail.com"
@@ -35,17 +23,10 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img
-          src="../assets/Footer/gmail.svg"
-          alt="Email"
-          width="50"
-          height="50"
-        />
+        <img src="../assets/Footer/gmail.svg" alt="Email" width="50" height="50" />
       </a>
     </div>
-    <div
-      class="text-[#656565] text-center font-['Chiron_Hei_HK',sans-serif] text-lg font-bold"
-    >
+    <div class="text-[#656565] text-center font-['Chiron_Hei_HK',sans-serif] text-lg font-bold">
       Copyright © 2025 Meichu Hackathon
     </div>
   </footer>
@@ -53,8 +34,8 @@
 
 <script setup>
 defineOptions({
-  name: "FooterComponent",
-});
+  name: 'FooterComponent',
+})
 </script>
 
 <style scoped>
