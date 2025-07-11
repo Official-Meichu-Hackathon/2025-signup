@@ -1,16 +1,22 @@
 <template>
   <Background>
-    <div class="flex flex-col items-center justify-center min-h-[100vh]">
+    <div class="flex flex-col items-center justify-center min-h-[70vh]">
       <!-- 字體應該還沒引用 -->
-      <h2
+      <h1
         class="font-bold text-[96px] leading-none text-center text-[#2D3E63] font-['Chiron_Hei_HK_Text']"
       >
         題目說明
-      </h2>
+      </h1>
 
       <!-- 通知欄位置在下方 -->
       <div class="w-full mt-16">
         <NoticeBar />
+      </div>
+      <div>
+        <h2 class="text-[32px] font-bold text-center text-[#2D3E63] mt-8 mb-4">黑客組</h2>
+      </div>
+      <div>
+        <h2 class="text-[32px] font-bold text-center text-[#2D3E63] mt-8 mb-4">創客交流組</h2>
       </div>
     </div>
   </Background>
