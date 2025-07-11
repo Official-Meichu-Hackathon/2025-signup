@@ -1,8 +1,7 @@
 <template>
   <div class="w-full my-12">
-    <!-- 黑客組的輪播 (多張卡片) -->
     <div v-if="groupType === 'hacker'" class="relative flex justify-center items-center">
-      <!-- 左箭頭 -->
+      <!-- TODO - need to modify 左箭頭 -->
       <button
         @click="prevCard"
         class="absolute left-4 z-30 p-2 rounded-full bg-white/80 shadow-md hover:bg-white focus:outline-none"
@@ -23,16 +22,16 @@
         </svg>
       </button>
 
-      <!-- 卡片容器 -->
+      <!-- Card Container -->
       <div class="flex justify-center items-center relative w-full max-w-5xl overflow-hidden py-10">
-        <div class="flex justify-center items-center relative" style="width: 1000px; height: 320px">
+        <div class="flex justify-center items-center relative" style="width: 750px; height: 650px">
           <div
             v-for="(card, index) in cards"
             :key="index"
             class="absolute transition-all duration-500 ease-in-out"
             :style="getCardStyle(index)"
           >
-            <img :src="getCardImageSrc(card)" :alt="card" class="w-[320px] h-auto" />
+            <img :src="getCardImageSrc(card)" :alt="card" class="w-[664px] h-[650px]" />
           </div>
         </div>
       </div>
@@ -54,9 +53,8 @@
       </button>
     </div>
 
-    <!-- 創客組 (只有一張卡片) -->
     <div v-else class="flex justify-center items-center">
-      <img :src="governmentCardSrc" alt="Government" class="w-[320px] h-auto" />
+      <img :src="governmentCardSrc" alt="Government" class="w-[664px] h-[650px]" />
     </div>
   </div>
 </template>
@@ -64,7 +62,6 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-// 預先導入所有卡片圖片
 import AMDCard from '../../assets/Problems/Card/AMD.svg'
 import TSMCCard from '../../assets/Problems/Card/TSMC.svg'
 import GoogleCard from '../../assets/Problems/Card/Google.svg'
@@ -73,7 +70,6 @@ import NXPCard from '../../assets/Problems/Card/NXP.svg'
 import CloudmosaCard from '../../assets/Problems/Card/Cloudmosa.svg'
 import GovernmentCard from '../../assets/Problems/Card/Government.svg'
 
-// 圖片映射
 const cardImages = {
   AMD: AMDCard,
   TSMC: TSMCCard,
@@ -85,12 +81,10 @@ const cardImages = {
 
 const governmentCardSrc = GovernmentCard
 
-// 獲取卡片圖片路徑
 const getCardImageSrc = (cardName) => {
   return cardImages[cardName]
 }
 
-// 接收組別類型
 const props = defineProps({
   groupType: {
     type: String,
@@ -99,23 +93,18 @@ const props = defineProps({
   },
 })
 
-// 根據組別決定顯示的卡片
 const cards = computed(() => {
   return props.groupType === 'hacker'
     ? ['AMD', 'TSMC', 'Google', 'Logitech', 'NXP', 'Cloudmosa']
     : ['Government']
 })
 
-// 當前選中的卡片索引
 const currentIndex = ref(0)
 
-// 取得指定索引卡片的樣式
 const getCardStyle = (index) => {
-  // 計算卡片位置
   const diff = index - currentIndex.value
   const normalizedDiff = (diff + cards.value.length) % cards.value.length
 
-  // 如果差值為0，表示是當前卡片
   if (normalizedDiff === 0) {
     return {
       transform: 'translateX(0)',
@@ -125,31 +114,27 @@ const getCardStyle = (index) => {
     }
   }
 
-  // 如果差值為1或-1，表示是相鄰卡片
   if (normalizedDiff === 1 || normalizedDiff === cards.value.length - 1) {
     return {
       transform: `translateX(${normalizedDiff === 1 ? 250 : -250}px)`,
       zIndex: 10,
       opacity: 0.7,
-      scale: 0.85,
+      scale: 0.75,
     }
   }
 
-  // 其他卡片，隱藏在更遠的位置
   return {
     transform: `translateX(${normalizedDiff <= cards.value.length / 2 ? 450 : -450}px)`,
     zIndex: 0,
     opacity: 0.3,
-    scale: 0.7,
+    scale: 0,
   }
 }
 
-// 切換到下一張卡片
 const nextCard = () => {
   currentIndex.value = (currentIndex.value + 1) % cards.value.length
 }
 
-// 切換到上一張卡片
 const prevCard = () => {
   currentIndex.value = (currentIndex.value - 1 + cards.value.length) % cards.value.length
 }

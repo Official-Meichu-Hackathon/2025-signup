@@ -12,7 +12,9 @@
       <div class="w-full mt-16">
         <NoticeBar />
       </div>
+    </div>
 
+    <div>
       <!-- 企業卡片輪播 - 黑客組 -->
       <div class="w-full mt-16">
         <h2 class="text-[32px] font-bold text-center text-[#2D3E63] mb-8">黑客組</h2>
