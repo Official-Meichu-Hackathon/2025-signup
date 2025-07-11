@@ -1,6 +1,6 @@
 <template>
   <Background>
-    <div class="problem-container">
+    <!-- <div class="problem-container">
       <div class="problem-content">
         <h1 class="problem-title">題目說明</h1>
         <div class="problem-section">
@@ -23,7 +23,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
   </Background>
 </template>
 

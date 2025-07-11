@@ -1,13 +1,17 @@
 <template>
-  <div
-    class="min-h-[calc(100vh-56px)] relative w-full flex flex-col items-center justify-center overflow-hidden"
-  >
-    <!-- 背景圖片 -->
-    <img
-      src="../../assets/Problems/background/bg.svg"
-      alt="背景"
-      class="absolute inset-0 w-full h-full object-cover z-0"
-    />
+  <div class="relative w-full">
+    <!-- 背景圖片 - 垂直排列 -->
+    <div class="absolute inset-0 w-full -z-10">
+      <div class="flex flex-col">
+        <img src="../../assets/Problems/background/bg.svg" alt="上方背景" class="w-full" />
+        <img
+          src="../../assets/Problems/background/vector58.svg"
+          alt="中間背景"
+          class="w-full -mt-8"
+        />
+        <img src="../../assets/Problems/background/vector59.svg" alt="下方背景" class="w-full" />
+      </div>
+    </div>
 
     <!-- 內容插槽 -->
     <div class="relative z-10 w-full">
@@ -21,27 +25,3 @@ defineOptions({
   name: 'BackgroundComponent',
 })
 </script>
-
-<style scoped>
-.background-container {
-  min-height: calc(100vh - 56px);
-  width: 100%;
-  background-image: linear-gradient(to bottom, #d83671, #1a2c55);
-  position: relative;
-  overflow: hidden;
-}
-
-/* 您可以添加其他背景元素 */
-.background-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('@/assets/Problems/background-pattern.svg');
-  background-repeat: repeat;
-  opacity: 0.05;
-  z-index: 0;
-}
-</style>
