@@ -9,13 +9,18 @@
       <span class="w-1 h-7 bg-neutral-400 rounded transition-all duration-700"></span>
     </div>
   </div>
+
   <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col items-center justify-center">
     <div class="text-3xl font-bold text-center text-[#F4F5F5]">Home Page</div>
   </div>
+
+  <!-- test section -->
+  <WorkshopSection></WorkshopSection>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import WorkshopSection from '../components/home/WorkshopSection.vue'
 
 const fullText = '距離活動開始還有'
 const typedText = ref('')
