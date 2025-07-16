@@ -15,12 +15,14 @@
   </div>
 
   <!-- test section -->
-  <WorkshopSection></WorkshopSection>
+  <!-- <Groups></Groups> -->
+  <PrizeSection></PrizeSection>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import WorkshopSection from '../components/home/WorkshopSection.vue'
+import PrizeSection from '../components/home/PrizeSection.vue'
+// import Groups from '../components/home/Groups.vue'
 
 const fullText = '距離活動開始還有'
 const typedText = ref('')
