@@ -1,1 +1,5 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-darkblue: #2d3e63;
+}

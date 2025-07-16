@@ -1,13 +1,18 @@
-<template>
-  <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col items-center justify-center">
-    <div class="text-3xl font-bold text-center text-[#F4F5F5]">Signup Page</div>
-  </div>
-</template>
-
 <script setup>
+import { ref } from 'vue'
+import '../assets/css/signup.css'
+import Header from '../components/signup/Header.vue'
+import Steps from '../components/signup/Steps.vue'
+
 defineOptions({
   name: 'SignupPage',
 })
+
+const playerCount = ref(5)
+const currentStep = ref(0)
 </script>
 
-<style scoped></style>
+<template>
+  <Header />
+  <Steps :player-count="playerCount" :current-step="currentStep" />
+</template>
