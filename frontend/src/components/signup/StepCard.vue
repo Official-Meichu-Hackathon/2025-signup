@@ -21,8 +21,8 @@ defineProps({
 
 <template>
   <div
-    class="w-40 h-20 flex items-center justify-center flex-col text-white rounded-2xl text-sm"
-    :class="current ? 'bg-darkblue shadow-lg' : 'bg-[#D9D9D9]'"
+    class="w-50 h-26 flex items-center justify-center flex-col text-white rounded-2xl text-md"
+    :class="current ? 'bg-darkblue ' : 'bg-[#D9D9D9]'"
   >
     <p>{{ order }}</p>
     <p class="px-2">{{ title }}</p>

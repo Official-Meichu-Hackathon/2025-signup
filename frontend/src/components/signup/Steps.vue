@@ -40,10 +40,10 @@ const secondRowSteps = computed(() => steps.value.slice(6))
 </script>
 
 <template>
-  <div class="flex mx-10 items-center justify-center">
+  <div class="flex mx-10 items-center justify-center mb-5">
     <StepCard v-for="step in firstRowSteps" :key="step.order" v-bind="step" class="mx-2" />
   </div>
-  <div v-if="secondRowSteps.length > 0" class="flex mx-10 items-center justify-center mt-5">
+  <div v-if="secondRowSteps.length > 0" class="flex mx-10 items-center justify-center mb-5">
     <StepCard v-for="step in secondRowSteps" :key="step.order" v-bind="step" class="mx-2" />
   </div>
 </template>

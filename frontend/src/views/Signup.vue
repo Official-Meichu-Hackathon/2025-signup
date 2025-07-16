@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import '../assets/css/signup.css'
 import Header from '../components/signup/Header.vue'
 import Steps from '../components/signup/Steps.vue'
+import Form from '../components/signup/form/Form.vue'
 
 defineOptions({
   name: 'SignupPage',
@@ -14,5 +15,6 @@ const currentStep = ref(0)
 
 <template>
   <Header />
-  <Steps :player-count="playerCount" :current-step="currentStep" />
+  <Steps :playerCount="playerCount" :currentStep="currentStep" />
+  <Form v-model:playerCount="playerCount" :currentStep="currentStep" />
 </template>
