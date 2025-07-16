@@ -5,6 +5,7 @@
       <div class="flex flex-col">
         <!-- 上方背景與橢圓疊加 -->
         <div class="relative">
+          <img src="../../assets/Problems/background/bg.svg" alt="上方背景" class="w-full -z-10" />
           <img
             src="../../assets/Problems/element/component40.svg"
             alt="上藍色小圓"
@@ -21,7 +22,6 @@
             alt="粉色小圓"
             class="absolute top-[168px] left-[525px] w-[100px] h-[100px] z-11 rounded-[20px] pointer-events-none animate-float"
           />
-          <img src="../../assets/Problems/background/bg.svg" alt="上方背景" class="w-full -z-10" />
           <img
             src="../../assets/Problems/background/ellipse28.svg"
             alt="中央橢圓"
@@ -44,12 +44,39 @@
           />
         </div>
 
+        <!-- 中間背景容器 -->
+        <div class="relative">
+          <!-- 原有中間背景 -->
+          <img
+            src="../../assets/Problems/background/vector58.svg"
+            alt="中間背景"
+            class="w-full relative -top-170"
+          />
+
+          <!-- 疊加的 Frame59 - 向右上方移動 -->
+          <img
+            src="../../assets/Problems/element/Frame59.svg"
+            alt="黑客組後面的圖"
+            class="absolute left-[400px] -top-[400px] animate-fade"
+          />
+        </div>
+
+        <img src="../../assets/Problems/background/vector59.svg" alt="藍暈" class="w-full" />
         <img
-          src="../../assets/Problems/background/vector58.svg"
-          alt="中間背景"
-          class="w-full -mt-8"
+          src="../../assets/Problems/background/vector59pink.svg"
+          alt="粉暈"
+          class="w-full relative -top-[30px]"
         />
-        <img src="../../assets/Problems/background/vector59.svg" alt="下方背景" class="w-full" />
+        <img
+          src="../../assets/Problems/element/star.svg"
+          alt="閃電"
+          class="w-124 h-100 relative -top-[30px]"
+        />
+        <img
+          src="../../assets/Problems/element/component37.svg"
+          alt="閃電"
+          class="w-124 h-100 relative -top-[30px]"
+        />
       </div>
     </div>
 
@@ -95,5 +122,17 @@ defineOptions({
 }
 .animate-float {
   animation: float 1s ease-in-out infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animate-fade {
+  animation: fade 3s ease-in-out forwards;
 }
 </style>
