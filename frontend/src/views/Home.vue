@@ -2,9 +2,9 @@
   <Entry_animation></Entry_animation>
   <Home_pg1></Home_pg1>
 
-  <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col items-center justify-center">
+  <!-- <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col items-center justify-center">
     <div class="text-3xl font-bold text-center text-[#F4F5F5]">Home Page</div>
-  </div>
+  </div> -->
 
   <!-- test section -->
   <!-- <Groups></Groups> -->
