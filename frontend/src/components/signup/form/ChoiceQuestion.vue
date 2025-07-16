@@ -17,7 +17,7 @@ defineProps({
   },
 })
 
-const selectedValue = defineModel('')
+const selectedValue = defineModel()
 </script>
 
 <template>
