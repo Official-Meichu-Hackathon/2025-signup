@@ -238,8 +238,8 @@ watch(showOptions, (val) => {
   document.body.style.overflow = val ? 'hidden' : '' // 鎖住滾輪
   // NEED !!! 監聽 showOptions 變化
   if (val) {
-    console.log('close light cursor')
-    glow.style.display = 'none' // showOptions=true 時隱藏
+    console.log('close light cursor') // 有印
+    glow.style.display = 'none' // showOptions=true 時隱藏 => 但還是開了
   }
 })
 
@@ -266,11 +266,18 @@ onMounted(() => {
   glow.style.display = 'none'
 
   area.addEventListener('mousemove', (e) => {
+    if (showOptions.value) {
+      glow.style.display = 'none' // 選單開啟不顯示光標
+      return
+    }
+
     glow.style.display = 'block'
     const rect = area.getBoundingClientRect()
     const x = e.clientX - rect.left
     const y = e.clientY - rect.top
     glow.style.left = `${x}px`
+    glow.style.display = 'block'
+
     glow.style.top = `${y}px`
   })
 
@@ -437,7 +444,7 @@ img {
   border-radius: 50%;
   transform-origin: 100% 50%;
   transform: translate(-60%, -50%);
-  filter: blur(10px);
+  filter: blur(30px);
   /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
 }
 </style>
