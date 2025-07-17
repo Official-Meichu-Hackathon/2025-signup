@@ -54,6 +54,43 @@
         <div class="timestamp-word">SECONDS</div>
       </div>
     </div>
+    <div class="flex justify-center mb-10">
+      <div class="relative">
+        <img
+          src="/HomeImages/imageDecorator1.svg"
+          alt="Top Decoration"
+          class="absolute top-27"
+          style="left: -8rem"
+        />
+        <img
+          src="/HomeImages/imagePlaceholder.png"
+          alt="Entry Animation"
+          class="w-[clamp(500px,60vw,1080px)] h-auto mt-40 object-contain"
+        />
+
+        <img
+          src="/HomeImages/imageDecorator2.svg"
+          alt="Bottom Decoration"
+          class="absolute bottom-[-clamp(2rem,5vw,3rem)]"
+          style="right: -3.5rem; bottom: -3.5rem"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col justify-center items-center px-8 py-10">
+      <p class="intro-text">
+        梅竹黑客松競賽的核心在於促進跨領域的意見交流，並以團隊合作的方式開發出最小可行性產品（MVP,
+        minimum viable product）。
+      </p>
+
+      <p class="intro-text">
+        在這場活動中，參賽者可自行選擇合作企業，以企業所提供的資源，在有限時間、夜以繼日地將想法碰撞及融合、整合技能、完成原型，並向觀眾與評審展示他們的解決方案。除競賽主題以外，活動中幾乎沒有其他限制，參與者可以自由激盪更多創意及靈感。我們相信，透過這樣的挑戰與協作，參賽者不僅能突破既有框架，更有機會為社會帶來前所未有的創新與改變，在這個充滿挑戰、瞬息萬變的時代，打造出自己的
+        MVP，更成為一代人的 MVP。
+      </p>
+      <p class="intro-text">
+        梅竹黑客松現為全台最大的校園黑客松，於 2013 年起步，每年定期在9月下旬到 10
+        月中旬間舉行大型黑客松年會，邀請全台學生在新竹參與熱血的盛會，進行一場難以忘懷的腦力激盪。期盼透過這場年度盛會，拉近企業與學生的距離，連結各方力量與資源，為科技領域注入創新動力，在以科技業聞名的新竹，留下深刻的印記。
+      </p>
+    </div>
   </div>
 </template>
 
@@ -124,7 +161,7 @@ defineOptions({
 
 <style scoped>
 .extrabold {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .rwd-gap {
@@ -161,11 +198,26 @@ defineOptions({
   margin: clamp(30px, 0.5vw, 50px) 0;
 }
 
+.intro-text {
+  color: #2d3e63;
+  text-align: justify;
+  font-family: 'Chiron Hei HK';
+  font-size: clamp(16px, 2vw, 24px);
+  font-style: normal;
+  font-weight: 370;
+  line-height: normal;
+  line-height: 1.8;
+  letter-spacing: clamp(0.02em, 0.5vw, 0.08em);
+  margin-bottom: 50px;
+  width: clamp(500px, 60vw, 1080px);
+}
+
 @keyframes blink {
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
@@ -175,12 +227,15 @@ defineOptions({
   0% {
     opacity: 1;
   }
+
   40% {
     opacity: 1;
   }
+
   60% {
     opacity: 0;
   }
+
   90% {
     opacity: 0;
   }
