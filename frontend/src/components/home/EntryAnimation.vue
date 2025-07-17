@@ -45,7 +45,6 @@ const handleScroll = () => {
   //let navbarOffset = 14;
   const scrollableDist = height - window.innerHeight // canvas contiainer height - viewport height
   const scrollProgress = Math.max(0, Math.min(1, (-top + 56) / scrollableDist))
-  console.log(`Top: ${top}`)
   const frameIndex = Math.min(frameCnt - 1, Math.floor(scrollProgress * frameCnt))
 
   requestAnimationFrame(() => {
