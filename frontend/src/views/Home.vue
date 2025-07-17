@@ -15,8 +15,8 @@
 <script setup>
 import PrizeSection from '../components/home/PrizeSection.vue'
 // import Groups from '../components/home/Groups.vue'
-import Home_pg1 from './home_eason/HomePg1.vue'
-import Entry_animation from './home_eason/EntryAnimation.vue'
+import Home_pg1 from '../components/home/HomePg1.vue'
+import Entry_animation from '../components/home/EntryAnimation.vue'
 
 defineOptions({
   name: 'HomePage',
