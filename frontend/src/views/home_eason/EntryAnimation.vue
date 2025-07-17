@@ -42,8 +42,10 @@ const handleScroll = () => {
 
   const rect = scrollContainer.value.getBoundingClientRect()
   const { top, height } = rect //top is the dist relative to viewport (positive when element top is below viewport)
+  //let navbarOffset = 14;
   const scrollableDist = height - window.innerHeight // canvas contiainer height - viewport height
-  const scrollProgress = Math.max(0, Math.min(1, -top / scrollableDist))
+  const scrollProgress = Math.max(0, Math.min(1, (-top + 56) / scrollableDist))
+  console.log(`Top: ${top}`)
   const frameIndex = Math.min(frameCnt - 1, Math.floor(scrollProgress * frameCnt))
 
   requestAnimationFrame(() => {
@@ -71,6 +73,23 @@ onMounted(() => {
     drawFrame(0)
     window.addEventListener('scroll', handleScroll)
   })
+  //loads scroll event listener for scrolling animation
+
+  // Regular animation without scroll
+  // let animationInterval = null;
+  // Promise.all(imagePromises).then((images) => {
+  //   loadedImages.push(...images);
+  //   let frameIdx = 0;
+  //   drawFrame(frameIdx);
+  //   animationInterval = setInterval(() => {
+  //     frameIdx++;
+  //     if(frameIdx < frameCnt) {
+  //       drawFrame(frameIdx);
+  //     } else {
+  //       clearInterval(animationInterval);
+  //     }
+  //   }, 65);
+  // })
 })
 
 onBeforeUnmount(() => {
@@ -80,7 +99,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .scroll-container {
-  height: 200vh;
+  height: 180vh;
   position: relative;
   width: 100%;
   background-color: #f0f0f0;
