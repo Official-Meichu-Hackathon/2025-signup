@@ -55,7 +55,7 @@ const handleScroll = () => {
 
   const rect = scrollContainer.value.getBoundingClientRect()
   const { top, height } = rect
-  const scrollableDist = height - window.innerHeight - 56
+  const scrollableDist = height - window.innerHeight
   const rawScrollProgress = Math.max(0, Math.min(1, (-top + 56) / scrollableDist))
 
   let scrollProgress = rawScrollProgress
@@ -234,6 +234,7 @@ body {
 .scroll-container {
   height: 320vh;
   position: relative;
+  top: -56px;
   width: 100%;
   background-color: #f0f0f0;
 }
