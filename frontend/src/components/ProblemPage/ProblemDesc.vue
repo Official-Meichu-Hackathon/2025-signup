@@ -22,7 +22,7 @@
             >
               黑客組
             </h2>
-            <ProblemCardGroup group-type="hacker" />
+            <ProblemCardGroup />
           </div>
 
           <!-- 企業卡片 - 創客交流組 -->

@@ -1,16 +1,49 @@
 <template>
-  <ProblemCard
-    v-for="(card, index) in cards"
-    :key="index"
-    :logo="card.logo"
-    :companyName="card.companyName"
-    :problemTitle="card.problemTitle"
-    :problemContent="card.problemContent"
-    :problemLink="card.problemLink"
-  />
+  <div class="relative w-full h-[70vh] flex items-center justify-center">
+    <!-- 左箭頭 -->
+    <button
+      @click="prevCard"
+      class="absolute z-30 p-3 rounded-full"
+      style="left: calc(50% - 40vh); top: 35%; transform: translateY(-50%)"
+    >
+      <div
+        class="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-r-[20px] border-[#374463]"
+      ></div>
+    </button>
+
+    <!-- 卡片容器 -->
+    <div class="relative flex justify-center items-center w-full h-full">
+      <div
+        v-for="(card, index) in cards"
+        :key="index"
+        class="absolute transition-all duration-500 ease-in-out"
+        :style="getCardStyle(index)"
+      >
+        <ProblemCard
+          :logo="card.logo"
+          :companyName="card.companyName"
+          :problemTitle="card.problemTitle"
+          :problemContent="card.problemContent"
+          :problemLink="card.problemLink"
+        />
+      </div>
+    </div>
+
+    <!-- 右箭頭 -->
+    <button
+      @click="nextCard"
+      class="absolute z-30 p-3 rounded-full"
+      style="right: calc(50% - 40vh); top: 35%; transform: translateY(-50%)"
+    >
+      <div
+        class="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-l-[20px] border-l-[#374463]"
+      ></div>
+    </button>
+  </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import ProblemCard from './ProblemCard.vue'
 import AMDLogo from '../../assets/Problems/Card/AMDlogo.svg'
 import TSMCLogo from '../../assets/Problems/Card/TSMClogo.svg'
@@ -68,4 +101,52 @@ const cards = [
 defineOptions({
   name: 'ProblemCardGroup',
 })
+
+const currentIndex = ref(0)
+
+const getCardStyle = (index) => {
+  const totalCards = cards.length
+  const diff = (index - currentIndex.value + totalCards) % totalCards
+
+  if (diff === 0) {
+    // 中間卡片
+    return {
+      transform: 'translateX(0) scale(1)',
+      zIndex: 20,
+      opacity: 1,
+      top: '-5vh',
+    }
+  } else if (diff === 1 || diff === totalCards - 1) {
+    // 左右卡片
+    return {
+      transform: `translateX(${diff === 1 ? '30vh' : '-30vh'}) scale(0.85)`,
+      zIndex: 10,
+      opacity: 0.5,
+      top: '0',
+    }
+  } else {
+    // 其他卡片
+    return {
+      transform: `translateX(${diff > 1 ? '40vh' : '-40vh'}) scale(0)`,
+      zIndex: 0,
+      opacity: 0,
+      top: '0',
+    }
+  }
+}
+
+const nextCard = () => {
+  currentIndex.value = (currentIndex.value + 1) % cards.length
+}
+
+const prevCard = () => {
+  currentIndex.value = (currentIndex.value - 1 + cards.length) % cards.length
+}
 </script>
+
+<style scoped>
+/* 卡片的過渡效果 */
+.card {
+  transition: all 0.5s ease-in-out;
+}
+</style>
