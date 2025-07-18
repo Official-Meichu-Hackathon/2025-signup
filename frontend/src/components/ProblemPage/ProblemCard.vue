@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-[55vh] h-[55vh] overflow-hidden">
+  <div class="relative w-[75vh] h-[75vh] overflow-hidden">
     <!-- 卡片底圖 -->
     <img src="../../assets/Problems/Card/RectangleCard.svg" alt="卡片底圖" />
 

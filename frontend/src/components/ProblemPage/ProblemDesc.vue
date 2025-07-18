@@ -18,7 +18,7 @@
           <!-- 企業卡片輪播 - 黑客組 -->
           <div class="w-full mt-[25vh]">
             <h2
-              class="text-[5vh] font-bold text-center text-[#2D3E63] mb-[15vh] font-['Chiron_Hei_HK']"
+              class="tracking-wide text-[5vh] font-bold text-center text-[#2D3E63] mb-[23vh] font-['Chiron_Hei_HK']"
             >
               黑客組
             </h2>
@@ -26,13 +26,13 @@
           </div>
 
           <!-- 企業卡片 - 創客交流組 -->
-          <div class="w-full mt-[5vh]">
+          <div class="w-full mt-[25vh]">
             <h2
-              class="text-[5vh] font-bold text-center text-[#2D3E63] mb-[3vh] font-['Chiron_Hei_HK']"
+              class="tracking-wide text-[5vh] font-bold text-center text-[#2D3E63] mb-[23vh] font-['Chiron_Hei_HK']"
             >
               創客交流組
             </h2>
-            <ProblemCardGroup group-type="maker" />
+            <ProblemCardGroup />
           </div>
         </div>
       </div>

@@ -60,16 +60,20 @@
           />
         </div>
 
-        <img src="../../assets/Problems/background/vector59.svg" alt="藍暈" class="w-full" />
+        <img
+          src="../../assets/Problems/background/vector59.svg"
+          alt="藍暈"
+          class="w-full relative -top-[120vh]"
+        />
         <img
           src="../../assets/Problems/background/vector59pink.svg"
           alt="粉暈"
-          class="w-full relative -top-[3vh]"
+          class="w-full relative -top-[185vh]"
         />
         <img
           src="../../assets/Problems/element/star.svg"
           alt="星星"
-          class="w-[12.4vh] h-[10vh] relative -top-[3vh]"
+          class="w-[38vh] h-[38vh] relative -top-[255vh] left-[83vh] animate-star-motion"
         />
         <img
           src="../../assets/Problems/element/component37.svg"
@@ -133,5 +137,25 @@ defineOptions({
 }
 .animate-fade {
   animation: fade 3s ease-in-out forwards;
+}
+
+/* 定義星星的往復運動動畫 */
+@keyframes star-motion {
+  0% {
+    transform: translate(8vh, 8vh);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 1); /* 加速 */
+  }
+  50% {
+    transform: translate(-7vh, -7vh);
+    animation-timing-function: linear; /* 勻速 */
+  }
+  100% {
+    transform: translate(8vh, 8vh);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 1); /* 加速 */
+  }
+}
+
+.animate-star-motion {
+  animation: star-motion 4s infinite; /* 動畫持續 6 秒，無限循環 */
 }
 </style>
