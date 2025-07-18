@@ -1,7 +1,7 @@
 <template>
   <div>
     <div ref="scrollContainer" class="scroll-container">
-      <canvas ref="canvasRef" :class="['sticky-canvas', { glowing: isBreathing }]"></canvas>
+      <canvas ref="canvasRef" :class="['sticky-canvas', { breathing: isBreathing }]"></canvas>
     </div>
   </div>
 </template>
@@ -30,6 +30,10 @@ const drawFrame = (idx) => {
   if (context && loadedImages[idx]) {
     context.clearRect(0, 0, canvasRef.value.width, canvasRef.value.height)
     context.drawImage(loadedImages[idx], 0, 0, canvasRef.value.width, canvasRef.value.height)
+    particles.forEach((p) => {
+      p.update()
+      p.draw(context)
+    })
     isBreathing.value = idx <= 9
   } else {
     console.error(`Image at index ${idx} is not loaded.`)
@@ -50,74 +54,88 @@ const handleScroll = () => {
   const frameIndex = Math.min(frameCnt - 1, Math.floor(scrollProgress * frameCnt))
 
   requestAnimationFrame(() => {
-    // using requestAnimationFrame for smoother animation
-    drawFrame(frameIndex) // this will work too, but might not sync with browser repaint
+    drawFrame(frameIndex)
   })
 }
 
 const particles = []
-const particleCount = 100
+const particleCount = 75
 
 class Particle {
   constructor(canvas) {
     this.canvas = canvas
-    // Start particles near the center
-    this.x = this.canvas.width / 2
-    this.y = this.canvas.height / 2
-    // Random velocity
-    this.vx = (Math.random() - 0.5) * 0.5
-    this.vy = (Math.random() - 0.5) * 0.5
-    this.size = Math.random() * 2 + 1
-    this.life = Math.random() * 100 + 50
-    this.opacity = 1
+    this.reset() // Initialize with random position
   }
 
   update() {
     this.x += this.vx
     this.y += this.vy
     this.life--
-    if (this.life < 50) {
-      this.opacity = this.life / 50
+
+    const fadeInDuration = 50
+    const fadeOutDuration = 50
+
+    if (this.life > this.maxLife - fadeInDuration) {
+      // Fade in
+      const timePassed = this.maxLife - this.life
+      const fadeRatio = Math.min(1, timePassed / fadeInDuration)
+      this.opacity = this.maxOpacity * (fadeRatio * fadeRatio * fadeRatio)
+    } else if (this.life < fadeOutDuration) {
+      // Fade out
+      const fadeRatio = Math.max(0, this.life / fadeOutDuration)
+      this.opacity = this.maxOpacity * (fadeRatio * fadeRatio * fadeRatio)
+    } else {
+      this.opacity = this.maxOpacity
     }
-    // Reset particle when it dies
+
+    // Reset particle if it's dead or off-screen
     if (this.life <= 0) {
       this.reset()
     }
   }
 
   draw(context) {
-    context.fillStyle = `rgba(255, 220, 180, ${this.opacity})` // Warm glow color
+    context.fillStyle = `rgba(${this.baseColor}, ${this.opacity})`
     context.beginPath()
     context.arc(this.x, this.y, this.size, 0, Math.PI * 2)
     context.fill()
   }
 
   reset() {
-    // Re-initialize the particle at the center
-    this.x = this.canvas.width / 2
-    this.y = this.canvas.height / 2
-    this.vx = (Math.random() - 0.5) * 0.5
-    this.vy = (Math.random() - 0.5) * 0.5
-    this.life = Math.random() * 100 + 50
-    this.opacity = 1
+    this.x = Math.random() * this.canvas.width
+    this.y = Math.random() * this.canvas.height
+    this.vx = (Math.random() - 0.5) * 0.3 // Slower movement
+    this.vy = (Math.random() - 0.5) * 0.3
+    this.size = Math.random() * 1.5 + 0.5 // Smaller particles
+    this.maxLife = Math.random() * 200 + 200 // Longer life
+    this.life = this.maxLife
+    this.opacity = 0 // Start transparent for fade-in
+    this.maxOpacity = Math.random() * 0.5 + 0.2 // Target opacity
+    const baseColors = [
+      '255, 255, 255', // White
+      '173, 216, 230', // Light Blue
+      '220, 220, 255', // Light Lavender
+    ]
+    this.baseColor = baseColors[Math.floor(Math.random() * baseColors.length)]
   }
 }
 
 let animationFrameId
 const animate = () => {
-  // Clear only if you don't have a background image being drawn by the scroll
-  // context.clearRect(0, 0, canvasRef.value.width, canvasRef.value.height);
+  // We only need to animate if the user isn't scrolling.
+  // The scroll handler will draw frames.
+  // We can get the current frame from the scroll progress if needed,
+  // but for now, let's just keep the particles moving.
+  const rect = scrollContainer.value.getBoundingClientRect()
+  // Only run this animation loop if the element is not being scrolled through
+  if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+    // It's in the main viewport and being scrolled, so handleScroll will manage drawing
+  } else {
+    // It's either fully visible or not in the scroll path, animate the current frame
+    const currentFrame = isBreathing.value ? 0 : frameCnt - 1
+    drawFrame(currentFrame)
+  }
 
-  // Note: The scroll animation will draw the main image.
-  // We just need to draw the particles on top.
-
-  // To see particles without scrolling, you'd draw the first frame here:
-  // if (loadedImages[0]) context.drawImage(loadedImages[0], ...);
-
-  particles.forEach((p) => {
-    p.update()
-    p.draw(context)
-  })
   animationFrameId = requestAnimationFrame(animate)
 }
 
@@ -138,12 +156,12 @@ onMounted(() => {
 
   Promise.all(imagePromises).then((images) => {
     loadedImages.push(...images)
-    drawFrame(0)
-    window.addEventListener('scroll', handleScroll)
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle(canvasRef.value))
     }
-    animate() // Start the particle animation
+    drawFrame(0) // Initial draw
+    window.addEventListener('scroll', handleScroll)
+    animate() // Start the particle animation loop
   })
   //loads scroll event listener for scrolling animation
 
@@ -190,30 +208,15 @@ onBeforeUnmount(() => {
 }
 
 .sticky-canvas.breathing {
-  animation: breathe 1.5s ease-in-out infinite alternate;
+  animation: breathe 2s ease-in-out infinite alternate;
 }
 
-@keyframes glow {
-  0% {
-    filter: brightness(100%) saturate(100%) blur(0px) scale(1);
-  }
-  50% {
-    filter: brightness(130%) saturate(150%) blur(2px) scale(1.1);
-  }
-  100% {
-    filter: brightness(100%) saturate(100%) blur(0px) scale(1);
-  }
-}
-
-.sticky-canvas.glowing {
-  animation: glow 4s ease-in-out infinite alternate;
-}
 @keyframes breathe {
   0% {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.2);
+    transform: scale(1.02);
   }
 }
 </style>
