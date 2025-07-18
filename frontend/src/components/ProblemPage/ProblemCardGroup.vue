@@ -1,14 +1,14 @@
 <template>
-  <div class="w-full my-12">
+  <div class="w-full">
     <div v-if="groupType === 'hacker'" class="relative flex justify-center items-center">
-      <!-- TODO - need to modify 左箭頭 -->
+      <!-- 左箭頭 -->
       <button
         @click="prevCard"
-        class="absolute left-4 z-30 p-2 rounded-full bg-white/80 shadow-md hover:bg-white focus:outline-none"
+        class="absolute left-[2vw] z-30 p-[1vh] rounded-full bg-white/80 shadow-md hover:bg-white focus:outline-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 text-[#2D3E63]"
+          class="h-[3vh] w-[3vh] text-[#2D3E63]"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -23,15 +23,17 @@
       </button>
 
       <!-- Card Container -->
-      <div class="flex justify-center items-center relative w-full max-w-5xl overflow-hidden py-10">
-        <div class="flex justify-center items-center relative" style="width: 750px; height: 650px">
+      <div
+        class="flex justify-center items-center relative w-full max-w-[80vw] overflow-hidden py-[5vh]"
+      >
+        <div class="flex justify-center items-center relative" style="width: 60vw; height: 65vh">
           <div
             v-for="(card, index) in cards"
             :key="index"
             class="absolute transition-all duration-500 ease-in-out"
             :style="getCardStyle(index)"
           >
-            <img :src="getCardImageSrc(card)" :alt="card" class="w-[664px] h-[650px]" />
+            <img :src="getCardImageSrc(card)" :alt="card" class="w-[50vw] h-[65vh]" />
           </div>
         </div>
       </div>
@@ -39,11 +41,11 @@
       <!-- 右箭頭 -->
       <button
         @click="nextCard"
-        class="absolute right-4 z-30 p-2 rounded-full bg-white/80 shadow-md hover:bg-white focus:outline-none"
+        class="absolute right-[2vw] z-30 p-[1vh] rounded-full bg-white/80 shadow-md hover:bg-white focus:outline-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 text-[#2D3E63]"
+          class="h-[3vh] w-[3vh] text-[#2D3E63]"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -54,7 +56,7 @@
     </div>
 
     <div v-else class="flex justify-center items-center">
-      <img :src="governmentCardSrc" alt="Government" class="w-[664px] h-[650px]" />
+      <img :src="governmentCardSrc" alt="Government" class="w-[50vw] h-[65vh]" />
     </div>
   </div>
 </template>
@@ -116,7 +118,7 @@ const getCardStyle = (index) => {
 
   if (normalizedDiff === 1 || normalizedDiff === cards.value.length - 1) {
     return {
-      transform: `translateX(${normalizedDiff === 1 ? 250 : -250}px)`,
+      transform: `translateX(${normalizedDiff === 1 ? '10vw' : '-10vw'})`,
       zIndex: 10,
       opacity: 0.7,
       scale: 0.75,
@@ -124,7 +126,7 @@ const getCardStyle = (index) => {
   }
 
   return {
-    transform: `translateX(${normalizedDiff <= cards.value.length / 2 ? 450 : -450}px)`,
+    transform: `translateX(${normalizedDiff <= cards.value.length / 2 ? '20vw' : '-20vw'})`,
     zIndex: 0,
     opacity: 0.3,
     scale: 0,
