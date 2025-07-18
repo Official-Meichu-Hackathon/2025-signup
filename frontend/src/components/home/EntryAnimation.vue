@@ -2,6 +2,10 @@
   <div>
     <div ref="scrollContainer" class="scroll-container">
       <canvas ref="canvasRef" :class="['sticky-canvas', { breathing: isBreathing }]"></canvas>
+      <div v-if="showScrollHint" class="scroll-hint">
+        <div class="scroll-indicator">↓</div>
+        <p>Scroll again to continue</p>
+      </div>
     </div>
   </div>
 </template>
@@ -14,6 +18,10 @@ defineOptions({
 
 const scrollContainer = ref(null)
 const canvasRef = ref(null)
+const hasReachedEnd = ref(false)
+const lastScrollY = ref(0)
+const showScrollHint = ref(false)
+const isLocked = ref(false) // Add this new state
 
 const frameCnt = 27 // 23
 const imageSrc = []
@@ -41,21 +49,50 @@ const drawFrame = (idx) => {
 }
 
 const handleScroll = () => {
-  if (!scrollContainer.value) {
-    console.error('Scroll container is not defined.')
+  if (!scrollContainer.value || isLocked.value) {
     return
   }
 
   const rect = scrollContainer.value.getBoundingClientRect()
-  const { top, height } = rect //top is the dist relative to viewport (positive when element top is below viewport)
-  //let navbarOffset = 14;
-  const scrollableDist = height - window.innerHeight // canvas contiainer height - viewport height
-  const scrollProgress = Math.max(0, Math.min(1, (-top + 56) / scrollableDist))
+  const { top, height } = rect
+  const scrollableDist = height - window.innerHeight - 56
+  const rawScrollProgress = Math.max(0, Math.min(1, (-top + 56) / scrollableDist))
+
+  let scrollProgress = rawScrollProgress
   const frameIndex = Math.min(frameCnt - 1, Math.floor(scrollProgress * frameCnt))
+
+  // Lock scroll at the final frame
+  // console.log(`Top: ${top}, Scrollable Dist: ${scrollableDist}, Progress: ${scrollProgress}, Frame Index: ${frameIndex}`)
+  if (frameIndex === frameCnt - 1 && !hasReachedEnd.value) {
+    console.log('Reached the end of the animation, locking scroll.')
+    isLocked.value = true
+    const lockPosition = scrollContainer.value.offsetTop + scrollableDist - 56
+    if (isLocked.value) {
+      window.scrollTo({ top: lockPosition, behavior: 'instant' })
+    }
+
+    // Listen for the next scroll to break the lock
+    window.addEventListener('wheel', unlockScroll, { once: true })
+    showScrollHint.value = true
+  }
 
   requestAnimationFrame(() => {
     drawFrame(frameIndex)
   })
+
+  lastScrollY.value = window.scrollY
+}
+
+const unlockScroll = (event) => {
+  // Only unlock on downward scroll
+  if (event.deltaY > 0) {
+    hasReachedEnd.value = true
+    isLocked.value = false
+    showScrollHint.value = false
+  } else {
+    // If scrolling up, re-listen for the next wheel event
+    window.addEventListener('wheel', unlockScroll, { once: true })
+  }
 }
 
 const particles = []
@@ -142,6 +179,9 @@ const animate = () => {
 onMounted(() => {
   context = canvasRef.value.getContext('2d')
 
+  // Initialize lastScrollY
+  lastScrollY.value = window.scrollY
+
   canvasRef.value.width = 1440
   canvasRef.value.height = 1020
 
@@ -164,35 +204,35 @@ onMounted(() => {
     animate() // Start the particle animation loop
   })
   //loads scroll event listener for scrolling animation
-
-  // Regular animation without scroll
-  // let animationInterval = null;
-  // Promise.all(imagePromises).then((images) => {
-  //   loadedImages.push(...images);
-  //   let frameIdx = 0;
-  //   drawFrame(frameIdx);
-  //   animationInterval = setInterval(() => {
-  //     frameIdx++;
-  //     if(frameIdx < frameCnt) {
-  //       drawFrame(frameIdx);
-  //     } else {
-  //       clearInterval(animationInterval);
-  //     }
-  //   }, 65);
-  // })
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('wheel', unlockScroll) // Clean up wheel listener
   if (animationFrameId) {
     cancelAnimationFrame(animationFrameId)
   }
 })
 </script>
 
+<style>
+/* Hide scrollbar for Chrome, Safari, Opera, and Arc */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html,
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+</style>
+
 <style scoped>
 .scroll-container {
-  height: 180vh;
+  height: 320vh;
   position: relative;
   width: 100%;
   background-color: #f0f0f0;
@@ -211,12 +251,44 @@ onBeforeUnmount(() => {
   animation: breathe 2s ease-in-out infinite alternate;
 }
 
+.scroll-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #666;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.scroll-indicator {
+  font-size: 24px;
+  animation: bounce 1s infinite;
+}
+
 @keyframes breathe {
   0% {
     transform: scale(1);
   }
   100% {
     transform: scale(1.02);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
   }
 }
 </style>
