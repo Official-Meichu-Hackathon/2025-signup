@@ -44,6 +44,7 @@
 import Background from '../ProblemPage/Background.vue'
 import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
+// import ProblemCard from '../ProblemPage/ProblemCard.vue'
 
 defineOptions({
   name: 'ProblemDesc',

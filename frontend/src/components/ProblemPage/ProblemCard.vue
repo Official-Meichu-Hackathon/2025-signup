@@ -1,30 +1,73 @@
 <template>
-  <div
-    class="problem-card transition-all duration-300 ease-in-out"
-    :class="{
-      'scale-100 z-20 opacity-100': isActive,
-      'scale-[0.85] z-10 opacity-70': !isActive && isAdjacent,
-      'scale-[0.7] z-0 opacity-50': !isActive && !isAdjacent,
-    }"
-  >
-    <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-md w-full">
-      <!-- 企業標誌區域 -->
-      <div class="bg-[#2D3E63] p-[2vh] text-white">
-        <h3 class="text-xl font-bold">{{ companyName }}</h3>
-      </div>
+  <div class="relative w-[55vh] h-[55vh] overflow-hidden">
+    <!-- 卡片底圖 -->
+    <img src="../../assets/Problems/Card/RectangleCard.svg" alt="卡片底圖" />
 
-      <!-- 題目內容區域 -->
-      <div class="p-[3vh]">
-        <h4 class="text-lg font-semibold mb-[1.5vh] text-[#2D3E63]">題目</h4>
-        <p class="text-gray-700">{{ problemContent }}</p>
-      </div>
+    <!-- 左下角覆蓋的 Cardleft -->
+    <img
+      src="../../assets/Problems/Card/Cardleft.svg"
+      alt="左下角裝飾"
+      class="absolute bottom-2.5 left-0 w-[50vh] h-[30vh]"
+    />
+
+    <!-- 右下角覆蓋的 Cardright -->
+    <img
+      src="../../assets/Problems/Card/Cardright.svg"
+      alt="右下角裝飾"
+      class="absolute bottom-2.5 right-0 w-[50vh] h-[30vh] rounded-[2.5vh]"
+    />
+
+    <!-- 卡片內容 -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-[3vh]">
+      <!-- 公司 Logo -->
+      <img
+        :src="logo"
+        alt="公司 Logo"
+        class="w-[30vh] h-[20vh] object-contain mb-[1vh] -mt-[14vh]"
+      />
+      <div class="bg-[#CD8A98] w-[80%] h-[0.1vh] mb-[2.5vh]"></div>
+
+      <!-- 公司名稱 -->
+      <!-- <h2 class="text-[3vh] font-bold text-[#2D3E63] mb-[1.5vh] font-[Chiron_Hei_HK]">
+        {{ companyName }}
+      </h2> -->
+
+      <!-- 題目標題 -->
+      <h3 class="text-[2vh] font-semibold text-[#2D3E63] mb-[1.5vh] font-[Chiron_Hei_HK]">
+        {{ problemTitle }}
+      </h3>
+
+      <!-- 題目內容 -->
+      <p class="text-[2vh] text-[#2D3E63] font-bold leading-relaxed mb-[2vh] font-[Chiron_Hei_HK]">
+        {{ problemContent }}
+      </p>
+
+      <!-- 題目連結 -->
+      <a
+        :href="problemLink"
+        target="_blank"
+        class="text-[2vh] text-white font-bold font-[Chiron_Hei_HK]"
+      >
+        詳細題目說明 >>
+      </a>
     </div>
   </div>
 </template>
 
 <script setup>
+defineOptions({
+  name: 'ProblemCard',
+})
 defineProps({
+  logo: {
+    type: String,
+    required: true,
+  },
   companyName: {
+    type: String,
+    required: true,
+  },
+  problemTitle: {
     type: String,
     required: true,
   },
@@ -32,20 +75,9 @@ defineProps({
     type: String,
     required: true,
   },
-  isActive: {
-    type: Boolean,
-    default: false,
-  },
-  isAdjacent: {
-    type: Boolean,
-    default: false,
+  problemLink: {
+    type: String,
+    required: true,
   },
 })
 </script>
-
-<style scoped>
-.problem-card {
-  width: 20vw; /* 寬度改為螢幕寬度的 20% */
-  min-height: 30vh; /* 高度改為螢幕高度的 30% */
-}
-</style>
