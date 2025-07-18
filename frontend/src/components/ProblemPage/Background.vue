@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full">
     <!-- 背景圖片 - 垂直排列 -->
-    <div class="absolute w-full -z-10">
+    <div class="absolute w-full -z-10 h-auto">
       <div class="flex flex-col">
         <!-- 上方背景與橢圓疊加 -->
         <div class="relative">
@@ -73,12 +73,12 @@
         <img
           src="../../assets/Problems/element/star.svg"
           alt="星星"
-          class="w-[38vh] h-[38vh] relative -top-[255vh] left-[83vh] animate-star-motion"
+          class="w-[38vh] h-[38vh] relative -top-[245vh] left-[86vh] animate-star-motion"
         />
         <img
           src="../../assets/Problems/element/component37.svg"
           alt="閃電"
-          class="w-[12.4vh] h-[10vh] relative -top-[3vh]"
+          class="w-[60vh] h-[60vh] relative -top-[210vh] left-[8vh]"
         />
       </div>
     </div>
@@ -146,7 +146,7 @@ defineOptions({
     animation-timing-function: cubic-bezier(0.55, 0, 1, 1); /* 加速 */
   }
   50% {
-    transform: translate(-7vh, -7vh);
+    transform: translate(-8vh, -8vh);
     animation-timing-function: linear; /* 勻速 */
   }
   100% {

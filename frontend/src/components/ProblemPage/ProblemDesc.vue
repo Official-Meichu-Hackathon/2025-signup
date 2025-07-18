@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full h-auto">
     <Background>
       <div class="transform -translate-y-[5vh] w-full">
         <!-- 標題 -->
@@ -32,7 +32,16 @@
             >
               創客交流組
             </h2>
-            <ProblemCardGroup />
+            <!-- <ProblemCardGroup /> -->
+            <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh]">
+              <ProblemCard
+                :logo="HsinchuLogo"
+                companyName="新竹市政府"
+                problemTitle="題目"
+                problem-content="題目題目題目之後改"
+                problemLink="https://example.com/problem"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -44,7 +53,8 @@
 import Background from '../ProblemPage/Background.vue'
 import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
-// import ProblemCard from '../ProblemPage/ProblemCard.vue'
+import ProblemCard from '../ProblemPage/ProblemCard.vue'
+import HsinchuLogo from '../../assets/Problems/Card/HsinchuLogo.svg'
 
 defineOptions({
   name: 'ProblemDesc',

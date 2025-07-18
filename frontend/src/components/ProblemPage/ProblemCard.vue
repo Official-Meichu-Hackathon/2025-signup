@@ -43,6 +43,7 @@
       </p>
 
       <!-- 題目連結 -->
+      <!-- <div class="relative w-full h-auto"> -->
       <a
         :href="problemLink"
         target="_blank"
@@ -50,6 +51,7 @@
       >
         詳細題目說明 >>
       </a>
+      <!-- </div> -->
     </div>
   </div>
 </template>
