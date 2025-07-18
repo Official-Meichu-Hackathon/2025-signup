@@ -165,7 +165,7 @@ defineOptions({
 }
 
 .rwd-gap {
-  gap: 4vw;
+  gap: clamp(1rem, 4vw, 20rem);
 }
 
 .flash {
