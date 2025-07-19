@@ -33,7 +33,7 @@
             activeTab === '黑客組'
               ? 'bg-[#db8396] left-[7vw] text-[2vw]'
               : 'bg-[#F4DAE1] left-[7vw] text-[1.6vw]',
-            'w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            'pt-[1vh] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '黑客組'"
         >
@@ -44,7 +44,7 @@
         <div
           :class="[
             activeTab === '工作坊' ? 'bg-[#db8396] text-[2vw]' : 'bg-[#F4DAE1] text-[1.6vw]',
-            'left-[19vw] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            'pt-[1vh] left-[19vw] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '工作坊'"
         >
@@ -104,7 +104,7 @@
         <div
           :class="[
             activeTab2 === '創客組' ? 'bg-[#db8396] text-[2vw]' : 'bg-[#F4DAE1] text-[1.6vw]',
-            ' left-[59vw] w-[16vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            'pt-[1vh] left-[59vw] w-[16vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab2 = '創客組'"
         >
@@ -115,7 +115,7 @@
         <div
           :class="[
             activeTab2 === '工作坊' ? 'bg-[#db8396] text-[2vw]' : 'bg-[#F4DAE1] text-[1.6vw]',
-            'left-[47vw] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            'pt-[1vh] left-[47vw] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab2 = '工作坊'"
         >

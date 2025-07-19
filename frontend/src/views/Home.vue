@@ -3,6 +3,9 @@
   <Home_pg1></Home_pg1>
 
   <DarkBlueSection></DarkBlueSection>
+
+  <!-- bottom section -->
+  <StaffSection></StaffSection>
 </template>
 
 // 李聿宸：基本介紹、合作企業 ~ 特別感謝
@@ -10,6 +13,7 @@
 import Home_pg1 from '../components/home/HomePg1.vue'
 import Entry_animation from '../components/home/EntryAnimation.vue'
 import DarkBlueSection from '../components/home/DarkBlueSection.vue'
+import StaffSection from '../components/home/StaffSection.vue'
 
 defineOptions({
   name: 'HomePage',

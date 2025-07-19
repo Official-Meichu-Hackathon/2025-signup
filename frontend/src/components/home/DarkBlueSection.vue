@@ -1,6 +1,6 @@
 <template>
   <div class="relative w-full min-h-screen overflow-hidden">
-    <img src="../../assets/Home/state=active.svg" alt="light-cursor" id="light-cursor" />
+    <img src="../../assets/Home/cursor.svg" alt="light-cursor" id="light-cursor" />
     <div
       class="min-h-[calc(100vh-56px)] bg-[#2D3E63] z-1 flex flex-col w-full overflow-hidden"
       id="target-area"
@@ -78,13 +78,14 @@ onUnmounted(() => {
   position: absolute;
   pointer-events: none; /* 不阻擋滑鼠事件，避免影響點擊 */
   z-index: 9;
-  width: 20vw;
-  height: 20vw;
+  width: 16vw;
+  height: 15vw;
   user-select: none; /* 禁止選取圖片 */
   border-radius: 50%;
   transform-origin: 100% 50%;
   transform: translate(-60%, -50%);
-  filter: brightness(1.1) blur(20px);
+  filter: blur(80px);
   /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
+  /* mix-blend-mode: screen; */
 }
 </style>
