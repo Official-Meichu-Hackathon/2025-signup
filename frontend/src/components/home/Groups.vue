@@ -1,11 +1,15 @@
 <template>
   <div class="relative w-full min-h-screen overflow-hidden bg-[#2D3E63]">
     <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col w-full">
-      <img src="../../assets/Home/star-06-1.svg" alt="star06-1" class="absolute left-[80%]" />
+      <img
+        src="../../assets/Home/star-06-1.svg"
+        alt="star06-1"
+        class="absolute right-[4%] scale-[0.8]"
+      />
       <img
         src="../../assets/Home/star-07-2.svg"
         alt="star07-2"
-        class="absolute left-[75%] top-[15%]"
+        class="absolute right-[15%] top-[15%] scale-[0.8]"
       />
       <img
         src="../../assets/Home/star-07-1.svg"
@@ -99,10 +103,8 @@
         <!-- tab 創客組 -->
         <div
           :class="[
-            activeTab2 === '創客組'
-              ? 'bg-[#db8396] left-[61vw] text-[2vw]'
-              : 'bg-[#F4DAE1] left-[61vw] text-[1.6vw]',
-            'w-[14vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            activeTab2 === '創客組' ? 'bg-[#db8396] text-[2vw]' : 'bg-[#F4DAE1] text-[1.6vw]',
+            ' left-[59vw] w-[16vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab2 = '創客組'"
         >
@@ -113,7 +115,7 @@
         <div
           :class="[
             activeTab2 === '工作坊' ? 'bg-[#db8396] text-[2vw]' : 'bg-[#F4DAE1] text-[1.6vw]',
-            'left-[49vw] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            'left-[47vw] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab2 = '工作坊'"
         >
