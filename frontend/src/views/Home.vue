@@ -3,6 +3,8 @@
   <Home_pg1></Home_pg1>
 
   <DarkBlueSection></DarkBlueSection>
+  <!-- <Groups></Groups> -->
+  <!-- <Test></Test> -->
 
   <!-- bottom section -->
   <StaffSection></StaffSection>
@@ -14,6 +16,8 @@ import Home_pg1 from '../components/home/HomePg1.vue'
 import Entry_animation from '../components/home/EntryAnimation.vue'
 import DarkBlueSection from '../components/home/DarkBlueSection.vue'
 import StaffSection from '../components/home/StaffSection.vue'
+// import Groups from '../components/home/Groups.vue';
+// import Test from '../components/home/Test.vue';
 
 defineOptions({
   name: 'HomePage',

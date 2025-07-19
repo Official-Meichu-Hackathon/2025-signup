@@ -1,6 +1,7 @@
 <template>
   <div class="relative w-full min-h-screen overflow-hidden bg-[#2D3E63]">
-    <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col w-full">
+    <img src="../../assets/Home/cursor.svg" alt="light-cursor" id="light-cursor2" />
+    <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col w-full" id="target-areas2">
       <div
         class="mx-auto title mb-[10vh] mt-[8vh] text-center text-white font-black font-['Chiron_Hei_HK']"
       >
@@ -15,9 +16,11 @@
             activeTab === '黑客組'
               ? 'bg-[#db8396] left-[7vw] text-[2vw]'
               : 'bg-[#F4DAE1] left-[7vw] text-[1.6vw]',
-            'pt-[1vh] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            'target-area pt-[1vh] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '黑客組'"
+          @mouseenter="showCursor = true"
+          @mouseleave="showCursor = false"
         >
           黑客組
         </div>
@@ -26,9 +29,11 @@
         <div
           :class="[
             activeTab === '創客' ? 'bg-[#db8396] text-[2vw]' : 'bg-[#F4DAE1] text-[1.6vw]',
-            'pt-[1vh] left-[19vw] w-[16vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            'target-area pt-[1vh] left-[19vw] w-[16vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '創客'"
+          @mouseenter="showCursor = true"
+          @mouseleave="showCursor = false"
         >
           創客交流組
         </div>
@@ -38,7 +43,9 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="w-[66vw] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
+          class="target-area w-[66vw] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
+          @mouseenter="showCursor = true"
+          @mouseleave="showCursor = false"
         >
           <!-- content -->
           <div class="pl-[5vw] pr-[5vw] pt-[8vh] pb-[8vh] flex justify-center">
@@ -140,12 +147,47 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 defineOptions({
   name: 'RuleSection',
 })
 const activeTab = ref('黑客組')
+const showCursor = ref(false)
+
+// light cursor
+onMounted(() => {
+  const glow = document.getElementById('light-cursor2')
+  const area = document.getElementById('target-areas2')
+
+  glow.style.display = 'none'
+
+  area.addEventListener('mousemove', (e) => {
+    console.log(showCursor.value)
+    if (!showCursor.value) {
+      glow.style.display = 'none' // 選單開啟不顯示光標
+      return
+    }
+
+    glow.style.display = 'block'
+    const rect = area.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    glow.style.left = `${x}px`
+    glow.style.display = 'block'
+
+    glow.style.top = `${y}px`
+  })
+
+  area.addEventListener('mouseleave', () => {
+    glow.style.display = 'none'
+  })
+})
+
+onUnmounted(() => {
+  // 離開頁面的時候自動恢復 y 軸滾輪 !
+  document.body.style.overflow = ''
+})
 </script>
 
 <style scoped>
@@ -206,5 +248,26 @@ const activeTab = ref('黑客組')
 .people2 {
   animation: blink2 4s infinite;
   /* transition: ease-in-out; */
+}
+
+.target-area {
+  /* border: 3px solid red; */
+  z-index: 2;
+}
+
+#light-cursor2 {
+  position: absolute;
+  pointer-events: none; /* 不阻擋滑鼠事件，避免影響點擊 */
+  z-index: 1;
+  /* z-index: 9999; */
+  width: 16vw;
+  height: 15vw;
+  user-select: none; /* 禁止選取圖片 */
+  border-radius: 50%;
+  transform-origin: 100% 50%;
+  transform: translate(-60%, -50%);
+  filter: blur(60px);
+  /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
+  /* mix-blend-mode: screen; */
 }
 </style>

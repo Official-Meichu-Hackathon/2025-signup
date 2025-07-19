@@ -1,22 +1,20 @@
 <template>
   <div class="relative w-full min-h-screen overflow-hidden">
-    <img src="../../assets/Home/cursor.svg" alt="light-cursor3" id="light-cursor3" />
+    <img src="../../assets/Home/state=active.svg" alt="light-cursor" id="light-cursor" />
     <div
-      class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col w-full overflow-hidden"
-      id="target-areas3"
+      class="min-h-[calc(100vh-56px)] bg-[#2D3E63] z-1 flex flex-col w-full overflow-hidden"
+      id="target-area"
     >
       <!-- wscreen 會撐太多導致有 scroll bar ，所以使用 w-full !!! -->
       <div
-        class="mx-auto title mb-[10px] mt-[5px] text-center justify-start text-white text-[3vw] font-black font-['Chiron_Hei_HK']"
+        class="mx-auto title mb-[10px] mt-[5px] text-center justify-start text-white text-3xl font-black font-['Chiron_Hei_HK']"
       >
         獎項資訊
       </div>
 
       <!-- hacker -->
       <div
-        class="hacker target-area relative bg-gradient-to-br from-blue-100/50 to-blue-100/10 rounded-[30px] shadow-[0px_4px_25px_-5px_rgba(28,27,31,1.00)] border border-blue-100/40"
-        @mouseenter="showCursor = true"
-        @mouseleave="showCursor = false"
+        class="hacker relative bg-gradient-to-br from-blue-100/50 to-blue-100/10 rounded-[30px] shadow-[0px_4px_25px_-5px_rgba(28,27,31,1.00)] border border-blue-100/40"
       >
         <div>
           <!-- img 加 overflow 是沒用的 !!! -->
@@ -27,7 +25,7 @@
           />
         </div>
 
-        <div class="ml-[5vh] mt-[3vh] mr-[2vh]">
+        <div class="z-10 ml-[5vh] mt-[3vh] mr-[2vh]">
           <!-- subtitle -->
           <div class="text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10">
             黑客組
@@ -37,13 +35,13 @@
           </div>
 
           <!-- content -->
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[1.3vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第一名：新台幣 25,000 元整、企業實體獎品、實習或實習面試機會
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[1.3vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第二名：新台幣 20,000 元整、企業實體獎品
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[1.3vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第三名：新台幣 15,000 元整、企業實體獎品
           </div>
 
@@ -56,9 +54,7 @@
 
       <!-- maker -->
       <div
-        class="maker target-area relative bg-gradient-to-br from-blue-100/50 to-blue-100/10 rounded-[30px] shadow-[0px_4px_25px_-5px_rgba(28,27,31,1.00)] border border-blue-100/40"
-        @mouseenter="showCursor = true"
-        @mouseleave="showCursor = false"
+        class="maker relative bg-gradient-to-br from-blue-100/50 to-blue-100/10 rounded-[30px] shadow-[0px_4px_25px_-5px_rgba(28,27,31,1.00)] border border-blue-100/40"
       >
         <div>
           <img
@@ -73,7 +69,7 @@
           />
         </div>
 
-        <div class="ml-[5vh] mt-[3vh] mr-[2vh] mb-[2vh]">
+        <div class="z-10 ml-[5vh] mt-[3vh] mr-[2vh] mb-[2vh]">
           <!-- subtitle -->
           <div
             class="mb-[2vh] text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10"
@@ -82,30 +78,32 @@
           </div>
 
           <!-- content -->
-          <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10 text-[1.4vw]">
+          <div
+            class="z-10 flex text-white font-bold font-['Chiron_Hei_HK'] leading-10 text-[1.3vw]"
+          >
             <!-- justify between 各自對齊左右側的排版
                     <div class="flex justify-between">
-                        <div class="text-[1.4vw]">第一名：新台幣 50,000 元整</div>
-                        <div class="text-[1.4vw]">創意獎一：新台幣 12,000 元整</div>
+                        <div class="text-[1.3vw]">第一名：新台幣 50,000 元整</div>
+                        <div class="text-[1.3vw]">創意獎一：新台幣 12,000 元整</div>
                     </div>
                     <div class="flex justify-between">
-                        <div class="text-[1.4vw]">第二名：新台幣 40,000 元整</div>
-                        <div class="text-[1.4vw]">創意獎二：新台幣 10,000 元整</div>
+                        <div class="text-[1.3vw]">第二名：新台幣 40,000 元整</div>
+                        <div class="text-[1.3vw]">創意獎二：新台幣 10,000 元整</div>
                     </div>
                     <div class="flex justify-between">
-                        <div class="text-[1.4vw]">第三名：新台幣 30,000 元整</div>
-                        <div class="text-[1.4vw]">創意獎三：新台幣 8,000 元整</div>
+                        <div class="text-[1.3vw]">第三名：新台幣 30,000 元整</div>
+                        <div class="text-[1.3vw]">創意獎三：新台幣 8,000 元整</div>
                     </div> -->
 
             <!-- 左邊欄 -->
-            <div class="flex flex-col w-1/2 text-[1.4vw]">
+            <div class="flex flex-col w-1/2 text-[1.3vw]">
               <div>第一名：新台幣 50,000 元整</div>
               <div>第二名：新台幣 40,000 元整</div>
               <div>第三名：新台幣 30,000 元整</div>
             </div>
 
             <!-- 右邊欄 -->
-            <div class="flex flex-col w-1/2 text-[1.4vw]">
+            <div class="flex flex-col w-1/2 text-[1.3vw]">
               <div>創意獎一：新台幣 12,000 元整</div>
               <div>創意獎二：新台幣 10,000 元整</div>
               <div>創意獎三：新台幣 8,000 元整</div>
@@ -117,9 +115,7 @@
       <!-- Meichu big prize -->
 
       <div
-        class="MH target-area bg-gradient-to-b from-blue-100/50 to-blue-100/10 rounded-[30px] shadow-[0px_4px_25px_-5px_rgba(28,27,31,1.00)] border border-blue-100/40"
-        @mouseenter="showCursor = true"
-        @mouseleave="showCursor = false"
+        class="MH bg-gradient-to-b from-blue-100/50 to-blue-100/10 rounded-[30px] shadow-[0px_4px_25px_-5px_rgba(28,27,31,1.00)] border border-blue-100/40"
       >
         <div>
           <img
@@ -139,7 +135,7 @@
           />
         </div>
 
-        <div class="ml-[5vh] mt-[3vh] mr-[2vh]">
+        <div class="z-10 ml-[5vh] mt-[3vh] mr-[2vh]">
           <!-- subtitle -->
           <div class="text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10">
             梅竹大獎
@@ -149,16 +145,16 @@
           </div>
 
           <!-- content -->
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[1.3vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第一名：新台幣 30,000 元整
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[1.3vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第二名：新台幣 16,000 元整
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[1.3vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第三名：新台幣 8,000 元整
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[1.3vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             最佳人氣獎：新台幣 3,000 元整
           </div>
         </div>
@@ -184,11 +180,10 @@
         ></div>
 
         <!-- 彈出選單 -->
-        <div class="relative z-10 p-6 flex flex-row gap-[10vw]">
-          <!-- 黑客組 button -->
+        <div class="relative z-10 p-6 flex flex-row gap-4">
           <button
             @click="selectOption('選項一', 0)"
-            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
+            class="option relative overflow-hidden rounded-[30px] text-white"
           >
             <img
               src="../../assets/Home/Frame-30.svg"
@@ -200,33 +195,24 @@
               class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
               alt="bg1"
             />
-            <span
-              class="text-shadow w-[30vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+            <span class="w-[30vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
               >黑客組</span
             >
           </button>
-
-          <!-- 創客組 button -->
           <button
             @click="selectOption('選項二', 1)"
-            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
+            class="option overflow-hidden rounded-[30px] text-white"
           >
-            <img
-              src="../../assets/Home/Frame-30.svg"
-              class="bg2 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
-              alt="bg2"
-            />
-            <img
-              src="../../assets/Home/Frame-29.svg"
-              class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
-              alt="bg1"
-            />
+            <!-- <img src="../../assets/Home/Frame-30.svg" alt="bg2">
+            <img src="../../assets/Home/Frame-29.svg" alt="bg1"> -->
 
-            <span
-              class="text-shadow w-[50vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+            <span class="w-[50vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
               >創客交流組</span
             >
           </button>
+          <!-- <button @click="closeMenu" class="text-white text-sm text-gray-500 mt-2 hover:underline">
+            關閉
+          </button> -->
         </div>
       </div>
     </div>
@@ -234,21 +220,33 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onUnmounted, onMounted } from 'vue'
 
 defineOptions({
   name: 'PrizeSection',
 })
 
 const showOptions = ref(false)
-defineExpose({
-  showOptions,
-})
 
 function closeMenu() {
   showOptions.value = false
   console.log('close menu\n')
 }
+
+watch(showOptions, (val) => {
+  const glow = document.getElementById('light-cursor')
+  document.body.style.overflow = val ? 'hidden' : '' // 鎖住滾輪
+  // NEED !!! 監聽 showOptions 變化
+  if (val) {
+    console.log('close light cursor') // 有印
+    glow.style.display = 'none' // showOptions=true 時隱藏 => 但還是開了
+  }
+})
+
+onUnmounted(() => {
+  // 離開頁面的時候自動恢復 y 軸滾輪 !
+  document.body.style.overflow = ''
+})
 
 // function handleClick() {
 //   console.log('click button')
@@ -260,18 +258,15 @@ function selectOption(option, id) {
   closeMenu()
 }
 
-const showCursor = ref(false)
-
 // light cursor
 onMounted(() => {
-  const glow = document.getElementById('light-cursor3')
-  const area = document.getElementById('target-areas3')
+  const glow = document.getElementById('light-cursor')
+  const area = document.getElementById('target-area')
 
   glow.style.display = 'none'
 
   area.addEventListener('mousemove', (e) => {
-    console.log(showCursor.value)
-    if (!showCursor.value) {
+    if (showOptions.value) {
       glow.style.display = 'none' // 選單開啟不顯示光標
       return
     }
@@ -289,11 +284,6 @@ onMounted(() => {
   area.addEventListener('mouseleave', () => {
     glow.style.display = 'none'
   })
-})
-
-onUnmounted(() => {
-  // 離開頁面的時候自動恢復 y 軸滾輪 !
-  document.body.style.overflow = ''
 })
 </script>
 
@@ -328,6 +318,13 @@ onUnmounted(() => {
   padding: 3vh 2vh;
 }
 
+span {
+  border: solid 3px black;
+}
+img {
+  /* border: solid 3px blue; */
+}
+
 /* .object-container {
     border: 3px solid red;
 } */
@@ -356,6 +353,7 @@ onUnmounted(() => {
 .sign-up {
   padding-top: 15vh;
   width: 25vw;
+  /* transition: 0.2s; */
 
   background-image: url('../../assets/Home/signupButton.svg');
   background-size: contain; /* 保持圖片完整顯示 */
@@ -381,49 +379,52 @@ onUnmounted(() => {
 }
 
 .bg2 {
-  opacity: 1; /* 這個 opacity 設成 0 的話就會在需要出現的時候疑似因為這裡是 0 出現不了 ! */
+  opacity: 0;
   animation-play-state: paused;
   animation: none;
 }
 
 /* hover 時啟動動畫 */
-.bg1:hover {
-  animation: showbg1 4s infinite;
-  animation-play-state: running;
-  animation-fill-mode: forwards;
-}
-
-.bg2:hover {
-  animation: showbg2 4s infinite;
+.option:hover .bg1 {
+  animation: fadeInOut 4s linear infinite;
   animation-delay: 2s;
   animation-play-state: running;
   animation-fill-mode: forwards;
 }
 
-@keyframes showbg1 {
+.option:hover .bg2 {
+  animation: fadeInOut 4s linear infinite;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInOut {
   0%,
-  100% {
+  50% {
     opacity: 1;
   }
-  50% {
+  50.01%,
+  100% {
     opacity: 0;
   }
 }
 
-@keyframes showbg2 {
-  0%,
-  100% {
-    opacity: 0;
+@keyframes bgSwitch {
+  0% {
+    background-image: url('../../assets/Home/Frame-29.svg');
   }
   50% {
-    opacity: 1;
+    background-image: url('../../assets/Home/Frame-30.svg');
+  }
+  100% {
+    background-image: url('../../assets/Home/Frame-29.svg');
   }
 }
 
 .option {
   /* width: 400px;
   height: 100px; */
-  border: 3px solid #d9d9d9;
+  border: 3px solid red;
   width: 32vw;
   height: 20vh;
   /* background-image: url('../../assets/Home/Frame-29.svg');
@@ -433,28 +434,17 @@ onUnmounted(() => {
   cursor: pointer; */
 }
 
-.text-shadow {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.target-area {
-  /* border: 3px solid red; */
-  z-index: 2;
-}
-
-#light-cursor3 {
+#light-cursor {
   position: absolute;
   pointer-events: none; /* 不阻擋滑鼠事件，避免影響點擊 */
-  z-index: 0;
-  /* z-index: 9999; */
-  width: 16vw;
-  height: 15vw;
+  z-index: 9;
+  width: 20vw;
+  height: 20vw;
   user-select: none; /* 禁止選取圖片 */
   border-radius: 50%;
   transform-origin: 100% 50%;
   transform: translate(-60%, -50%);
-  filter: blur(60px);
+  filter: blur(30px);
   /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
-  /* mix-blend-mode: screen; */
 }
 </style>
