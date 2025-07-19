@@ -134,7 +134,7 @@
         </div>
       </div>
 
-      <div class="mt-[40vh]"></div>
+      <div class="mt-[30vh]"></div>
     </div>
   </div>
 </template>

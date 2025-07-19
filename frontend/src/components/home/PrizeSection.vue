@@ -1,10 +1,6 @@
 <template>
   <div class="relative w-full min-h-screen overflow-hidden">
-    <img src="../../assets/Home/state=active.svg" alt="light-cursor" id="light-cursor" />
-    <div
-      class="min-h-[calc(100vh-56px)] bg-[#2D3E63] z-1 flex flex-col w-full overflow-hidden"
-      id="target-area"
-    >
+    <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] z-1 flex flex-col w-full overflow-hidden">
       <!-- wscreen 會撐太多導致有 scroll bar ，所以使用 w-full !!! -->
       <div
         class="mx-auto title mb-[10px] mt-[5px] text-center justify-start text-white text-[3vw] font-black font-['Chiron_Hei_HK']"
@@ -230,33 +226,21 @@
 </template>
 
 <script setup>
-import { ref, watch, onUnmounted, onMounted } from 'vue'
+import { ref } from 'vue'
 
 defineOptions({
   name: 'PrizeSection',
 })
 
 const showOptions = ref(false)
+defineExpose({
+  showOptions,
+})
 
 function closeMenu() {
   showOptions.value = false
   console.log('close menu\n')
 }
-
-watch(showOptions, (val) => {
-  const glow = document.getElementById('light-cursor')
-  document.body.style.overflow = val ? 'hidden' : '' // 鎖住滾輪
-  // NEED !!! 監聽 showOptions 變化
-  if (val) {
-    console.log('close light cursor') // 有印
-    glow.style.display = 'none' // showOptions=true 時隱藏 => 但還是開了
-  }
-})
-
-onUnmounted(() => {
-  // 離開頁面的時候自動恢復 y 軸滾輪 !
-  document.body.style.overflow = ''
-})
 
 // function handleClick() {
 //   console.log('click button')
@@ -267,34 +251,6 @@ function selectOption(option, id) {
 
   closeMenu()
 }
-
-// light cursor
-onMounted(() => {
-  const glow = document.getElementById('light-cursor')
-  const area = document.getElementById('target-area')
-
-  glow.style.display = 'none'
-
-  area.addEventListener('mousemove', (e) => {
-    if (showOptions.value) {
-      glow.style.display = 'none' // 選單開啟不顯示光標
-      return
-    }
-
-    glow.style.display = 'block'
-    const rect = area.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    glow.style.left = `${x}px`
-    glow.style.display = 'block'
-
-    glow.style.top = `${y}px`
-  })
-
-  area.addEventListener('mouseleave', () => {
-    glow.style.display = 'none'
-  })
-})
 </script>
 
 <style scoped>
@@ -431,20 +387,6 @@ onMounted(() => {
   background-position:20% 50%;
   transition: ease-in-out;
   cursor: pointer; */
-}
-
-#light-cursor {
-  position: absolute;
-  pointer-events: none; /* 不阻擋滑鼠事件，避免影響點擊 */
-  z-index: 9;
-  width: 20vw;
-  height: 20vw;
-  user-select: none; /* 禁止選取圖片 */
-  border-radius: 50%;
-  transform-origin: 100% 50%;
-  transform: translate(-60%, -50%);
-  filter: blur(30px);
-  /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
 }
 
 .text-shadow {
