@@ -29,11 +29,15 @@
 
         <div class="ml-[5vh] mt-[3vh] mr-[2vh]">
           <!-- subtitle -->
-          <div class="text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10">
+          <div
+            class="mb-[2vh] text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10"
+          >
             黑客組
-          </div>
-          <div class="info text-slate-700 text-sm font-bold font-['Chiron_Hei_HK'] leading-10">
-            每間企業獨立評選
+            <div
+              class="info leading-5 text-slate-700 text-[1.2vw] font-bold font-['Chiron_Hei_HK']"
+            >
+              每間企業獨立評選
+            </div>
           </div>
 
           <!-- content -->
@@ -43,13 +47,14 @@
           <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第二名：新台幣 20,000 元整、企業實體獎品
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div
+            class="flex flex-col mb-[2vh] text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10"
+          >
             第三名：新台幣 15,000 元整、企業實體獎品
-          </div>
-
-          <!-- additional info-->
-          <div class="text-slate-700 text-sm font-bold font-['Chiron_Hei_HK'] leading-10">
-            *實習機會主要依據企業本身而定
+            <!-- additional info-->
+            <div class="leading-5 text-slate-700 text-[1.2vw] font-bold font-['Chiron_Hei_HK']">
+              *實習機會主要依據企業本身而定
+            </div>
           </div>
         </div>
       </div>
@@ -125,27 +130,32 @@
           <img
             src="../../assets/Home/Vector_red.svg"
             alt="vector_red"
-            class="absolute left-[45%]"
+            class="absolute left-[45%] w-[40vw]"
           />
           <img
             src="../../assets/Home/Vector_blue.svg"
             alt="vector_blue"
-            class="absolute left-[60%] bottom-[10%]"
+            class="absolute left-[60%] bottom-[10%] w-[40vw]"
           />
           <img
             src="../../assets/Home/curve.svg"
             alt="curve"
-            class="absolute brightness-210 bottom-[2%] left-[39%] scale-90"
+            class="absolute brightness-210 bottom-[10%] left-[41%] w-[47vw]"
           />
         </div>
 
         <div class="ml-[5vh] mt-[3vh] mr-[2vh]">
           <!-- subtitle -->
-          <div class="text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10">
+          <div
+            class="mb-[2vh] text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10"
+          >
             梅竹大獎
-          </div>
-          <div class="info text-slate-700 text-sm font-bold font-['Chiron_Hei_HK'] leading-10">
-            為黑客組複賽，由各間企業之第一名獲獎組別共同角逐
+
+            <div
+              class="info leading-5 text-slate-700 text-[1.2vw] font-bold font-['Chiron_Hei_HK']"
+            >
+              為黑客組複賽，由各間企業之第一名獲獎組別共同角逐
+            </div>
           </div>
 
           <!-- content -->
@@ -170,6 +180,12 @@
         class="mx-auto z-8 sign-up mb-[8vh] mt-[10vh] cursor-pointer"
         @click="showOptions = true"
       ></button>
+
+      <div
+        class="w-96 h-24 relative bg-slate-400/20 rounded-[30px] shadow-[0px_4px_20px_-1px_rgba(28,27,31,0.60)] outline outline-1 outline-offset-[-1px] outline-blue-100/80 overflow-hidden"
+      >
+        點我報名
+      </div>
 
       <!-- 遮罩 + 彈出選單 -->
       <div
@@ -444,6 +460,10 @@ onUnmounted(() => {
 .target-area {
   /* border: 3px solid red; */
   z-index: 2;
+}
+
+.container {
+  border: red solid 3px;
 }
 
 #light-cursor3 {
