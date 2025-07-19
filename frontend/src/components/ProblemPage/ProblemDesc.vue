@@ -42,6 +42,11 @@
                 problemLink="https://example.com/problem"
               />
             </div>
+            <img
+              src="../../assets/Problems/element/Frame52.svg"
+              alt="星星"
+              class="w-[18vh] h-[18vh] relative -top-[90vh] left-[110vh] z-30 animate-star-motion"
+            />
           </div>
         </div>
       </div>
@@ -65,3 +70,28 @@ defineOptions({
   },
 })
 </script>
+
+<style scoped>
+/* 定義星星的漸變消失和浮出動畫 */
+@keyframes star-motion {
+  0% {
+    opacity: 1; /* 完全可見 */
+  }
+  25% {
+    opacity: 0.5; /* 半透明 */
+  }
+  50% {
+    opacity: 0; /* 完全消失 */
+  }
+  75% {
+    opacity: 0.5; /* 半透明 */
+  }
+  100% {
+    opacity: 1; /* 完全可見 */
+  }
+}
+
+.animate-star-motion {
+  animation: star-motion 6s infinite; /* 動畫持續 6 秒，無限循環 */
+}
+</style>

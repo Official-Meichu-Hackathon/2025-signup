@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full">
+  <div class="relative w-full overflow-hidden">
     <!-- 背景圖片 - 垂直排列 -->
     <div class="absolute w-full -z-10 h-auto">
       <div class="flex flex-col">
@@ -72,13 +72,18 @@
         />
         <img
           src="../../assets/Problems/element/star.svg"
-          alt="星星"
+          alt="流星"
           class="w-[38vh] h-[38vh] relative -top-[245vh] left-[86vh] animate-star-motion"
         />
         <img
-          src="../../assets/Problems/element/component37.svg"
+          src="../../assets/Problems/element/Frame51.svg"
           alt="閃電"
-          class="w-[60vh] h-[60vh] relative -top-[210vh] left-[8vh]"
+          class="w-[60vh] h-[60vh] relative -top-[210vh] left-[8vh] animate-blur-fade"
+        />
+        <img
+          src="../../assets/Problems/element/Layer2.svg"
+          alt="閃閃發亮的星星"
+          class="w-[12vh] h-[12vh] relative -top-[280vh] left-[5vh] z-30"
         />
       </div>
     </div>
@@ -157,5 +162,24 @@ defineOptions({
 
 .animate-star-motion {
   animation: star-motion 4s infinite; /* 動畫持續 6 秒，無限循環 */
+}
+
+@keyframes blur-fade {
+  0% {
+    filter: blur(0); /* 初始清晰 */
+    opacity: 1; /* 完全可見 */
+  }
+  50% {
+    filter: blur(10px); /* 中間模糊 */
+    opacity: 0.6; /* 半透明 */
+  }
+  100% {
+    filter: blur(0); /* 恢復清晰 */
+    opacity: 1; /* 完全可見 */
+  }
+}
+
+.animate-blur-fade {
+  animation: blur-fade 5s infinite; /* 動畫持續 3 秒，無限循環 */
 }
 </style>
