@@ -84,7 +84,7 @@ onUnmounted(() => {
   border-radius: 50%;
   transform-origin: 100% 50%;
   transform: translate(-60%, -50%);
-  filter: blur(30px);
+  filter: brightness(1.1) blur(20px);
   /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
 }
 </style>
