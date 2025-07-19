@@ -234,7 +234,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 
 defineOptions({
   name: 'PrizeSection',
@@ -243,6 +243,10 @@ defineOptions({
 const showOptions = ref(false)
 defineExpose({
   showOptions,
+})
+
+watch(showOptions, (val) => {
+  document.body.style.overflow = val ? 'hidden' : ''
 })
 
 function closeMenu() {
