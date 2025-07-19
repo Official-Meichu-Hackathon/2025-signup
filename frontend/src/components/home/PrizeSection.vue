@@ -180,10 +180,11 @@
         ></div>
 
         <!-- 彈出選單 -->
-        <div class="relative z-10 p-6 flex flex-row gap-4">
+        <div class="relative z-10 p-6 flex flex-row gap-[10vw]">
+          <!-- 黑客組 button -->
           <button
             @click="selectOption('選項一', 0)"
-            class="option relative overflow-hidden rounded-[30px] text-white"
+            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
           >
             <img
               src="../../assets/Home/Frame-30.svg"
@@ -195,24 +196,33 @@
               class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
               alt="bg1"
             />
-            <span class="w-[30vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+            <span
+              class="text-shadow w-[30vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
               >黑客組</span
             >
           </button>
+
+          <!-- 創客組 button -->
           <button
             @click="selectOption('選項二', 1)"
-            class="option overflow-hidden rounded-[30px] text-white"
+            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
           >
-            <!-- <img src="../../assets/Home/Frame-30.svg" alt="bg2">
-            <img src="../../assets/Home/Frame-29.svg" alt="bg1"> -->
+            <img
+              src="../../assets/Home/Frame-30.svg"
+              class="bg2 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
+              alt="bg2"
+            />
+            <img
+              src="../../assets/Home/Frame-29.svg"
+              class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
+              alt="bg1"
+            />
 
-            <span class="w-[50vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+            <span
+              class="text-shadow w-[50vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
               >創客交流組</span
             >
           </button>
-          <!-- <button @click="closeMenu" class="text-white text-sm text-gray-500 mt-2 hover:underline">
-            關閉
-          </button> -->
         </div>
       </div>
     </div>
@@ -318,13 +328,6 @@ onMounted(() => {
   padding: 3vh 2vh;
 }
 
-span {
-  border: solid 3px black;
-}
-img {
-  /* border: solid 3px blue; */
-}
-
 /* .object-container {
     border: 3px solid red;
 } */
@@ -353,7 +356,6 @@ img {
 .sign-up {
   padding-top: 15vh;
   width: 25vw;
-  /* transition: 0.2s; */
 
   background-image: url('../../assets/Home/signupButton.svg');
   background-size: contain; /* 保持圖片完整顯示 */
@@ -379,52 +381,49 @@ img {
 }
 
 .bg2 {
-  opacity: 0;
+  opacity: 1; /* 這個 opacity 設成 0 的話就會在需要出現的時候疑似因為這裡是 0 出現不了 ! */
   animation-play-state: paused;
   animation: none;
 }
 
 /* hover 時啟動動畫 */
-.option:hover .bg1 {
-  animation: fadeInOut 4s linear infinite;
+.bg1:hover {
+  animation: showbg1 4s infinite;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+}
+
+.bg2:hover {
+  animation: showbg2 4s infinite;
   animation-delay: 2s;
   animation-play-state: running;
   animation-fill-mode: forwards;
 }
 
-.option:hover .bg2 {
-  animation: fadeInOut 4s linear infinite;
-  animation-play-state: running;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeInOut {
+@keyframes showbg1 {
   0%,
-  50% {
+  100% {
     opacity: 1;
   }
-  50.01%,
-  100% {
+  50% {
     opacity: 0;
   }
 }
 
-@keyframes bgSwitch {
-  0% {
-    background-image: url('../../assets/Home/Frame-29.svg');
+@keyframes showbg2 {
+  0%,
+  100% {
+    opacity: 0;
   }
   50% {
-    background-image: url('../../assets/Home/Frame-30.svg');
-  }
-  100% {
-    background-image: url('../../assets/Home/Frame-29.svg');
+    opacity: 1;
   }
 }
 
 .option {
   /* width: 400px;
   height: 100px; */
-  border: 3px solid red;
+  border: 3px solid #d9d9d9;
   width: 32vw;
   height: 20vh;
   /* background-image: url('../../assets/Home/Frame-29.svg');
@@ -446,5 +445,9 @@ img {
   transform: translate(-60%, -50%);
   filter: blur(30px);
   /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 </style>
