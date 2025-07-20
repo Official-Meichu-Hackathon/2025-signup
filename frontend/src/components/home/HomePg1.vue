@@ -54,18 +54,20 @@
         <div class="timestamp-word">SECONDS</div>
       </div>
     </div>
+
     <div class="flex justify-center mb-10">
       <div class="relative">
+        <div class="w-80 h-72 left-300 top-10 absolute bg-blue-100 blur-[90px] z-0"></div>
         <img
           src="/HomeImages/imageDecorator1.svg"
           alt="Top Decoration"
-          class="absolute top-27"
+          class="absolute top-27 z-10"
           style="left: -8rem"
         />
         <img
           src="/HomeImages/imagePlaceholder.png"
           alt="Entry Animation"
-          class="w-[clamp(500px,60vw,1080px)] h-auto mt-40 object-contain"
+          class="w-[clamp(500px,60vw,1080px)] h-auto mt-40 object-contain z-10"
         />
 
         <img
@@ -76,7 +78,69 @@
         />
       </div>
     </div>
-    <div class="flex flex-col justify-center items-center px-8 py-10">
+    <div class="relative flex flex-col justify-center items-center px-8 py-10">
+      <div class="absolute left-0 -top-30">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="369"
+          height="728"
+          viewBox="0 0 369 728"
+          fill="#EBD5D8"
+        >
+          <g filter="url(#filter0_f_2028_1410)">
+            <path
+              d="M168.752 293.402C168.752 242.34 113.252 167.402 18.2519 215.401C-76.7481 263.4 -96.7326 490.015 -37.7478 518.402C42.2522 556.902 62.7524 457.403 74.7522 411.902C86.7374 366.456 168.752 362.402 168.752 293.402Z"
+              fill="#f0c0c6"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_2028_1410"
+              x="-271"
+              y="0"
+              width="639.752"
+              height="727.074"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_2028_1410" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      <div class="absolute left-0 top-35">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="369"
+          height="641"
+          viewBox="0 0 369 641"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_2028_1409)">
+            <path
+              d="M167.879 371.641C171.524 419.979 105.065 451.635 43.8953 437.58C-72.2509 409.735 -84.5769 221.861 -29.5268 202.255C12.5461 187.271 42.7895 267.548 71.3468 291.893C100.23 316.517 163.461 313.062 167.879 371.641Z"
+              fill="#6e83ba"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_2028_1409"
+              x="-261.115"
+              y="0.406006"
+              width="629.138"
+              height="640.529"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_2028_1409" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
       <p class="intro-text">
         梅竹黑客松競賽的核心在於促進跨領域的意見交流，並以團隊合作的方式開發出最小可行性產品（MVP,
         minimum viable product）。
@@ -210,6 +274,18 @@ defineOptions({
   letter-spacing: clamp(0.02em, 0.5vw, 0.08em);
   margin-bottom: 50px;
   width: clamp(500px, 60vw, 1080px);
+}
+
+.pink-blur {
+  fill: #ebd5d8;
+  left: 10px;
+  flex-shrink: 0;
+}
+
+.blue-blur {
+  fill: #7b8ebf;
+  transform: rotate(-103.083deg);
+  flex-shrink: 0;
 }
 
 @keyframes blink {

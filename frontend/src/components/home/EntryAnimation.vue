@@ -116,7 +116,7 @@ class Particle {
       // Fade in
       const timePassed = this.maxLife - this.life
       const fadeRatio = Math.min(1, timePassed / fadeInDuration)
-      this.opacity = this.maxOpacity * (fadeRatio * fadeRatio * fadeRatio)
+      this.opacity = this.maxOpacity * (fadeRatio * fadeRatio * fadeRatio) + 0.2
     } else if (this.life < fadeOutDuration) {
       // Fade out
       const fadeRatio = Math.max(0, this.life / fadeOutDuration)
@@ -199,9 +199,9 @@ onMounted(() => {
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle(canvasRef.value))
     }
+    animate() // Start the particle animation loop
     drawFrame(0) // Initial draw
     window.addEventListener('scroll', handleScroll)
-    animate() // Start the particle animation loop
   })
   //loads scroll event listener for scrolling animation
 })
