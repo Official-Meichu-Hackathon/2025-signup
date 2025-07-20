@@ -13,6 +13,7 @@ defineProps({
   },
   maxLength: {
     type: Number,
+    default: 100,
   },
 })
 
@@ -30,7 +31,7 @@ const text = defineModel()
       required
     />
     <p v-if="maxLength && text.length > maxLength" class="text-red-500 text-sm mt-2 mx-4">
-      字數超過限制！請保持在20字以內
+      字數超過限制！請保持在 {{ maxLength }} 字以內
     </p>
   </div>
 </template>

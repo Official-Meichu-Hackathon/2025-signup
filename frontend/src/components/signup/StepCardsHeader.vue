@@ -2,11 +2,7 @@
 import { computed } from 'vue'
 import StepCard from './StepCard.vue'
 
-defineOptions({
-  name: 'StepsComponent',
-})
-
-const props = defineProps({
+const { playerCount, currentStep } = defineProps({
   playerCount: {
     type: Number,
     default: 5,
@@ -14,14 +10,14 @@ const props = defineProps({
   },
   currentStep: {
     type: Number,
-    default: 0,
+    default: 1,
   },
 })
 
 const steps = computed(() => {
   const steps = ['報名選項']
 
-  for (let i = 1; i <= props.playerCount; i++) {
+  for (let i = 1; i <= playerCount; i++) {
     const playerOrders = ['一', '二', '三', '四', '五']
     steps.push(`參賽者${playerOrders[i - 1]}基本資料`)
   }
@@ -31,7 +27,7 @@ const steps = computed(() => {
   return steps.map((stepName, index) => ({
     order: index + 1,
     title: stepName,
-    current: props.currentStep === index,
+    current: currentStep === index + 1,
   }))
 })
 

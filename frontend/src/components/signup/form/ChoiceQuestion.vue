@@ -1,8 +1,4 @@
 <script setup>
-defineOptions({
-  name: 'ChoiceQuestionComponent',
-})
-
 defineProps({
   title: {
     type: String,
