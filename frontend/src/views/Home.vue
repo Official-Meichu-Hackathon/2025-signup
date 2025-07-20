@@ -7,6 +7,7 @@
   <!-- <Test></Test> -->
 
   <!-- bottom section -->
+  <BottomSection></BottomSection>
   <StaffSection></StaffSection>
 </template>
 
@@ -16,6 +17,7 @@ import Home_pg1 from '../components/home/HomePg1.vue'
 import Entry_animation from '../components/home/EntryAnimation.vue'
 import DarkBlueSection from '../components/home/DarkBlueSection.vue'
 import StaffSection from '../components/home/StaffSection.vue'
+import BottomSection from '../components/home/BottomSection.vue'
 // import Groups from '../components/home/Groups.vue';
 // import Test from '../components/home/Test.vue';
 
