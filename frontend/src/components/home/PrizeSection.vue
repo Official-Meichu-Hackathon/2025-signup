@@ -140,7 +140,7 @@
           <img
             src="../../assets/Home/curve.svg"
             alt="curve"
-            class="absolute brightness-210 bottom-[10%] left-[41%] w-[47vw]"
+            class="absolute bottom-[14%] left-[46%] w-[38vw] -rotate-10 brightness-105"
           />
         </div>
 
@@ -176,16 +176,23 @@
 
       <!-- signup button -->
       <!-- 記得調 button 的 z-index 才可以不被 img 蓋住 ! -->
-      <button
-        class="mx-auto z-8 sign-up mb-[8vh] mt-[10vh] cursor-pointer"
+      <!-- <button
+        class="mx-auto z-8 sign-up-button mb-[8vh] mt-[10vh] cursor-pointer"
         @click="showOptions = true"
-      ></button>
+      ></button> -->
 
-      <div
-        class="w-96 h-24 relative bg-slate-400/20 rounded-[30px] shadow-[0px_4px_20px_-1px_rgba(28,27,31,0.60)] outline outline-1 outline-offset-[-1px] outline-blue-100/80 overflow-hidden"
-      >
-        點我報名
+      <div class="h-[50vh]">
+        <div
+          class="relative flex justify-center items-center sign-up opacity-[0.8] mb-[15vh] mt-[20vh] cursor-pointer mx-auto w-[21.5vw] h-[10.5vh] relative z-8 bg-slate-400/20 rounded-[20px] shadow-[0px_4px_20px_-1px_rgba(28,27,31,0.60)] outline outline-1 outline-offset-[-1px] outline-blue-100/80 overflow-hidden"
+          @click="showOptions = true"
+        >
+          <div class="z-2 flex font-black text-[#F4F5F5] font-['Chiron_Hei_HK']">點我報名</div>
+          <img class="btn2 absolute z-1" src="../../assets/Home/btn2.svg" alt="btn2" />
+          <img class="btn1 absolute z-1" src="../../assets/Home/btn1.svg" alt="btn1" />
+        </div>
       </div>
+
+      <!-- hover => w-[25vw] h-[12vh] -->
 
       <!-- 遮罩 + 彈出選單 -->
       <div
@@ -373,7 +380,7 @@ onUnmounted(() => {
   transform-origin: top left; /* 以左上角當作放大縮小的基準點 */
 }
 
-.sign-up {
+.sign-up-button {
   padding-top: 15vh;
   width: 25vw;
 
@@ -383,8 +390,61 @@ onUnmounted(() => {
   background-position: center;
 }
 
-.sign-up:hover {
+.sign-up-button:hover {
   background-image: url('../../assets/Home/signupButton-hover.svg');
+}
+
+.sign-up {
+  font-size: 2vw;
+}
+
+.sign-up:hover {
+  opacity: 1;
+  /* <!-- hover => w-[25vw] h-[12vh] --> */
+  width: 25vw;
+  height: 12vh;
+  font-size: 2.5vw;
+  border: 3px solid rgba(191, 219, 254, 0.8);
+}
+
+.btn1 {
+  opacity: 0;
+  /* animation-play-state: paused; */
+  /* animation: none; */
+}
+
+.btn2 {
+  opacity: 0;
+  /* animation-play-state: paused;
+  animation: none; */
+}
+
+.sign-up:hover .btn1 {
+  /* 一定要先調回 1 才可以被觸發動畫 !!!!!! */
+  opacity: 1;
+  animation: showbg1 4s infinite;
+  animation-fill-mode: forwards;
+}
+
+.sign-up:hover .btn2 {
+  /* 一定要先調回 1 才可以被觸發動畫 !!!!!! */
+  opacity: 1;
+  animation: showbg2 4s infinite;
+  /* animation-delay: 2s; */
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0px);
+    /* transform: scale(1.2); */
+  }
+  50% {
+    transform: translateX(15px); /* 可調整位移距離 */
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* .menu {
@@ -455,6 +515,8 @@ onUnmounted(() => {
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  /* fix : 這裡調成 none 才不會因為這不適 background 所以 hover 沒反應 !!!!!!!(可以流暢的一職轉換顏色 !) */
+  pointer-events: none;
 }
 
 .target-area {
