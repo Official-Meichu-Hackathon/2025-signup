@@ -2,9 +2,25 @@
   <div class="flex justify-center relative w-full min-h-screen overflow-hidden">
     <div class="min-h-[calc(100vh-56px)] flex flex-col w-full">
       <div
-        class="mx-auto title mt-[5vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
+        class="relative mx-auto title mt-[8vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
-        協辦單位
+        <div>協辦單位</div>
+
+        <img
+          class="red-back absolute bottom-[65%] left-[42%] w-[15vw] blur-[20px]"
+          src="../../assets/Home/red-back.svg"
+          alt="red-back"
+        />
+        <img
+          class="blue-back absolute bottom-[50%] left-[43%] w-[15vw] blur-[20px]"
+          src="../../assets/Home/blue-back.svg"
+          alt="blue-back"
+        />
+        <img
+          class="absolute w-[10vw] bottom-[70%] left-[35%]"
+          src="../../assets/Home/star-02-02-1.svg"
+          alt="star-02-02-1"
+        />
 
         <div class="w-[80vw] mt-[7vh] mb-[7vh] flex flex-row justify-around">
           <div class="mt-[2vh] w-[28vw] flex flex-col justify-center text-[black]">
@@ -23,9 +39,14 @@
       </div>
 
       <div
-        class="mx-auto title mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
+        class="relatvie mx-auto title mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
         特別感謝
+        <img
+          class="absolute w-[10vw] brightness-[1.02] contrast-[0.9] left-[53%] top-[12%]"
+          src="../../assets/Home/star-06-1.svg"
+          alt="star-06-1"
+        />
       </div>
 
       <div class="text-[1.8vw] mx-auto flex flex-col text-[black] font-bold font-['Chiron_Hei_HK']">
@@ -61,10 +82,21 @@
       </div>
 
       <div
-        class="flex justify-center mt-[8vh] mb-[10vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100"
+        class="relative flex justify-center mt-[8vh] mb-[20vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100"
         @click="Play = !Play"
       >
         <img v-if="!Play" src="../../assets/Home/play_circle.svg" alt="play_circle" />
+
+        <img
+          class="absolute top-[95%] right-[90%]"
+          src="../../assets/Home/6star-14-3.svg"
+          alt="6star-14-3"
+        />
+        <img
+          class="absolute top-[110%] right-[85%]"
+          src="../../assets/Home/6star-14-4.svg"
+          alt="6star-14-4"
+        />
       </div>
     </div>
   </div>
@@ -91,5 +123,57 @@ watch(Play, (newVal) => {
 
 .container {
   border: red solid 3px;
+}
+@keyframes color-shift {
+  0%,
+  100% {
+    filter: hue-rotate(0deg); /* red */
+    opacity: 1;
+  }
+  25% {
+    filter: hue-rotate(180deg); /* blue */
+    opacity: 1;
+  }
+  50% {
+    filter: hue-rotate(180deg);
+    opacity: 0;
+  }
+  75% {
+    filter: hue-rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.animate-color-shift {
+  animation: color-shift 4s infinite;
+}
+
+.red-back {
+  animation: blink1 4s infinite;
+  /* transition: ease-in-out; */
+}
+.blue-back {
+  animation: blink2 4s infinite;
+  /* transition: ease-in-out; */
+}
+
+@keyframes blink1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink2 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 </style>
