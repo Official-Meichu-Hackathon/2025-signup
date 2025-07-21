@@ -1,5 +1,5 @@
 <template>
-  <!-- Notice-->
+  <!-- Info-->
   <div
     class="w-full min-h-[1400px] bg-cover bg-center bg-no-repeat flex items-start justify-center pt-32"
     style="background-color: white; position: relative; overflow: hidden; height: 800px"
