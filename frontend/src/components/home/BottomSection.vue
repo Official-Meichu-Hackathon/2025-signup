@@ -53,6 +53,46 @@
           </div>
         </div>
 
+        <div>贊助企業</div>
+        <div class="sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
+          <div class="animate-marquee flex">
+            <div class="sponsors-content flex-shrink-0">
+              <img
+                class="inline-block h-[10vw]"
+                src="../../assets/Home/Sponsors.png"
+                alt="Sponsors"
+              />
+            </div>
+            <div class="sponsors-content flex-shrink-0">
+              <img
+                class="inline-block h-[10vw]"
+                src="../../assets/Home/Sponsors.png"
+                alt="Sponsors"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div>特殊贊助</div>
+        <div class="sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
+          <div class="animate-marquee flex">
+            <div class="sponsors-content flex-shrink-0">
+              <img
+                class="inline-block h-[10vw]"
+                src="../../assets/Home/Sponsors.png"
+                alt="Sponsors"
+              />
+            </div>
+            <div class="sponsors-content flex-shrink-0">
+              <img
+                class="inline-block h-[10vw]"
+                src="../../assets/Home/Sponsors.png"
+                alt="Sponsors"
+              />
+            </div>
+          </div>
+        </div>
+
         <div>協辦單位</div>
 
         <img
@@ -196,6 +236,20 @@ watch(Play, (newVal) => {
   width: 25vw;
   margin-bottom: 3vw;
   height: auto;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+  margin-bottom: 3rem;
 }
 
 @keyframes color-shift {
