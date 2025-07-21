@@ -1,13 +1,22 @@
 <template>
-  <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col items-center justify-center">
-    <div class="text-3xl font-bold text-center text-[#F4F5F5]">Registration Page</div>
-  </div>
+  <BigWord />
+  <RegistrationSchedule />
+  <RegistrationNotice />
 </template>
 
-<script setup>
-defineOptions({
-  name: 'RegistrationPage',
-})
-</script>
-
 <style scoped></style>
+
+<script>
+import BigWord from '../components/Registration/BigWord.vue'
+import RegistrationSchedule from '../components/Registration/RegistrationSchedule.vue'
+import RegistrationNotice from '../components/Registration/RegistrationNotice.vue'
+
+export default {
+  name: 'RegistrationPage',
+  components: {
+    BigWord,
+    RegistrationSchedule,
+    RegistrationNotice,
+  },
+}
+</script>
