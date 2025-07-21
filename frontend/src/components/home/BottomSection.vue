@@ -4,6 +4,55 @@
       <div
         class="relative mx-auto title mt-[8vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
+        <div>合作企業</div>
+        <div class="collaborators">
+          <img src="../../assets/Home/company/00_新竹市政府-01 1.svg" alt="新竹市政府" />
+          <img src="../../assets/Home/company/00_新竹市政府-01 2.svg" alt="新竹市政府" />
+        </div>
+        <div class="collaborators">
+          <div class="collaborator-item">
+            <img
+              class="!w-[22vw]"
+              src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
+              alt="CloudMosa"
+            />
+          </div>
+          <div class="collaborator-item">
+            <img
+              class="!w-[15vw]"
+              src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
+              alt="NXP"
+            />
+          </div>
+        </div>
+        <div class="collaborators">
+          <div class="collaborator-item">
+            <img class="!w-[15vw]" src="../../assets/Home/company/3_TSMC-01 1.svg" alt="TSMC" />
+          </div>
+          <div class="collaborator-item">
+            <img
+              class="!w-[25vw]"
+              src="../../assets/Home/company/4_Logitech 1.svg"
+              alt="Logitech"
+            />
+          </div>
+        </div>
+
+        <div class="collaborators">
+          <div class="collaborator-item">
+            <img class="!w-[20vw]" src="../../assets/Home/company/5_Google 1.svg" alt="Google" />
+          </div>
+          <div class="collaborator-item">
+            <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
+          </div>
+        </div>
+        <div class="collaborators !gap-0">
+          <div class="collaborator-item !w-[18vw] pl-[3vw]">特別合作企業</div>
+          <div class="collaborator-item">
+            <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
+          </div>
+        </div>
+
         <div>協辦單位</div>
 
         <img
@@ -39,7 +88,7 @@
       </div>
 
       <div
-        class="relatvie mx-auto title mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
+        class="relative mx-auto title mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
         特別感謝
         <img
@@ -124,6 +173,31 @@ watch(Play, (newVal) => {
 .container {
   border: red solid 3px;
 }
+
+.collaborators {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3rem;
+  gap: 5rem;
+}
+
+.collaborator-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: auto;
+}
+
+.collaborators img {
+  max-width: 100%;
+  width: 25vw;
+  margin-bottom: 3vw;
+  height: auto;
+}
+
 @keyframes color-shift {
   0%,
   100% {
