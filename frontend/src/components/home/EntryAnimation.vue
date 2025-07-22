@@ -345,4 +345,10 @@ body {
     transform: translateY(-5px);
   }
 }
+
+@media (max-width: 768px) {
+  .scroll-container {
+    display: none !important;
+  }
+}
 </style>

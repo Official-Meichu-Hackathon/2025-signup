@@ -1,7 +1,7 @@
 <template>
   <div class="bg-[#fff] flex flex-col justify-center">
     <div
-      class="flex items-center justify-start pl-[clamp(0rem,15vw,60rem)] py-[clamp(3rem,10vw,5rem)] overflow-hidden"
+      class="typing-container flex items-center justify-start pl-[clamp(0rem,15vw,60rem)] py-[clamp(3rem,10vw,5rem)] overflow-hidden"
     >
       <div ref="typingContainer" class="flex items-center overflow-hidden">
         <span
@@ -9,16 +9,17 @@
         >
           {{ typedText }}
         </span>
-        <span class="w-1 h-7 ml-1 bg-neutral-400 rounded flash"></span>
+        <span v-if="!isMobile" class="w-1 h-7 ml-1 bg-neutral-400 flash"></span>
+        <span v-else class="w-0.5 h-5 ml-0.5 mb-2.5 bg-neutral-400 flash"></span>
       </div>
     </div>
 
-    <!-- Restructure: Group numbers and labels together -->
-    <div class="flex items-center justify-center rwd-gap">
+    <div class="flex items-center justify-center rwd-gap timestamp-container">
       <!-- Days -->
       <div class="flex flex-col items-center">
         <div class="timestamp-number">{{ String(days).padStart(2, '0') }}</div>
-        <div class="timestamp-word">DAYS</div>
+        <div v-if="isMobile" class="timestamp-word">DAYS</div>
+        <div v-else class="timestamp-word">DAYS</div>
       </div>
 
       <!-- Colon -->
@@ -29,7 +30,8 @@
       <!-- Hours -->
       <div class="flex flex-col items-center">
         <div class="timestamp-number blink">{{ String(hours).padStart(2, '0') }}</div>
-        <div class="timestamp-word">HOURS</div>
+        <div v-if="!isMobile" class="timestamp-word">HOURS</div>
+        <div v-else class="timestamp-word">HRS</div>
       </div>
 
       <!-- Colon -->
@@ -40,7 +42,8 @@
       <!-- Minutes -->
       <div class="flex flex-col items-center">
         <div class="timestamp-number">{{ String(minutes).padStart(2, '0') }}</div>
-        <div class="timestamp-word">MINUTES</div>
+        <div v-if="!isMobile" class="timestamp-word">MINUTES</div>
+        <div v-else class="timestamp-word">MINS</div>
       </div>
 
       <!-- Colon -->
@@ -51,13 +54,17 @@
       <!-- Seconds -->
       <div class="flex flex-col items-center">
         <div class="timestamp-number">{{ String(seconds).padStart(2, '0') }}</div>
-        <div class="timestamp-word">SECONDS</div>
+        <div v-if="!isMobile" class="timestamp-word">SECONDS</div>
+        <div v-else class="timestamp-word">SECS</div>
       </div>
     </div>
 
     <div class="flex justify-center mb-10">
-      <div class="relative">
-        <div class="w-80 h-72 left-300 top-10 absolute bg-blue-100 blur-[90px] z-0"></div>
+      <div class="relative image-container">
+        <div
+          v-if="!isMobile"
+          class="w-80 h-72 left-300 top-10 absolute bg-blue-100 blur-[90px] z-0"
+        ></div>
         <img
           src="/HomeImages/imageDecorator1.svg"
           alt="Top Decoration"
@@ -78,8 +85,8 @@
         />
       </div>
     </div>
-    <div class="relative flex flex-col justify-center items-center px-8 py-10">
-      <div class="absolute left-0 -top-30">
+    <div class="relative flex flex-col justify-center items-center px-8 py-10 intro-text-container">
+      <div class="absolute left-0 -top-30 blur-svg-container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="369"
@@ -110,7 +117,7 @@
           </defs>
         </svg>
       </div>
-      <div class="absolute left-0 top-35">
+      <div class="absolute left-0 top-35 blur-svg-container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="369"
@@ -161,12 +168,21 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
+const isMobile = ref(false)
+
 const fullText = '距離活動開始還有'
 const typedText = ref(' ')
 let index = 0
 let interval = null
 const typingContainer = ref(null)
 let observer = null
+
+const checkIsMobile = () => {
+  const width = document.documentElement.clientWidth
+  console.log('Resize event triggered. clientWidth:', width)
+  isMobile.value = width <= 768
+  console.log('isMobile is now:', isMobile.value)
+}
 
 const startTyping = () => {
   typedText.value = ''
@@ -209,6 +225,9 @@ const updateCountdown = () => {
 }
 
 onMounted(() => {
+  checkIsMobile() // Check on initial mount
+  window.addEventListener('resize', checkIsMobile) // Add listener for changes
+
   const options = {
     root: null,
     rootMargin: '0px',
@@ -233,6 +252,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkIsMobile) // Clean up the listener
   if (interval) clearInterval(interval)
   if (countdownInterval) clearInterval(countdownInterval)
   if (observer) observer.disconnect()
@@ -334,6 +354,75 @@ defineOptions({
 
   90% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .rwd-gap {
+    gap: 0.7rem;
+  }
+
+  .timestamp-container {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .timestamp-number {
+    font-size: 32px;
+  }
+
+  .timestamp-word {
+    font-size: 15px;
+    margin: 8px 0;
+  }
+
+  .flash-colon {
+    padding-top: 0.1rem;
+    font-size: 32px;
+  }
+  .intro-text {
+    width: 70vw;
+    font-size: 12px;
+    font-weight: 700;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+  }
+
+  .image-container {
+    margin-top: 0rem; /* 40px */
+  }
+
+  .image-container img[alt='Entry Animation'] {
+    width: 70vw;
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+  }
+
+  .image-container img[alt='Top Decoration'],
+  .image-container img[alt='Bottom Decoration'] {
+    display: none;
+  }
+
+  .blur-svg-container {
+    display: none;
+  }
+
+  .typing-container {
+    padding-left: 4.4rem;
+    padding-right: 1rem;
+    padding-bottom: 0rem;
+  }
+  .typing-container span {
+    font-size: 15px;
+  }
+
+  /* Add this rule to target the intro text container */
+  .intro-text-container {
+    padding-top: 0rem;
+    padding-bottom: 1rem;
   }
 }
 </style>
