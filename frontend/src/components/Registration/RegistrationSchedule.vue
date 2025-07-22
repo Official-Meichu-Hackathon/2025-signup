@@ -2,8 +2,8 @@
   <!-- Schedule -->
   <div
     id="cursor-area"
-    class="w-full min-h-[1000px] bg-cover bg-center bg-no-repeat flex items-center justify-center"
-    style="background-image: url('/src/assets/Registration/blue_bg.svg'); position: relative"
+    class="w-full min-h-[1000px] flex items-center justify-center"
+    style="background-color: #2d3e63; position: relative"
   >
     <img src="/src/assets/Registration/state=active.svg" alt="light-cursor" id="light-cursor" />
     <!-- Flowers -->
