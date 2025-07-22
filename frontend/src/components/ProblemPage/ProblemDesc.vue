@@ -1,11 +1,11 @@
 <template>
-  <div class="w-full h-auto">
+  <div class="w-full h-auto flex flex-col">
     <Background>
       <!-- <div class="transform -translate-y-[5vh] w-full"> -->
 
       <!-- 封面component container -->
       <div class="flex flex-col items-center justify-center">
-        <!-- 上面翅膀 -->
+        <!-- 上面翅膠 -->
         <div class="relative w-full h-[20vh] mx-auto left-[25vw] top-[10vh] mb-[5%]">
           <!-- 上藍色小圓 -->
           <img
@@ -34,7 +34,7 @@
           題目說明
         </h1>
 
-        <!-- 下面翅膀 -->
+        <!-- 下面翅膠 -->
         <div class="relative w-full h-[20vh] mx-auto left-[51vw]">
           <img
             src="../../assets/Problems/element/component40.svg"
@@ -62,64 +62,78 @@
       </div>
       <!-- 封面container end -->
 
-      <div>
-        <!-- 企業卡片輪播 - 黑客組 -->
-        <div class="w-full mt-[25vh]">
-          <!-- <img
+      <!-- 黑客組container -->
+      <div class="flex flex-col items-center justify-center h-[130vh] mb-[7vw]">
+        <!-- 黑客組字樣 with element -->
+        <div class="relative m-[18vh] w-full h-[30vh]">
+          <img
             src="../../assets/Problems/element/Frame59.svg"
             alt="黑客組後面的圖"
-            class="absolute left-[35vh] top-[10vh] animate-fade"
-            /> -->
+            class="absolute w-90% top-[50%] left-[50%] transform -translate-x-[65%] -translate-y-[53%] animate-fade"
+          />
           <h2
-            class="tracking-wide text-[5vh] font-bold text-center text-[#2D3E63] mb-[23vh] font-['Chiron_Hei_HK']"
+            class="absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] tracking-wider text-[3vw] font-bold text-center text-[#2D3E63] font-['Chiron_Hei_HK']"
           >
             黑客組
           </h2>
-
-          <ProblemCardGroup />
         </div>
-        <!-- <img
-          src="../../assets/Problems/element/star.svg"
-          alt="流星"
-          class="w-[38vh] h-[38vh] relative -top-[245vh] left-[86vh] animate-star-motion"
-          />
-          <img
-            src="../../assets/Problems/element/Frame51.svg"
-            alt="閃電"
-            class="w-[60vh] h-[60vh] relative -top-[210vh] left-[8vh] animate-blur-fade"
-          />
-          <img
-            src="../../assets/Problems/element/Layer2.svg"
-            alt="閃閃發亮的星星"
-            class="w-[12vh] h-[12vh] relative -top-[280vh] left-[5vh] z-30"
-          /> -->
+        <!---------------------->
 
-        <!-- 企業卡片 - 創客交流組 -->
-        <div class="w-full mt-[25vh]">
+        <ProblemCardGroup></ProblemCardGroup>
+      </div>
+      <!-- 黑客組container end-->
+
+      <!-- 創客交流組 container -->
+      <div class="relative w-full h-[130vh] flex flex-col items-center justify-center">
+        <!-- 創客交流組字樣 -->
+        <div class="relative w-full h-[30%] flex flex-col items-center justify-center">
           <h2
-            class="tracking-wide text-[5vh] font-bold text-center text-[#2D3E63] mb-[23vh] font-['Chiron_Hei_HK']"
+            class="tracking-wide text-[5vh] font-bold text-center text-[#2D3E63] font-['Chiron_Hei_HK']"
           >
             創客交流組
           </h2>
-          <!-- <ProblemCardGroup /> -->
-          <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh]">
-            <ProblemCard
-              :logo="HsinchuLogo"
-              companyName="新竹市政府"
-              problemTitle="題目"
-              problem-content="題目題目題目之後改"
-              problemLink="https://example.com/problem"
-            />
-          </div>
+          <!-- 流星 -->
+          <img
+            src="../../assets/Problems/element/star.svg"
+            alt="會動的流星"
+            class="absolute w-[25vw] h-[25vw] top-[5%] right-[10%] animate-shooting-star"
+          />
+        </div>
+
+        <!-- 卡片 -->
+        <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh]">
+          <ProblemCard
+            :logo="HsinchuLogo"
+            companyName="新竹市政府"
+            problemTitle="題目"
+            problem-content="題目題目題目之後改"
+            problemLink="https://example.com/problem"
+          />
+
+          <!-- 發亮的星星 -->
+          <img
+            src="../../assets/Problems/element/Layer2.svg"
+            alt="閃閃發亮的星星"
+            class="absolute w-[10vw] h-[10vw] bottom-[20%] left-[5%] z-20 animate-star-motion"
+          />
+
+          <!-- 閃電 -->
+          <img
+            src="../../assets/Problems/element/Frame51.svg"
+            alt="閃電"
+            class="absolute w-[80%] h-[80%] bottom-[-10%] left-[-10%] -z-10 animate-blur-fade"
+          />
+
+          <!-- 星星 -->
           <img
             src="../../assets/Problems/element/Frame52.svg"
             alt="星星"
-            class="w-[18vh] h-[18vh] relative -top-[90vh] left-[110vh] z-30 animate-star-motion"
+            class="absolute w-[8vw] h-[8vw] top-[5%] right-[5%] z-30"
           />
         </div>
       </div>
 
-      <!-- </div> -->
+      <!-- 創客交流組 container end -->
     </Background>
   </div>
 </template>
@@ -193,5 +207,48 @@ defineOptions({
 }
 .animate-float {
   animation: float 1s ease-in-out infinite;
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20vw, -20vh); /* 射出去一小段 */
+  }
+  100% {
+    transform: translate(0, 0); /* 回到原位 */
+  }
+}
+
+.animate-shooting-star {
+  animation: shooting-star 5s cubic-bezier(0.4, 0, 1, 1) infinite;
+}
+
+@keyframes blur-fade {
+  0% {
+    opacity: 1; /* 完全可見 */
+    filter: blur(0px); /* 無模糊 */
+  }
+  25% {
+    opacity: 0.5; /* 半透明 */
+    filter: blur(2px); /* 輕微模糊 */
+  }
+  50% {
+    opacity: 0.3; /* 完全消失 */
+    filter: blur(4px); /* 更模糊 */
+  }
+  75% {
+    opacity: 0.5; /* 半透明 */
+    filter: blur(2px); /* 輕微模糊 */
+  }
+  100% {
+    opacity: 1; /* 完全可見 */
+    filter: blur(0px); /* 無模糊 */
+  }
+}
+
+.animate-blur-fade {
+  animation: star-motion 6s infinite; /* 動畫持續 6 秒，無限循環 */
 }
 </style>

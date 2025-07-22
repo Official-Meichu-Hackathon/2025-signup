@@ -1,17 +1,17 @@
 <template>
-  <div class="relative w-full h-[70vh] flex items-center justify-center">
+  <!-- 整個container -->
+  <div class="relative w-full h-[80vh] flex items-center justify-center">
     <!-- 左箭頭 -->
     <button
       @click="prevCard"
-      class="absolute z-30 p-3 rounded-full"
-      style="left: calc(50% - 40vh); top: 35%; transform: translateY(-50%)"
+      class="absolute z-30 left-[23vw] transform -translate-y-1/2 top-[20vw] p-3 rounded-full"
     >
       <div
-        class="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-r-[20px] border-[#374463]"
+        class="w-0 h-0 border-t-[2.5vh] border-t-transparent border-b-[2.5vh] border-b-transparent border-r-[4vh] border-[#374463]"
       ></div>
     </button>
 
-    <!-- 卡片容器 -->
+    <!-- 卡片本人 -->
     <div class="relative flex justify-center items-center w-full h-full">
       <div
         v-for="(card, index) in cards"
@@ -32,11 +32,10 @@
     <!-- 右箭頭 -->
     <button
       @click="nextCard"
-      class="absolute z-30 p-3 rounded-full"
-      style="right: calc(50% - 40vh); top: 35%; transform: translateY(-50%)"
+      class="absolute z-30 right-[23vw] transform -translate-y-1/2 top-[20vw] p-3"
     >
       <div
-        class="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-l-[20px] border-l-[#374463]"
+        class="w-0 h-0 border-t-[2.5vh] border-t-transparent border-b-[2.5vh] border-b-transparent border-l-[4vh] border-[#374463]"
       ></div>
     </button>
   </div>
