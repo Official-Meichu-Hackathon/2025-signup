@@ -3,7 +3,7 @@
     <div
       class="flex items-center justify-start pl-[clamp(0rem,15vw,60rem)] py-[clamp(3rem,10vw,5rem)] overflow-hidden"
     >
-      <div class="flex items-center overflow-hidden">
+      <div ref="typingContainer" class="flex items-center overflow-hidden">
         <span
           class="text-center text-slate-700 text-xl md:text-2xl font-['Chiron_Hei_HK'] min-h-[2rem] extrabold"
         >
@@ -165,6 +165,8 @@ const fullText = '距離活動開始還有'
 const typedText = ref(' ')
 let index = 0
 let interval = null
+const typingContainer = ref(null)
+let observer = null
 
 const startTyping = () => {
   typedText.value = ''
@@ -175,7 +177,6 @@ const startTyping = () => {
       index++
     } else {
       clearInterval(interval)
-      setTimeout(startTyping, 1000)
     }
   }, 250)
 }
@@ -208,7 +209,25 @@ const updateCountdown = () => {
 }
 
 onMounted(() => {
-  startTyping()
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1,
+  }
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startTyping()
+        observer.unobserve(entry.target) // Stop observing after it has triggered once
+      }
+    })
+  }, options)
+
+  if (typingContainer.value) {
+    observer.observe(typingContainer.value)
+  }
+
   updateCountdown()
   countdownInterval = setInterval(updateCountdown, 1000)
 })
@@ -216,6 +235,7 @@ onMounted(() => {
 onBeforeUnmount(() => {
   if (interval) clearInterval(interval)
   if (countdownInterval) clearInterval(countdownInterval)
+  if (observer) observer.disconnect()
 })
 
 defineOptions({
