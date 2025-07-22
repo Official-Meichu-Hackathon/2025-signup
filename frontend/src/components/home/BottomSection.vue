@@ -54,42 +54,38 @@
         </div>
 
         <div>贊助企業</div>
-        <div class="sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
-          <div class="animate-marquee flex">
-            <div class="sponsors-content flex-shrink-0">
-              <img
-                class="inline-block h-[10vw]"
-                src="../../assets/Home/Sponsors.png"
-                alt="Sponsors"
-              />
-            </div>
-            <div class="sponsors-content flex-shrink-0">
-              <img
-                class="inline-block h-[10vw]"
-                src="../../assets/Home/Sponsors.png"
-                alt="Sponsors"
-              />
-            </div>
+        <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
+          <div class="marquee-content flex-shrink-0">
+            <img
+              class="inline-block h-[10vw]"
+              src="../../assets/Home/Sponsors.png"
+              alt="Sponsors"
+            />
+          </div>
+          <div class="marquee-content flex-shrink-0">
+            <img
+              class="inline-block h-[10vw]"
+              src="../../assets/Home/Sponsors.png"
+              alt="Sponsors"
+            />
           </div>
         </div>
 
         <div>特殊贊助</div>
-        <div class="sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
-          <div class="animate-marquee flex">
-            <div class="sponsors-content flex-shrink-0">
-              <img
-                class="inline-block h-[10vw]"
-                src="../../assets/Home/Sponsors.png"
-                alt="Sponsors"
-              />
-            </div>
-            <div class="sponsors-content flex-shrink-0">
-              <img
-                class="inline-block h-[10vw]"
-                src="../../assets/Home/Sponsors.png"
-                alt="Sponsors"
-              />
-            </div>
+        <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
+          <div class="marquee-content flex-shrink-0">
+            <img
+              class="inline-block h-[10vw]"
+              src="../../assets/Home/Sponsors.png"
+              alt="Sponsors"
+            />
+          </div>
+          <div class="marquee-content flex-shrink-0">
+            <img
+              class="inline-block h-[10vw]"
+              src="../../assets/Home/Sponsors.png"
+              alt="Sponsors"
+            />
           </div>
         </div>
 
@@ -246,12 +242,21 @@ watch(Play, (newVal) => {
     transform: translateX(-100%);
   }
 }
-
-.animate-marquee {
-  animation: marquee 15s linear infinite;
+/* working on flickering marquee */
+.marquee-sponsors {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
   margin-bottom: 3rem;
 }
 
+.marquee-content {
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  padding: 5px 15px 5px 15px;
+}
 @keyframes color-shift {
   0%,
   100% {
