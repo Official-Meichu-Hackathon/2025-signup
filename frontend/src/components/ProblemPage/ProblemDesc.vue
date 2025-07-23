@@ -211,13 +211,13 @@ defineOptions({
 
 @keyframes shooting-star {
   0% {
-    transform: translate(0, 0) scale(2);
+    transform: translate(0, 0) scale(1.5);
   }
   50% {
-    transform: translate(-10vw, -8vw) scale(2); /* 射出去一小段 */
+    transform: translate(-10vw, -8vw) scale(1.5); /* 射出去一小段 */
   }
   100% {
-    transform: translate(0, 0) scale(2); /* 回到原位 */
+    transform: translate(0, 0) scale(1.5); /* 回到原位 */
   }
 }
 
