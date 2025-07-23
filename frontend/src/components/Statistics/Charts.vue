@@ -24,7 +24,7 @@
             <!-- 上半部左側 -->
             <div class="upper-section flex flex-col items-center justify-center">
               <div class="text-center">
-                <h3 class="blue-text chart-title upper-chart-title">上半部左側標題</h3>
+                <h3 class="blue-text chart-title upper-chart-title">參賽者年級比</h3>
               </div>
               <div class="chart-image">
                 <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
@@ -34,7 +34,7 @@
             <!-- 上半部右側 -->
             <div class="upper-section flex flex-col items-center justify-center">
               <div class="text-center">
-                <h3 class="blue-text chart-title upper-chart-title">上半部右側標題</h3>
+                <h3 class="blue-text chart-title upper-chart-title">參賽者學校分佈</h3>
               </div>
               <div class="chart-image">
                 <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
@@ -44,8 +44,8 @@
             <!-- 下半部左側 -->
             <div class="lower-section flex flex-col items-center justify-center">
               <div class="text-center">
-                <h3 class="blue-text chart-title lower-chart-title">下半部左側標題</h3>
-                <p class="pink-text chart-subtitle text-gray-600">小標題</p>
+                <h3 class="blue-text chart-title lower-chart-title">參賽者科系分佈</h3>
+                <p class="pink-text chart-subtitle text-gray-600">【黑客組】</p>
               </div>
               <div class="chart-image">
                 <img src="../../assets/Statistics/chart1.svg" alt="圖表1" class="mx-auto" />
@@ -55,8 +55,8 @@
             <!-- 下半部右側 -->
             <div class="lower-section flex flex-col items-center justify-center">
               <div class="text-center">
-                <h3 class="blue-text chart-title lower-chart-title">下半部右側標題</h3>
-                <p class="pink-text chart-subtitle text-gray-600">小標題</p>
+                <h3 class="blue-text chart-title lower-chart-title">參賽者科系分佈</h3>
+                <p class="pink-text chart-subtitle text-gray-600">【創客交流組】</p>
               </div>
               <div class="chart-image">
                 <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />

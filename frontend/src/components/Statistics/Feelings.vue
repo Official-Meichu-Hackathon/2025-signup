@@ -36,6 +36,11 @@
                   :alt="`感言 ${currentFeelings[0]}`"
                   class="w-full h-auto"
                 />
+                <img
+                  src="../../assets/Statistics/sparkle-left.svg"
+                  alt="Sparkle Left"
+                  class="absolute sparkle-animation sparkle-left"
+                />
                 <div
                   class="feeling-text absolute inset-0 flex items-center justify-center text-center m-[1vw]"
                 >
@@ -65,6 +70,11 @@
                   :src="getFeelingImageUrl(currentFeelings[1])"
                   :alt="`感言 ${currentFeelings[1]}`"
                   class="w-full h-auto"
+                />
+                <img
+                  src="../../assets/Statistics/sparkle-right.svg"
+                  alt="Sparkle Right"
+                  class="absolute sparkle-animation sparkle-right"
                 />
                 <div
                   class="feeling-text absolute inset-0 flex items-center justify-center text-center m-[1vw]"
@@ -225,12 +235,12 @@ function previousFeeling(boxIndex) {
   opacity: 1;
   transform: translateY(0);
 }
-.feeling-content img {
+/* .feeling-content img {
   display: block;
-  width: 100%;
+  width: 10%;
   height: auto;
-  object-fit: contain; /* Ensure the image is fully visible */
-}
+  object-fit: contain;
+} */
 .feeling-text {
   color: #2d3e63;
   font-family: 'Chiron Hei HK Text', sans-serif;
@@ -238,5 +248,30 @@ function previousFeeling(boxIndex) {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sparkle-animation {
+  position: absolute;
+  width: 10vw;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  animation: rotate 5s linear infinite; /* 5秒完成一次旋轉，線性，無限循環 */
+}
+.sparkle-left {
+  left: -5vw;
+  top: -5vw;
+}
+.sparkle-right {
+  right: -4vw;
+  bottom: -4vw;
 }
 </style>
