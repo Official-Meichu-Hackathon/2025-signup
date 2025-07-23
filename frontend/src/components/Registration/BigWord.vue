@@ -36,7 +36,7 @@
       "
     />
     <img
-      src="/src/assets/Registration/registration_bg.png"
+      src="/src/assets/Registration/registration_bg.webp"
       style="
         position: absolute;
         top: 0;
