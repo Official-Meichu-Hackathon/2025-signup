@@ -1,13 +1,34 @@
 <template>
-  <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col items-center justify-center">
-    <div class="text-3xl font-bold text-center text-[#F4F5F5]">Registration Page</div>
-  </div>
+  <component :is="currentComponent" />
 </template>
 
-<script setup>
-defineOptions({
-  name: 'RegistrationPage',
-})
-</script>
-
 <style scoped></style>
+
+<script>
+import { ref, onMounted } from 'vue'
+import RegistrationDesktop from '../components/Registration/RegistrationDesktop.vue'
+import RegistrationMobile from '../components/Registration/RegistrationMobile.vue'
+
+export default {
+  name: 'RegistrationPage',
+  components: {
+    RegistrationDesktop,
+    RegistrationMobile,
+  },
+  setup() {
+    const currentComponent = ref('RegistrationDesktop')
+    const mobileQuery = window.matchMedia('(max-width: 768px)')
+
+    function updateComponent() {
+      currentComponent.value = mobileQuery.matches ? 'RegistrationMobile' : 'RegistrationDesktop'
+    }
+
+    onMounted(() => {
+      updateComponent()
+      mobileQuery.addEventListener('change', updateComponent)
+    })
+
+    return { currentComponent }
+  },
+}
+</script>
