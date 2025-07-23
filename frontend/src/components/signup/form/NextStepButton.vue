@@ -4,6 +4,10 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  isLastStep: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits(['click'])
@@ -25,7 +29,7 @@ const handleClick = () => {
           : 'bg-[#E9D1D599] hover:bg-[#E9D1D5] cursor-pointer'
       "
     >
-      <p>下一步</p>
+      <p>{{ isLastStep ? '送出' : '下一步' }}</p>
     </button>
   </div>
 </template>

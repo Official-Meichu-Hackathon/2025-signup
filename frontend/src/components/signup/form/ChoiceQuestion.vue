@@ -4,6 +4,9 @@ defineProps({
     type: String,
     required: true,
   },
+  pdf: {
+    type: String,
+  },
   description: {
     type: String,
   },
@@ -19,6 +22,11 @@ const selectedValue = defineModel()
 <template>
   <div class="py-4">
     <h3>{{ title }}</h3>
+    <embed
+      v-if="pdf"
+      :src="`https://drive.google.com/viewerng/
+viewer?embedded=true&url=${pdf}`"
+    />
     <p v-if="description" class="mx-4 mt-2 whitespace-pre-line">{{ description }}</p>
 
     <div class="mx-4 mt-3 flex flex-wrap gap-4">

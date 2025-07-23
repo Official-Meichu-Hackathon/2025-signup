@@ -27,14 +27,16 @@ const allRequiredFilled = computed(() => {
   })
 })
 
+const isLastStep = computed(() => currentStepOrder.value === totalStepOrder)
+
 const handleNextStep = () => {
-  if (currentStepOrder.value == totalStepOrder) return emit('submit')
+  if (isLastStep.value) return emit('submit')
   currentStepOrder.value += 1
 }
 </script>
 
 <template>
-  <div class="px-35 py-5">
+  <div class="py-5 px-10 md:px-30 2xl:px-80">
     <div
       v-if="formStepOrder === currentStepOrder"
       class="bg-lightblue shadow-lg p-15 rounded-3xl font-bold text-darkblue"
@@ -49,7 +51,11 @@ const handleNextStep = () => {
       </div>
 
       <slot></slot>
-      <NextStepButton @click="handleNextStep" :disabled="!allRequiredFilled"></NextStepButton>
+      <NextStepButton
+        @click="handleNextStep"
+        :disabled="!allRequiredFilled"
+        :isLastStep
+      ></NextStepButton>
     </div>
     <div v-else class="bg-[#D9D9D9] rounded-3xl px-15 py-8 font-bold text-white">
       <p class="text-3xl whitespace-pre">{{ formStepOrder }}&nbsp;&nbsp;{{ stepName }}</p>
