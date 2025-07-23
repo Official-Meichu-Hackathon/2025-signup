@@ -84,7 +84,7 @@
       <!-- 黑客組container end-->
 
       <!-- 創客交流組 container -->
-      <div class="relative h-[130vh] flex flex-col items-center justify-center">
+      <div class="relative h-[130vh] flex flex-col items-center justify-center mt-[7vw]">
         <!-- 創客交流組字樣 -->
         <div class="relative h-[30%] flex flex-col items-center justify-center">
           <h2
@@ -96,12 +96,12 @@
           <img
             src="../../assets/Problems/element/star.svg"
             alt="會動的流星"
-            class="absolute w-[30vw] h-[30vw] top-[5%] right-[-120%] animate-shooting-star"
+            class="absolute w-[30vw] h-[30vw] top-[5%] right-[-120%] -z-10 animate-shooting-star"
           />
         </div>
 
         <!-- 卡片 -->
-        <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh]">
+        <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh] mt-[8vh]">
           <ProblemCard
             :logo="HsinchuLogo"
             companyName="新竹市政府"
@@ -121,7 +121,7 @@
           <img
             src="../../assets/Problems/element/Frame52.svg"
             alt="星星"
-            class="absolute w-[8vw] h-[8vw] top-[-5vw] right-[24vw] z-30"
+            class="absolute w-[8vw] h-[8vw] top-[-5vw] right-[24vw] z-30 animate-star-motion"
           />
 
           <!-- 發亮的星星 -->
@@ -211,13 +211,13 @@ defineOptions({
 
 @keyframes shooting-star {
   0% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(2);
   }
   50% {
-    transform: translate(-10vw, -8vw); /* 射出去一小段 */
+    transform: translate(-10vw, -8vw) scale(2); /* 射出去一小段 */
   }
   100% {
-    transform: translate(0, 0); /* 回到原位 */
+    transform: translate(0, 0) scale(2); /* 回到原位 */
   }
 }
 
@@ -250,5 +250,20 @@ defineOptions({
 
 .animate-blur-fade {
   animation: star-motion 6s infinite; /* 動畫持續 6 秒，無限循環 */
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.2; /* 初始透明 */
+  }
+  50% {
+    opacity: 1; /* 半透明 */
+  }
+  100% {
+    opacity: 0.2; /* 最終完全可見 */
+  }
+}
+.animate-fade {
+  animation: fade 5s ease-in-out infinite; /* 動畫持續 3 秒，並在結束時保持最終狀態 */
 }
 </style>
