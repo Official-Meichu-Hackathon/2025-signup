@@ -143,7 +143,7 @@ import Background from '../ProblemPage/Background.vue'
 import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
 import ProblemCard from '../ProblemPage/ProblemCard.vue'
-import HsinchuLogo from '../../assets/Problems/Card/HsinchuLogo.svg'
+import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
 
 defineOptions({
   name: 'ProblemDesc',
