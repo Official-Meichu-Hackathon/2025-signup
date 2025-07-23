@@ -11,7 +11,7 @@
     <div class="navbar-right h-full flex items-center gap-4">
       <router-link to="/signup">
         <button
-          class="bg-[rgba(244,245,245,0.60)] rounded-[15px] border border-[rgba(255,255,255,0.20)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base h-9 px-5 flex items-center justify-center transition-colors duration-200 hover:bg-[#F4F5F5] hover:border-white"
+          class="bg-[rgba(244,245,245,0.60)] rounded-[15px] border border-[rgba(255,255,255,0.20)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base h-9 px-5 flex items-center justify-center transition-colors duration-200 hover:bg-[#F4F5F5] hover:border-white cursor-pointer"
         >
           點我報名
         </button>
