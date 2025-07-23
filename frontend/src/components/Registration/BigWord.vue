@@ -15,9 +15,11 @@
     />
 
     <div class="relative z-10 flex items-center justify-center w-full">
-      <h1 class="text-center text-slate-700 text-9xl font-bold font-['Chiron_Hei_HK_Text']">
-        報名方式
-      </h1>
+      <img
+        src="/src/assets/Registration/Title.svg"
+        alt="報名方式"
+        class="w-[40vw] h-auto scale-84"
+      />
     </div>
     <!-- Background Images -->
     <img

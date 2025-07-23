@@ -1,26 +1,34 @@
 <template>
-  <BigWord />
-  <div id="schedule">
-    <RegistrationSchedule />
-  </div>
-  <div id="info">
-    <RegistrationInfo />
-  </div>
+  <component :is="currentComponent" />
 </template>
 
 <style scoped></style>
 
 <script>
-import BigWord from '../components/Registration/BigWord.vue'
-import RegistrationSchedule from '../components/Registration/RegistrationSchedule.vue'
-import RegistrationInfo from '../components/Registration/RegistrationInfo.vue'
+import { ref, onMounted } from 'vue'
+import RegistrationDesktop from '../components/Registration/RegistrationDesktop.vue'
+import RegistrationMobile from '../components/Registration/RegistrationMobile.vue'
 
 export default {
   name: 'RegistrationPage',
   components: {
-    BigWord,
-    RegistrationSchedule,
-    RegistrationInfo,
+    RegistrationDesktop,
+    RegistrationMobile,
+  },
+  setup() {
+    const currentComponent = ref('RegistrationDesktop')
+    const mobileQuery = window.matchMedia('(max-width: 768px)')
+
+    function updateComponent() {
+      currentComponent.value = mobileQuery.matches ? 'RegistrationMobile' : 'RegistrationDesktop'
+    }
+
+    onMounted(() => {
+      updateComponent()
+      mobileQuery.addEventListener('change', updateComponent)
+    })
+
+    return { currentComponent }
   },
 }
 </script>
