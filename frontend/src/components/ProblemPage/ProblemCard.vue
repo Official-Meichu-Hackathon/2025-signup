@@ -1,14 +1,12 @@
 <template>
-  <div
-    class="w-[45vw] h-[44vw] overflow-hidden relative flex items-center justify-center shadow-2xl shadow-[#00000080]"
-  >
+  <div class="w-[45vw] h-[44vw] overflow-hidden relative flex items-center justify-center">
     <!-- 卡片背景 -->
-    <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute">
       <!-- 卡片底圖 -->
       <img
         src="../../assets/Problems/Card/RectangleCard.svg"
         alt="卡片底圖"
-        class="w-full h-full object-contain"
+        class="w-full h-full object-cover"
       />
 
       <!-- 左下角覆蓋的 Cardleft -->

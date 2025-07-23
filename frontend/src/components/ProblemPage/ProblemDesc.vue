@@ -84,9 +84,9 @@
       <!-- 黑客組container end-->
 
       <!-- 創客交流組 container -->
-      <div class="relative w-full h-[130vh] flex flex-col items-center justify-center">
+      <div class="relative h-[130vh] flex flex-col items-center justify-center">
         <!-- 創客交流組字樣 -->
-        <div class="relative w-full h-[30%] flex flex-col items-center justify-center">
+        <div class="relative h-[30%] flex flex-col items-center justify-center">
           <h2
             class="tracking-wide text-[5vh] font-bold text-center text-[#2D3E63] font-['Chiron_Hei_HK']"
           >
@@ -96,7 +96,7 @@
           <img
             src="../../assets/Problems/element/star.svg"
             alt="會動的流星"
-            class="absolute w-[25vw] h-[25vw] top-[5%] right-[10%] animate-shooting-star"
+            class="absolute w-[30vw] h-[30vw] top-[5%] right-[-120%] animate-shooting-star"
           />
         </div>
 
@@ -110,25 +110,25 @@
             problemLink="https://example.com/problem"
           />
 
-          <!-- 發亮的星星 -->
-          <img
-            src="../../assets/Problems/element/Layer2.svg"
-            alt="閃閃發亮的星星"
-            class="absolute w-[10vw] h-[10vw] bottom-[20%] left-[5%] z-20 animate-star-motion"
-          />
-
           <!-- 閃電 -->
           <img
             src="../../assets/Problems/element/Frame51.svg"
             alt="閃電"
-            class="absolute w-[80%] h-[80%] bottom-[-10%] left-[-10%] -z-10 animate-blur-fade"
+            class="absolute w-[100%] h-[100%] bottom-[-20%] left-[-25%] -z-10 animate-blur-fade"
           />
 
           <!-- 星星 -->
           <img
             src="../../assets/Problems/element/Frame52.svg"
             alt="星星"
-            class="absolute w-[8vw] h-[8vw] top-[5%] right-[5%] z-30"
+            class="absolute w-[8vw] h-[8vw] top-[-5vw] right-[24vw] z-30"
+          />
+
+          <!-- 發亮的星星 -->
+          <img
+            src="../../assets/Problems/element/Layer2.svg"
+            alt="閃閃發亮的星星"
+            class="absolute w-[10vw] h-[10vw] top-[5vw] left-[5%] z-20 animate-star-motion"
           />
         </div>
       </div>
@@ -214,7 +214,7 @@ defineOptions({
     transform: translate(0, 0);
   }
   50% {
-    transform: translate(-20vw, -20vh); /* 射出去一小段 */
+    transform: translate(-10vw, -8vw); /* 射出去一小段 */
   }
   100% {
     transform: translate(0, 0); /* 回到原位 */
