@@ -1,5 +1,12 @@
 <template>
-  <component :is="currentComponent" />
+  <div>
+    <div class="hidden md:block">
+      <RegistrationDesktop />
+    </div>
+    <div class="block md:hidden">
+      <RegistrationMobile />
+    </div>
+  </div>
 </template>
 
 <style>
@@ -49,7 +56,6 @@
 </style>
 
 <script>
-import { ref, onMounted } from 'vue'
 import RegistrationDesktop from '../components/Registration/RegistrationDesktop.vue'
 import RegistrationMobile from '../components/Registration/RegistrationMobile.vue'
 
@@ -58,21 +64,6 @@ export default {
   components: {
     RegistrationDesktop,
     RegistrationMobile,
-  },
-  setup() {
-    const currentComponent = ref('RegistrationDesktop')
-    const mobileQuery = window.matchMedia('(max-width: 768px)')
-
-    function updateComponent() {
-      currentComponent.value = mobileQuery.matches ? 'RegistrationMobile' : 'RegistrationDesktop'
-    }
-
-    onMounted(() => {
-      updateComponent()
-      mobileQuery.addEventListener('change', updateComponent)
-    })
-
-    return { currentComponent }
   },
 }
 </script>
