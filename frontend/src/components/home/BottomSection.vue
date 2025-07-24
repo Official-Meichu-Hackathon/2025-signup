@@ -89,6 +89,23 @@
           </div>
         </div>
 
+        <div>媒體合作</div>
+        <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
+          <div class="marquee-content flex-shrink-0">
+            <img
+              class="inline-block h-[10vw]"
+              src="../../assets/Home/Sponsors.png"
+              alt="Sponsors"
+            />
+          </div>
+          <div class="marquee-content flex-shrink-0">
+            <img
+              class="inline-block h-[10vw]"
+              src="../../assets/Home/Sponsors.png"
+              alt="Sponsors"
+            />
+          </div>
+        </div>
         <div>協辦單位</div>
 
         <img
