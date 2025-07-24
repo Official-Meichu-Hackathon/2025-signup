@@ -7,11 +7,11 @@
     <!-- Wings -->
     <img
       src="/src/assets/Registration/wingleft.svg"
-      class="absolute pointer-events-none z-20 h-auto scale-120 top-[45%] right-[50%] w-[20vw] wing-animate-left"
+      class="absolute pointer-events-none z-20 h-auto scale-120 top-[42%] right-[50%] w-[20vw] wing-animate-left"
     />
     <img
       src="/src/assets/Registration/wingright.svg"
-      class="absolute pointer-events-none z-20 h-auto scale-120 top-[45%] left-[50%] w-[20vw] wing-animate-right"
+      class="absolute pointer-events-none z-20 h-auto scale-120 top-[42%] left-[50%] w-[20vw] wing-animate-right"
     />
 
     <div class="relative z-10 flex items-center justify-center w-full">
