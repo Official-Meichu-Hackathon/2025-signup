@@ -23,12 +23,12 @@ const lastScrollY = ref(0)
 const showScrollHint = ref(false)
 const isLocked = ref(false) // Add this new state
 
-const frameCnt = 27 // 23
+const frameCnt = 23 // 27
 const imageSrc = []
 const loadedImages = []
 
 for (let i = 1; i <= frameCnt; i++) {
-  imageSrc.push(`/EntryAnimation/frame-${i}.png`)
+  imageSrc.push(`/EntryAnimation/frame-${i}.webp`)
 }
 
 let context = null
@@ -181,7 +181,7 @@ class Particle {
         }
         break
       default:
-        // Add logic for other cases if needed
+        this.display = 0
         break
     }
   }
