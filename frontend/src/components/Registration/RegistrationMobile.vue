@@ -25,16 +25,16 @@
 
   <!-- Schedule -->
   <div
-    class="w-full min-h-[360px] flex items-center pt-10"
+    class="w-full min-h-[380px] flex items-center"
     style="background-color: white; position: relative"
   >
-    <div class="flex items-center ml-10 h-80">
-      <div class="w-0.5 h-full bg-[#2D3E63]"></div>
-      <div class="flex flex-col ml-8 text-[#2D3E63] h-full justify-between">
+    <div class="flex items-center ml-8 sm:ml-12 md:ml-24 h-80 pt-2">
+      <div class="w-0.5 h-full bg-[#2D3E63] translate-y-1"></div>
+      <div class="flex flex-col ml-8 sm:ml-12 md:ml-24 text-[#2D3E63] h-full justify-between">
         <div
           v-for="(item, idx) in scheduleItems"
           :key="idx"
-          class="justify-start text-slate-700 text-lg font-bold font-['Chiron_Hei_HK_Text'] animate-fade-in-left"
+          class="justify-start text-slate-700 text-xl sm:text-2xl md:text-5xl font-bold font-['Chiron_Hei_HK_Text'] animate-fade-in-left"
           :style="{ animationDelay: `${idx * 0.2}s` }"
         >
           <div>{{ item.date }}</div>
@@ -44,6 +44,12 @@
       </div>
     </div>
   </div>
+
+  <!-- Registration Info -->
+  <div
+    class="w-full min-h-[500px] bg-cover bg-center bg-no-repeat flex items-center justify-center"
+    style="background-color: white; position: relative"
+  ></div>
 </template>
 
 <script>
