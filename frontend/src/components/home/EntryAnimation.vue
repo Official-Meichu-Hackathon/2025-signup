@@ -11,10 +11,12 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref, inject } from 'vue'
 defineOptions({
   name: 'EntryAnimation',
 })
+
+const setEntryAnimationLoaded = inject('setEntryAnimationLoaded')
 
 const scrollContainer = ref(null)
 const canvasRef = ref(null)
@@ -22,6 +24,7 @@ const hasReachedEnd = ref(false)
 const lastScrollY = ref(0)
 const showScrollHint = ref(false)
 const isLocked = ref(false) // Add this new state
+const isLoaded = ref(false)
 
 const frameCnt = 23 // 27
 const imageSrc = []
@@ -250,6 +253,10 @@ onMounted(() => {
 
   Promise.all(imagePromises).then((images) => {
     loadedImages.push(...images)
+    isLoaded.value = true
+    if (setEntryAnimationLoaded) {
+      setEntryAnimationLoaded()
+    }
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle(canvasRef.value))
     }
@@ -349,6 +356,10 @@ body {
 
 @media (max-width: 768px) {
   .scroll-container {
+    display: none !important;
+  }
+
+  .loading-overlay {
     display: none !important;
   }
 }
