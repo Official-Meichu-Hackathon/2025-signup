@@ -266,7 +266,6 @@ onUnmounted(() => {
 }
 
 .tab {
-  padding: 5px 5px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   cursor: pointer;
