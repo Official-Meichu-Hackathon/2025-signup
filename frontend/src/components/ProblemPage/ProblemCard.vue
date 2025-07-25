@@ -1,34 +1,13 @@
 <template>
-  <div class="w-[45vw] h-[44vw] overflow-hidden relative flex items-center justify-center">
+  <div
+    class="relative w-[45vw] h-[45vw] overflow-hidden flex items-center justify-center bg-white rounded-[2vw] shadow-lg border-3 border-dashed border-[#c9b3b8]"
+  >
     <!-- 卡片背景 -->
-    <div class="absolute">
-      <!-- 卡片底圖 -->
-      <img
-        src="../../assets/Problems/Card/RectangleCard.svg"
-        alt="卡片底圖"
-        class="w-full h-full object-cover"
-      />
-
-      <!-- 左下角覆蓋的 Cardleft -->
-      <img
-        src="../../assets/Problems/Card/Cardleft.svg"
-        alt="左下角漸層"
-        class="absolute left-0 bottom-0 w-[50%] h-[30%] rounded-[3vh]"
-      />
-
-      <!-- 右下角覆蓋的 Cardright -->
-      <img
-        src="../../assets/Problems/Card/Cardright.svg"
-        alt="右下角漸層"
-        class="absolute right-0 bottom-0 w-[50%] h-[30%] rounded-[2.5vh]"
-      />
-    </div>
-
     <!-- 卡片內容 -->
     <div class="relative flex flex-col items-center justify-between text-center w-[90%] h-[90%]">
       <!-- 公司 Logo -->
       <div class="flex items-center justify-center w-full h-[33%]">
-        <img :src="logo" alt="公司 Logo" class="max-w-[60%] max-h-full" />
+        <img :src="logo" alt="公司 Logo" class="max-w-[80%] max-h-full" />
       </div>
       <!-- 公司名稱 -->
       <!-- <h2 class="absolute text-[2.0vh] font-bold text-[#CD8A98] font-[Chiron_Hei_HK] top-[27%]">
