@@ -46,7 +46,7 @@
             <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
           </div>
         </div>
-        <div class="collaborators !gap-0">
+        <div class="collaborators !gap-0 special-coop">
           <div class="collaborator-item !w-[18vw] pl-[3vw]">特別合作企業</div>
           <div class="collaborator-item">
             <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
@@ -89,6 +89,23 @@
           </div>
         </div>
 
+        <div>媒體合作</div>
+        <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
+          <div class="marquee-content flex-shrink-0">
+            <img
+              class="inline-block h-[10vw]"
+              src="../../assets/Home/Sponsors.png"
+              alt="Sponsors"
+            />
+          </div>
+          <div class="marquee-content flex-shrink-0">
+            <img
+              class="inline-block h-[10vw]"
+              src="../../assets/Home/Sponsors.png"
+              alt="Sponsors"
+            />
+          </div>
+        </div>
         <div>協辦單位</div>
 
         <img
@@ -107,8 +124,10 @@
           alt="star-02-02-1"
         />
 
-        <div class="w-[80vw] mt-[7vh] mb-[7vh] flex flex-row justify-around">
-          <div class="mt-[2vh] w-[28vw] flex flex-col justify-center text-[black]">
+        <div class="w-[80vw] mt-[7vh] mb-[7vh] flex flex-row justify-around co-organizer-logos">
+          <div
+            class="mt-[2vh] w-[28vw] flex flex-col justify-center text-[black] co-organizer-text"
+          >
             <div class="font-bold text-[1.8vw]">國立陽明交通大學資訊與工程學系</div>
             <div class="font-bold text-[0.7vw]">
               Department of Computer Science, National Yang Ming Chiao Tung University
@@ -134,14 +153,18 @@
         />
       </div>
 
-      <div class="text-[1.8vw] mx-auto flex flex-col text-[black] font-bold font-['Chiron_Hei_HK']">
-        <div class="mt-[5vh] w-[80vw] flex flex-row justify-around">
+      <div
+        class="text-[1.8vw] mx-auto flex flex-col text-[black] font-bold font-['Chiron_Hei_HK'] text-list"
+      >
+        <div class="mt-[5vh] w-[80vw] flex flex-row justify-around co-organizers">
           <div>國立陽明交通大學產學運籌中心</div>
           <div>國立陽明交通大學電機工程學系</div>
           <div>國立清華大學資訊工程學系</div>
         </div>
 
-        <div class="pl-[3vw] mx-auto mt-[4vh] w-[63vw] flex flex-row justify-between">
+        <div
+          class="pl-[3vw] mx-auto mt-[4vh] w-[63vw] flex flex-row justify-between special-thanks-list"
+        >
           <div>國立清華大學電機資訊學院學士班</div>
           <div>國立清華大學清華學院學士班系學會</div>
         </div>
@@ -158,7 +181,7 @@
       >
         企業廣告
       </div>
-      <div class="mt-[8vh] mb-[10vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100"></div>
+      <div class="mt-[8vh] mb-[10vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100 ad-placeholder"></div>
 
       <div
         class="mx-auto title mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
@@ -167,7 +190,7 @@
       </div>
 
       <div
-        class="relative flex justify-center mt-[8vh] mb-[20vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100"
+        class="relative flex justify-center mt-[8vh] mb-[20vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100 video-placeholder"
         @click="Play = !Play"
       >
         <img v-if="!Play" src="../../assets/Home/play_circle.svg" alt="play_circle" />
@@ -307,6 +330,104 @@ watch(Play, (newVal) => {
   }
   50% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 6vw;
+  }
+
+  /* Stack collaborator logos vertically */
+  .collaborators {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .collaborator-item,
+  .collaborators img {
+    width: 50vw;
+  }
+
+  .collaborators.special-coop {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .special-coop .collaborator-item {
+    width: 40vw;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  /* Adjust marquee sponsors */
+  .marquee-sponsors {
+    width: 90vw;
+  }
+  .marquee-sponsors img {
+    height: 18vw;
+  }
+
+  /* Hide decorative images on mobile */
+  img[alt='red-back'],
+  img[alt='blue-back'],
+  img[alt='star-02-02-1'],
+  img[alt='star-06-1'],
+  img[alt='6star-14-3'],
+  img[alt='6star-14-4'] {
+    display: none;
+  }
+
+  /* Stack co-organizer sections */
+  .co-organizers,
+  .special-thanks-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 90vw;
+    text-align: center;
+  }
+
+  .co-organizers > div,
+  .special-thanks-list > div {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .co-organizer-logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .co-organizer-logos img {
+    width: 50vw;
+  }
+
+  .co-organizer-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .co-organizer-text > div {
+    font-size: 4vw;
+  }
+  .co-organizer-text > div:last-child {
+    font-size: 2.5vw;
+  }
+
+  /* Adjust text lists */
+  .text-list {
+    font-size: 4vw;
+  }
+
+  /* Adjust placeholder boxes */
+  .ad-placeholder,
+  .video-placeholder {
+    width: 90vw;
+    height: 50vh;
   }
 }
 </style>

@@ -179,9 +179,7 @@ let observer = null
 
 const checkIsMobile = () => {
   const width = document.documentElement.clientWidth
-  console.log('Resize event triggered. clientWidth:', width)
   isMobile.value = width <= 768
-  console.log('isMobile is now:', isMobile.value)
 }
 
 const startTyping = () => {

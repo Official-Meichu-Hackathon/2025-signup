@@ -23,13 +23,23 @@ const lastScrollY = ref(0)
 const showScrollHint = ref(false)
 const isLocked = ref(false) // Add this new state
 
-const frameCnt = 27 // 23
+const frameCnt = 23 // 27
 const imageSrc = []
 const loadedImages = []
 
 for (let i = 1; i <= frameCnt; i++) {
-  imageSrc.push(`/EntryAnimation/frame-${i}.png`)
+  imageSrc.push(`/EntryAnimation/frame-${i}_compressed.webp`)
 }
+
+// Preload images as soon as the script runs
+const imagePromises = imageSrc.map((src) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    img.src = src
+    img.onload = () => resolve(img)
+    img.onerror = reject
+  })
+})
 
 let context = null
 const isBreathing = ref(false)
@@ -181,7 +191,7 @@ class Particle {
         }
         break
       default:
-        // Add logic for other cases if needed
+        this.display = 0
         break
     }
   }
@@ -237,15 +247,6 @@ onMounted(() => {
 
   canvasRef.value.width = 1440
   canvasRef.value.height = 1020
-
-  const imagePromises = imageSrc.map((src) => {
-    return new Promise((resolve, reject) => {
-      const img = new Image()
-      img.src = src
-      img.onload = () => resolve(img)
-      img.onerror = reject
-    })
-  })
 
   Promise.all(imagePromises).then((images) => {
     loadedImages.push(...images)
