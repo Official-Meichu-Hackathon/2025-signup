@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-auto flex flex-col">
+  <div class="w-full h-auto flex flex-col overflow-hidden">
     <!-- <Background> -->
-    <div class="absolute w-full h-full -z-10">
+    <div class="absolute w-full overflow-x-hidden">
       <BackgroundOne />
     </div>
     <!-- <div class="transform -translate-y-[5vh] w-full"> -->
@@ -68,9 +68,6 @@
 
     <!-- 黑客組container -->
     <div class="relative flex flex-col items-center justify-center h-[130vh] mb-[7vw]">
-      <div class="absolute w-full h-full -z-10 object-fill">
-        <!-- <BackgroundTwo /> -->
-      </div>
       <!-- 黑客組字樣 with element -->
       <div class="relative m-[18vh] w-full h-[30vh]">
         <img
@@ -91,7 +88,10 @@
     <!-- 黑客組container end-->
 
     <!-- 創客交流組 container -->
-    <div class="relative h-[130vh] flex flex-col items-center justify-center mt-[7vw]">
+    <div class="relative h-[130vh] flex flex-col items-center justify-center mt-[5vw]">
+      <div class="absolute w-full h-full -z-10 object-fill">
+        <BackgroundThree />
+      </div>
       <!-- 創客交流組字樣 -->
       <div class="relative h-[30%] flex flex-col items-center justify-center">
         <h2
@@ -153,6 +153,7 @@ import ProblemCard from '../ProblemPage/ProblemCard.vue'
 import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
 import BackgroundOne from '../ProblemPage/Bg1.vue'
 import BackgroundTwo from '../ProblemPage/Bg2.vue'
+import BackgroundThree from '../ProblemPage/Bg3.vue'
 
 defineOptions({
   name: 'ProblemDesc',
@@ -162,6 +163,7 @@ defineOptions({
     ProblemCardGroup,
     BackgroundOne,
     BackgroundTwo,
+    BackgroundThree,
   },
 })
 </script>

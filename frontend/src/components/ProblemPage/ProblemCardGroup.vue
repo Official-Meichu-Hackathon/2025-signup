@@ -4,7 +4,7 @@
     <!-- 左箭頭 -->
     <button
       @click="prevCard"
-      class="absolute z-30 left-[23vw] transform -translate-y-1/2 top-[20vw] p-3 rounded-full"
+      class="absolute z-30 left-[20vw] transform -translate-y-1/2 top-[20vw] p-3 rounded-full"
     >
       <div
         class="w-0 h-0 border-t-[2.5vh] border-t-transparent border-b-[2.5vh] border-b-transparent border-r-[4vh] border-[#374463]"
@@ -32,7 +32,7 @@
     <!-- 右箭頭 -->
     <button
       @click="nextCard"
-      class="absolute z-30 right-[23vw] transform -translate-y-1/2 top-[20vw] p-3"
+      class="absolute z-30 right-[20vw] transform -translate-y-1/2 top-[20vw] p-3"
     >
       <div
         class="w-0 h-0 border-t-[2.5vh] border-t-transparent border-b-[2.5vh] border-b-transparent border-l-[4vh] border-[#374463]"
