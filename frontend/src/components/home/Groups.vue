@@ -2,23 +2,6 @@
   <div class="relative w-full min-h-screen overflow-hidden bg-[#2D3E63]">
     <img src="../../assets/Home/cursor.svg" alt="light-cursor" id="light-cursor" />
     <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col w-full" id="target-areas">
-      <img
-        src="../../assets/Home/star-06-1.svg"
-        alt="star06-1"
-        class="absolute right-[4%] scale-[0.8]"
-      />
-      <img
-        src="../../assets/Home/star-07-2.svg"
-        alt="star07-2"
-        class="absolute right-[15%] top-[15%] scale-[0.8]"
-      />
-      <img
-        src="../../assets/Home/star-07-1.svg"
-        alt="start07-1"
-        class="z-3 scale-[0.7] absolute bottom-[-8%] left-[-1%]"
-        @mouseenter="showCursor = true"
-        @mouseleave="showCursor = false"
-      />
       <!-- <div class="text-3xl font-bold text-center text-[#F4F5F5]">Workshop</div> -->
 
       <div
@@ -63,15 +46,15 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[63vw] h-[40vh] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl justify-center items-center"
+          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl justify-center items-center"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
           <!-- content -->
-          <div class="justify-center h-[40vh] container items-center flex flex-row">
+          <div class="justify-center h-[42vh] items-center flex flex-row">
             <!-- 內容區 -->
             <div v-if="activeTab === '黑客組'" class="card">
-              <div class="content w-[27vw] h-[29vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[27vw] h-[32vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
                 class="content w-[26vw] text-[#656565] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"
@@ -106,17 +89,27 @@
           </div>
         </div>
       </div>
-
+      <!-- deco img => absolute to Card1 -->
+      <img
+        src="../../assets/Home/star-06-1.svg"
+        alt="star06-1"
+        class="absolute right-[6%] scale-[0.8]"
+      />
+      <img
+        src="../../assets/Home/star-07-2.svg"
+        alt="star07-2"
+        class="absolute right-[15%] top-[13%] scale-[0.8]"
+      />
       <div class="mt-[8vh]"></div>
 
       <!-- Card 2 : 創客組 -->
-      <div class="w-[80vw] relative mx-auto select-none mb-[10vh]">
+      <div class="w-[80vw] relative mx-auto select-none">
         <!-- tab ! -->
         <!-- tab 創客組 -->
         <div
           :class="[
-            activeTab2 === '創客組' ? 'bg-[#db8396] text-[2vw]' : 'bg-[#F4DAE1] text-[1.6vw]',
-            'target-area pt-[1vh] left-[59vw] w-[16vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            activeTab2 === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+            'tab target-area pt-[1vh] left-[55vw] w-[15vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab2 = '創客組'"
           @mouseenter="showCursor = true"
@@ -128,8 +121,10 @@
         <!-- tab 工作坊 -->
         <div
           :class="[
-            activeTab2 === '工作坊' ? 'bg-[#db8396] text-[2vw]' : 'bg-[#F4DAE1] text-[1.6vw]',
-            'target-area pt-[1vh] left-[47vw] w-[12vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            activeTab2 === '工作坊'
+              ? 'bg-[#db8396] left-[7vw] active'
+              : 'bg-[#F4DAE1] left-[7vw] inactive',
+            'target-area tab pt-[1vh] left-[43vw] w-[12vw] h-[9vh] absolute',
           ]"
           @click="activeTab2 = '工作坊'"
           @mouseenter="showCursor = true"
@@ -143,37 +138,38 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[68vw] h-[45vh] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
+          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
           <!-- content -->
-          <div class="pl-[3vw] pr-[3vw] pt-[5vh] pb-[5vh] flex flex-row">
+          <div class="justify-center h-[42vh] items-center flex flex-row">
             <!-- 內容區 -->
-            <template v-if="activeTab2 === '創客組'">
-              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
+            <div v-if="activeTab2 === '創客組'" class="card">
+              <div class="content w-[27vw] h-[32vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="content w-[30vw] text-[#656565] text-[1.65vw] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"
+                class="content w-[26vw] text-[#656565] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
-                由新竹市政府命題，鼓勵參賽者運用 AI、大數據、物聯網等科技，
-                針對市政服務提出創新解方，從智慧交通、公共安全到環境監測，打造更即時、便利、貼近市民需求
-                的智慧應用，共創友善高效的未來城市。
+                由新竹市政府命題，鼓勵參賽者運用
+                AI、大數據、物聯網等科技，針對市政服務提出創新解方，
+                從智慧交通、公共安全到環境監測，打造更即時、便利、貼近市民需求的智慧應用，共創友善高效的未來城市。
               </div>
-            </template>
+            </div>
 
-            <template v-else>
+            <div v-else class="card">
               <div
-                class="mt-[3vh] ml-[3vw] mb-[3vh] mr-[3vw] w-[32vw] text-[#656565] text-[1.65vw] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"
+                class="content mx-auto w-[27vw] text-[#656565] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"
               >
                 由市府團隊主辦，工作坊將包含技術教學、題目講解等內容，並包含參賽團隊選題之流程。
-                過程中參賽者將與講師討論應用技術，共同激盪出更多的靈感與創意。點擊右側箭頭查看詳細內容。
+                過程中參賽者將與講師討論應用技術，共同激盪出更多的靈感與創意。
+                點擊右側箭頭查看詳細內容。
               </div>
 
               <!-- info -->
               <div
-                class="w-[28vw] h-[35vh] flex flex-col items-center justify-center font-bold font-[Chiron_Hei_HK]"
+                class="content w-[25vw] h-[29vh] flex flex-col items-center justify-center font-bold font-[Chiron_Hei_HK]"
                 @click="openDoc2"
               >
                 <img src="../../assets/Home/double_arrow.svg" alt="arrow" class="cursor-pointer" />
@@ -181,12 +177,21 @@
                   詳細文件參考
                 </div>
               </div>
-            </template>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="mb-[10vh]"></div>
+      <div class="mb-[10vh] w-[20vw] h-[20vh]">
+        <img
+          src="../../assets/Home/star-07-1.svg"
+          alt="start07-1"
+          class="z-3 scale-[0.7] absolute pointer-events-none bottom-[3%] left-[-1%]"
+        />
+        <!--@mouseenter="showCursor = true"
+          @mouseleave="showCursor = false" -->
+        <!-- 改用 pointer-event-none 來正確 hover 到 target-area 上 -->
+      </div>
     </div>
   </div>
 </template>
@@ -246,21 +251,24 @@ onUnmounted(() => {
 <style scoped>
 .title {
   width: 90vw;
-  font-size: clamp(30px, 2.3vw, 32px);
+  /* font-size: clamp(30px, 2.3vw, 32px); */
+  font-size: 32px;
 }
 
 .active {
-  font-size: clamp(22px, 2vw, 28px);
+  /* font-size: clamp(22px, 2vw, 28px); */
+  font-size: 22px;
 }
 
 .inactive {
-  font-size: clamp(20px, 1.8vw, 24px);
+  /* font-size: clamp(20px, 2vw, 24px); */
+  font-size: 18px;
 }
 
 .tab {
-  padding: clamp(0.25rem, 0.5vw, 0.5rem) clamp(0.25rem, 0.5vw, 0.5rem);
-  border-top-left-radius: clamp(0.75rem, 2vw, 2rem);
-  border-top-right-radius: clamp(0.75rem, 2vw, 2rem);
+  padding: 5px 5px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -279,9 +287,9 @@ onUnmounted(() => {
   margin-right: 1vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
-  font-size: clamp(20px, 1.8vw, 22px);
+  font-size: 17px;
   text-align: justify;
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 }
 
 .card {

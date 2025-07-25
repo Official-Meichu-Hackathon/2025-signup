@@ -128,7 +128,7 @@
           <div
             class="mt-[2vh] w-[28vw] flex flex-col justify-center text-[black] co-organizer-text"
           >
-            <div class="font-bold text-[1.8vw]">國立陽明交通大學資訊與工程學系</div>
+            <div class="font-bold text-[1.8vw]">國立陽明交通大學資訊工程學系</div>
             <div class="font-bold text-[0.7vw]">
               Department of Computer Science, National Yang Ming Chiao Tung University
             </div>
