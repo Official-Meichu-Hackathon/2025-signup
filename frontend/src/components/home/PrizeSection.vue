@@ -7,7 +7,7 @@
     >
       <!-- wscreen 會撐太多導致有 scroll bar ，所以使用 w-full !!! -->
       <div
-        class="mx-auto title mb-[10px] mt-[5px] text-center justify-start text-white text-[3vw] font-black font-['Chiron_Hei_HK']"
+        class="mx-auto title mb-[10px] mt-[5px] text-center justify-start text-white font-black font-['Chiron_Hei_HK']"
       >
         獎項資訊
       </div>
@@ -27,32 +27,30 @@
           />
         </div>
 
-        <div class="ml-[5vh] mt-[3vh] mr-[2vh]">
+        <div class="ml-[3vw] mt-[3vh] mr-[2vh]">
           <!-- subtitle -->
-          <div
-            class="mb-[2vh] text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10"
-          >
+          <div class="mb-[2vh] text-white text-[28px] font-black font-['Chiron_Hei_HK'] leading-10">
             黑客組
             <div
-              class="info leading-5 text-slate-700 text-[1.2vw] font-bold font-['Chiron_Hei_HK']"
+              class="info leading-[25px] text-slate-700 text-sm font-bold font-['Chiron_Hei_HK']"
             >
               每間企業獨立評選
             </div>
           </div>
 
           <!-- content -->
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第一名：新台幣 25,000 元整、企業實體獎品、實習或實習面試機會
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第二名：新台幣 20,000 元整、企業實體獎品
           </div>
           <div
-            class="flex flex-col mb-[2vh] text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10"
+            class="flex flex-col mb-[2vh] text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10"
           >
             第三名：新台幣 15,000 元整、企業實體獎品
             <!-- additional info-->
-            <div class="leading-5 text-slate-700 text-[1.2vw] font-bold font-['Chiron_Hei_HK']">
+            <div class="leading-normal text-slate-700 text-sm font-bold font-['Chiron_Hei_HK']">
               *實習機會主要依據企業本身而定
             </div>
           </div>
@@ -78,39 +76,37 @@
           />
         </div>
 
-        <div class="ml-[5vh] mt-[3vh] mr-[2vh] mb-[2vh]">
+        <div class="ml-[3vw] mt-[3vh] mr-[2vh] mb-[2vh]">
           <!-- subtitle -->
-          <div
-            class="mb-[2vh] text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10"
-          >
+          <div class="mb-[2vh] text-white text-[28px] font-black font-['Chiron_Hei_HK'] leading-10">
             創客交流組
           </div>
 
           <!-- content -->
-          <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10 text-[1.4vw]">
+          <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10 text-[17px]">
             <!-- justify between 各自對齊左右側的排版
                     <div class="flex justify-between">
-                        <div class="text-[1.4vw]">第一名：新台幣 50,000 元整</div>
-                        <div class="text-[1.4vw]">創意獎一：新台幣 12,000 元整</div>
+                        <div class="text-[17px]">第一名：新台幣 50,000 元整</div>
+                        <div class="text-[17px]">創意獎一：新台幣 12,000 元整</div>
                     </div>
                     <div class="flex justify-between">
-                        <div class="text-[1.4vw]">第二名：新台幣 40,000 元整</div>
-                        <div class="text-[1.4vw]">創意獎二：新台幣 10,000 元整</div>
+                        <div class="text-[17px]">第二名：新台幣 40,000 元整</div>
+                        <div class="text-[17px]">創意獎二：新台幣 10,000 元整</div>
                     </div>
                     <div class="flex justify-between">
-                        <div class="text-[1.4vw]">第三名：新台幣 30,000 元整</div>
-                        <div class="text-[1.4vw]">創意獎三：新台幣 8,000 元整</div>
+                        <div class="text-[17px]">第三名：新台幣 30,000 元整</div>
+                        <div class="text-[17px]">創意獎三：新台幣 8,000 元整</div>
                     </div> -->
 
             <!-- 左邊欄 -->
-            <div class="flex flex-col w-1/2 text-[1.4vw]">
+            <div class="flex flex-col w-1/2 text-[17px]">
               <div>第一名：新台幣 50,000 元整</div>
               <div>第二名：新台幣 40,000 元整</div>
               <div>第三名：新台幣 30,000 元整</div>
             </div>
 
             <!-- 右邊欄 -->
-            <div class="flex flex-col w-1/2 text-[1.4vw]">
+            <div class="flex flex-col w-1/2 text-[17px]">
               <div>創意獎一：新台幣 12,000 元整</div>
               <div>創意獎二：新台幣 10,000 元整</div>
               <div>創意獎三：新台幣 8,000 元整</div>
@@ -130,12 +126,12 @@
           <img
             src="../../assets/Home/Vector_red.svg"
             alt="vector_red"
-            class="absolute left-[45%] w-[40vw]"
+            class="absolute left-[45%] bottom-[16%] w-[40vw]"
           />
           <img
             src="../../assets/Home/Vector_blue.svg"
             alt="vector_blue"
-            class="absolute left-[60%] bottom-[10%] w-[40vw]"
+            class="absolute left-[60%] bottom-[15%] w-[40vw]"
           />
           <img
             src="../../assets/Home/curve.svg"
@@ -144,31 +140,27 @@
           />
         </div>
 
-        <div class="ml-[5vh] mt-[3vh] mr-[2vh]">
+        <div class="ml-[3vw] mt-[3vh] mr-[2vh]">
           <!-- subtitle -->
-          <div
-            class="mb-[2vh] text-white text-[2.2vw] font-black font-['Chiron_Hei_HK'] leading-10"
-          >
+          <div class="mb-[2vh] text-white text-[28px] font-black font-['Chiron_Hei_HK'] leading-10">
             梅竹大獎
 
-            <div
-              class="info leading-5 text-slate-700 text-[1.2vw] font-bold font-['Chiron_Hei_HK']"
-            >
+            <div class="info leading-5 text-slate-700 text-sm font-bold font-['Chiron_Hei_HK']">
               為黑客組複賽，由各間企業之第一名獲獎組別共同角逐
             </div>
           </div>
 
           <!-- content -->
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第一名：新台幣 30,000 元整
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第二名：新台幣 16,000 元整
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             第三名：新台幣 8,000 元整
           </div>
-          <div class="flex text-[1.4vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
             最佳人氣獎：新台幣 3,000 元整
           </div>
         </div>
@@ -326,10 +318,10 @@ onUnmounted(() => {
 
 <style scoped>
 .title {
-  /* must stay in the middle as one whole line */
   width: 90vw;
-  font-size: 2.3vw;
+  font-size: 32px;
 }
+
 .hacker {
   /* border: 3px solid pink; */
   margin-top: 5vh;
@@ -349,7 +341,7 @@ onUnmounted(() => {
 
 .MH {
   /* border: 3px solid pink; */
-  width: 35vw;
+  width: 37vw;
   margin-top: 5vh;
   margin-left: 15vw;
   padding: 3vh 2vh;
@@ -396,6 +388,10 @@ onUnmounted(() => {
 
 .sign-up {
   font-size: 2vw;
+  /* transition: 0.3s ease-in-out; */
+  /* transition-property: transform, color, background-color; */
+  transition-duration: 0.4s, 0.3s, 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease, ease;
 }
 
 .sign-up:hover {
@@ -409,12 +405,14 @@ onUnmounted(() => {
 
 .btn1 {
   opacity: 0;
+  /* transition: 0.3s ease-in-out; */
   /* animation-play-state: paused; */
   /* animation: none; */
 }
 
 .btn2 {
   opacity: 0;
+  /* transition: 0.3s ease-in-out; */
   /* animation-play-state: paused;
   animation: none; */
 }
