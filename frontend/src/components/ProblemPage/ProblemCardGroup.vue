@@ -44,12 +44,12 @@
 <script setup>
 import { ref } from 'vue'
 import ProblemCard from './ProblemCard.vue'
-import AMDLogo from '../../assets/Problems/Card/AMDlogo.svg'
-import TSMCLogo from '../../assets/Problems/Card/TSMClogo.svg'
-import CloudMosaLogo from '../../assets/Problems/Card/CloudMosalogo.svg'
-import GoogleLogo from '../../assets/Problems/Card/Googlelogo.svg'
-import LogitechLogo from '../../assets/Problems/Card/Logitechlogo.svg'
-import NXPLogo from '../../assets/Problems/Card/NXPlogo.svg'
+import AMDLogo from '../../assets/Problems/Logo/AMD 1.webp'
+import TSMCLogo from '../../assets/Problems/Logo/TSMC.webp'
+import CloudMosaLogo from '../../assets/Problems/Logo/CloudMosa.webp'
+import GoogleLogo from '../../assets/Problems/Logo/Google.webp'
+import LogitechLogo from '../../assets/Problems/Logo/Logitech.webp'
+import NXPLogo from '../../assets/Problems/Logo/NXP.webp'
 
 const cards = [
   {
