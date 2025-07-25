@@ -47,7 +47,7 @@
       <a
         :href="problemLink"
         target="_blank"
-        class="text-[1.8vh] text-white font-bold font-[Chiron_Hei_HK] bg-[#2D3E63] px-[2vw] py-[0.5vh] rounded-[1vh]"
+        class="text-[1.8vh] text-white font-bold font-[Chiron_Hei_HK] px-[2vw] py-[0.5vh] rounded-[1vh]"
       >
         詳細題目說明 >>
       </a>
