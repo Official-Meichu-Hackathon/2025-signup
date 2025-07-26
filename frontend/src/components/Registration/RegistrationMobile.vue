@@ -44,12 +44,27 @@
       </div>
     </div>
   </div>
-
   <!-- Registration Info -->
   <div
-    class="w-full min-h-[500px] bg-cover bg-center bg-no-repeat flex items-center justify-center"
+    class="w-full h-auto bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center pt-48 pb-36"
     style="background-color: white; position: relative"
-  ></div>
+  >
+    <div
+      class="w-[75vw] min-h-[64px] bg-gradient-to-b from-blue-100 to-white rounded-tl-2xl rounded-tr-2xl border-l border-r border-t border-neutral-100 relative z-50"
+    ></div>
+    <div
+      class="w-[75vw] min-h-[64px] bg-blue-100 rounded-tl-2xl rounded-tr-2xl border border-neutral-100 relative z-40 -mt-28"
+    ></div>
+    <div
+      class="w-[75vw] min-h-[64px] bg-blue-100 rounded-tl-2xl rounded-tr-2xl border border-neutral-100 relative z-30 -mt-28"
+    ></div>
+    <div
+      class="w-[75vw] min-h-[64px] bg-blue-100 rounded-tl-2xl rounded-tr-2xl border border-neutral-100 relative z-20 -mt-28"
+    ></div>
+    <div
+      class="w-[75vw] min-h-[64px] bg-blue-100 rounded-tl-2xl rounded-tr-2xl border border-neutral-100 relative z-10 -mt-28"
+    ></div>
+  </div>
 </template>
 
 <script>
