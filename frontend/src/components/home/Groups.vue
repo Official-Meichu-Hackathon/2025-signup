@@ -57,7 +57,7 @@
           <div class="justify-center h-[42vh] items-center flex flex-row">
             <!-- 內容區 -->
             <div v-if="activeTab === '黑客組'" class="card">
-              <div class="content w-[27vw] h-[32vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[27vw] h-[30vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
                 class="content w-[26vw] text-[#656565] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"
@@ -340,12 +340,12 @@ onUnmounted(() => {
 
 .active {
   /* font-size: clamp(22px, 2vw, 28px); */
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .inactive {
   /* font-size: clamp(20px, 2vw, 24px); */
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .tab {
@@ -369,7 +369,7 @@ onUnmounted(() => {
   margin-right: 1vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
-  font-size: 17px;
+  font-size: 20px;
   text-align: justify;
   /* border: 3px solid blue; */
 }
