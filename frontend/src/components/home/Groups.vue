@@ -202,9 +202,19 @@
   <div class="block md:hidden bg-[white] flex flex-col w-full overflow-hidden">
     <!-- <h1>手機板排版</h1> -->
     <div
-      class="w-[90vw] text-[24px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[7vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      class="relative w-[90vw] text-[24px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[5vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
     >
       組別介紹、工作坊
+      <img
+        src="../../assets/Home/6star-14-5.svg"
+        alt="6star-14-5"
+        class="w-[13vw] absolute left-[65%] top-[4%]"
+      />
+      <img
+        src="../../assets/Home/6star-14-6.svg"
+        alt="6star-14-6"
+        class="w-[5vw] absolute left-[75%] top-[4%]"
+      />
     </div>
 
     <!-- Card 組別介紹 -->
@@ -239,14 +249,20 @@
       <div
         class="w-[65vw] mt-[7vh] mx-auto relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
       >
+        <img
+          src="../../assets/Home/people1.svg"
+          alt="people1"
+          class="swinging absolute z-2 w-[30vw] left-[-5%] top-[86%]"
+        />
         <!-- content -->
-        <div class="pt-[5vh] pb-[5vh] pl-[3vw] pr-[3vw]">
+        <div class="pt-[5vh] pb-[5vh] pl-[3vw] pr-[3vw] relative">
           <!-- 內容區 -->
           <div
             v-if="activeTabPhone === '黑客組'"
             class="card relative flex flex-col space-y-[1.5vh]"
           >
-            <div class="w-[45vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
+            <div class="w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
+
             <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
               致力於搭起學界與業界之間的橋樑，參賽者將運用企業資源並發揮創意回應企業命題，讓想像力與實作並存！
               2025
@@ -262,16 +278,29 @@
             v-if="activeTabPhone === '創客組'"
             class="card space-y-[1.5vh] relative flex flex-col"
           >
-            <div
-              class="content mt-[3vh] text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]"
-            ></div>
+            <div class="w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
+
+            <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
+              由新竹市政府命題，融入新竹居民的民生交通情境，鼓勵參賽者跨領域，運用共享、共創的資源，實際動手解決問題。
+              過程中將促進各方人才創作交流，激發新穎想法並提升日常生活的用戶體驗，打造數位科技的創客精神！
+            </div>
+            <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
+              由市府團隊主辦，工作坊將包含技術教學、題目講解等內容，並包含參賽團隊選題之流程。
+              過程中參賽者將與講師討論應用技術，共同激盪出更多的靈感與創意。
+            </div>
           </div>
 
-          <div class="workshop-btn"></div>
+          <!-- <div class="workshop-btn mx-auto"></div> -->
+          <div class="items-stretch">
+            <img
+              ref="workshopBtn"
+              :src="frames[0]"
+              class="mx-auto cursor-pointer"
+              @click="handleClick"
+            />
+          </div>
         </div>
       </div>
-
-      <!-- <img src="" alt="people1" class="absolute"> -->
 
       <div class="mb-[8vh]"></div>
     </div>
@@ -295,6 +324,10 @@ function openDoc() {
 
 function openDoc2() {
   console.log('open doc2')
+}
+
+function handleClick() {
+  console.log('click info button')
 }
 
 // light cursor
@@ -329,6 +362,32 @@ onUnmounted(() => {
   // 離開頁面的時候自動恢復 y 軸滾輪 !
   document.body.style.overflow = ''
 })
+
+const frames = [
+  new URL('../../assets/Home/workshop-btn-anim/workshop-btn1.svg', import.meta.url).href,
+  new URL('../../assets/Home/workshop-btn-anim/workshop-btn2.svg', import.meta.url).href,
+  new URL('../../assets/Home/workshop-btn-anim/workshop-btn3.svg', import.meta.url).href,
+  new URL('../../assets/Home/workshop-btn-anim/workshop-btn4.svg', import.meta.url).href,
+]
+const delays = [200, 180, 190, 175] // 每張圖的停留時間
+
+const workshopBtn = ref(null)
+let index = 0
+
+onMounted(() => {
+  function playFrame() {
+    if (!workshopBtn.value) return
+
+    workshopBtn.value.src = frames[index]
+
+    const delay = delays[index]
+    index = (index + 1) % frames.length
+
+    setTimeout(playFrame, delay)
+  }
+
+  playFrame() // 啟動動畫
+})
 </script>
 
 <style scoped>
@@ -340,17 +399,18 @@ onUnmounted(() => {
 
 .active {
   /* font-size: clamp(22px, 2vw, 28px); */
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .inactive {
   /* font-size: clamp(20px, 2vw, 24px); */
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .tab {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+  /* aspect-ratio: 16 / 7; */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -378,7 +438,6 @@ onUnmounted(() => {
   justify-content: center;
   display: flex;
   align-items: center;
-  min-height: 38vh;
   /* border: 3px solid pink; */
   /* flex-direction: column; */
 }
@@ -433,7 +492,7 @@ onUnmounted(() => {
   }
 
   .content {
-    width: 45vw;
+    width: 52vw;
     margin-left: 3vw;
     margin-right: 3vw;
     /* margin-top: 1vh; */
@@ -458,8 +517,8 @@ onUnmounted(() => {
     justify-content: center;
     display: flex;
     /* align-items: center; */
-    /* height: 34vh; */
-    /* min-height: 85vh; */
+    height: 58vh;
+    /* min-height: 58vh; */
     /* border: 3px solid pink; */
     flex-direction: column;
   }
@@ -469,11 +528,15 @@ onUnmounted(() => {
   }
 }
 .workshop-btn {
-  width: 24vw;
-  height: 10vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 45vw;
+  height: 5vh;
   /* background-color:red; */
   background-image: url('../../assets/Home/workshop-btn-anim/workshop-btn1.svg');
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   animation: lineFlow 1.5s infinite steps(4);
 }
@@ -483,7 +546,7 @@ onUnmounted(() => {
     transform: rotate(-20deg);
   }
   50% {
-    transform: rotate(20deg);
+    transform: rotate(10deg);
   }
   /* 75% {
     transform: rotate(-10deg);

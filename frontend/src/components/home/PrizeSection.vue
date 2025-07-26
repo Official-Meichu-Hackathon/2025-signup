@@ -675,7 +675,7 @@ onUnmounted(() => {
     align-items: stretch;
     /* align-items: center; */
     /* height: 34vh; */
-    min-height: 25vh;
+    min-height: 28vh;
     /* aspect-ratio: 16 / 7; */
     /* border: 3px solid pink; */
     flex-direction: column;

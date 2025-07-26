@@ -118,7 +118,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[18px] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>施閔智</div>
@@ -130,7 +130,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[18px] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>陳宣蓉 / 林昀澍</div>
@@ -145,7 +145,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[18px] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>侯佑勳 / 蔡婕安 / 莊皓雯</div>
@@ -160,7 +160,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[18px] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>范嘉尹 / 陳芃嬡 / 莊亦安</div>
@@ -175,7 +175,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[18px] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>李采穗 / 陳翊嘉</div>
@@ -187,7 +187,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[18px] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>陳婷祺 / 吳奕涔</div>
@@ -202,7 +202,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[18px] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>陳芝瑄 / 周廷威</div>
@@ -237,11 +237,11 @@ const activeTab = ref('行政部')
 }
 
 .active {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .inactive {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .container {
