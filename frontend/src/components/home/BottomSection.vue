@@ -56,54 +56,254 @@
         <div>贊助企業</div>
         <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
           <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+            <!-- Diamond Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(3); padding-top: 0.8rem"
+                src="../../assets/Home/sponsors/JUMBO_diamond.webp"
+                alt="JUMBO"
+              />
+            </div>
+
+            <!-- Platinum Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/sponsors/Cathay_platinum.webp"
+                alt="Cathay"
+              />
+            </div>
+
+            <!-- Gold Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 2rem">Gold</span>
+              <img
+                class="inline-block"
+                style="padding-top: 1rem"
+                src="../../assets/Home/sponsors/91APP_gold.webp"
+                alt="91APP"
+              />
+            </div>
+
+            <!-- Silver Sponsor 1 -->
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: -1rem">Silver</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.95)"
+                src="../../assets/Home/sponsors/Phison_silver1.webp"
+                alt="Phison"
+              />
+            </div>
+
+            <!-- Silver Sponsor 2 -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Silver</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1.5); margin: 0 2rem 0 2rem"
+                src="../../assets/Home/sponsors/Pixart_silver2.webp"
+                alt="Pixart"
+              />
+            </div>
+
+            <!-- Bronze Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Bronze</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/sponsors/Ctbc_bronze.webp"
+                alt="CTBC"
+              />
+            </div>
           </div>
           <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+            <!-- Diamond Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(3); padding-top: 0.8rem"
+                src="../../assets/Home/sponsors/JUMBO_diamond.webp"
+                alt="JUMBO"
+              />
+            </div>
+
+            <!-- Platinum Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/sponsors/Cathay_platinum.webp"
+                alt="Cathay"
+              />
+            </div>
+
+            <!-- Gold Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 2rem">Gold</span>
+              <img
+                class="inline-block"
+                style="padding-top: 1rem"
+                src="../../assets/Home/sponsors/91APP_gold.webp"
+                alt="91APP"
+              />
+            </div>
+
+            <!-- Silver Sponsor 1 -->
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: -1rem">Silver</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.95)"
+                src="../../assets/Home/sponsors/Phison_silver1.webp"
+                alt="Phison"
+              />
+            </div>
+
+            <!-- Silver Sponsor 2 -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Silver</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1.5); margin: 0 2rem 0 2rem"
+                src="../../assets/Home/sponsors/Pixart_silver2.webp"
+                alt="Pixart"
+              />
+            </div>
+
+            <!-- Bronze Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Bronze</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/sponsors/Ctbc_bronze.webp"
+                alt="CTBC"
+              />
+            </div>
           </div>
         </div>
 
         <div>特殊贊助</div>
         <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
-          <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+          <div class="marquee-content-special-sponsor flex-shrink-0">
+            <!-- First set of sponsors -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/BABI_platinum.svg"
+                alt="BABI"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Silver</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/GCOMM_silver.svg"
+                alt="GCOMM"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Others</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/hsinhao_others.svg"
+                alt="Hsinhao"
+              />
+            </div>
           </div>
-          <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+
+          <!-- Duplicate set for seamless loop -->
+          <div class="marquee-content-special-sponsor flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/BABI_platinum.svg"
+                alt="BABI"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Silver</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/GCOMM_silver.svg"
+                alt="GCOMM"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Others</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/hsinhao_others.svg"
+                alt="Hsinhao"
+              />
+            </div>
           </div>
         </div>
 
         <div>媒體合作</div>
         <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
-          <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+          <div class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/newstaiwan_diamond.svg"
+                alt="科技新報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/ettoday_platinum.svg"
+                alt="數位時代"
+              />
+            </div>
           </div>
-          <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+
+          <!-- Second part of marquee-->
+          <div class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/newstaiwan_diamond.svg"
+                alt="科技新報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/ettoday_platinum.svg"
+                alt="數位時代"
+              />
+            </div>
+          </div>
+
+          <div class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/newstaiwan_diamond.svg"
+                alt="科技新報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/ettoday_platinum.svg"
+                alt="數位時代"
+              />
+            </div>
           </div>
         </div>
         <div>協辦單位</div>
@@ -270,16 +470,59 @@ watch(Play, (newVal) => {
   display: flex;
   overflow: hidden;
   white-space: nowrap;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
 }
 
 .marquee-content {
-  animation-duration: 8s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
-  padding: 5px 15px 5px 15px;
+  padding: 5px 0px 5px 0px;
 }
+
+/* Add this to your existing CSS */
+.marquee-content-special-sponsor {
+  animation-duration: 6s; /* Half the speed of the normal 12s */
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  padding: 5px 0px 5px 0px;
+}
+
+.marquee-content-media {
+  animation-duration: 4s; /* Half the speed of the normal 12s */
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  padding: 5px 0px 5px 0px;
+}
+.sponsor-item {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.5rem; /* Adjust spacing between logos */
+}
+
+.sponsor-item img {
+  width: 20vw; /* Set consistent width */
+  height: 12vw; /* Set consistent height */
+  object-fit: contain; /* Scale to fit while maintaining aspect ratio */
+  object-position: center; /* Center the image */
+}
+
+.sponsor-level {
+  position: absolute;
+  top: -1px; /* Position at the very top */
+  left: 8%;
+  color: black;
+
+  font-size: 1.1vw;
+  font-weight: 600;
+  z-index: 1;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
 @keyframes color-shift {
   0%,
   100% {
@@ -368,6 +611,32 @@ watch(Play, (newVal) => {
   }
   .marquee-sponsors img {
     height: 18vw;
+  }
+
+  .sponsor-level {
+    font-size: 2.5vw;
+  }
+
+  .sponsor-placeholder {
+    width: 20vw;
+    height: 12vw;
+    background-color: #e5e7eb; /* Grey background */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    border-radius: 8px;
+    border: 2px dashed #9ca3af;
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #6b7280;
+    text-align: center;
+    position: relative;
+  }
+
+  .sponsor-placeholder::before {
+    content: attr(data-company);
+    white-space: nowrap;
   }
 
   /* Hide decorative images on mobile */
