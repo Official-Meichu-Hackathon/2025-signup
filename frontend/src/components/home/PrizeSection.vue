@@ -1,10 +1,16 @@
 <!-- Prize Section : Apple -->
 
 <template>
-  <div class="relative w-full min-h-screen overflow-hidden">
-    <img src="../../assets/Home/cursor.svg" alt="light-cursor3" id="light-cursor3" />
+  <!-- layout for computer -->
+  <div class="hidden md:block relative w-full min-h-screen overflow-hidden">
+    <img
+      src="../../assets/Home/cursor.svg"
+      alt="light-cursor3"
+      id="light-cursor3"
+      class="hidden md:block"
+    />
     <div
-      class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col w-full overflow-hidden hidden md:block"
+      class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col w-full overflow-hidden"
       id="target-areas3"
     >
       <!-- wscreen 會撐太多導致有 scroll bar ，所以使用 w-full !!! -->
@@ -175,7 +181,7 @@
         @click="showOptions = true"
       ></button> -->
 
-      <div class="h-[40vh]">
+      <div class="h-[45vh]">
         <div
           class="relative flex justify-center items-center sign-up opacity-[0.8] mb-[8vh] mt-[22vh] cursor-pointer mx-auto w-[21.5vw] h-[10.5vh] relative z-8 bg-slate-400/20 rounded-[20px] shadow-[0px_4px_20px_-1px_rgba(28,27,31,0.60)] outline outline-1 outline-offset-[-1px] outline-blue-100/80 overflow-hidden"
           @click="showOptions = true"
@@ -191,6 +197,112 @@
       <SignUpGroup v-if="showOptions" @close="showOptions = false"> </SignUpGroup>
     </div>
   </div>
+
+  <!-- layout for phone < 768px -->
+  <div
+    class="block md:hidden bg-[white] min-h-[calc(100vh-56px)] flex flex-col w-full overflow-hidden"
+  >
+    <!-- <h1>手機板排版</h1> -->
+    <div
+      class="w-[90vw] text-[28px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[7vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+    >
+      獎項資訊
+    </div>
+
+    <!-- Card : 獎項 -->
+    <div class="w-[80vw] relative mx-auto select-none">
+      <!-- tab ! -->
+      <!-- tab 黑客組 -->
+      <div
+        :class="[
+          activeTab === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+          'target-area tab left-[7.5vw] w-[15vw] pt-[1vh] absolute',
+        ]"
+        @click="activeTab = '黑客組'"
+      >
+        黑客組
+      </div>
+
+      <!-- tab 創客交流組 -->
+      <div
+        :class="[
+          activeTab === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+          'target-area tab w-[20vw] pt-[1vh] left-[22.5vw] absolute ',
+        ]"
+        @click="activeTab = '創客組'"
+      >
+        創客交流組
+      </div>
+
+      <!-- tab 梅竹大獎 -->
+      <div
+        :class="[
+          activeTab === '梅竹' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+          'target-area tab w-[16vw] pt-[1vh] left-[42.5vw] absolute ',
+        ]"
+        @click="activeTab = '梅竹'"
+      >
+        梅竹大獎
+      </div>
+
+      <!-- 卡片背景 -->
+      <!-- left-[7vw] 差不多在中間左右 !-->
+      <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
+      <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
+      <div
+        class="w-[65vw] mt-[7vh] mx-auto relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
+      >
+        <!-- content -->
+        <div class="">
+          <!-- 內容區 -->
+          <div v-if="activeTab === '黑客組'" class="card relative flex flex-col">
+            <div class="info leading-[10px]">每間企業獨立評選</div>
+            <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
+              <div>第一名：新台幣 25,000 元、企業實體獎品、實習或實習面試機會</div>
+              <div>第二名：新台幣 20,000 元整、企業實體獎品</div>
+              <div>第三名：新台幣 15,000 元整、企業實體獎品</div>
+            </div>
+            <div class="info leading-[10px]">*實習機會主要依據企業本身而定</div>
+          </div>
+
+          <div v-if="activeTab === '創客組'" class="card space-y-[1.5vh] relative flex flex-col">
+            <div
+              class="content-maker mt-[3vh] text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]"
+            >
+              <div>第一名：新台幣 50,000 元整</div>
+              <div>第二名：新台幣 40,000 元整</div>
+              <div>第三名：新台幣 30,000 元整</div>
+            </div>
+
+            <div
+              class="content-maker mb-[3vh] text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]"
+            >
+              <div>創意獎一：新台幣 12,000 元整</div>
+              <div>創意獎二：新台幣 10,000 元整</div>
+              <div>創意獎三：新台幣 8,000 元整</div>
+            </div>
+
+            <div></div>
+          </div>
+
+          <div v-if="activeTab === '梅竹'" class="card relative">
+            <div class="info">為黑客組決賽，由各間企業之第一名獲獎組別共同角逐</div>
+            <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
+              <div>第一名：新台幣 30,000 元整</div>
+              <div>第二名：新台幣 16,000 元整</div>
+              <div>第三名：新台幣 8,000 元整</div>
+              <div>最佳人氣獎：新台幣 3,000 元整</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="../../assets/Home/curve_dark.svg"
+        alt="curve_dark"
+        class="swinging absolute scale-[1.5] left-[70%] top-[60%]"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -202,6 +314,8 @@ defineOptions({
 })
 
 const showOptions = ref(false)
+const activeTab = ref('黑客組')
+
 defineExpose({
   showOptions,
 })
@@ -494,5 +608,94 @@ onUnmounted(() => {
   filter: blur(60px);
   /* box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5); */
   /* mix-blend-mode: screen; */
+}
+
+/* for phone */
+
+@media (max-width: 768px) {
+  .active {
+    /* font-size: clamp(22px, 2vw, 28px); */
+    font-size: 17px;
+  }
+
+  .inactive {
+    /* font-size: clamp(20px, 2vw, 24px); */
+    font-size: 14px;
+  }
+
+  .tab {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 7vh;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-family: 'Chiron Hei HK', sans-serif;
+    border: 1.5px solid #f4f5f5;
+  }
+
+  .content {
+    margin-left: 3vw;
+    margin-right: 3vw;
+    /* margin-top: 1vh; */
+    /* margin-bottom: ; */
+    font-size: 16px;
+    text-align: justify;
+    /* border: 3px solid blue; */
+  }
+
+  .content-maker {
+    margin-left: 3vw;
+    margin-right: 3vw;
+    /* margin-top: 2vh; */
+    /* margin-bottom:2vh ; */
+    font-size: 16px;
+    text-align: justify;
+    /* border: 3px solid blue; */
+  }
+
+  .info {
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 1.5vh;
+    margin-bottom: 1.8vh;
+    font-size: 13px;
+    font-weight: 500;
+    color: #a2a2a2;
+    font-family: 'Chiron Hei HK', sans-serif;
+  }
+
+  .card {
+    justify-content: center;
+    display: flex;
+    /* align-items: center; */
+    /* height: 34vh; */
+    min-height: 34vh;
+    /* border: 3px solid pink; */
+    flex-direction: column;
+  }
+
+  .swinging {
+    animation: swing 4s ease-in-out infinite;
+    /* transform-origin: top center; 以上方中心為旋轉點 */
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  /* 75% {
+    transform: rotate(-10deg);
+  } */
+  100% {
+    transform: rotate(-10deg);
+  }
 }
 </style>
