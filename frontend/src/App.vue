@@ -3,7 +3,7 @@ import { ref, provide, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
-
+import LoadingAnimation from './components/home/LoadingAnimation.vue'
 const route = useRoute()
 const isEntryAnimationLoaded = ref(false)
 
@@ -21,13 +21,14 @@ provide('setEntryAnimationLoaded', setEntryAnimationLoaded)
 
 <template>
   <div>
-    <!-- Loading Screen (only for home page) -->
-    <div v-if="shouldShowLoading" class="loading-screen">
-      <div class="loading-content">
-        <div class="loading-spinner"></div>
-        <p class="loading-text">載入中...</p>
+    <!-- Loading Screen with transition -->
+    <Transition name="loading-fade" appear>
+      <div v-if="shouldShowLoading" class="loading-screen">
+        <div class="loading-content">
+          <LoadingAnimation />
+        </div>
       </div>
-    </div>
+    </Transition>
 
     <!-- Main Content -->
     <div v-show="!shouldShowLoading">
@@ -41,8 +42,14 @@ provide('setEntryAnimationLoaded', setEntryAnimationLoaded)
 </template>
 
 <style>
-.main-content {
-  padding-top: 56px;
+.loading-fade-enter-active,
+.loading-fade-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+
+.loading-fade-enter-from,
+.loading-fade-leave-to {
+  opacity: 0;
 }
 
 .loading-screen {
@@ -51,7 +58,7 @@ provide('setEntryAnimationLoaded', setEntryAnimationLoaded)
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: #f4f5f4; /* Use the background color from LoadingAnimation */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,31 +67,10 @@ provide('setEntryAnimationLoaded', setEntryAnimationLoaded)
 
 .loading-content {
   text-align: center;
-  color: white;
+  color: #333; /* Change text color to be visible on light background */
 }
 
-.loading-spinner {
-  width: 60px;
-  height: 60px;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid white;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 20px;
-}
-
-.loading-text {
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.main-content {
+  padding-top: 56px;
 }
 </style>

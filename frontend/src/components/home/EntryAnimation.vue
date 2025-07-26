@@ -25,6 +25,7 @@ const lastScrollY = ref(0)
 const showScrollHint = ref(false)
 const isLocked = ref(false) // Add this new state
 const isLoaded = ref(false)
+const oneSecondLoaded = ref(false) // Track if one second has passed
 
 const frameCnt = 23 // 27
 const imageSrc = []
@@ -245,15 +246,20 @@ const animate = () => {
 
 onMounted(() => {
   context = canvasRef.value.getContext('2d')
-
   lastScrollY.value = window.scrollY
-
   canvasRef.value.width = 1440
   canvasRef.value.height = 1020
 
-  Promise.all(imagePromises).then((images) => {
+  // Create a promise that resolves after 1 second
+  const oneSecondPromise = new Promise((resolve) => {
+    setTimeout(resolve, 2000)
+  })
+
+  // Wait for both images and minimum time
+  Promise.all([Promise.all(imagePromises), oneSecondPromise]).then(([images]) => {
     loadedImages.push(...images)
     isLoaded.value = true
+    oneSecondLoaded.value = true
     if (setEntryAnimationLoaded) {
       setEntryAnimationLoaded()
     }
