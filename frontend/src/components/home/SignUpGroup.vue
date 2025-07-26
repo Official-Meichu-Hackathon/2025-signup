@@ -64,8 +64,6 @@ defineOptions({
   name: 'SignupGroup',
 })
 
-import { defineEmits } from 'vue'
-
 const emit = defineEmits(['close', 'select'])
 
 function closeMenu() {
