@@ -6,50 +6,91 @@
       >
         <div>合作企業</div>
         <div class="collaborators">
-          <img src="../../assets/Home/company/00_新竹市政府-01 1.svg" alt="新竹市政府" />
-          <img src="../../assets/Home/company/00_新竹市政府-01 2.svg" alt="新竹市政府" />
-        </div>
-        <div class="collaborators">
-          <div class="collaborator-item">
+          <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
             <img
               class="!w-[22vw]"
-              src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
-              alt="CloudMosa"
+              src="../../assets/Home/company/00_新竹市政府-01 1.svg"
+              alt="新竹市政府"
             />
+          </a>
+          <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
+            <img
+              class="!w-[24vw]"
+              src="../../assets/Home/company/00_新竹市政府-01 2.svg"
+              alt="新竹市政府"
+            />
+          </a>
+        </div>
+        <div class="collaborators">
+          <div class="collaborator-item">
+            <a href="https://www.cloudmosa.com/about" target="_blank" rel="noopener noreferrer">
+              <!-- wasn't provided-->
+              <img
+                class="!w-[22vw]"
+                src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
+                alt="CloudMosa"
+              />
+            </a>
           </div>
           <div class="collaborator-item">
-            <img
-              class="!w-[15vw]"
-              src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
-              alt="NXP"
-            />
+            <a
+              href="https://www.facebook.com/nxpsemitaiwan"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="!w-[15vw]"
+                src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
+                alt="NXP"
+              />
+            </a>
           </div>
         </div>
         <div class="collaborators">
           <div class="collaborator-item">
-            <img class="!w-[15vw]" src="../../assets/Home/company/3_TSMC-01 1.svg" alt="TSMC" />
+            <a href="https://www.tsmc.com/chinese" target="_blank" rel="noopener noreferrer">
+              <img class="!w-[15vw]" src="../../assets/Home/company/3_TSMC-01 1.svg" alt="TSMC" />
+              <!-- wasn't provided  -->
+            </a>
           </div>
           <div class="collaborator-item">
-            <img
-              class="!w-[25vw]"
-              src="../../assets/Home/company/4_Logitech 1.svg"
-              alt="Logitech"
-            />
+            <a href="https://www.logitech.com/zh-tw" target="_blank" rel="noopener noreferrer">
+              <img
+                class="!w-[25vw]"
+                src="../../assets/Home/company/4_Logitech 1.svg"
+                alt="Logitech"
+              />
+            </a>
           </div>
         </div>
 
         <div class="collaborators">
           <div class="collaborator-item">
-            <img class="!w-[20vw]" src="../../assets/Home/company/5_Google 1.svg" alt="Google" />
+            <a href="https://about.google/" target="_blank" rel="noopener noreferrer">
+              <!-- wasn't provided -->
+              <img class="!w-[20vw]" src="../../assets/Home/company/5_Google 1.svg" alt="Google" />
+            </a>
           </div>
           <div class="collaborator-item">
-            <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
+            <a href="https://www.amd.com/zh-tw.html" target="_blank" rel="noopener noreferrer">
+              <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
+              <!-- wasn't provided -->
+            </a>
           </div>
         </div>
         <div class="collaborators !gap-0 special-coop">
           <div class="collaborator-item !w-[18vw] pl-[3vw]">特別合作企業</div>
           <div class="collaborator-item">
-            <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
+            <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
+              <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
+            </a>
+          </div>
+        </div>
+
+        <div>網路贊助</div>
+        <div class="collaborators">
+          <div class="collaborator-item">
+            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.svg" alt="中華電信" />
           </div>
         </div>
 
@@ -574,6 +615,19 @@ watch(Play, (newVal) => {
   50% {
     opacity: 1;
   }
+}
+
+.collaborators a img,
+.collaborators img.cursor-pointer {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.collaborators a:hover img,
+.collaborators img.cursor-pointer:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
