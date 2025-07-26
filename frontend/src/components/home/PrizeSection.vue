@@ -199,12 +199,10 @@
   </div>
 
   <!-- layout for phone < 768px -->
-  <div
-    class="block md:hidden bg-[white] min-h-[calc(100vh-56px)] flex flex-col w-full overflow-hidden"
-  >
+  <div class="block md:hidden bg-[white] flex flex-col w-full overflow-hidden">
     <!-- <h1>手機板排版</h1> -->
     <div
-      class="w-[90vw] text-[28px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[7vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      class="w-[90vw] text-[24px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[7vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
     >
       獎項資訊
     </div>
@@ -302,6 +300,8 @@
         class="swinging absolute scale-[1.5] left-[70%] top-[60%]"
       />
     </div>
+
+    <div class="mb-[10vh]"></div>
   </div>
 </template>
 
@@ -615,7 +615,7 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .active {
     /* font-size: clamp(22px, 2vw, 28px); */
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .inactive {
@@ -642,7 +642,7 @@ onUnmounted(() => {
     margin-right: 3vw;
     /* margin-top: 1vh; */
     /* margin-bottom: ; */
-    font-size: 16px;
+    font-size: 15px;
     text-align: justify;
     /* border: 3px solid blue; */
   }
@@ -652,7 +652,7 @@ onUnmounted(() => {
     margin-right: 3vw;
     /* margin-top: 2vh; */
     /* margin-bottom:2vh ; */
-    font-size: 16px;
+    font-size: 15px;
     text-align: justify;
     /* border: 3px solid blue; */
   }
