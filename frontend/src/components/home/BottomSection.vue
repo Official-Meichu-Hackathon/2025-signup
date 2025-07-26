@@ -626,7 +626,7 @@ watch(Play, (newVal) => {
 
 .collaborators a:hover img,
 .collaborators img.cursor-pointer:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   opacity: 0.8;
 }
 
