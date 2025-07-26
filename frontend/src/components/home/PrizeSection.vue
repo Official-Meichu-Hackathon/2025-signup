@@ -4,7 +4,7 @@
   <div class="relative w-full min-h-screen overflow-hidden">
     <img src="../../assets/Home/cursor.svg" alt="light-cursor3" id="light-cursor3" />
     <div
-      class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col w-full overflow-hidden"
+      class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col w-full overflow-hidden hidden md:block"
       id="target-areas3"
     >
       <!-- wscreen 會撐太多導致有 scroll bar ，所以使用 w-full !!! -->
@@ -120,7 +120,7 @@
       <!-- Meichu big prize -->
 
       <div
-        class="MH target-area bg-gradient-to-b from-blue-100/50 to-blue-100/10 rounded-[30px] shadow-[0px_4px_25px_-5px_rgba(28,27,31,1.00)] border border-blue-100/40"
+        class="MH relative bg-gradient-to-b from-blue-100/50 to-blue-100/10 rounded-[30px] shadow-[0px_4px_25px_-5px_rgba(28,27,31,1.00)] border border-blue-100/40"
         @mouseenter="showCursor = true"
         @mouseleave="showCursor = false"
       >
@@ -128,17 +128,17 @@
           <img
             src="../../assets/Home/Vector_red.svg"
             alt="vector_red"
-            class="absolute left-[45%] bottom-[16%] w-[40vw]"
+            class="absolute left-[80%] top-[10%] w-[40vw]"
           />
           <img
             src="../../assets/Home/Vector_blue.svg"
             alt="vector_blue"
-            class="absolute left-[60%] bottom-[15%] w-[40vw]"
+            class="absolute left-[120%] top-[10%] w-[40vw]"
           />
           <img
             src="../../assets/Home/curve.svg"
             alt="curve"
-            class="absolute bottom-[14%] left-[46%] w-[38vw] -rotate-10 brightness-105"
+            class="absolute top-[5%] left-[85%] w-[33vw] -rotate-10 brightness-105 pointer-events-none"
           />
         </div>
 
@@ -175,9 +175,9 @@
         @click="showOptions = true"
       ></button> -->
 
-      <div class="h-[50vh]">
+      <div class="h-[40vh]">
         <div
-          class="relative flex justify-center items-center sign-up opacity-[0.8] mb-[15vh] mt-[20vh] cursor-pointer mx-auto w-[21.5vw] h-[10.5vh] relative z-8 bg-slate-400/20 rounded-[20px] shadow-[0px_4px_20px_-1px_rgba(28,27,31,0.60)] outline outline-1 outline-offset-[-1px] outline-blue-100/80 overflow-hidden"
+          class="relative flex justify-center items-center sign-up opacity-[0.8] mb-[8vh] mt-[22vh] cursor-pointer mx-auto w-[21.5vw] h-[10.5vh] relative z-8 bg-slate-400/20 rounded-[20px] shadow-[0px_4px_20px_-1px_rgba(28,27,31,0.60)] outline outline-1 outline-offset-[-1px] outline-blue-100/80 overflow-hidden"
           @click="showOptions = true"
         >
           <div class="z-2 flex font-black text-[#F4F5F5] font-['Chiron_Hei_HK']">點我報名</div>
@@ -283,6 +283,7 @@ onUnmounted(() => {
   margin-left: 35vw;
   padding: 3vh 2vh;
   padding-right: 5vh;
+  z-index: 2;
 }
 
 .MH {
@@ -291,6 +292,13 @@ onUnmounted(() => {
   margin-top: 5vh;
   margin-left: 15vw;
   padding: 3vh 2vh;
+  z-index: 2;
+}
+.title,
+.subtitle,
+.content {
+  position: relative;
+  z-index: 8; /* 確保一定在 light-cursor 上方 */
 }
 
 /* .object-container {
