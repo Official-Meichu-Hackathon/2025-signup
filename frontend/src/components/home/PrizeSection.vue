@@ -638,8 +638,8 @@ onUnmounted(() => {
   }
 
   .content {
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-left: 20px;
+    margin-right: 20px;
     /* margin-top: 1vh; */
     /* margin-bottom: ; */
     font-size: 15px;
@@ -648,8 +648,8 @@ onUnmounted(() => {
   }
 
   .content-maker {
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-left: 20px;
+    margin-right: 20px;
     /* margin-top: 2vh; */
     /* margin-bottom:2vh ; */
     font-size: 15px;
@@ -658,10 +658,10 @@ onUnmounted(() => {
   }
 
   .info {
-    margin-left: 3vw;
-    margin-right: 3vw;
-    margin-top: 1.5vh;
-    margin-bottom: 1.8vh;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 1.3vh;
+    margin-bottom: 1.5vh;
     font-size: 13px;
     font-weight: 500;
     color: #a2a2a2;
@@ -671,9 +671,12 @@ onUnmounted(() => {
   .card {
     justify-content: center;
     display: flex;
+    /* items-stretch */
+    align-items: stretch;
     /* align-items: center; */
     /* height: 34vh; */
-    min-height: 34vh;
+    min-height: 25vh;
+    /* aspect-ratio: 16 / 7; */
     /* border: 3px solid pink; */
     flex-direction: column;
   }
