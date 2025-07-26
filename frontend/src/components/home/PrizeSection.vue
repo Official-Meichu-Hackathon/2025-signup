@@ -188,70 +188,14 @@
 
       <!-- hover => w-[25vw] h-[12vh] -->
 
-      <!-- 遮罩 + 彈出選單 -->
-      <div
-        v-if="showOptions"
-        class="menu fixed inset-0 z-40 flex items-center justify-center"
-        @click.self="closeMenu"
-      >
-        <!-- 背景遮罩 -->
-        <div
-          @click="closeMenu"
-          class="menu2 absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300"
-        ></div>
-
-        <!-- 彈出選單 -->
-        <div class="relative z-10 p-6 flex flex-row gap-[10vw]">
-          <!-- 黑客組 button -->
-          <button
-            @click="selectOption('選項一', 0)"
-            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
-          >
-            <img
-              src="../../assets/Home/Frame-30.svg"
-              class="bg2 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
-              alt="bg2"
-            />
-            <img
-              src="../../assets/Home/Frame-29.svg"
-              class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
-              alt="bg1"
-            />
-            <span
-              class="text-shadow w-[30vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
-              >黑客組</span
-            >
-          </button>
-
-          <!-- 創客組 button -->
-          <button
-            @click="selectOption('選項二', 1)"
-            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
-          >
-            <img
-              src="../../assets/Home/Frame-30.svg"
-              class="bg2 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
-              alt="bg2"
-            />
-            <img
-              src="../../assets/Home/Frame-29.svg"
-              class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
-              alt="bg1"
-            />
-
-            <span
-              class="text-shadow w-[50vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
-              >創客交流組</span
-            >
-          </button>
-        </div>
-      </div>
+      <SignUpGroup v-if="showOptions" @close="showOptions = false"> </SignUpGroup>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
+import SignUpGroup from './SignUpGroup.vue'
 
 defineOptions({
   name: 'PrizeSection',
@@ -266,20 +210,20 @@ watch(showOptions, (val) => {
   document.body.style.overflow = val ? 'hidden' : ''
 })
 
-function closeMenu() {
-  showOptions.value = false
-  console.log('close menu\n')
-}
-
-// function handleClick() {
-//   console.log('click button')
+// function closeMenu() {
+//   showOptions.value = false
+//   console.log('close menu\n')
 // }
 
-function selectOption(option, id) {
-  alert(`你選擇了：${option} id=${id}`)
+// function handleClick() {
+//   console.log('click button');
+// }
 
-  closeMenu()
-}
+// function selectOption(option, id) {
+//   alert(`你選擇了：${option} id=${id}`)
+
+//   closeMenu()
+// }
 
 const showCursor = ref(false)
 

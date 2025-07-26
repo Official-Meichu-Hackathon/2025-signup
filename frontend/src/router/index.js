@@ -31,6 +31,11 @@ const routes = [
     name: 'Data',
     component: () => import('../views/Data.vue'),
   },
+  // {
+  //   path: '/signup-group',
+  //   name: 'SignUpGroup',
+  //   component: () => import('../components/home/SignUpGroup.vue'),
+  // },
 ]
 
 const router = createRouter({
