@@ -1,3 +1,5 @@
+<!-- Prize Section : Apple -->
+
 <template>
   <div class="relative w-full min-h-screen overflow-hidden">
     <img src="../../assets/Home/cursor.svg" alt="light-cursor3" id="light-cursor3" />
@@ -7,7 +9,7 @@
     >
       <!-- wscreen 會撐太多導致有 scroll bar ，所以使用 w-full !!! -->
       <div
-        class="mx-auto title mb-[10px] mt-[5px] text-center justify-start text-white font-black font-['Chiron_Hei_HK']"
+        class="mx-auto title mb-[10px] mt-[14vh] text-center justify-start text-white font-black font-['Chiron_Hei_HK']"
       >
         獎項資訊
       </div>

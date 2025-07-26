@@ -1,3 +1,5 @@
+<!-- Rule Section : Apple -->
+
 <template>
   <div class="relative w-full min-h-screen overflow-hidden bg-[#2D3E63]">
     <img src="../../assets/Home/cursor.svg" alt="light-cursor" id="light-cursor2" />
