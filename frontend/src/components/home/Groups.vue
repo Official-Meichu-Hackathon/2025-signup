@@ -1,6 +1,7 @@
 <!-- Group Section : Apple -->
 
 <template>
+  <div id="groups"></div>
   <!-- layout for computer -->
   <div class="hidden md:block relative w-full min-h-screen overflow-hidden bg-[#2D3E63]">
     <img src="../../assets/Home/cursor.svg" alt="light-cursor" id="light-cursor" />
@@ -203,6 +204,7 @@
     <!-- <h1>手機板排版</h1> -->
     <div
       class="relative w-[90vw] text-[20px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[5vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      id="groups"
     >
       組別介紹、工作坊
       <img

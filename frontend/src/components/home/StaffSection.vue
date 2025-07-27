@@ -1,6 +1,7 @@
 <!-- Staff Section : Apple -->
 
 <template>
+  <div id="staff"></div>
   <div class="flex justify-center relative w-full min-h-screen overflow-hidden">
     <div class="justify-center min-h-[calc(100vh-56px)] flex flex-col w-full">
       <div

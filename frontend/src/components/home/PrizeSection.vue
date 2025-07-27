@@ -1,6 +1,7 @@
 <!-- Prize Section : Apple -->
 
 <template>
+  <div id="awards"></div>
   <!-- layout for computer -->
   <div class="hidden md:block relative w-full min-h-screen overflow-hidden">
     <img
