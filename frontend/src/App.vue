@@ -1,15 +1,25 @@
 <script setup>
-import { ref, provide, computed } from 'vue'
+import { ref, provide, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import LoadingAnimation from './components/home/LoadingAnimation.vue'
+
 const route = useRoute()
 const isEntryAnimationLoaded = ref(false)
 
 const setEntryAnimationLoaded = () => {
   isEntryAnimationLoaded.value = true
 }
+
+watch(
+  () => route.path,
+  (newPath, oldPath) => {
+    if (oldPath === '/' && newPath !== '/') {
+      isEntryAnimationLoaded.value = false
+    }
+  }
+)
 
 // 只在首頁時才需要等待 EntryAnimation 載入
 const shouldShowLoading = computed(() => {

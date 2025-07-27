@@ -1,13 +1,69 @@
 <template>
-  <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col items-center justify-center">
-    <div class="text-3xl font-bold text-center text-[#F4F5F5]">Registration Page</div>
+  <div>
+    <div class="hidden md:block">
+      <RegistrationDesktop />
+    </div>
+    <div class="block md:hidden">
+      <RegistrationMobile />
+    </div>
   </div>
 </template>
 
-<script setup>
-defineOptions({
-  name: 'RegistrationPage',
-})
-</script>
+<style>
+@keyframes rotateWingLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(16.5deg);
+  }
+  50% {
+    transform: rotate(16.5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
-<style scoped></style>
+@keyframes rotateWingRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-16.5deg);
+  }
+  50% {
+    transform: rotate(-16.5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wing-animate-left {
+  animation: rotateWingLeft 1.8s ease-in-out infinite;
+}
+
+.wing-animate-right {
+  animation: rotateWingRight 1.8s ease-in-out infinite;
+}
+</style>
+
+<script>
+import RegistrationDesktop from '../components/Registration/RegistrationDesktop.vue'
+import RegistrationMobile from '../components/Registration/RegistrationMobile.vue'
+
+export default {
+  name: 'RegistrationPage',
+  components: {
+    RegistrationDesktop,
+    RegistrationMobile,
+  },
+}
+</script>
