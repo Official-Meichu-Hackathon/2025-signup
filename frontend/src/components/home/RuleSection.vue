@@ -62,7 +62,7 @@
               <div
                 class="justify-start text-justify text-left content w-[55vw] text-[#656565] text-[1.6vw] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"
               >
-                <ul class="list-disc space-y-[1.2vh] leading-[30px]">
+                <ul class="list-disc space-y-[1.2vh] leading-[35px]">
                   <!-- 第一項 -->
                   <li>
                     分為初賽與決賽（梅竹大獎），且黑客組不允許採用影片
@@ -120,13 +120,13 @@
               <div
                 class="text-justify text-left content w-[55vw] text-[#656565] text-[1.6vw] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"
               >
-                <ul class="list-disc space-y-[1.2vh] leading-[30px]">
+                <ul class="list-disc space-y-[1.2vh] leading-[35px]">
                   <!-- 第一項 -->
                   <li>
                     創客組僅有一次 Demo，創客組接受多元形式的 Demo 與作品，唯需於比賽 Demo
                     時讓評審實際操作作品。 <br />
                     （參考工具：figma、Miro、Webflow、Sketch）
-                    <ul class="list-disc pl-[3vw]">
+                    <ul class="list-disc pl-[3vw] space-y-[1.2vh]">
                       <li>
                         創客組 Demo
                         前，參賽者需以組別為單位上傳簡報終稿、程式碼或其他作品連結；並且於指定時間至主舞台旁進行設備測試。
@@ -201,7 +201,7 @@ onUnmounted(() => {
 .title {
   width: 90vw;
   /* font-size: 2.3vw; */
-  font-size: 32px;
+  font-size: clamp(30px, 2.3vw, 36px);
 }
 
 .tab {
@@ -221,11 +221,13 @@ onUnmounted(() => {
 }
 
 .active {
-  font-size: 22px;
+  /* font-size: 22px; */
+  font-size: clamp(20px, 1.6vw, 26px);
 }
 
 .inactive {
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: clamp(16px, 1.4vw, 22px);
 }
 
 .content {
@@ -233,7 +235,8 @@ onUnmounted(() => {
   margin-right: 1vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
-  font-size: 17px;
+  font-size: clamp(16px, 1.8vw, 22px);
+  text-align: justify;
   /* border: blue 3px solid; */
 }
 

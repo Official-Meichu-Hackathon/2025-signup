@@ -46,20 +46,20 @@
             </div>
           </div>
 
-          <!-- content -->
-          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
-            第一名：新台幣 25,000 元整、企業實體獎品、實習或實習面試機會
-          </div>
-          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
-            第二名：新台幣 20,000 元整、企業實體獎品
-          </div>
-          <div
-            class="flex flex-col mb-[2vh] text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10"
-          >
-            第三名：新台幣 15,000 元整、企業實體獎品
-            <!-- additional info-->
-            <div class="leading-normal text-slate-700 text-sm font-bold font-['Chiron_Hei_HK']">
-              *實習機會主要依據企業本身而定
+          <div class="content">
+            <!-- content -->
+            <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+              第一名：新台幣 25,000 元整、企業實體獎品、實習或實習面試機會
+            </div>
+            <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+              第二名：新台幣 20,000 元整、企業實體獎品
+            </div>
+            <div class="flex flex-col text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+              第三名：新台幣 15,000 元整、企業實體獎品
+              <!-- additional info-->
+              <div class="leading-normal text-slate-700 text-sm font-bold font-['Chiron_Hei_HK']">
+                *實習機會主要依據企業本身而定
+              </div>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@
           <img
             src="../../assets/Home/star1.svg"
             alt="star1-anim"
-            class="absolute star1-anim right-[78%]"
+            class="absolute star1-anim right-[83%]"
           />
         </div>
 
@@ -91,7 +91,9 @@
           </div>
 
           <!-- content -->
-          <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10 text-[17px]">
+          <div
+            class="content2 flex text-white font-bold font-['Chiron_Hei_HK'] leading-10 justify-between"
+          >
             <!-- justify between 各自對齊左右側的排版
                     <div class="flex justify-between">
                         <div class="text-[17px]">第一名：新台幣 50,000 元整</div>
@@ -107,14 +109,14 @@
                     </div> -->
 
             <!-- 左邊欄 -->
-            <div class="flex flex-col w-1/2 text-[17px]">
+            <div class="flex flex-col w-4.5/10">
               <div>第一名：新台幣 50,000 元整</div>
               <div>第二名：新台幣 40,000 元整</div>
               <div>第三名：新台幣 30,000 元整</div>
             </div>
 
             <!-- 右邊欄 -->
-            <div class="flex flex-col w-1/2 text-[17px]">
+            <div class="flex flex-col w-5.5/10">
               <div>創意獎一：新台幣 12,000 元整</div>
               <div>創意獎二：新台幣 10,000 元整</div>
               <div>創意獎三：新台幣 8,000 元整</div>
@@ -158,18 +160,20 @@
             </div>
           </div>
 
-          <!-- content -->
-          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
-            第一名：新台幣 30,000 元整
-          </div>
-          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
-            第二名：新台幣 16,000 元整
-          </div>
-          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
-            第三名：新台幣 8,000 元整
-          </div>
-          <div class="flex text-[17px] text-white font-bold font-['Chiron_Hei_HK'] leading-10">
-            最佳人氣獎：新台幣 3,000 元整
+          <div class="content">
+            <!-- content -->
+            <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+              第一名：新台幣 30,000 元整
+            </div>
+            <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+              第二名：新台幣 16,000 元整
+            </div>
+            <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+              第三名：新台幣 8,000 元整
+            </div>
+            <div class="flex text-white font-bold font-['Chiron_Hei_HK'] leading-10">
+              最佳人氣獎：新台幣 3,000 元整
+            </div>
           </div>
         </div>
       </div>
@@ -210,37 +214,38 @@
     <!-- Card : 獎項 -->
     <div class="w-[80vw] relative mx-auto select-none">
       <!-- tab ! -->
-      <!-- tab 黑客組 -->
-      <div
-        :class="[
-          activeTab === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-          'target-area tab left-[7.5vw] w-[15vw] pt-[1vh] absolute',
-        ]"
-        @click="activeTab = '黑客組'"
-      >
-        黑客組
-      </div>
+      <div class="flex flex-row tab-list justify-start">
+        <!-- tab 黑客組 -->
+        <div
+          :class="[
+            activeTab === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+            'target-area tab w-[15vw] pt-[1vh]',
+          ]"
+          @click="activeTab = '黑客組'"
+        >
+          黑客組
+        </div>
 
-      <!-- tab 創客交流組 -->
-      <div
-        :class="[
-          activeTab === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-          'target-area tab w-[20vw] pt-[1vh] left-[22.5vw] absolute ',
-        ]"
-        @click="activeTab = '創客組'"
-      >
-        創客交流組
-      </div>
-
-      <!-- tab 梅竹大獎 -->
-      <div
-        :class="[
-          activeTab === '梅竹' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-          'target-area tab w-[16vw] pt-[1vh] left-[42.5vw] absolute ',
-        ]"
-        @click="activeTab = '梅竹'"
-      >
-        梅竹大獎
+        <!-- tab 創客交流組 -->
+        <div
+          :class="[
+            activeTab === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+            'target-area tab w-[20vw] pt-[1vh]',
+          ]"
+          @click="activeTab = '創客組'"
+        >
+          創客交流組
+        </div>
+        <!-- tab 梅竹大獎 -->
+        <div
+          :class="[
+            activeTab === '梅竹' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+            'target-area tab w-[16vw] pt-[1vh]',
+          ]"
+          @click="activeTab = '梅竹'"
+        >
+          梅竹大獎
+        </div>
       </div>
 
       <!-- 卡片背景 -->
@@ -248,7 +253,7 @@
       <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
       <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
       <div
-        class="w-[65vw] mt-[7vh] mx-auto relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
+        class="w-[65vw] mx-auto relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
       >
         <!-- content -->
         <div class="">
@@ -264,17 +269,13 @@
           </div>
 
           <div v-if="activeTab === '創客組'" class="card space-y-[1.5vh] relative flex flex-col">
-            <div
-              class="content-maker mt-[3vh] text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]"
-            >
+            <div class="content-maker text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
               <div>第一名：新台幣 50,000 元整</div>
               <div>第二名：新台幣 40,000 元整</div>
               <div>第三名：新台幣 30,000 元整</div>
             </div>
 
-            <div
-              class="content-maker mb-[3vh] text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]"
-            >
+            <div class="content-maker text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
               <div>創意獎一：新台幣 12,000 元整</div>
               <div>創意獎二：新台幣 10,000 元整</div>
               <div>創意獎三：新台幣 8,000 元整</div>
@@ -379,7 +380,8 @@ onUnmounted(() => {
 <style scoped>
 .title {
   width: 90vw;
-  font-size: 32px;
+  /* font-size: 32px; */
+  font-size: clamp(30px, 2.3vw, 36px);
 }
 
 .hacker {
@@ -415,6 +417,25 @@ onUnmounted(() => {
   z-index: 8; /* 確保一定在 light-cursor 上方 */
 }
 
+.content {
+  /* margin-left: 1vw; */
+  margin-right: 2vw;
+  /* margin-top: 1vh; */
+  margin-bottom: 1vh;
+  font-size: clamp(16px, 1.8vw, 22px);
+  text-align: justify;
+  /* border: 3px solid blue; */
+}
+
+.content2 {
+  /* margin-left: 1vw; */
+  margin-right: 1vw;
+  /* margin-top: 1vh; */
+  margin-bottom: 1vh;
+  font-size: clamp(16px, 1.8vw, 20px);
+  text-align: justify;
+  /* border: 3px solid blue; */
+}
 /* .object-container {
     border: 3px solid red;
 } */
@@ -614,19 +635,22 @@ onUnmounted(() => {
 
 @media (max-width: 768px) {
   .active {
-    /* font-size: clamp(22px, 2vw, 28px); */
+    font-size: clamp(14px, 1vw, 18px);
     font-size: 16px;
   }
 
   .inactive {
-    /* font-size: clamp(20px, 2vw, 24px); */
-    font-size: 14px;
+    font-size: clamp(12px, 0.8vw, 16px);
+    /* font-size: 14px; */
   }
 
   .tab {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    height: 7vh;
+    min-height: 5vh;
+    max-height: 7vh;
+    /* height:7vh; */
+    /* padding: 1.5rem 1rem; */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -635,6 +659,10 @@ onUnmounted(() => {
     font-weight: 900;
     font-family: 'Chiron Hei HK', sans-serif;
     border: 1.5px solid #f4f5f5;
+  }
+
+  .tab-list {
+    margin-left: 7.5vw;
   }
 
   .content {
@@ -675,7 +703,8 @@ onUnmounted(() => {
     align-items: stretch;
     /* align-items: center; */
     /* height: 34vh; */
-    min-height: 28vh;
+    min-height: 27vh;
+    padding: 1.5rem 1rem;
     /* aspect-ratio: 16 / 7; */
     /* border: 3px solid pink; */
     flex-direction: column;

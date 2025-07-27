@@ -16,40 +16,40 @@
       <!-- Card1 : 黑客組 -->
       <div class="w-[80vw] relative mx-auto select-none">
         <!-- tab ! -->
-        <!-- tab 黑客組 -->
-        <div
-          :class="[
-            activeTab === '黑客組'
-              ? 'bg-[#db8396] left-[7vw] active'
-              : 'bg-[#F4DAE1] left-[7vw] inactive',
-            'target-area tab pt-[1vh] w-[12vw] h-[9vh] absolute',
-          ]"
-          @click="activeTab = '黑客組'"
-          @mouseenter="showCursor = true"
-          @mouseleave="showCursor = false"
-        >
-          黑客組
-        </div>
 
-        <!-- tab 工作坊 -->
-        <div
-          :class="[
-            activeTab === '工作坊' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'target-area tab pt-[1vh] left-[19vw] w-[12vw] h-[9vh] absolute ',
-          ]"
-          @click="activeTab = '工作坊'"
-          @mouseenter="showCursor = true"
-          @mouseleave="showCursor = false"
-        >
-          工作坊
-        </div>
+        <div class="tab-list flex flex-row">
+          <!-- tab 黑客組 -->
+          <div
+            :class="[
+              activeTab === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+              'target-area tab pt-[1vh] w-[12vw]',
+            ]"
+            @click="activeTab = '黑客組'"
+            @mouseenter="showCursor = true"
+            @mouseleave="showCursor = false"
+          >
+            黑客組
+          </div>
 
+          <!-- tab 工作坊 -->
+          <div
+            :class="[
+              activeTab === '工作坊' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+              'target-area tab pt-[1vh] w-[12vw]',
+            ]"
+            @click="activeTab = '工作坊'"
+            @mouseenter="showCursor = true"
+            @mouseleave="showCursor = false"
+          >
+            工作坊
+          </div>
+        </div>
         <!-- 卡片背景 -->
         <!-- left-[7vw] 差不多在中間左右 !-->
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl justify-center items-center"
+          class="target-area w-[63vw] h-[42vh] ml-[7vw] bg-card relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl justify-center items-center"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
@@ -141,7 +141,7 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
+          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] bg-card relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
@@ -189,7 +189,7 @@
         <img
           src="../../assets/Home/star-07-1.svg"
           alt="start07-1"
-          class="z-3 scale-[0.7] absolute pointer-events-none bottom-[3%] left-[-1%]"
+          class="z-3 scale-[0.7] absolute pointer-events-none bottom-[6%] left-[3%]"
         />
         <!--@mouseenter="showCursor = true"
           @mouseleave="showCursor = false" -->
@@ -302,7 +302,7 @@
         </div>
       </div>
 
-      <div class="mb-[8vh]"></div>
+      <div class="mb-[20vh]"></div>
     </div>
   </div>
 </template>
@@ -393,18 +393,24 @@ onMounted(() => {
 <style scoped>
 .title {
   width: 90vw;
-  /* font-size: clamp(30px, 2.3vw, 32px); */
-  font-size: 32px;
+  font-size: clamp(30px, 2.3vw, 36px);
+  /* font-size: 32px; */
 }
 
 .active {
-  /* font-size: clamp(22px, 2vw, 28px); */
-  font-size: 24px;
+  font-size: clamp(20px, 1.6vw, 26px);
+  /* font-size: 24px; */
 }
 
 .inactive {
-  /* font-size: clamp(20px, 2vw, 24px); */
-  font-size: 20px;
+  font-size: clamp(16px, 1.4vw, 22px);
+  /* font-size: 20px; */
+}
+
+.tab-list {
+  margin-left: 7vw;
+  height: 9vh;
+  /* min-height: 7vh; */
 }
 
 .tab {
@@ -429,7 +435,7 @@ onMounted(() => {
   margin-right: 1vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
-  font-size: 20px;
+  font-size: clamp(16px, 1.8vw, 22.5px);
   text-align: justify;
   /* border: 3px solid blue; */
 }
@@ -438,8 +444,13 @@ onMounted(() => {
   justify-content: center;
   display: flex;
   align-items: center;
+  /* padding: 1.5rem 1rem; */
   /* border: 3px solid pink; */
   /* flex-direction: column; */
+}
+
+.bg-card {
+  /* padding: 1.5rem 1rem; */
 }
 
 .target-area {
@@ -517,7 +528,7 @@ onMounted(() => {
     justify-content: center;
     display: flex;
     /* align-items: center; */
-    height: 58vh;
+    /* height: 58vh; */
     /* min-height: 58vh; */
     /* border: 3px solid pink; */
     flex-direction: column;

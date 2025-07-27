@@ -237,11 +237,13 @@ const activeTab = ref('行政部')
 }
 
 .active {
-  font-size: 22px;
+  /* font-size: 22px; */
+  font-size: clamp(20px, 1.6vw, 26px);
 }
 
 .inactive {
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: clamp(16px, 1.4vw, 22px);
 }
 
 .container {
@@ -253,5 +255,6 @@ const activeTab = ref('行政部')
   margin-right: 2vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
+  font-size: clamp(16px, 1.8vw, 24px);
 }
 </style>
