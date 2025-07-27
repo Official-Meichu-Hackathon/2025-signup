@@ -6,7 +6,7 @@
       class="absolute top-0 left-0 w-full h-full z-[-1] pointer-events-none bg-[linear-gradient(90deg,_#F4F5F5_0%,_#F4DAE1_33%,_#D3E4FC_61%,_#F4F5F5_100%)]"
     ></div>
     <div class="navbar-left h-full flex items-center">
-      <img src="../assets/Navbar/logo.svg" alt="梅竹賽客松" class="h-10 w-auto" />
+      <img src="../assets/Navbar/logo.svg" alt="梅竹黑客松" class="h-10 w-auto" />
     </div>
     <div class="navbar-right h-full flex items-center gap-4">
       <!-- <router-link to="/signup-group"> -->

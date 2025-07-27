@@ -1,13 +1,38 @@
 <template>
-  <div class="min-h-[calc(100vh-56px)] bg-[#2D3E63] flex flex-col items-center justify-center">
-    <div class="text-3xl font-bold text-center text-[#F4F5F5]">Problems Page</div>
+  <div>
+    <ProblemDesc v-if="isDesktop" />
+    <ProblemDescMobile v-else />
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted, provide } from 'vue'
+import ProblemDesc from '../components/ProblemPage/ProblemDesc.vue'
+import ProblemDescMobile from '../components/ProblemPage/ProblemDescMobile.vue'
+
+const isDesktop = ref(window.innerWidth >= 768)
+
+const handleResize = () => {
+  isDesktop.value = window.innerWidth >= 768
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
+
 defineOptions({
   name: 'ProblemsPage',
+  components: {
+    ProblemDesc,
+    ProblemDescMobile,
+  },
 })
+
+provide('isDesktop', isDesktop)
 </script>
 
 <style scoped></style>
