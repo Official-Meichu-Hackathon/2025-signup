@@ -1,21 +1,21 @@
 <template>
   <!-- Halo Effects -->
   <div
-    class="fixed top-[3.61vh] left-[-4.09vw] w-[17.81vw] h-[37.59vh] bg-[#DEEAFA] z-0"
+    class="fixed top-[3.61vh] left-[0vw] w-[17.81vw] h-[37.59vh] bg-[#DEEAFA] z-0"
     style="filter: blur(100px)"
   ></div>
   <div
-    class="fixed top-[24.79vh] left-[-1.95vw] w-[12.92vw] h-[14.54vh] bg-[#F4DAE1] z-0"
+    class="fixed top-[24.79vh] left-[0vw] w-[12.92vw] h-[14.54vh] bg-[#F4DAE1] z-0"
     style="transform: rotate(19.822deg); filter: blur(100px)"
   ></div>
   <!-- New Blue Halo -->
   <div
-    class="fixed top-[21.39vh] left-[70.35vw] w-[18.23vw] h-[32.41vh] bg-[#DEEAFA] z-0"
+    class="fixed top-[21.39vh] right-[0vw] w-[18.23vw] h-[32.41vh] bg-[#DEEAFA] z-0"
     style="filter: blur(100px)"
   ></div>
   <!-- New Pink Halo -->
   <div
-    class="fixed top-[10.74vh] left-[62.5vw] w-[12.9vw] h-[17.12vh] bg-[#F4DAE1] z-0"
+    class="fixed top-[10.74vh] right-[0vw] w-[12.9vw] h-[17.12vh] bg-[#F4DAE1] z-0"
     style="transform: rotate(19.822deg); filter: blur(100px)"
   ></div>
 
@@ -24,7 +24,7 @@
 
     <div class="bg-[#F4F5F5] pt-8 sm:pt-12 md:pt-16" v-if="!isMobile">
       <div class="container mx-auto max-w-[1453px] px-4">
-        <div class="relative z-10 mb-8 md:mb-12 mt-24">
+        <div class="relative z-0 mb-8 md:mb-12 mt-24">
           <h1
             class="relative text-[#2D3E63] font-bold font-chiron text-4xl sm:text-5xl md:text-6xl"
           >
@@ -50,10 +50,10 @@
 
         <div class="relative" style="margin-left: 0px; display: flex; justify-content: center">
           <!-- Decorative rectangles (behind) -->
-          <div class="absolute cursor-pointer" :style="decorativeRectStyle" @click="toggleDay">
+          <div class="absolute cursor-pointer" :style="decorativeRectStyle" @click="toggleDay0920">
             <span :style="dateTextStyle">0920 Sat.</span>
           </div>
-          <div class="absolute cursor-pointer" :style="decorativeRectStyle2" @click="toggleDay">
+          <div class="absolute cursor-pointer" :style="decorativeRectStyle2" @click="toggleDay0921">
             <span :style="dateTextStyle2">0921 Sun.</span>
           </div>
 
@@ -446,8 +446,12 @@ const scheduleItems = computed(() => {
   return selectedDay.value === '0920' ? scheduleItems0920 : scheduleItems0921
 })
 
-const toggleDay = () => {
-  selectedDay.value = selectedDay.value === '0920' ? '0921' : '0920'
+const toggleDay0920 = () => {
+  selectedDay.value = '0920'
+}
+
+const toggleDay0921 = () => {
+  selectedDay.value = '0921'
 }
 
 const formatTitle = (title) => {
