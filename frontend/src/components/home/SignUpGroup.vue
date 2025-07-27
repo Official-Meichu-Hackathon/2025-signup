@@ -67,12 +67,12 @@ defineOptions({
 const emit = defineEmits(['close', 'select'])
 
 function closeMenu() {
-  console.log('close menu')
+  // console.log('close menu')
   emit('close')
 }
 
 function selectOption(option, id) {
-  console.log('select ', option, id)
+  // console.log('select ', option, id)
   emit('select', { option, id })
   emit('close')
 }

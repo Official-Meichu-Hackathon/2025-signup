@@ -460,7 +460,8 @@ defineOptions({
 
 const Play = ref(false)
 watch(Play, (newVal) => {
-  console.log('Play 狀態變更為:', newVal)
+  // console.log('Play 狀態變更為:', newVal)
+  newVal
 })
 </script>
 

@@ -206,7 +206,7 @@
   <div class="block md:hidden bg-[white] flex flex-col w-full overflow-hidden">
     <!-- <h1>手機板排版</h1> -->
     <div
-      class="w-[90vw] text-[24px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[7vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      class="w-[90vw] text-[20px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[7vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
     >
       獎項資訊
     </div>
@@ -302,7 +302,7 @@
       />
     </div>
 
-    <div class="mb-[10vh]"></div>
+    <div class="mb-[20vh]"></div>
   </div>
 </template>
 
@@ -350,7 +350,7 @@ onMounted(() => {
   glow.style.display = 'none'
 
   area.addEventListener('mousemove', (e) => {
-    console.log(showCursor.value)
+    // console.log(showCursor.value)
     if (!showCursor.value) {
       glow.style.display = 'none' // 選單開啟不顯示光標
       return
@@ -634,13 +634,19 @@ onUnmounted(() => {
 /* for phone */
 
 @media (max-width: 768px) {
+  .title {
+    width: 90vw;
+    font-size: 20px;
+    /* font-size: clamp(20px, 2.3vw, 20px); */
+  }
+
   .active {
-    font-size: clamp(14px, 1vw, 18px);
-    font-size: 16px;
+    font-size: clamp(12px, 1vw, 14px);
+    /* font-size: 16px; */
   }
 
   .inactive {
-    font-size: clamp(12px, 0.8vw, 16px);
+    font-size: clamp(10px, 0.8vw, 12px);
     /* font-size: 14px; */
   }
 
@@ -670,7 +676,7 @@ onUnmounted(() => {
     margin-right: 20px;
     /* margin-top: 1vh; */
     /* margin-bottom: ; */
-    font-size: 15px;
+    font-size: 12px;
     text-align: justify;
     /* border: 3px solid blue; */
   }
@@ -680,7 +686,7 @@ onUnmounted(() => {
     margin-right: 20px;
     /* margin-top: 2vh; */
     /* margin-bottom:2vh ; */
-    font-size: 15px;
+    font-size: 12px;
     text-align: justify;
     /* border: 3px solid blue; */
   }
@@ -690,7 +696,7 @@ onUnmounted(() => {
     margin-right: 20px;
     margin-top: 1.3vh;
     margin-bottom: 1.5vh;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 500;
     color: #a2a2a2;
     font-family: 'Chiron Hei HK', sans-serif;
@@ -703,7 +709,7 @@ onUnmounted(() => {
     align-items: stretch;
     /* align-items: center; */
     /* height: 34vh; */
-    min-height: 27vh;
+    min-height: 30vh;
     padding: 1.5rem 1rem;
     /* aspect-ratio: 16 / 7; */
     /* border: 3px solid pink; */

@@ -199,10 +199,12 @@
   </div>
 
   <!-- layout for phone -->
-  <div class="block md:hidden bg-[white] flex flex-col w-full overflow-hidden">
+  <div
+    class="block md:hidden bg-[white] relative w-full min-h-screen flex flex-col w-full overflow-hidden"
+  >
     <!-- <h1>手機板排版</h1> -->
     <div
-      class="relative w-[90vw] text-[24px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[5vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      class="relative w-[90vw] text-[20px] bg-[white] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[5vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
     >
       組別介紹、工作坊
       <img
@@ -291,7 +293,7 @@
           </div>
 
           <!-- <div class="workshop-btn mx-auto"></div> -->
-          <div class="items-stretch">
+          <div class="mt-[2vh] items-stretch">
             <img
               ref="workshopBtn"
               :src="frames[0]"
@@ -319,15 +321,15 @@ const activeTabPhone = ref('黑客組')
 const showCursor = ref(false)
 
 function openDoc() {
-  console.log('open doc')
+  // console.log('open doc')
 }
 
 function openDoc2() {
-  console.log('open doc2')
+  // console.log('open doc2')
 }
 
 function handleClick() {
-  console.log('click info button')
+  // console.log('click info button')
 }
 
 // light cursor
@@ -477,15 +479,18 @@ onMounted(() => {
 /* for phone */
 @media (max-width: 768px) {
   .title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 900;
   }
+
   .active {
-    font-size: 16px;
+    font-size: clamp(12px, 1vw, 14px);
+    /* font-size: 16px; */
   }
 
   .inactive {
-    font-size: 14px;
+    font-size: clamp(10px, 0.8vw, 12px);
+    /* font-size: 14px; */
   }
 
   .tab {
@@ -507,8 +512,8 @@ onMounted(() => {
     margin-left: 3vw;
     margin-right: 3vw;
     /* margin-top: 1vh; */
-    /* margin-bottom: ; */
-    font-size: 14px;
+    /* margin-bottom:; */
+    font-size: 12px;
     text-align: justify;
     /* border: 3px solid blue; */
   }

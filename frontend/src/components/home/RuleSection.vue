@@ -170,7 +170,7 @@ onMounted(() => {
   glow.style.display = 'none'
 
   area.addEventListener('mousemove', (e) => {
-    console.log(showCursor.value)
+    // console.log(showCursor.value)
     if (!showCursor.value) {
       glow.style.display = 'none' // 選單開啟不顯示光標
       return
