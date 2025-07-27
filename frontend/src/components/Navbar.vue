@@ -9,13 +9,15 @@
       <img src="../assets/Navbar/logo.svg" alt="梅竹黑客松" class="h-10 w-auto" />
     </div>
     <div class="navbar-right h-full flex items-center gap-4">
-      <router-link to="/signup">
-        <button
-          class="bg-[rgba(244,245,245,0.60)] rounded-[15px] border border-[rgba(255,255,255,0.20)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base h-9 px-5 flex items-center justify-center transition-colors duration-200 hover:bg-[#F4F5F5] hover:border-white cursor-pointer"
-        >
-          點我報名
-        </button>
-      </router-link>
+      <!-- <router-link to="/signup-group"> -->
+      <button
+        class="bg-[rgba(244,245,245,0.60)] rounded-[15px] border border-[rgba(255,255,255,0.20)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base h-9 px-5 flex items-center justify-center transition-colors duration-200 hover:bg-[#F4F5F5] hover:border-white"
+        @click="showOptions = true"
+      >
+        點我報名
+      </button>
+      <SignUpGroup v-if="showOptions" @close="showOptions = false"> </SignUpGroup>
+      <!-- </router-link> -->
       <button
         class="menu-btn bg-none border-none h-14 w-14 flex items-center justify-center p-0 cursor-pointer"
         @click="drawerOpen = !drawerOpen"
@@ -94,13 +96,15 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import SignUpGroup from './home/SignUpGroup.vue'
 
 defineOptions({
   name: 'NavbarComponent',
 })
 
 const drawerOpen = ref(false)
+const showOptions = ref(false)
 const menu = [
   {
     title: '首頁',
@@ -130,6 +134,10 @@ const open = ref({})
 function toggle(idx) {
   open.value[idx] = !open.value[idx]
 }
+
+watch(showOptions, (val) => {
+  document.body.style.overflow = val ? 'hidden' : ''
+})
 </script>
 
 <style>
