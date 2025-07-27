@@ -33,13 +33,34 @@ const steps = computed(() => {
 
 const firstRowSteps = computed(() => steps.value.slice(0, 6))
 const secondRowSteps = computed(() => steps.value.slice(6))
+
+const mobileRows = computed(() => {
+  const rows = []
+  const stepsArray = steps.value
+  for (let i = 0; i < stepsArray.length; i += 4) {
+    rows.push(stepsArray.slice(i, i + 4))
+  }
+  return rows
+})
 </script>
 
 <template>
-  <div class="flex mx-10 items-center justify-center mb-5">
-    <StepCard v-for="step in firstRowSteps" :key="step.order" v-bind="step" class="mx-2" />
+  <div class="hidden md:block">
+    <div class="flex mx-10 items-center justify-center mb-5">
+      <StepCard v-for="step in firstRowSteps" :key="step.order" v-bind="step" class="mx-2" />
+    </div>
+    <div v-if="secondRowSteps.length > 0" class="flex mx-10 items-center justify-center mb-5">
+      <StepCard v-for="step in secondRowSteps" :key="step.order" v-bind="step" class="mx-2" />
+    </div>
   </div>
-  <div v-if="secondRowSteps.length > 0" class="flex mx-10 items-center justify-center mb-5">
-    <StepCard v-for="step in secondRowSteps" :key="step.order" v-bind="step" class="mx-2" />
+
+  <div class="block md:hidden">
+    <div
+      v-for="(row, rowIndex) in mobileRows"
+      :key="rowIndex"
+      class="flex mx-4 items-center justify-center mb-5"
+    >
+      <StepCard v-for="step in row" :key="step.order" v-bind="step" class="mx-1" />
+    </div>
   </div>
 </template>
