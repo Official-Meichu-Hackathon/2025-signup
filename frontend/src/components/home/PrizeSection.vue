@@ -298,7 +298,7 @@
       <img
         src="../../assets/Home/curve_dark.svg"
         alt="curve_dark"
-        class="swinging absolute scale-[1.5] left-[70%] top-[60%]"
+        class="swinging absolute w-[35vw] left-[68%] top-[60%]"
       />
     </div>
 
@@ -676,7 +676,8 @@ onUnmounted(() => {
     margin-right: 20px;
     /* margin-top: 1vh; */
     /* margin-bottom: ; */
-    font-size: 12px;
+    /* font-size: 12px; */
+    font-size: clamp(13px, 1.4vw, 15px);
     text-align: justify;
     /* border: 3px solid blue; */
   }
@@ -686,7 +687,8 @@ onUnmounted(() => {
     margin-right: 20px;
     /* margin-top: 2vh; */
     /* margin-bottom:2vh ; */
-    font-size: 12px;
+    /* font-size: 12px; */
+    font-size: clamp(13px, 1.4vw, 15px);
     text-align: justify;
     /* border: 3px solid blue; */
   }
