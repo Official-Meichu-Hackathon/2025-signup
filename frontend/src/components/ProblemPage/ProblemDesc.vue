@@ -1,140 +1,147 @@
 <template>
-  <div class="w-full h-auto flex flex-col">
-    <Background>
-      <!-- <div class="transform -translate-y-[5vh] w-full"> -->
+  <div class="w-full h-auto flex flex-col overflow-hidden">
+    <!-- <Background> -->
+    <div class="absolute w-full overflow-x-hidden">
+      <BackgroundOne />
+    </div>
+    <!-- <div class="transform -translate-y-[5vh] w-full"> -->
 
-      <!-- 封面component container -->
-      <div class="flex flex-col items-center justify-center">
-        <!-- 上面翅膠 -->
-        <div class="relative w-full h-[20vh] mx-auto left-[25vw] top-[10vh] mb-[5%]">
-          <!-- 上藍色小圓 -->
-          <img
-            src="../../assets/Problems/element/component40.svg"
-            alt="上藍色小圓"
-            class="absolute w-[2.5%] z-11 rounded-full animate-pulse-scale"
-          />
-          <!-- 上面的小元件 -->
-          <img
-            src="../../assets/Problems/element/vector32.svg"
-            alt="上面的小元件"
-            class="absolute w-[23%] h-[90%] z-10"
-          />
-          <!-- 粉色小圓 -->
-          <img
-            src="../../assets/Problems/element/component25.svg"
-            alt="粉色小圓"
-            class="absolute left-[14%] w-[3%] top-[20%] z-11 rounded-full animate-float"
-          />
-        </div>
-        <!----------->
+    <!-- 封面component container -->
+    <div class="flex flex-col items-center justify-center">
+      <!-- 上面翅膠 -->
+      <div class="relative w-full h-[20vh] mx-auto left-[25vw] top-[10vh] mb-[5%]">
+        <!-- 上藍色小圓 -->
+        <img
+          src="../../assets/Problems/element/component40.svg"
+          alt="上藍色小圓"
+          class="absolute w-[2.5%] z-11 rounded-full animate-pulse-scale"
+        />
+        <!-- 上面的小元件 -->
+        <img
+          src="../../assets/Problems/element/vector32.svg"
+          alt="上面的小元件"
+          class="absolute w-[23%] h-[90%] z-10"
+        />
+        <!-- 粉色小圓 -->
+        <img
+          src="../../assets/Problems/element/component25.svg"
+          alt="粉色小圓"
+          class="absolute left-[14%] w-[3%] top-[20%] z-11 rounded-full animate-float"
+        />
+      </div>
 
-        <h1
-          class="font-bold text-[7vw] text-center text-[#2D3E63] font-['Chiron_Hei_HK'] tracking-wider"
+      <!----------->
+
+      <h1
+        class="font-bold text-[7vw] text-center text-[#2D3E63] font-['Chiron_Hei_HK'] tracking-wider z-40"
+      >
+        題目說明
+      </h1>
+
+      <!-- 下面翅膠 -->
+      <div class="relative w-full h-[20vh] mx-auto left-[51vw]">
+        <img
+          src="../../assets/Problems/element/component40.svg"
+          alt="下藍色小圓"
+          class="absolute w-[2.5%] top-[9%] left-[5%] z-11 rounded-[2vh] animate-pulse-scale"
+        />
+        <img
+          src="../../assets/Problems/element/vector31.svg"
+          alt="下面的小元件"
+          class="absolute w-[23%] h-[90%] z-10 top-0"
+        />
+        <img
+          src="../../assets/Problems/element/component25.svg"
+          alt="粉色小圓"
+          class="absolute left-[19%] w-[3%] top-[20%] z-11 rounded-full animate-float"
+        />
+      </div>
+      <!---------->
+
+      <!-- notice bar -->
+      <div class="relative">
+        <NoticeBar />
+      </div>
+      <!---------->
+    </div>
+    <!-- 封面container end -->
+
+    <!-- 黑客組container -->
+    <div class="relative flex flex-col items-center justify-center h-[130vh] mb-[7vw]">
+      <!-- 黑客組字樣 with element -->
+      <div class="relative m-[18vh] w-full h-[30vh]">
+        <img
+          src="../../assets/Problems/element/Frame59.svg"
+          alt="黑客組後面的圖"
+          class="absolute w-90% top-[50%] left-[50%] transform -translate-x-[65%] -translate-y-[53%] animate-fade"
+        />
+        <h2
+          class="absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] tracking-wider text-[3vw] font-bold text-center text-[#2D3E63] font-['Chiron_Hei_HK']"
         >
-          題目說明
-        </h1>
-
-        <!-- 下面翅膠 -->
-        <div class="relative w-full h-[20vh] mx-auto left-[51vw]">
-          <img
-            src="../../assets/Problems/element/component40.svg"
-            alt="下藍色小圓"
-            class="absolute w-[2.5%] top-[9%] left-[5%] z-11 rounded-[2vh] animate-pulse-scale"
-          />
-          <img
-            src="../../assets/Problems/element/vector31.svg"
-            alt="下面的小元件"
-            class="absolute w-[23%] h-[90%] z-10 top-0"
-          />
-          <img
-            src="../../assets/Problems/element/component25.svg"
-            alt="粉色小圓"
-            class="absolute left-[19%] w-[3%] top-[20%] z-11 rounded-full animate-float"
-          />
-        </div>
-        <!---------->
-
-        <!-- notice bar -->
-        <div class="relative">
-          <NoticeBar />
-        </div>
-        <!---------->
+          黑客組
+        </h2>
       </div>
-      <!-- 封面container end -->
+      <!---------------------->
 
-      <!-- 黑客組container -->
-      <div class="flex flex-col items-center justify-center h-[130vh] mb-[7vw]">
-        <!-- 黑客組字樣 with element -->
-        <div class="relative m-[18vh] w-full h-[30vh]">
-          <img
-            src="../../assets/Problems/element/Frame59.svg"
-            alt="黑客組後面的圖"
-            class="absolute w-90% top-[50%] left-[50%] transform -translate-x-[65%] -translate-y-[53%] animate-fade"
-          />
-          <h2
-            class="absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] tracking-wider text-[3vw] font-bold text-center text-[#2D3E63] font-['Chiron_Hei_HK']"
-          >
-            黑客組
-          </h2>
-        </div>
-        <!---------------------->
+      <ProblemCardGroup></ProblemCardGroup>
+    </div>
+    <!-- 黑客組container end-->
 
-        <ProblemCardGroup></ProblemCardGroup>
+    <!-- 創客交流組 container -->
+    <div class="relative h-[130vh] flex flex-col items-center justify-center mt-[5vw]">
+      <div class="absolute w-full h-full -z-10 object-fill">
+        <BackgroundThree />
       </div>
-      <!-- 黑客組container end-->
-
-      <!-- 創客交流組 container -->
-      <div class="relative h-[130vh] flex flex-col items-center justify-center mt-[7vw]">
-        <!-- 創客交流組字樣 -->
-        <div class="relative h-[30%] flex flex-col items-center justify-center">
-          <h2
-            class="tracking-wide text-[5vh] font-bold text-center text-[#2D3E63] font-['Chiron_Hei_HK']"
-          >
-            創客交流組
-          </h2>
-          <!-- 流星 -->
-          <img
-            src="../../assets/Problems/element/star.svg"
-            alt="會動的流星"
-            class="absolute w-[30vw] h-[30vw] top-[5%] right-[-120%] -z-10 animate-shooting-star"
-          />
-        </div>
-
-        <!-- 卡片 -->
-        <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh] mt-[8vh]">
-          <ProblemCard
-            :logo="HsinchuLogo"
-            companyName="新竹市政府"
-            problemTitle="題目"
-            problem-content="題目題目題目之後改"
-            problemLink="https://example.com/problem"
-          />
-
-          <!-- 閃電 -->
-          <img
-            src="../../assets/Problems/element/Frame51.svg"
-            alt="閃電"
-            class="absolute w-[100%] h-[100%] bottom-[-20%] left-[-25%] -z-10 animate-blur-fade"
-          />
-
-          <!-- 星星 -->
-          <img
-            src="../../assets/Problems/element/Frame52.svg"
-            alt="星星"
-            class="absolute w-[8vw] h-[8vw] top-[-5vw] right-[24vw] z-30 animate-star-motion"
-          />
-
-          <!-- 發亮的星星 -->
-          <img
-            src="../../assets/Problems/element/Layer2.svg"
-            alt="閃閃發亮的星星"
-            class="absolute w-[10vw] h-[10vw] top-[5vw] left-[5%] z-20 animate-star-motion"
-          />
-        </div>
+      <!-- 創客交流組字樣 -->
+      <div class="relative h-[30%] flex flex-col items-center justify-center">
+        <h2
+          class="tracking-wide text-[5vh] font-bold text-center text-[#2D3E63] font-['Chiron_Hei_HK']"
+        >
+          創客交流組
+        </h2>
+        <!-- 流星 -->
+        <img
+          src="../../assets/Problems/element/star.svg"
+          alt="會動的流星"
+          class="absolute w-[30vw] h-[30vw] top-[5%] right-[-120%] -z-10 animate-shooting-star"
+        />
       </div>
 
-      <!-- 創客交流組 container end -->
-    </Background>
+      <!-- 卡片 -->
+      <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh] mt-[8vh]">
+        <ProblemCard
+          :logo="HsinchuLogo"
+          companyName="新竹市政府"
+          problemTitle="題目"
+          problem-content="題目題目題目之後改"
+          problemLink="https://example.com/problem"
+        />
+
+        <!-- 閃電 -->
+        <img
+          src="../../assets/Problems/element/Frame51.svg"
+          alt="閃電"
+          class="absolute w-[100%] h-[100%] bottom-[-20%] left-[-25%] -z-10 animate-blur-fade"
+        />
+
+        <!-- 星星 -->
+        <img
+          src="../../assets/Problems/element/Frame52.svg"
+          alt="星星"
+          class="absolute w-[8vw] h-[8vw] top-[-5vw] right-[24vw] z-30 animate-star-motion"
+        />
+
+        <!-- 發亮的星星 -->
+        <img
+          src="../../assets/Problems/element/Layer2.svg"
+          alt="閃閃發亮的星星"
+          class="absolute w-[10vw] h-[10vw] top-[5vw] left-[5%] z-20 animate-star-motion"
+        />
+      </div>
+    </div>
+
+    <!-- 創客交流組 container end -->
+    <!-- </Background> -->
   </div>
 </template>
 
@@ -144,6 +151,9 @@ import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
 import ProblemCard from '../ProblemPage/ProblemCard.vue'
 import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
+import BackgroundOne from '../ProblemPage/Bg1.vue'
+import BackgroundTwo from '../ProblemPage/Bg2.vue'
+import BackgroundThree from '../ProblemPage/Bg3.vue'
 
 defineOptions({
   name: 'ProblemDesc',
@@ -151,6 +161,9 @@ defineOptions({
     Background,
     NoticeBar,
     ProblemCardGroup,
+    BackgroundOne,
+    BackgroundTwo,
+    BackgroundThree,
   },
 })
 </script>
