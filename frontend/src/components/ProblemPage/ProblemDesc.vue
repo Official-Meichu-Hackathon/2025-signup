@@ -33,7 +33,7 @@
       <!----------->
 
       <h1
-        class="font-bold text-[7vw] text-center text-[#2D3E63] font-['Chiron_Hei_HK'] tracking-wider"
+        class="font-bold text-[7vw] text-center text-[#2D3E63] font-['Chiron_Hei_HK'] tracking-wider z-40"
       >
         題目說明
       </h1>

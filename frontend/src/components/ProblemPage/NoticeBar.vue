@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex justify-center w-[60vw] h-[20vh] rounded-[5vh]">
+  <div v-if="isDesktop" class="relative flex justify-center w-[60vw] h-[20vh] rounded-[5vh]">
     <div class="absolute w-[100vw] h-auto -z-10 top-[-20vh]">
       <BackgroundTwo />
     </div>
@@ -20,10 +20,28 @@
       無法配合者，主辦方有權取消參賽資格，感謝您的理解！
     </p>
   </div>
+  <div
+    v-else
+    class="relative flex justify-center items-center w-[70vw] h-[28vw] rounded-[2vh] bg-white border-2 border-dashed border-[#EBD5D8]"
+  >
+    <!-- 文字內容 -->
+    <p
+      class="absolute p-[4%] text-center text-[#566797] text-[2.5vw] font-medium leading-relaxed font-['Chiron_Hei_HK']"
+    >
+      為保護梅竹黑客松協辦企業之權益，<br />
+      關於合作企業所提供之專屬技術或資源，<br />
+      若有需要參賽者簽署技術保密協定，<br />
+      參賽者必須配合簽署。<br />
+      無法配合者，主辦方有權取消參賽資格，感謝您的理解！
+    </p>
+  </div>
 </template>
 
 <script setup>
+import { inject } from 'vue'
 import BackgroundTwo from '../ProblemPage/Bg2.vue'
+
+const isDesktop = inject('isDesktop')
 
 defineOptions({
   name: 'NoticeBar',
