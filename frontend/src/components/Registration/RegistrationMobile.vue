@@ -72,7 +72,7 @@
   >
     <!-- Toggle Boxes -->
     <div class="w-[80vw] space-y-4 relative z-100">
-      <!-- Box 1 - 報名費用 -->
+      <!-- 報名費用 -->
       <MobileToggleBox title="報名費用" :index="0" :is-active="activeBox === 0" @toggle="toggleBox">
         ＄900／人（含保證金 ＄200 ）<br />
         <ul class="list-disc pl-6 mt-2">
@@ -89,7 +89,7 @@
         </ul>
       </MobileToggleBox>
 
-      <!-- Box 2 - 保證金制度 -->
+      <!-- 保證金制度 -->
       <MobileToggleBox
         title="保證金制度"
         :index="1"
@@ -111,14 +111,14 @@
         </ul>
       </MobileToggleBox>
 
-      <!-- Box 3 - 報名資格 -->
+      <!-- 報名資格 -->
       <MobileToggleBox title="報名資格" :index="2" :is-active="activeBox === 2" @toggle="toggleBox">
         黑客組：全台大專院校生以及碩博士生，每隊至少需有一人員具備使用企業提供之資源的能力，黑客組全面不允許影片Demo。
         <br />創客交流組：高中職、大專院校及碩博士、社會人士皆可報名，參賽者需於比賽 Demo
         時讓評審實際操作作品。（參考工具：figma、Miro、Webflow、Sketch）
       </MobileToggleBox>
 
-      <!-- Box 4 - 報名方式 -->
+      <!-- 報名方式 -->
       <MobileToggleBox title="報名方式" :index="3" :is-active="activeBox === 3" @toggle="toggleBox">
         採自行報名組隊，梅竹黑客松提供
         <a
@@ -147,7 +147,7 @@
         </ul>
       </MobileToggleBox>
 
-      <!-- Box 5 - 其他注意事項 -->
+      <!-- 其他注意事項 -->
       <MobileToggleBox
         title="其他注意事項"
         :index="4"
@@ -209,16 +209,14 @@ export default {
         { date: '8 / 25 (一) -  8 / 28 (四)', text: '繳費期間' },
         { date: '8 / 29 (五) -  8 / 30 (六)', text: '備取遞補期間' },
       ],
-      activeBox: null, // 當前展開的方塊索引，null 表示沒有展開的方塊
+      activeBox: null,
     }
   },
   methods: {
     toggleBox(index) {
-      // 如果點擊的是已經展開的方塊，則收起它
       if (this.activeBox === index) {
         this.activeBox = null
       } else {
-        // 否則展開點擊的方塊
         this.activeBox = index
       }
     },
