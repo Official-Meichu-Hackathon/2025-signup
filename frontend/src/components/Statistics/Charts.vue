@@ -1,76 +1,154 @@
 <template>
-  <div class="statistics-bar statistics-container z-[100]" style="margin-bottom: -5vw">
-    <div class="relative svg-container overflow-hidden rounded-t-lg" style="aspect-ratio: 1440/210">
-      <img
-        src="../../assets/Statistics/bar-top.svg"
-        class="absolute inset-0 w-full h-full object-cover"
-        alt="背景裝飾"
-      />
-      <div class="relative z-10 flex items-center justify-center top-[20%]">
-        <h3 class="blue-text bar-title">梅竹黑客松參賽數據</h3>
-        <span
-          class="absolute right-6 text-[#2D3E63] font-mono transition-transform duration-200 responsive-icon cursor-pointer hover:bg-[rgba(255,255,255,0.2)] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200"
-          @click="toggleStats"
-        >
-          {{ isOpen ? '−' : '+' }}
-        </span>
+  <div class="statistics-bar statistics-container z-[100]">
+    <div class="hidden md:block" style="margin-bottom: -5vw">
+      <div
+        class="relative svg-container overflow-hidden rounded-t-lg"
+        style="aspect-ratio: 1440/210"
+      >
+        <img
+          src="../../assets/Statistics/bar-pc.svg"
+          class="absolute inset-0 w-full h-full object-cover"
+          alt="背景裝飾"
+        />
+        <div class="relative z-10 flex items-center justify-center top-[20%]">
+          <h3 class="blue-text bar-title-pc shadow-text">梅竹黑客松參賽數據</h3>
+          <span class="absolute toggle-icon-pc" @click="toggleStats">
+            {{ isOpen ? '−' : '+' }}
+          </span>
+        </div>
       </div>
-    </div>
-    <transition name="slide-down">
-      <div v-if="isOpen" class="flex justify-center items-center mb-8">
-        <div class="chart-box">
-          <!-- 2x2 Grid Layout with custom proportions -->
-          <div class="chart-grid">
-            <!-- 上半部左側 -->
-            <div class="upper-section flex flex-col items-center justify-center">
-              <div class="text-center">
-                <h3 class="blue-text chart-title upper-chart-title">參賽者年級比</h3>
+      <transition name="slide-down">
+        <div v-if="isOpen" class="flex justify-center items-center mb-8">
+          <div class="chart-box">
+            <!-- 1x4 Flex Row Layout -->
+            <div class="chart-grid flex flex-row flex-wrap justify-center items-center">
+              <!-- 上半部左側 -->
+              <div class="flex flex-col items-center justify-center">
+                <div class="text-center">
+                  <h3 class="blue-text chart-title upper-chart-title">參賽者年級比</h3>
+                </div>
+                <div class="chart-image">
+                  <!-- <PieChart1 /> -->
+                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                </div>
               </div>
-              <div class="chart-image">
-                <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
-              </div>
-            </div>
 
-            <!-- 上半部右側 -->
-            <div class="upper-section flex flex-col items-center justify-center">
-              <div class="text-center">
-                <h3 class="blue-text chart-title upper-chart-title">參賽者學校分佈</h3>
+              <!-- 上半部右側 -->
+              <div class="flex flex-col items-center justify-center">
+                <div class="text-center">
+                  <h3 class="blue-text chart-title upper-chart-title">參賽者學校分佈</h3>
+                </div>
+                <div class="chart-image">
+                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                </div>
               </div>
-              <div class="chart-image">
-                <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
-              </div>
-            </div>
 
-            <!-- 下半部左側 -->
-            <div class="lower-section flex flex-col items-center justify-center">
-              <div class="text-center">
-                <h3 class="blue-text chart-title lower-chart-title">參賽者科系分佈</h3>
-                <p class="pink-text chart-subtitle text-gray-600">【黑客組】</p>
+              <!-- 下半部左側 -->
+              <div class="flex flex-col items-center justify-center">
+                <div class="text-center">
+                  <h3 class="blue-text chart-title lower-chart-title">參賽者科系分佈</h3>
+                  <p class="pink-text chart-subtitle text-gray-600">【黑客組】</p>
+                </div>
+                <div class="chart-image">
+                  <img src="../../assets/Statistics/chart1.svg" alt="圖表1" class="mx-auto" />
+                </div>
               </div>
-              <div class="chart-image">
-                <img src="../../assets/Statistics/chart1.svg" alt="圖表1" class="mx-auto" />
-              </div>
-            </div>
 
-            <!-- 下半部右側 -->
-            <div class="lower-section flex flex-col items-center justify-center">
-              <div class="text-center">
-                <h3 class="blue-text chart-title lower-chart-title">參賽者科系分佈</h3>
-                <p class="pink-text chart-subtitle text-gray-600">【創客交流組】</p>
-              </div>
-              <div class="chart-image">
-                <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+              <!-- 下半部右側 -->
+              <div class="flex flex-col items-center justify-center">
+                <div class="text-center">
+                  <h3 class="blue-text chart-title lower-chart-title">參賽者科系分佈</h3>
+                  <p class="pink-text chart-subtitle text-gray-600">【創客交流組】</p>
+                </div>
+                <div class="chart-image">
+                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </transition>
+    </div>
+    <!-- mobile -->
+    <div class="md:hidden" style="margin-bottom: -8vw">
+      <div class="relative svg-container overflow-hidden rounded-t-lg" style="aspect-ratio: 393/80">
+        <img
+          src="../../assets/Statistics/bar-mobile-top.svg"
+          class="absolute inset-0 w-full h-full object-cover"
+          alt="背景裝飾"
+        />
+        <div class="relative z-10 flex items-center justify-center top-[20%]">
+          <h3 class="blue-text bar-title-mobile shadow-text">梅竹黑客松參賽數據</h3>
+          <span class="absolute toggle-icon-mobile" @click="toggleStats">
+            {{ isOpen ? '−' : '+' }}
+          </span>
+        </div>
       </div>
-    </transition>
+      <transition name="slide-down">
+        <div v-if="isOpen" class="flex justify-center items-center mb-8">
+          <div class="chart-box-mobile">
+            <img
+              src="../../assets/Statistics/chartbg-left.svg"
+              class="chartbg-left-mobile"
+              alt="bg-left"
+            />
+            <img
+              src="../../assets/Statistics/chartbg-right.svg"
+              class="chartbg-right-mobile"
+              alt="bg-right"
+            />
+            <div
+              class="chart-grid-mobile h-full flex flex-col justify-evenly items-center"
+              style="position: relative"
+            >
+              <div class="chart-item items-center justify-center">
+                <div class="text-center">
+                  <h3 class="blue-text chart-title-mobile">參賽者年級比</h3>
+                </div>
+                <!-- <div class="pie-chart-mobile">
+                  <PieChart1 />
+                </div> -->
+                <div class="chart-image">
+                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                </div>
+              </div>
+              <div class="chart-item items-center justify-center">
+                <div class="text-center">
+                  <h3 class="blue-text chart-title-mobile">參賽者學校分佈</h3>
+                </div>
+                <div class="chart-image">
+                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                </div>
+              </div>
+              <div class="chart-item items-center justify-center">
+                <div class="text-center">
+                  <h3 class="blue-text chart-title-mobile">參賽者科系分佈</h3>
+                  <p class="pink-text chart-subtitle-mobile text-gray-600">【黑客組】</p>
+                </div>
+                <div class="chart-image">
+                  <img src="../../assets/Statistics/chart1.svg" alt="圖表1" class="mx-auto" />
+                </div>
+              </div>
+              <div class="chart-item items-center justify-center">
+                <div class="text-center">
+                  <h3 class="blue-text chart-title-mobile">參賽者科系分佈</h3>
+                  <p class="pink-text chart-subtitle-mobile text-gray-600">【創客交流組】</p>
+                </div>
+                <div class="chart-image">
+                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+// import PieChart1 from './PieChart1.vue'
 
 defineOptions({
   name: 'StatisticsCharts',
@@ -85,13 +163,29 @@ function toggleStats() {
 
 <style scoped>
 @import './statistics.css';
+.chart-title-mobile {
+  font-size: 3.5vw;
+  margin: 1.7vw 0;
+}
+.chart-subtitle-mobile {
+  font-size: 3vw;
+  margin-top: -1vw;
+  margin-bottom: 1.7vw;
+}
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+#chartdiv {
+  width: 100%;
+  height: 500px;
+  margin-top: 20px;
+}
 
 .responsive-subtitle {
   font-size: max(18px, 2.5vw);
-}
-
-.responsive-icon {
-  font-size: max(24px, 3.33vw);
 }
 
 .statistics-bar {
@@ -118,7 +212,19 @@ function toggleStats() {
   border-radius: 24px;
   position: relative;
 }
-
+.chart-box-mobile {
+  /* 背景圖片 */
+  background-image: url('../../assets/Statistics/chart-background-mobile.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 70vw;
+  height: 200vw;
+  padding: 3vw;
+  margin-bottom: 6vw;
+  border-radius: 24px;
+  position: relative;
+}
 /* 自定義虛線邊框 */
 .chart-box::before {
   content: '';
@@ -138,7 +244,24 @@ function toggleStats() {
   pointer-events: none;
   z-index: -1;
 }
-
+.chart-box-mobile::before {
+  content: '';
+  position: absolute;
+  top: -0.8px;
+  left: -0.8px;
+  right: -0.8px;
+  bottom: -0.8px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #d6a0b2 0,
+    #d6a0b2 7px,
+    /* 虛線長度 */ transparent 5px,
+    transparent 12px /* 虛線間距 */
+  );
+  border-radius: 24px;
+  pointer-events: none;
+  z-index: -1;
+}
 /* Grid layout with custom proportions */
 .chart-grid {
   display: grid;
@@ -148,7 +271,7 @@ function toggleStats() {
   height: 100%;
 }
 
-.chart-image img {
+.chart-image {
   max-width: 20vw;
   height: auto;
 }
@@ -172,5 +295,43 @@ function toggleStats() {
   max-height: 800px;
   opacity: 1;
   transform: translateY(0);
+}
+
+/* mobile chart-item 樣式 */
+.chart-grid-mobile .chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0.5rem 0;
+}
+
+.chartbg-left-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: auto;
+  border-top-left-radius: 24px;
+  z-index: 0;
+}
+.chartbg-right-mobile {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+  height: auto;
+  border-bottom-right-radius: 24px;
+  z-index: 0;
+}
+.pie-chart-mobile {
+  width: 40vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

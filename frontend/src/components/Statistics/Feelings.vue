@@ -1,138 +1,215 @@
 <template>
-  <div class="statistics-bar z-[101]" style="margin-bottom: -5vw">
-    <div class="relative svg-container overflow-hidden rounded-t-lg" style="aspect-ratio: 1440/210">
-      <img
-        src="../../assets/Statistics/bar-top.svg"
-        class="absolute inset-0 w-full h-full object-cover"
-        alt="背景裝飾"
-      />
-      <div class="relative z-10 flex items-center justify-center top-[20%]">
-        <h3 class="blue-text bar-title">參賽者感言</h3>
-        <span
-          class="absolute right-6 text-[#2D3E63] font-mono transition-transform duration-200 responsive-icon cursor-pointer hover:bg-[rgba(255,255,255,0.2)] rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200"
-          @click="toggleFeelings"
-        >
-          {{ isOpen ? '−' : '+' }}
-        </span>
+  <div class="statistics-bar z-[101]">
+    <div class="hidden md:block" style="margin-bottom: -5vw">
+      <div
+        class="relative svg-container overflow-hidden rounded-t-lg"
+        style="aspect-ratio: 1440/210"
+      >
+        <img
+          src="../../assets/Statistics/bar-pc.svg"
+          class="absolute inset-0 w-full h-full object-cover"
+          alt="背景裝飾"
+        />
+        <div class="relative z-10 flex items-center justify-center top-[20%]">
+          <h3 class="blue-text bar-title-pc shadow-text">參賽者感言</h3>
+          <span class="absolute toggle-icon-pc" @click="toggleFeelings">
+            {{ isOpen ? '−' : '+' }}
+          </span>
+        </div>
       </div>
-    </div>
-    <transition name="slide-down">
-      <div v-if="isOpen" class="px-[5vw] pb-[8vw]" style="margin-top: -2vw">
-        <!-- 左右雙欄佈局 -->
-        <div class="grid grid-cols-2 gap-8">
-          <!-- 第一個 feeling box -->
-          <div class="feeling-container">
-            <div class="category-title">【黑客組】</div>
-            <div class="flex items-center justify-center">
-              <!-- 左箭頭 -->
-              <button @click="previousFeeling(0)" class="arrow-btn">
-                <img src="../../assets/Statistics/left-arrow.svg" alt="Previous" class="w-6 h-6" />
-              </button>
+      <transition name="slide-down">
+        <div v-if="isOpen" class="px-[5vw] pb-[8vw]" style="margin-top: -2vw">
+          <!-- 左右雙欄佈局 -->
+          <div class="grid grid-cols-2 gap-8">
+            <div
+              v-for="(category, index) in feelingCategories"
+              :key="index"
+              class="feeling-container"
+            >
+              <div class="category-title">{{ category.title }}</div>
+              <div class="flex items-center justify-center">
+                <!-- 左箭頭 -->
+                <button @click="previousFeeling(index)" class="arrow-btn">
+                  <img
+                    src="../../assets/Statistics/left-arrow.svg"
+                    alt="Previous"
+                    class="arrow-pc"
+                  />
+                </button>
 
-              <!-- 感言內容 -->
-              <div class="feeling-content relative w-full">
-                <img
-                  :src="getFeelingImageUrl(currentFeelings[0])"
-                  :alt="`感言 ${currentFeelings[0]}`"
-                  class="w-full h-auto"
-                />
-                <img
-                  src="../../assets/Statistics/sparkle-left.svg"
-                  alt="Sparkle Left"
-                  class="absolute sparkle-animation sparkle-left"
-                />
-                <div
-                  class="feeling-text absolute inset-0 flex items-center justify-center text-center m-[1vw]"
-                >
-                  {{ getCurrentFeeling(0) }}
+                <!-- 感言內容 -->
+                <div class="feeling-content relative w-full">
+                  <img
+                    :src="getFeelingImageUrl(currentFeelings[index])"
+                    :alt="`感言 ${currentFeelings[index]}`"
+                    class="w-full h-auto"
+                  />
+                  <img
+                    :src="getSparkleImageUrl(index)"
+                    :alt="index === 0 ? 'Sparkle Left' : 'Sparkle Right'"
+                    class="absolute sparkle-animation"
+                    :class="index === 0 ? 'sparkle-left' : 'sparkle-right'"
+                  />
+                  <div
+                    class="feeling-text feeling-textsize-pc absolute inset-0 flex items-center justify-center m-[1vw]"
+                  >
+                    <pre class="whitespace-pre-wrap">{{
+                      category.feelings[currentFeelings[index]]
+                    }}</pre>
+                  </div>
                 </div>
+
+                <!-- 右箭頭 -->
+                <button @click="nextFeeling(index)" class="arrow-btn">
+                  <img src="../../assets/Statistics/right-arrow.svg" alt="Next" class="arrow-pc" />
+                </button>
               </div>
-
-              <!-- 右箭頭 -->
-              <button @click="nextFeeling(0)" class="arrow-btn">
-                <img src="../../assets/Statistics/right-arrow.svg" alt="Next" class="w-6 h-6" />
-              </button>
-            </div>
-          </div>
-
-          <!-- 第二個 feeling box -->
-          <div class="feeling-container">
-            <div class="category-title">【創客交流組】</div>
-            <div class="flex items-center justify-center">
-              <!-- 左箭頭 -->
-              <button @click="previousFeeling(1)" class="arrow-btn">
-                <img src="../../assets/Statistics/left-arrow.svg" alt="Previous" class="w-6 h-6" />
-              </button>
-
-              <!-- 感言內容 -->
-              <div class="feeling-content relative w-full">
-                <img
-                  :src="getFeelingImageUrl(currentFeelings[1])"
-                  :alt="`感言 ${currentFeelings[1]}`"
-                  class="w-full h-auto"
-                />
-                <img
-                  src="../../assets/Statistics/sparkle-right.svg"
-                  alt="Sparkle Right"
-                  class="absolute sparkle-animation sparkle-right"
-                />
-                <div
-                  class="feeling-text absolute inset-0 flex items-center justify-center text-center m-[1vw]"
-                >
-                  {{ getCurrentFeeling(1) }}
-                </div>
-              </div>
-
-              <!-- 右箭頭 -->
-              <button @click="nextFeeling(1)" class="arrow-btn">
-                <img src="../../assets/Statistics/right-arrow.svg" alt="Next" class="w-6 h-6" />
-              </button>
             </div>
           </div>
         </div>
+      </transition>
+    </div>
+    <!-- mobile -->
+    <div class="md:hidden" style="margin-bottom: -8vw">
+      <div class="relative svg-container overflow-hidden rounded-t-lg" style="aspect-ratio: 393/80">
+        <img
+          src="../../assets/Statistics/bar-mobile-top.svg"
+          class="absolute inset-0 w-full h-full object-cover"
+          alt="背景裝飾"
+        />
+        <div class="relative z-10 flex items-center justify-center top-[20%]">
+          <h3 class="blue-text bar-title-mobile shadow-text">參賽者感言</h3>
+          <span class="absolute toggle-icon-mobile" @click="toggleFeelings">
+            {{ isOpen ? '−' : '+' }}
+          </span>
+        </div>
       </div>
-    </transition>
+      <transition name="slide-down">
+        <div v-if="isOpen" class="px-[5vw] pb-[8vw]" style="margin-top: -2vw">
+          <!-- 左右雙欄佈局 -->
+          <div class="grid grid-rows-2 gap-8" style="margin-bottom: 10vw">
+            <!-- 第一個 feeling box -->
+            <div
+              class="feeling-container"
+              v-for="(category, index) in feelingCategories"
+              :key="index"
+            >
+              <div class="category-title">{{ category.title }}</div>
+              <div class="w-full flex items-center justify-center">
+                <!-- 左箭頭 -->
+                <button @click="previousFeeling(index)" class="arrow-btn">
+                  <img
+                    src="../../assets/Statistics/left-arrow.svg"
+                    alt="Previous"
+                    class="arrow-mobile"
+                  />
+                </button>
+
+                <!-- 感言內容 -->
+                <div class="feeling-content relative" style="width: 60vw; height: auto">
+                  <img
+                    :src="getFeelingImageUrl(currentFeelings[index])"
+                    :alt="`感言 ${currentFeelings[index]}`"
+                    class="w-full h-auto"
+                  />
+                  <img
+                    :src="getSparkleImageUrl(index)"
+                    :alt="index === 0 ? 'Sparkle Left' : 'Sparkle Right'"
+                    class="absolute sparkle-animation-mobile"
+                    :class="index === 0 ? 'sparkle-left-mobile' : 'sparkle-right-mobile'"
+                  />
+                  <div
+                    class="feeling-text feeling-textsize-mobile absolute inset-0 flex items-center justify-center m-[1vw]"
+                  >
+                    <pre class="whitespace-pre-wrap">{{
+                      category.feelings[currentFeelings[index]]
+                    }}</pre>
+                  </div>
+                </div>
+
+                <!-- 右箭頭 -->
+                <button @click="nextFeeling(index)" class="arrow-btn">
+                  <img
+                    src="../../assets/Statistics/right-arrow.svg"
+                    alt="Next"
+                    class="arrow-mobile"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 defineOptions({
   name: 'ParticipantFeelings',
 })
 
 const isOpen = ref(false)
+const isMobile = ref(false)
 
 const currentFeelings = ref([0, 0]) // 改為從 0 開始
 const totalFeelings = 3 // 總共有多少個感言
 
-// 黑客組感言內容
-const hackerFeelings = [
-  '參加梅竹黑客松讓我們非常有成就感！我們花了很多時間鑽研自己未曾涉足的領域，通過團隊討論與協作嘗試新技術，也從中收穫不少知識和經驗，並且也順利在比賽中取得佳績，這讓大家都很滿足。',
-  '這是我第一次參加黑客松，也很高興是和好朋友們一起完成這次比賽。我們每個人都投入各自的任務，全程沒有閒著的人，每個人都在努力完成自己的部分、彼此支持，即使我的部分很晚才完成，其他人也一直等我，這讓我非常感動。',
-  '我本身是一位創客，會參加各種黑客松，創客的生活，就是不同的創造及研發，雖然說不一定能實際改變生活，但可以為大家帶來一些啟發，人具有影響力，我們今天的發表也可以為台下的人帶來腦力激盪，期許有一天，總有一個產品是可以影響世界的。',
-]
+// 檢測螢幕尺寸
+const checkScreenSize = () => {
+  isMobile.value = window.innerWidth < 768
+}
 
-// 創客組感言內容
-const makerFeelings = [
-  '這次活動讓我們都感到非常開心，相較於之前參賽的經驗，我們這次對比賽的流程和目標有了更深入的理解，尤其在報告方面，我們能更精確地表達作品概念。同時，也感受到團隊間的成長，並因此取得成果，感到非常欣慰。',
-  '原本想要做公車相關的主題，不過第一天和交通處長討論過後，發現我們的發現和實際情況會有些不足。但是處長給我們很多不同的數據和實質建議，一開始的挫折反而是讓我們收穫最多的地方。可以直接和交通部的處長講到話非常難得，也在這裡看到很多值得學習的強者，參加梅竹黑客松真的是很棒的機會。',
-  '今年的活動氛圍比以往更輕鬆愉快，競爭雖然激烈，但參賽者間的互動更具交流性，少了緊張的競爭感。可能因為角色的轉換，從工作人員變成參賽者後，我們更能放鬆，享受活動的樂趣。',
+onMounted(() => {
+  checkScreenSize()
+  window.addEventListener('resize', checkScreenSize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkScreenSize)
+})
+
+// 整合感言數據
+const feelingCategories = [
+  {
+    title: '【黑客組】',
+    feelings: [
+      '“參加梅竹黑客松讓我們非常有成就感！我\n們花了很多時間鑽研自己未曾涉足的領域，\n通過團隊討論與協作嘗試新技術，也從中收\n穫不少知識和經驗，並且也順利在比賽中取\n得佳績，這讓大家都很滿足。”',
+      '“這是我第一次參加黑客松，也很高興是和\n好朋友們一起完成這次比賽。我們每個人都\n投入各自的任務，全程沒有閒著的人，每個\n人都在努力完成自己的部分、彼此支持，即\n使我的部分很晚才完成，其他人也一直等我\n，這讓我非常感動。”',
+      '“我本身是一位創客，會參加各種黑客松，\n創客的生活，就是不同的創造及研發，雖然\n說不一定能實際改變生活，但可以為大家帶\n來一些啟發，人具有影響力，我們今天的發\n表也可以為台下的人帶來腦力激盪，期許有\n一天，總有一個產品是可以影響世界的。”',
+    ],
+  },
+  {
+    title: '【創客交流組】',
+    feelings: [
+      '“這次活動讓我們都感到非常開心，相較於\n之前參賽的經驗，我們這次對比賽的流程和\n目標有了更深入的理解，尤其在報告方面，\n我們能更精確地表達作品概念。同時，也感\n受到團隊間的成長，並因此取得成果，感到\n非常欣慰。”',
+      '“原本想要做公車相關的主題，不過第一天\n和交通處長討論過後，發現我們的發現和實\n際情況會有些不足。但是處長給我們很多不\n同的數據和實質建議，一開始的挫折反而是\n讓我們收穫最多的地方。可以直接和交通部\n的處長講到話非常難得，也在這裡看到很多\n值得學習的強者，參加梅竹黑客松真的是很\n棒的機會。”',
+      '“今年的活動氛圍比以往更輕鬆愉快，競爭\n雖然激烈，但參賽者間的互動更具交流性，\n少了緊張的競爭感。可能因為角色的轉換，\n從工作人員變成參賽者後，我們更能放鬆，\n享受活動的樂趣。”',
+    ],
+  },
 ]
 
 const getFeelingImageUrl = (index) => {
-  return new URL(`../../assets/Statistics/feeling-box${index + 1}.svg`, import.meta.url).href
+  const suffix = isMobile.value ? '-mobile' : '-pc'
+  return new URL(`../../assets/Statistics/feeling-box${index + 1}${suffix}.svg`, import.meta.url)
+    .href
+}
+
+const getSparkleImageUrl = (index) => {
+  return new URL(
+    index === 0
+      ? '../../assets/Statistics/sparkle-left.svg'
+      : '../../assets/Statistics/sparkle-right.svg',
+    import.meta.url
+  ).href
 }
 
 // 獲取當前感言文字
-const getCurrentFeeling = (boxIndex) => {
-  if (boxIndex === 0) {
-    return hackerFeelings[currentFeelings.value[0]]
-  } else {
-    return makerFeelings[currentFeelings.value[1]]
-  }
-}
+// const getCurrentFeeling = (boxIndex) => {
+//   return feelingCategories[boxIndex].feelings[currentFeelings.value[boxIndex]]
+// }
 
 function toggleFeelings() {
   isOpen.value = !isOpen.value
@@ -158,10 +235,6 @@ function previousFeeling(boxIndex) {
 </script>
 
 <style scoped>
-.responsive-icon {
-  font-size: max(24px, 3.33vw);
-}
-
 .statistics-bar {
   position: relative;
   background: transparent;
@@ -180,7 +253,6 @@ function previousFeeling(boxIndex) {
   min-height: 200px;
   gap: 1.5rem; /* 增加標題和感言內容之間的間距 */
 }
-
 /* 分類標題樣式 */
 .category-title {
   color: #d6a0b2;
@@ -192,8 +264,17 @@ function previousFeeling(boxIndex) {
   line-height: normal;
 }
 
+.arrow-pc {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+.arrow-mobile {
+  width: 4vw;
+  height: 4vw;
+}
+
 .arrow-btn {
-  padding: 0.5rem;
+  padding: 1vw;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.8);
   border: none;
@@ -244,11 +325,17 @@ function previousFeeling(boxIndex) {
 .feeling-text {
   color: #2d3e63;
   font-family: 'Chiron Hei HK Text', sans-serif;
-  font-size: max(12px, 1.5vw); /* 響應式字體大小 */
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
+.feeling-textsize-mobile {
+  font-size: 2.5vw;
+}
+.feeling-textsize-pc {
+  font-size: 1.6vw;
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -266,6 +353,15 @@ function previousFeeling(boxIndex) {
   object-fit: cover;
   animation: rotate 5s linear infinite; /* 5秒完成一次旋轉，線性，無限循環 */
 }
+.sparkle-animation-mobile {
+  position: absolute;
+  width: 13vw;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  animation: rotate 5s linear infinite; /* 5秒完成一次旋轉，線性，無限循環 */
+}
 .sparkle-left {
   left: -5vw;
   top: -5vw;
@@ -273,5 +369,14 @@ function previousFeeling(boxIndex) {
 .sparkle-right {
   right: -4vw;
   bottom: -4vw;
+}
+
+.sparkle-left-mobile {
+  left: -4vw;
+  top: -4vw;
+}
+.sparkle-right-mobile {
+  right: -3vw;
+  bottom: -3vw;
 }
 </style>
