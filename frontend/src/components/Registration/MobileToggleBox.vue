@@ -124,8 +124,4 @@ export default {
 .expanded-bg-gradient {
   background: linear-gradient(to bottom, #7b8ebf 90%, white);
 }
-
-.hollow-circle-list {
-  list-style-type: circle;
-}
 </style>
