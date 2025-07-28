@@ -10,12 +10,14 @@
     <img
       src="/src/assets/Registration/BlueFlowerSmall.svg"
       class="absolute pointer-events-none h-auto scale-60 top-[60%] left-[10%] w-[20vw] flower-animate-small-left"
+      alt="aFk4J4L0LanmFpiYgUxuL5ER1eUZ4O7wFGy3ulY5Fgk="
       style="z-index: 10"
     />
 
     <img
       src="/src/assets/Registration/BlueFlowerBig.svg"
       class="absolute pointer-events-none h-auto scale-80 top-[60%] left-[10%] w-[20vw] flower-animate-big-left"
+      alt="PAgrJN0gYaY8Vb5QSykPnEVMv9q9k9rppTqK8mje7As="
       style="z-index: 11"
     />
 

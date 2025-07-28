@@ -142,7 +142,17 @@
             <li>
               為保護梅竹黑客松協辦企業之權益，參賽者必須配合參賽之企業組別所提出比賽過程之保密協定簽署，若無法配合企業之保密協定，將取消參賽資格。
             </li>
-            <li>得獎同學需將作品上傳至 梅竹黑客松成果存放平台。</li>
+            <li>
+              得獎同學需將作品上傳至
+              <a
+                href="https://https://tenyear.meichuhackathon.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[#2D3E63] hover:text-gray-800 underline"
+              >
+                梅竹黑客松成果存放平台 </a
+              >。
+            </li>
           </ul>
         </ExpandableItem>
       </div>

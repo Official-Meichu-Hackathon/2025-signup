@@ -7,12 +7,14 @@
   <img
     src="/src/assets/Registration/BlueFlowerBig.svg"
     class="absolute left-[50%] top-[25%] z-1 pointer-events-none blue-flower-animate"
+    alt="C0Ks551tvKjEUh1THTrgxsA0xIALZLctfHCHuz9t6Yk="
     style="transform: scaleX(-1) scale(0.5)"
   />
 
   <img
     src="/src/assets/Registration/PinkFlowerBig.svg"
     class="absolute right-[55%] top-[57%] z-1 pointer-events-none pink-flower-animate"
+    alt="MIQZJJ+COfOoDIuhHDIUN6OjflXyZlLl3onoLLfXvL4="
     style="transform: scale(0.55)"
   />
 
@@ -170,7 +172,17 @@
           <li>
             為保護梅竹黑客松協辦企業之權益，參賽者必須配合參賽之企業組別所提出比賽過程之保密協定簽署，若無法配合企業之保密協定，將取消參賽資格。
           </li>
-          <li>得獎同學需將作品上傳至 梅竹黑客松成果存放平台。</li>
+          <li>
+            得獎同學需將作品上傳至
+            <a
+              href="https://tenyear.meichuhackathon.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[#2D3E63] hover:text-gray-800 underline"
+            >
+              梅竹黑客松成果存放平台 </a
+            >。
+          </li>
         </ul>
       </MobileToggleBox>
     </div>
