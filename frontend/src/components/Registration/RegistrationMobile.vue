@@ -59,7 +59,7 @@
       >
         <div class="p-4 flex justify-between items-center">
           <span
-            class="font-bold text-lg"
+            class="font-bold text-lg font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 0 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
             >報名費用</span
           >
@@ -90,14 +90,14 @@
           :class="{ expanded: activeBox === 0, 'expanded-bg': activeBox === 0 }"
         >
           <div
-            class="px-4 pb-8 text-sm"
+            class="px-8 pb-8 text-base font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 0 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
           >
             ＄900／人（含保證金 ＄200 ）<br />
-            <ul class="list-disc pl-12 mt-2">
+            <ul class="list-disc pl-6 mt-2">
               <li>
                 跨域組隊：隊伍成員每人減免＄100
-                <ul class="list-circle pl-12 mt-1 hollow-circle-list">
+                <ul class="list-circle pl-6 mt-1 hollow-circle-list">
                   <li>報名隊伍內有三個（含）以上不同科系</li>
                   <li>
                     限創客交流組：該組內含高中職、大專院校生或碩博生、社會人士兩種（含）以上身份別之參賽者
@@ -118,7 +118,7 @@
       >
         <div class="p-4 flex justify-between items-center">
           <span
-            class="font-bold text-lg"
+            class="font-bold text-lg font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 1 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
             >保證金制度</span
           >
@@ -149,12 +149,12 @@
           :class="{ expanded: activeBox === 1, 'expanded-bg': activeBox === 1 }"
         >
           <div
-            class="px-4 pb-8 text-sm"
+            class="px-8 pb-8 text-base font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 1 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
           >
             若有以下情事，主辦單位將酌情不予退還個人之保證金：
             <br />
-            <ul class="list-disc pl-12 mt-2">
+            <ul class="list-disc pl-6 mt-2">
               <li>
                 未有特殊理由之隊伍，隊內無人參加錄取企業或新竹市府所辦理之賽前工作坊（若企業有開放線上參與，則隊內須至少一人參與線上或實體之賽前工作坊）
               </li>
@@ -177,7 +177,7 @@
       >
         <div class="p-4 flex justify-between items-center">
           <span
-            class="font-bold text-lg"
+            class="font-bold text-lg font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 2 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
             >報名資格</span
           >
@@ -208,7 +208,7 @@
           :class="{ expanded: activeBox === 2, 'expanded-bg': activeBox === 2 }"
         >
           <div
-            class="px-4 pb-8 text-sm"
+            class="px-8 pb-8 text-base font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 2 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
           >
             黑客組：全台大專院校生以及碩博士生，每隊至少需有一人員具備使用企業提供之資源的能力，黑客組全面不允許影片Demo。
@@ -226,7 +226,7 @@
       >
         <div class="p-4 flex justify-between items-center">
           <span
-            class="font-bold text-lg"
+            class="font-bold text-lg font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 3 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
             >報名方式</span
           >
@@ -257,7 +257,7 @@
           :class="{ expanded: activeBox === 3, 'expanded-bg': activeBox === 3 }"
         >
           <div
-            class="px-4 pb-8 text-sm"
+            class="px-8 pb-8 text-base font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 3 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
           >
             採自行報名組隊，梅竹黑客松提供
@@ -271,14 +271,14 @@
             供大家找隊友 <br />
             黑客組：每隊 3~5 人 <br />
             創客交流組：每隊 3~5 人 <br />
-            <ul class="list-disc pl-12 mt-2">
+            <ul class="list-disc pl-6 mt-2">
               <li>分為兩種報名渠道：黑客創客混合報名、創客交流組獨立報名</li>
-              <ul class="list-circle pl-12 mt-1 hollow-circle-list">
+              <ul class="list-circle pl-6 mt-1 hollow-circle-list">
                 <li>黑客組報名採志願排序制，須將創客交流組加入排序中</li>
               </ul>
               <li>若黑客組之單一企業超額，將採亂數分發</li>
               <li>創客交流組另需提交一頁式企劃方案，方完成報名手續</li>
-              <ul class="list-circle pl-12 mt-1 hollow-circle-list">
+              <ul class="list-circle pl-6 mt-1 hollow-circle-list">
                 <li>
                   黑客創客混合報名之志願序排列，若將創客交流組志願序排至前三（含），亦需繳交一頁式企劃方案
                 </li>
@@ -297,7 +297,7 @@
       >
         <div class="p-4 flex justify-between items-center">
           <span
-            class="font-bold text-lg"
+            class="font-bold text-lg font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 4 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
             >其他注意事項</span
           >
@@ -328,7 +328,7 @@
           :class="{ expanded: activeBox === 4, 'expanded-bg-gradient': activeBox === 4 }"
         >
           <div
-            class="px-4 pb-16 text-sm"
+            class="px-8 pb-16 text-base font-['Chiron_Hei_HK_Text']"
             :class="activeBox === 4 ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
           >
             <ul class="list-disc mt-2">
@@ -418,7 +418,7 @@ export default {
 }
 
 .expandable-content.expanded {
-  max-height: 500px;
+  max-height: 1000px;
 }
 
 .expanded-bg {
@@ -426,6 +426,10 @@ export default {
 }
 
 .expanded-bg-gradient {
-  background: linear-gradient(to bottom, #7b8ebf 80%, white);
+  background: linear-gradient(to bottom, #7b8ebf 90%, white);
+}
+
+.hollow-circle-list {
+  list-style-type: circle;
 }
 </style>
