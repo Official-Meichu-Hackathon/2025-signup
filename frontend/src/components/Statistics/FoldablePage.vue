@@ -65,7 +65,7 @@
               </a>
             </div>
           </div>
-          <div class="bg-white border-t-0" style="height: 200px">
+          <div class="bg-white border-t-0" style="height: 400px">
             <!-- blank space area -->
           </div>
         </div>
