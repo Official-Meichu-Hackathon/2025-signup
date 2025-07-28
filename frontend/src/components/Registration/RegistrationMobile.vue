@@ -1,4 +1,9 @@
 <template>
+  <img
+    src="/src/assets/Registration/MobileCloud.svg"
+    class="absolute scale-120 left-[0%] top-[10%] z-1 pointer-events-none"
+  />
+
   <!-- Big Word-->
   <div
     class="w-full min-h-[80px] bg-cover bg-center bg-no-repeat flex items-center justify-center"
@@ -29,8 +34,10 @@
     style="background-color: white; position: relative"
   >
     <div class="flex items-center ml-8 sm:ml-12 md:ml-24 h-80 pt-2">
-      <div class="w-0.5 h-full bg-[#2D3E63] translate-y-1"></div>
-      <div class="flex flex-col ml-8 sm:ml-12 md:ml-24 text-[#2D3E63] h-full justify-between">
+      <div class="w-0.5 h-full bg-[#2D3E63] translate-y-1 relative z-10"></div>
+      <div
+        class="flex flex-col ml-8 sm:ml-12 md:ml-24 text-[#2D3E63] h-full justify-between relative z-10"
+      >
         <div
           v-for="(item, idx) in scheduleItems"
           :key="idx"
@@ -46,11 +53,11 @@
   </div>
   <!-- Registration Info -->
   <div
-    class="w-full h-auto bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center pt-12 pb-2"
+    class="w-full h-auto bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center pt-12 pb-2 relative z-0"
     style="background-color: white; position: relative"
   >
     <!-- Toggle Boxes -->
-    <div class="w-[80vw] space-y-4">
+    <div class="w-[80vw] space-y-4 relative z-100">
       <!-- Box 1 - 報名費用 -->
       <MobileToggleBox title="報名費用" :index="0" :is-active="activeBox === 0" @toggle="toggleBox">
         ＄900／人（含保證金 ＄200 ）<br />
@@ -155,6 +162,10 @@
         </ul>
       </MobileToggleBox>
     </div>
+    <img
+      src="/src/assets/Registration/MobileCloud.svg"
+      class="absolute scale-120 right-[0%] top-[10%] z-10 pointer-events-none scale-x-[-1]"
+    />
   </div>
 </template>
 
