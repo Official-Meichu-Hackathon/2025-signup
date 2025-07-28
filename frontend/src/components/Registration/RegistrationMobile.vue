@@ -4,6 +4,18 @@
     class="absolute scale-120 left-[0%] top-[10%] z-1 pointer-events-none"
   />
 
+  <img
+    src="/src/assets/Registration/BlueFlowerBig.svg"
+    class="absolute left-[50%] top-[25%] z-1 pointer-events-none blue-flower-animate"
+    style="transform: scaleX(-1) scale(0.5)"
+  />
+
+  <img
+    src="/src/assets/Registration/PinkFlowerBig.svg"
+    class="absolute right-[55%] top-[57%] z-1 pointer-events-none pink-flower-animate"
+    style="transform: scale(0.55)"
+  />
+
   <!-- Big Word-->
   <div
     class="w-full min-h-[80px] bg-cover bg-center bg-no-repeat flex items-center justify-center"
@@ -53,7 +65,7 @@
   </div>
   <!-- Registration Info -->
   <div
-    class="w-full h-auto bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center pt-12 pb-2 relative z-0"
+    class="w-full h-auto bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center pt-24 pb-2 relative z-0"
     style="background-color: white; position: relative"
   >
     <!-- Toggle Boxes -->
@@ -220,5 +232,31 @@ export default {
 
 .hollow-circle-list {
   list-style-type: circle;
+}
+
+@keyframes pink-flower-rotate-scale {
+  0% {
+    transform: scale(0.55) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.2) rotate(-20deg);
+  }
+}
+
+.pink-flower-animate {
+  animation: pink-flower-rotate-scale 2s ease-in-out infinite alternate;
+}
+
+@keyframes blue-flower-rotate-scale {
+  0% {
+    transform: scaleX(-1) scale(0.5) rotate(0deg);
+  }
+  100% {
+    transform: scaleX(-1) scale(0.2) rotate(-20deg);
+  }
+}
+
+.blue-flower-animate {
+  animation: blue-flower-rotate-scale 2s ease-in-out infinite alternate;
 }
 </style>
