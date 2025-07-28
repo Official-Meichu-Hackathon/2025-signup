@@ -1,4 +1,5 @@
 <template>
+  <div id="sponsors"></div>
   <div class="flex justify-center relative w-full min-h-screen overflow-hidden">
     <div class="min-h-[calc(100vh-56px)] flex flex-col w-full">
       <div

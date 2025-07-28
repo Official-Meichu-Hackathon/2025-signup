@@ -8,7 +8,7 @@
     ></div>
 
     <!-- 彈出選單 -->
-    <div class="relative z-10 p-6 flex flex-row gap-[10vw]">
+    <div class="relative z-10 p-6 flex flex-col md:flex-row gap-[10vw]">
       <router-link :to="{ path: '/signup', query: { ref: 'hacker' } }">
         <!-- 黑客組 button -->
         <button
@@ -17,7 +17,7 @@
         >
           <img
             src="../../assets/Home/Frame-30.svg"
-            class="bg2 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
+            class="bg2 absolute transform scale-300 md:scale-200 bottom-[5%] left-[30%] z-0"
             alt="bg2"
           />
           <img
@@ -40,7 +40,7 @@
         >
           <img
             src="../../assets/Home/Frame-30.svg"
-            class="bg2 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
+            class="bg2 absolute transform scale-300 md:scale-200 bottom-[5%] left-[30%] z-0"
             alt="bg2"
           />
           <img

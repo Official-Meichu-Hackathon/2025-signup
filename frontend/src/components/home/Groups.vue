@@ -1,6 +1,7 @@
 <!-- Group Section : Apple -->
 
 <template>
+  <div id="groups"></div>
   <!-- layout for computer -->
   <div class="hidden md:block relative w-full min-h-screen overflow-hidden bg-[#2D3E63]">
     <img src="../../assets/Home/cursor.svg" alt="light-cursor" id="light-cursor" />
@@ -199,49 +200,50 @@
   </div>
 
   <!-- layout for phone -->
-  <div
-    class="block md:hidden bg-[white] relative w-full min-h-screen flex flex-col w-full overflow-hidden"
-  >
+  <div class="block md:hidden relative w-full bg-[white] flex flex-col w-full overflow-hidden">
     <!-- <h1>手機板排版</h1> -->
     <div
-      class="relative w-[90vw] text-[20px] bg-[white] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[5vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      class="relative w-[90vw] text-[20px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[5vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      id="groups"
     >
       組別介紹、工作坊
       <img
         src="../../assets/Home/6star-14-5.svg"
         alt="6star-14-5"
-        class="w-[13vw] absolute left-[65%] top-[4%]"
+        class="w-[13vw] absolute left-[65%] top-[4%] border-none"
       />
       <img
         src="../../assets/Home/6star-14-6.svg"
         alt="6star-14-6"
-        class="w-[5vw] absolute left-[75%] top-[4%]"
+        class="w-[5vw] absolute left-[75%] top-[4%] border-none"
       />
     </div>
 
     <!-- Card 組別介紹 -->
-    <div class="w-[80vw] relative mx-auto select-none">
+    <div class="w-[80vw] relative mx-auto min-h-screen select-none">
       <!-- tab ! -->
-      <!-- tab 黑客組 -->
-      <div
-        :class="[
-          activeTabPhone === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-          'target-area tab left-[7.5vw] w-[15vw] pt-[1vh] absolute',
-        ]"
-        @click="activeTabPhone = '黑客組'"
-      >
-        黑客組
-      </div>
+      <div class="tab-list flex flex-row">
+        <!-- tab 黑客組 -->
+        <div
+          :class="[
+            activeTabPhone === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+            'target-area tab left-[7.5vw] w-[15vw] pt-[1vh]',
+          ]"
+          @click="activeTabPhone = '黑客組'"
+        >
+          黑客組
+        </div>
 
-      <!-- tab 創客交流組 -->
-      <div
-        :class="[
-          activeTabPhone === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-          'target-area tab w-[20vw] pt-[1vh] left-[22.5vw] absolute ',
-        ]"
-        @click="activeTabPhone = '創客組'"
-      >
-        創客交流組
+        <!-- tab 創客交流組 -->
+        <div
+          :class="[
+            activeTabPhone === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+            'target-area tab w-[20vw] pt-[1vh] left-[22.5vw]',
+          ]"
+          @click="activeTabPhone = '創客組'"
+        >
+          創客交流組
+        </div>
       </div>
 
       <!-- 卡片背景 -->
@@ -249,7 +251,7 @@
       <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
       <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
       <div
-        class="w-[65vw] mt-[7vh] mx-auto relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
+        class="w-[65vw] mx-auto relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
       >
         <img
           src="../../assets/Home/people1.svg"
@@ -257,38 +259,36 @@
           class="swinging absolute z-2 w-[30vw] left-[-5%] top-[86%]"
         />
         <!-- content -->
-        <div class="pt-[5vh] pb-[5vh] pl-[3vw] pr-[3vw] relative">
+        <div class="pt-[3vh] pb-[3vh] pl-[3vw] pr-[3vw] relative">
           <!-- 內容區 -->
-          <div
-            v-if="activeTabPhone === '黑客組'"
-            class="card relative flex flex-col space-y-[1.5vh]"
-          >
-            <div class="w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
+          <div v-if="activeTabPhone === '黑客組'" class="relative flex flex-col space-y-[1.5vh]">
+            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
 
-            <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
-              致力於搭起學界與業界之間的橋樑，參賽者將運用企業資源並發揮創意回應企業命題，讓想像力與實作並存！
-              2025
-              年梅竹黑客松將由以下六家企業作為引導單位：CloudMosa、恩智浦半導體、台積電、羅技、Google、AMD。
-            </div>
-            <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
-              每間合作企業皆會舉辦工作坊，透過工作坊，參賽者將領取到企業所提供的硬體設備或軟體資源，
-              並且由企業之技術人員親自教學，簡易的指導參賽者如何使用相關技術或資源。舉辦地點與時間將依不同企業而定。
+            <div class="">
+              <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
+                致力於搭起學界與業界之間的橋樑，參賽者將運用企業資源並發揮創意回應企業命題，讓想像力與實作並存！
+                2025
+                年梅竹黑客松將由以下六家企業作為引導單位：CloudMosa、恩智浦半導體、台積電、羅技、Google、AMD。
+              </div>
+              <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
+                每間合作企業皆會舉辦工作坊，透過工作坊，參賽者將領取到企業所提供的硬體設備或軟體資源，
+                並且由企業之技術人員親自教學，簡易的指導參賽者如何使用相關技術或資源。舉辦地點與時間將依不同企業而定。
+              </div>
             </div>
           </div>
 
-          <div
-            v-if="activeTabPhone === '創客組'"
-            class="card space-y-[1.5vh] relative flex flex-col"
-          >
-            <div class="w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
+          <div v-if="activeTabPhone === '創客組'" class="space-y-[1.5vh] relative flex flex-col">
+            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
 
-            <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
-              由新竹市政府命題，融入新竹居民的民生交通情境，鼓勵參賽者跨領域，運用共享、共創的資源，實際動手解決問題。
-              過程中將促進各方人才創作交流，激發新穎想法並提升日常生活的用戶體驗，打造數位科技的創客精神！
-            </div>
-            <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
-              由市府團隊主辦，工作坊將包含技術教學、題目講解等內容，並包含參賽團隊選題之流程。
-              過程中參賽者將與講師討論應用技術，共同激盪出更多的靈感與創意。
+            <div class="">
+              <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
+                由新竹市政府命題，融入新竹居民的民生交通情境，鼓勵參賽者跨領域，運用共享、共創的資源，實際動手解決問題。
+                過程中將促進各方人才創作交流，激發新穎想法並提升日常生活的用戶體驗，打造數位科技的創客精神！
+              </div>
+              <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
+                由市府團隊主辦，工作坊將包含技術教學、題目講解等內容，並包含參賽團隊選題之流程。
+                過程中參賽者將與講師討論應用技術，共同激盪出更多的靈感與創意。
+              </div>
             </div>
           </div>
 
@@ -304,7 +304,7 @@
         </div>
       </div>
 
-      <div class="mb-[20vh]"></div>
+      <div class="mb-[5vh]"></div>
     </div>
   </div>
 </template>
@@ -412,6 +412,7 @@ onMounted(() => {
 .tab-list {
   margin-left: 7vw;
   height: 9vh;
+  /* border: 3px solid red; */
   /* min-height: 7vh; */
 }
 
@@ -496,7 +497,7 @@ onMounted(() => {
   .tab {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    height: 7vh;
+    /* height: 7vh; */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -505,6 +506,12 @@ onMounted(() => {
     font-weight: 900;
     font-family: 'Chiron Hei HK', sans-serif;
     border: 1.5px solid #f4f5f5;
+  }
+
+  .tab-list {
+    /* height:; */
+    max-height: 5vh;
+    padding-left: 0.5vw;
   }
 
   .content {
@@ -533,9 +540,9 @@ onMounted(() => {
     justify-content: center;
     display: flex;
     /* align-items: center; */
-    /* height: 58vh; */
+    height: 50vh;
     /* min-height: 58vh; */
-    /* border: 3px solid pink; */
+    border: 3px solid pink;
     flex-direction: column;
   }
 
