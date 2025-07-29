@@ -28,8 +28,7 @@
                   <h3 class="blue-text chart-title upper-chart-title">參賽者年級比</h3>
                 </div>
                 <div class="chart-image">
-                  <!-- <PieChart1 /> -->
-                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                  <ChartAge />
                 </div>
               </div>
 
@@ -39,7 +38,7 @@
                   <h3 class="blue-text chart-title upper-chart-title">參賽者學校分佈</h3>
                 </div>
                 <div class="chart-image">
-                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                  <ChartSchool />
                 </div>
               </div>
 
@@ -50,7 +49,7 @@
                   <p class="pink-text chart-subtitle text-gray-600">【黑客組】</p>
                 </div>
                 <div class="chart-image">
-                  <img src="../../assets/Statistics/chart1.svg" alt="圖表1" class="mx-auto" />
+                  <ChartHacker />
                 </div>
               </div>
 
@@ -61,7 +60,7 @@
                   <p class="pink-text chart-subtitle text-gray-600">【創客交流組】</p>
                 </div>
                 <div class="chart-image">
-                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                  <ChartMaker />
                 </div>
               </div>
             </div>
@@ -105,19 +104,16 @@
                 <div class="text-center">
                   <h3 class="blue-text chart-title-mobile">參賽者年級比</h3>
                 </div>
-                <!-- <div class="pie-chart-mobile">
-                  <PieChart1 />
-                </div> -->
-                <div class="chart-image">
-                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                <div class="pie-chart-mobile">
+                  <ChartAge />
                 </div>
               </div>
               <div class="chart-item items-center justify-center">
                 <div class="text-center">
                   <h3 class="blue-text chart-title-mobile">參賽者學校分佈</h3>
                 </div>
-                <div class="chart-image">
-                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                <div class="pie-chart-mobile">
+                  <ChartSchool />
                 </div>
               </div>
               <div class="chart-item items-center justify-center">
@@ -125,8 +121,8 @@
                   <h3 class="blue-text chart-title-mobile">參賽者科系分佈</h3>
                   <p class="pink-text chart-subtitle-mobile text-gray-600">【黑客組】</p>
                 </div>
-                <div class="chart-image">
-                  <img src="../../assets/Statistics/chart1.svg" alt="圖表1" class="mx-auto" />
+                <div class="pie-chart-mobile">
+                  <ChartHacker />
                 </div>
               </div>
               <div class="chart-item items-center justify-center">
@@ -134,8 +130,8 @@
                   <h3 class="blue-text chart-title-mobile">參賽者科系分佈</h3>
                   <p class="pink-text chart-subtitle-mobile text-gray-600">【創客交流組】</p>
                 </div>
-                <div class="chart-image">
-                  <img src="../../assets/Statistics/chart2.svg" alt="圖表2" class="mx-auto" />
+                <div class="pie-chart-mobile">
+                  <ChartMaker />
                 </div>
               </div>
             </div>
@@ -148,7 +144,10 @@
 
 <script setup>
 import { ref } from 'vue'
-// import PieChart1 from './PieChart1.vue'
+import ChartAge from './ChartAge.vue'
+import ChartSchool from './ChartSchool.vue'
+import ChartMaker from './ChartMaker.vue'
+import ChartHacker from './ChartHacker.vue'
 
 defineOptions({
   name: 'StatisticsCharts',
@@ -213,7 +212,6 @@ body {
   position: relative;
 }
 .chart-box-mobile {
-  /* 背景圖片 */
   background-image: url('../../assets/Statistics/chart-background-mobile.svg');
   background-size: cover;
   background-position: center;
@@ -237,8 +235,8 @@ body {
     -45deg,
     #d6a0b2 0,
     #d6a0b2 7px,
-    /* 虛線長度 */ transparent 5px,
-    transparent 12px /* 虛線間距 */
+    transparent 5px,
+    /* 虛線長度 */ transparent 12px /* 虛線間距 */
   );
   border-radius: 24px;
   pointer-events: none;
@@ -255,8 +253,8 @@ body {
     -45deg,
     #d6a0b2 0,
     #d6a0b2 7px,
-    /* 虛線長度 */ transparent 5px,
-    transparent 12px /* 虛線間距 */
+    transparent 5px,
+    /* 虛線長度 */ transparent 12px /* 虛線間距 */
   );
   border-radius: 24px;
   pointer-events: none;
@@ -328,8 +326,8 @@ body {
   z-index: 0;
 }
 .pie-chart-mobile {
-  width: 40vw;
-  height: auto;
+  width: 30vw;
+  height: 30vw;
   display: flex;
   justify-content: center;
   align-items: center;
