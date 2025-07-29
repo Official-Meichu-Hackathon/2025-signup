@@ -94,7 +94,7 @@
               v-for="(category, index) in feelingCategories"
               :key="index"
             >
-              <div class="category-title">{{ category.title }}</div>
+              <div class="pink-text" style="font-size: 3vw">{{ category.title }}</div>
               <div class="w-full flex items-center justify-center">
                 <!-- 左箭頭 -->
                 <button @click="previousFeeling(index)" class="arrow-btn">
@@ -206,11 +206,6 @@ const getSparkleImageUrl = (index) => {
   ).href
 }
 
-// 獲取當前感言文字
-// const getCurrentFeeling = (boxIndex) => {
-//   return feelingCategories[boxIndex].feelings[currentFeelings.value[boxIndex]]
-// }
-
 function toggleFeelings() {
   isOpen.value = !isOpen.value
 }
@@ -251,14 +246,14 @@ function previousFeeling(boxIndex) {
   align-items: center;
   justify-content: center;
   min-height: 200px;
-  gap: 1.5rem; /* 增加標題和感言內容之間的間距 */
+  gap: 1.5rem;
 }
-/* 分類標題樣式 */
+
 .category-title {
   color: #d6a0b2;
   text-align: center;
   font-family: 'Chiron Hei HK Text', sans-serif;
-  font-size: max(16px, 2.3vw); /* 響應式字體大小 */
+  font-size: max(16px, 2.3vw);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -316,12 +311,7 @@ function previousFeeling(boxIndex) {
   opacity: 1;
   transform: translateY(0);
 }
-/* .feeling-content img {
-  display: block;
-  width: 10%;
-  height: auto;
-  object-fit: contain;
-} */
+
 .feeling-text {
   color: #2d3e63;
   font-family: 'Chiron Hei HK Text', sans-serif;
@@ -351,7 +341,7 @@ function previousFeeling(boxIndex) {
   object-fit: cover;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  animation: rotate 5s linear infinite; /* 5秒完成一次旋轉，線性，無限循環 */
+  animation: rotate 5s linear infinite;
 }
 .sparkle-animation-mobile {
   position: absolute;
@@ -360,7 +350,7 @@ function previousFeeling(boxIndex) {
   object-fit: cover;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  animation: rotate 5s linear infinite; /* 5秒完成一次旋轉，線性，無限循環 */
+  animation: rotate 5s linear infinite;
 }
 .sparkle-left {
   left: -5vw;
