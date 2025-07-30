@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
 import '../assets/css/signup.css'
 import TitleHeader from '../components/signup/TitleHeader.vue'
 import StepCardsHeader from '../components/signup/StepCardsHeader.vue'
@@ -13,8 +12,6 @@ import FileUpload from '../components/signup/form/FileUpload.vue'
 defineOptions({
   name: 'SignupPage',
 })
-
-const route = useRoute()
 
 const playerCount = ref(null)
 const currentStepOrder = ref(1)
@@ -207,7 +204,7 @@ const submit = async () => {
 (1) 企業題目或組別將依據隊伍的志願序分發。若單一企業或組別超額，將亂數抽籤決定。
 (2) 未報名創客交流組則將創客交流組的志願序填為 7。"
         :options="
-          route.query.ref === 'maker'
+          $route.query.ref === 'maker'
             ? ['創客交流組', 'CloudMosa', 'NXP', 'TSMC', 'Logitech', 'Google', 'AMD']
             : ['CloudMosa', 'NXP', 'TSMC', 'Logitech', 'Google', 'AMD', '創客交流組']
         "
