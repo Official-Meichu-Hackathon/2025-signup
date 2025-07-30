@@ -8,7 +8,7 @@ import '../assets/css/signup.css'
     style="min-height: calc(100vh - 56px - 134px)"
   >
     <div
-      class="bg-white border border-gray-200 shadow-2xl rounded-3xl p-8 text-center flex items-center justify-center flex-col py-35 px-30 relative"
+      class="bg-white border border-gray-200 shadow-2xl rounded-3xl text-center flex items-center justify-center flex-col py-20 md:py-35 px-15 md:px-30 relative"
     >
       <h1 class="text-6xl font-extrabold text-darkblue mb-6 relative z-10">報名成功</h1>
       <img
