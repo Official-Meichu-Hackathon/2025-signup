@@ -274,7 +274,7 @@
 
   <!-- layout for phone -->
   <div
-    class="block md:hidden flex flex-col justify-center items-center relative w-full overflow-hidden h-[70vh]"
+    class="block md:hidden mb-[3vh] flex flex-col justify-center items-center relative w-full overflow-hidden h-[80vh]"
   >
     <div class="mb-[15px] title text-center font-['Chiron_Hei_HK'] font-bold">工作人員名單</div>
     <div class="w-[80vw]">

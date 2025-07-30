@@ -7,7 +7,7 @@
     <div class="p-4 flex justify-between items-center">
       <span
         class="font-bold text-[16px] font-['Chiron_Hei_HK']"
-        :class="isActive ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
+        :class="isActive ? 'text-[#F4F5F5]' : 'text-[#2D3E63]'"
       >
         {{ title }}
       </span>
