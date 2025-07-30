@@ -25,11 +25,19 @@ onMounted(() => {
     chartInstance = new Chart(canvasRef.value, {
       type: 'pie',
       data: {
-        labels: ['電機資訊學院', '理學院', '管理學院', '藝術學院', '其他'],
+        labels: ['電機資訊學院', '理學院', '管理學院', '藝術學院', '生命科學院', '工學院', '其他'],
         datasets: [
           {
-            data: [67.0, 3.2, 20.7, 3.2, 3.2],
-            backgroundColor: ['#C27992', '#D6A0B2', '#2D3E63', '#7489B8', '#A6B3CF'],
+            data: [67.0, 3.2, 20.7, 3.2, 2.1, 0.5, 3.2],
+            backgroundColor: [
+              '#C27992',
+              '#D6A0B2',
+              '#2D3E63',
+              '#4B5C82',
+              '#7489B8',
+              '#A6B3CF',
+              '#DBBDC7',
+            ],
             borderWidth: 0,
           },
         ],
