@@ -36,7 +36,7 @@
       "
     />
     <img
-      src="/src/assets/Registration/registration_bg.png"
+      src="/src/assets/Registration/registration_bg.webp"
       style="
         position: absolute;
         top: 0;
@@ -51,51 +51,7 @@
   </div>
 </template>
 
-<style scoped>
-@keyframes rotateWingLeft {
-  0% {
-    transform: rotate(0deg);
-  }
-  20% {
-    transform: rotate(16.5deg);
-  }
-  50% {
-    transform: rotate(16.5deg);
-  }
-  70% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes rotateWingRight {
-  0% {
-    transform: rotate(0deg);
-  }
-  20% {
-    transform: rotate(-16.5deg);
-  }
-  50% {
-    transform: rotate(-16.5deg);
-  }
-  70% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.wing-animate-left {
-  animation: rotateWingLeft 1.8s ease-in-out infinite;
-}
-
-.wing-animate-right {
-  animation: rotateWingRight 1.8s ease-in-out infinite;
-}
-</style>
+<style scoped></style>
 
 <script>
 export default {

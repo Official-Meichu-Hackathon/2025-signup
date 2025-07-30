@@ -4,6 +4,7 @@
     <div class="absolute w-full -z-10 h-auto">
       <div class="flex flex-col">
         <!-- 上方背景與橢圓疊加 -->
+
         <div class="relative">
           <img src="../../assets/Problems/background/bg.svg" alt="上方背景" class="w-full -z-10" />
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-[calc(100vh-56px)] flex flex-col items-center overflow-hidden">
+  <div class="min-h-[calc(100vh-180px)] flex flex-col items-center overflow-hidden">
     <div class="w-full mx-auto relative">
       <FoldablePage />
     </div>
