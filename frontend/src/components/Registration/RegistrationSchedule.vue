@@ -5,17 +5,19 @@
     class="w-full min-h-[1000px] flex items-center justify-center"
     style="background-color: #2d3e63; position: relative"
   >
-    <img src="/src/assets/Registration/state=active.svg" alt="light-cursor" id="light-cursor" />
+    <img src="/src/assets/Registration/cursor.webp" alt="light-cursor" id="light-cursor" />
     <!-- Flowers -->
     <img
       src="/src/assets/Registration/BlueFlowerSmall.svg"
       class="absolute pointer-events-none h-auto scale-60 top-[60%] left-[10%] w-[20vw] flower-animate-small-left"
+      alt="aFk4J4L0LanmFpiYgUxuL5ER1eUZ4O7wFGy3ulY5Fgk="
       style="z-index: 10"
     />
 
     <img
       src="/src/assets/Registration/BlueFlowerBig.svg"
       class="absolute pointer-events-none h-auto scale-80 top-[60%] left-[10%] w-[20vw] flower-animate-big-left"
+      alt="PAgrJN0gYaY8Vb5QSykPnEVMv9q9k9rppTqK8mje7As="
       style="z-index: 11"
     />
 
@@ -121,14 +123,14 @@
 #light-cursor {
   position: absolute;
   pointer-events: none;
-  z-index: 9;
-  width: 20vw;
-  height: 20vw;
+  z-index: 1;
+  width: 16vw;
+  height: 15vw;
   user-select: none;
   border-radius: 50%;
   transform-origin: 100% 50%;
   transform: translate(-60%, -50%);
-  filter: blur(30px);
+  filter: blur(60px);
 }
 </style>
 

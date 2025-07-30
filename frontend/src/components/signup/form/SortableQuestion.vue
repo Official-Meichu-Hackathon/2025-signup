@@ -20,7 +20,6 @@ const sortedOptions = defineModel()
 
 const draggedIndex = ref(null)
 const dragOnIndex = ref(null)
-const inDragMode = ref(true)
 const showModal = ref(false)
 
 const mandarinNumbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十']
@@ -84,18 +83,17 @@ const moveDown = (index) => {
   swapItems(index, index + 1)
 }
 
-const resetOrder = () => {
-  sortedOptions.value = [...props.options]
-}
+// const resetOrder = () => {
+//   sortedOptions.value = [...props.options]
+// }
 
 const handleApplyPriorities = (sortedItems) => {
   sortedOptions.value = sortedItems
 }
 
 const getItemClass = (index) => {
-  const baseClass = inDragMode.value
-    ? 'group relative bg-white border-2 rounded-lg p-3 cursor-move transition-all duration-200 flex-1'
-    : 'group relative bg-white border-2 rounded-lg p-3 transition-all duration-200 flex-1'
+  const baseClass =
+    'group relative bg-white border-2 rounded-lg p-3 md:cursor-move transition-all duration-200 flex-1'
 
   if (dragOnIndex.value === index && draggedIndex.value !== index) {
     return `${baseClass} border-darkblue bg-blue-50`
@@ -116,19 +114,19 @@ const getItemClass = (index) => {
 
     <div class="mx-4 mt-3">
       <div class="flex gap-2 mb-3 flex-wrap">
-        <button
+        <!-- <button
           @click="resetOrder"
           class="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded-md transition-colors cursor-pointer"
         >
           重置順序
-        </button>
+        </button> -->
 
-        <button
+        <!-- <button
           @click="() => (inDragMode = !inDragMode)"
           class="px-3 py-1 text-sm bg-blue-200 hover:bg-blue-300 rounded-md transition-colors cursor-pointer"
         >
           {{ inDragMode ? '按鈕模式' : '拖拉模式' }}
-        </button>
+        </button> -->
 
         <button
           @click="() => (showModal = true)"
@@ -149,8 +147,8 @@ const getItemClass = (index) => {
           </div>
 
           <div
-            v-if="inDragMode"
             draggable="true"
+            class="hidden md:block"
             :class="getItemClass(index)"
             @dragstart="handleDragStart($event, index)"
             @dragend="handleDragEnd"
@@ -181,7 +179,7 @@ const getItemClass = (index) => {
             />
           </div>
 
-          <div v-else :class="getItemClass(index)">
+          <div class="block md:hidden" :class="getItemClass(index)">
             <div class="flex items-center justify-between">
               <span class="text-lg">{{ option }}</span>
 
@@ -219,10 +217,11 @@ const getItemClass = (index) => {
         </div>
       </div>
 
-      <div class="mt-3 text-sm text-gray-600">
-        💡 提示：{{
-          inDragMode ? '拖拉項目來調整順序，或點擊其他模式作為替代方案' : '使用按鈕來調整項目順序'
-        }}
+      <div class="mt-3 text-sm text-gray-600 hidden md:block">
+        💡 提示： 拖拉項目來調整項目順序，或是點擊數字輸入模式作為其他方案
+      </div>
+      <div class="mt-3 text-sm text-gray-600 block md:hidden">
+        💡 提示： 使用按鈕來調整項目順序，或是點擊數字輸入模式作為其他方案
       </div>
     </div>
 

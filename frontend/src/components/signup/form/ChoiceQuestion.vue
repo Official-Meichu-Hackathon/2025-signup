@@ -20,13 +20,23 @@ const selectedValue = defineModel()
 </script>
 
 <template>
-  <div class="py-4">
+  <div class="py-4 whitespace-pre-line">
     <h3>{{ title }}</h3>
-    <embed
+    <iframe
       v-if="pdf"
-      :src="`https://drive.google.com/viewerng/
-viewer?embedded=true&url=${pdf}`"
-    />
+      :src="`https://drive.google.com/file/d/${pdf}/preview`"
+      class="w-full h-[60vh] my-5"
+      allow="autoplay"
+    ></iframe>
+    <p v-if="pdf" class="mx-4 mt-2 whitespace-pre-line">
+      若pdf無法正確內嵌顯示，你可以
+      <a
+        :href="`https://drive.google.com/file/d/${pdf}/view`"
+        class="text-blue-600 hover:underline"
+        target="_blank"
+        >點擊我下載</a
+      >（在新分頁中開啟）
+    </p>
     <p v-if="description" class="mx-4 mt-2 whitespace-pre-line">{{ description }}</p>
 
     <div class="mx-4 mt-3 flex flex-wrap gap-4">
