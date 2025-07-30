@@ -120,7 +120,7 @@
             <template v-if="activeTab === '行政部'">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
-                  src="../../assets/Home/staff/admin.jpg"
+                  src="../../assets/Home/staff/admin.JPG"
                   alt="admin_photo"
                   class="w-full h-full object-cover rounded-[30px] scale-[1.2] object-center object-[38%_center]"
                 />
@@ -159,7 +159,7 @@
             <template v-if="activeTab === '公關部'">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
-                  src="../../assets/Home/staff/PR.jpg"
+                  src="../../assets/Home/staff/PR.JPG"
                   alt="PR_photo"
                   class="w-full h-full object-cover object-[35%_center] rounded-[30px]"
                 />
@@ -182,7 +182,7 @@
             <template v-if="activeTab === '活動部'">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
-                  src="../../assets/Home/staff/activities.jpg"
+                  src="../../assets/Home/staff/activities.JPG"
                   alt="act_photo"
                   class="w-full h-full object-cover object-[35%_45%] rounded-[30px]"
                 />
@@ -203,7 +203,7 @@
             <template v-if="activeTab === '財務部'">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
-                  src="../../assets/Home/staff/finance.jpg"
+                  src="../../assets/Home/staff/finance.JPG"
                   alt="finance_photo"
                   class="w-full h-full object-cover object-[35%_0%] rounded-[30px]"
                 />

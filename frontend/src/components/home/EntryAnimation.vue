@@ -2,10 +2,6 @@
   <div>
     <div ref="scrollContainer" class="scroll-container">
       <canvas ref="canvasRef" :class="['sticky-canvas', { breathing: isBreathing }]"></canvas>
-      <div v-if="showScrollHint" class="scroll-hint">
-        <div class="scroll-indicator">↓</div>
-        <p>Scroll again to continue</p>
-      </div>
     </div>
   </div>
 </template>
@@ -20,10 +16,7 @@ const setEntryAnimationLoaded = inject('setEntryAnimationLoaded')
 
 const scrollContainer = ref(null)
 const canvasRef = ref(null)
-const hasReachedEnd = ref(false)
 const lastScrollY = ref(0)
-const showScrollHint = ref(false)
-const isLocked = ref(false) // Add this new state
 const isLoaded = ref(false)
 const oneSecondLoaded = ref(false) // Track if one second has passed
 
@@ -71,7 +64,7 @@ const drawFrame = (idx) => {
 }
 
 const handleScroll = () => {
-  if (!scrollContainer.value || isLocked.value) {
+  if (!scrollContainer.value) {
     return
   }
 
@@ -83,27 +76,12 @@ const handleScroll = () => {
   let scrollProgress = rawScrollProgress
   const frameIndex = Math.min(frameCnt - 1, Math.floor(scrollProgress * frameCnt))
 
-  // Lock scroll at the final frame
-  // console.log(`Top: ${top}, Scrollable Dist: ${scrollableDist}, Progress: ${scrollProgress}, Frame Index: ${frameIndex}`)
-
   requestAnimationFrame(() => {
     drawFrame(frameIndex)
     animate()
   })
 
   lastScrollY.value = window.scrollY
-}
-
-const unlockScroll = (event) => {
-  // Only unlock on downward scroll
-  if (event.deltaY > 0) {
-    hasReachedEnd.value = true
-    isLocked.value = false
-    showScrollHint.value = false
-  } else {
-    // If scrolling up, re-listen for the next wheel event
-    window.addEventListener('wheel', unlockScroll, { once: true })
-  }
 }
 
 const particles = []
@@ -269,7 +247,6 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
-  window.removeEventListener('wheel', unlockScroll) // Clean up wheel listener
   if (animationFrameId) {
     cancelAnimationFrame(animationFrameId)
   }
@@ -313,44 +290,12 @@ body {
   animation: breathe 2s ease-in-out infinite alternate;
 }
 
-.scroll-hint {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: #666;
-  pointer-events: none;
-  opacity: 0.8;
-}
-
-.scroll-indicator {
-  font-size: 24px;
-  animation: bounce 1s infinite;
-}
-
 @keyframes breathe {
   0% {
     transform: scale(1);
   }
   100% {
     transform: scale(1.02);
-  }
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
   }
 }
 
