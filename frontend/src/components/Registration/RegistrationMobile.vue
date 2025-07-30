@@ -11,13 +11,6 @@
     style="transform: scaleX(-1) scale(0.5)"
   />
 
-  <img
-    src="/src/assets/Registration/PinkFlowerBig.svg"
-    class="absolute right-[55%] top-[57%] z-1 pointer-events-none pink-flower-animate"
-    alt="MIQZJJ+COfOoDIuhHDIUN6OjflXyZlLl3onoLLfXvL4="
-    style="transform: scale(0.55)"
-  />
-
   <!-- Big Word-->
   <div
     class="w-full min-h-[80px] bg-cover bg-center bg-no-repeat flex items-center justify-center"
@@ -64,6 +57,13 @@
         </div>
       </div>
     </div>
+
+    <img
+      src="/src/assets/Registration/PinkFlowerBig.svg"
+      class="absolute right-[55%] top-[70%] z-1 pointer-events-none pink-flower-animate"
+      alt="MIQZJJ+COfOoDIuhHDIUN6OjflXyZlLl3onoLLfXvL4="
+      style="transform: scale(0.55)"
+    />
   </div>
   <!-- Registration Info -->
   <div

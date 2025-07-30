@@ -5,10 +5,12 @@
       class="w-full flex justify-between items-center text-left text-[#2D3E63] text-2xl font-bold font-['Chiron_Hei_HK_Text'] hover:text-[#2D3E63] transition-colors"
     >
       <div
-        class="w-40 h-12 flex items-center justify-start text-[#2D3E63] text-4xl font-bold font-['Noto Serif',serif] whitespace-nowrap pl-3 mb-[2px]"
+        class="w-40 h-12 flex items-center justify-start text-[#2D3E63] text-4xl font-bold whitespace-nowrap pl-3 mb-[2px]"
+        style="font-family: 'Noto Serif', serif"
       >
         {{ title }}
       </div>
+
       <svg
         class="w-8 h-8 transition-transform duration-300 toggle-flicker"
         fill="none"
