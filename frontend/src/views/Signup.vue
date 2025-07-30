@@ -260,16 +260,19 @@ const submit = async () => {
       />
 
       <TextQuestion
-        title="*就讀學校（填寫全名 eg.國立陽明交通大學）"
+        title="*就讀學校（填寫全名 e.g.國立陽明交通大學）"
         v-model="playerData[index].school"
       />
 
       <TextQuestion
-        title="*科系（填寫全名 eg.資訊工程學系）"
+        title="*科系（填寫全名 e.g.資訊工程學系）"
         v-model="playerData[index].department"
       />
 
-      <TextQuestion title="*年級" v-model="playerData[index].grade" />
+      <TextQuestion
+        title="*年級（格式：XX X年級 e.g.大學三年級、碩士二年級、已畢業）"
+        v-model="playerData[index].grade"
+      />
 
       <TextQuestion title="職業（社會人士填寫）" v-model="playerData[index].occupation" />
 
