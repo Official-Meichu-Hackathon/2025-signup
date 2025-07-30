@@ -73,7 +73,7 @@
           style="left: -8rem"
         />
         <img
-          src="/HomeImages/imagePlaceholder.png"
+          src="/HomeImages/MCH.jpg"
           alt="Entry Animation"
           class="w-[clamp(500px,60vw,1080px)] h-auto mt-40 object-contain z-10"
         />

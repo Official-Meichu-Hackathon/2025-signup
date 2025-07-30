@@ -227,16 +227,10 @@ class Particle {
 
 let animationFrameId
 const animate = () => {
-  // We only need to animate if the user isn't scrolling.
-  // The scroll handler will draw frames.
-  // We can get the current frame from the scroll progress if needed,
-  // but for now, let's just keep the particles moving.
   const rect = scrollContainer.value.getBoundingClientRect()
-  // Only run this animation loop if the element is not being scrolled through
   if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
     // It's in the main viewport and being scrolled, so handleScroll will manage drawing
   } else {
-    // It's either fully visible or not in the scroll path, animate the current frame
     const currentFrame = isBreathing.value ? 0 : frameCnt - 1
     drawFrame(currentFrame)
   }

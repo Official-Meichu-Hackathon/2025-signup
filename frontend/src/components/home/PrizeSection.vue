@@ -40,9 +40,7 @@
           <!-- subtitle -->
           <div class="mb-[2vh] text-white text-[28px] font-black font-['Chiron_Hei_HK'] leading-10">
             黑客組
-            <div
-              class="info leading-[25px] text-slate-700 text-sm font-bold font-['Chiron_Hei_HK']"
-            >
+            <div class="info leading-[25px] text-slate-700 font-bold font-['Chiron_Hei_HK']">
               每間企業獨立評選
             </div>
           </div>
@@ -58,7 +56,7 @@
             <div class="flex flex-col text-white font-bold font-['Chiron_Hei_HK'] leading-10">
               第三名：新台幣 15,000 元整、企業實體獎品
               <!-- additional info-->
-              <div class="leading-normal text-slate-700 text-sm font-bold font-['Chiron_Hei_HK']">
+              <div class="info leading-normal text-slate-700 font-bold font-['Chiron_Hei_HK']">
                 *實習機會主要依據企業本身而定
               </div>
             </div>
@@ -156,7 +154,9 @@
           <div class="mb-[2vh] text-white text-[28px] font-black font-['Chiron_Hei_HK'] leading-10">
             梅竹大獎
 
-            <div class="info leading-5 text-slate-700 text-sm font-bold font-['Chiron_Hei_HK']">
+            <div
+              class="info leading-[25px] text-slate-700 text-sm font-bold font-['Chiron_Hei_HK']"
+            >
               為黑客組複賽，由各間企業之第一名獲獎組別共同角逐
             </div>
           </div>
@@ -411,6 +411,7 @@ onUnmounted(() => {
   padding: 3vh 2vh;
   z-index: 2;
 }
+
 .title,
 .subtitle,
 .content {
@@ -418,12 +419,16 @@ onUnmounted(() => {
   z-index: 8; /* 確保一定在 light-cursor 上方 */
 }
 
+.info {
+  font-size: clamp(16px, 1vw, 18px);
+}
+
 .content {
   /* margin-left: 1vw; */
   margin-right: 2vw;
   /* margin-top: 1vh; */
   margin-bottom: 1vh;
-  font-size: clamp(16px, 1.8vw, 22px);
+  font-size: clamp(18px, 1.8vw, 22px);
   text-align: justify;
   /* border: 3px solid blue; */
 }
@@ -433,7 +438,7 @@ onUnmounted(() => {
   margin-right: 1vw;
   /* margin-top: 1vh; */
   margin-bottom: 1vh;
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(18px, 1.8vw, 20px);
   text-align: justify;
   /* border: 3px solid blue; */
 }
