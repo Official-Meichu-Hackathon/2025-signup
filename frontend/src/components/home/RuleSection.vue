@@ -287,15 +287,18 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- moving star -->
-      <div v-if="activeTabPhone === '創客組'" class="w-screen relative flex flex-col ml-[0]">
-        <!-- <div class="relative flex">
-          <img src="../../assets/Home/bluestar-10-1.svg" alt="bluestar-10-1" class="bluestar-1">
-          <img src="../../assets/Home/bluestar-11-3.svg" alt="bluestar-11-3" class="bluestar-2">
-        </div> -->
-        <StarMove></StarMove>
-      </div>
+    <!-- moving star => 原本被-->
+    <div
+      v-if="activeTabPhone === '創客組'"
+      class="w-[110vw] relative flex flex-col px-0 ml-0 mr-0 pl-[0]"
+    >
+      <!-- <div class="relative flex">
+        <img src="../../assets/Home/bluestar-10-1.svg" alt="bluestar-10-1" class="bluestar-1">
+        <img src="../../assets/Home/bluestar-11-3.svg" alt="bluestar-11-3" class="bluestar-2">
+      </div> -->
+      <StarMove></StarMove>
     </div>
 
     <div class="mb-[8vh]"></div>

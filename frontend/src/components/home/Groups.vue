@@ -50,7 +50,7 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[63vw] h-[42vh] ml-[7vw] bg-card relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl justify-center items-center"
+          class="target-area w-[63vw] h-[42vh] ml-[7vw] relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl justify-center items-center"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
@@ -148,7 +148,7 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] bg-card relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
+          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
@@ -812,10 +812,6 @@ onMounted(() => {
   /* padding: 1.5rem 1rem; */
   /* border: 3px solid pink; */
   /* flex-direction: column; */
-}
-
-.bg-card {
-  /* padding: 1.5rem 1rem; */
 }
 
 .target-area {
