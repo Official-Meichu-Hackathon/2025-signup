@@ -1,97 +1,197 @@
 <template>
-  <div id="sponsors"></div>
   <div class="flex justify-center relative w-full min-h-screen overflow-hidden">
     <div class="min-h-[calc(100vh-56px)] flex flex-col w-full">
       <div
-        class="relative mx-auto title mt-[8vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
+        class="relative mx-auto title md:mt-[8vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
         <div>合作企業</div>
-        <div class="collaborators">
-          <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
-            <img
-              class="!w-[22vw]"
-              src="../../assets/Home/company/00_新竹市政府-01 1.svg"
-              alt="新竹市政府"
-            />
-          </a>
-          <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
-            <img
-              class="!w-[24vw]"
-              src="../../assets/Home/company/00_新竹市政府-01 2.svg"
-              alt="新竹市政府"
-            />
-          </a>
+
+        <!-- Desktop collaborators -->
+        <div v-if="!isMobile">
+          <div class="collaborators">
+            <div class="collaborator-item">
+              <a
+                href="https://www.hccg.gov.tw/hccg/index"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="!w-[22vw]"
+                  src="../../assets/Home/company/00_新竹市政府-01 1.svg"
+                  alt="新竹市政府"
+                />
+              </a>
+            </div>
+            <div class="collaborator-item">
+              <a
+                href="https://www.hccg.gov.tw/hccg/index"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="!w-[24vw]"
+                  src="../../assets/Home/company/00_新竹市政府-01 2.svg"
+                  alt="新竹市政府"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="collaborators">
+            <div class="collaborator-item">
+              <a href="https://www.cloudmosa.com/about" target="_blank" rel="noopener noreferrer">
+                <img
+                  class="!w-[22vw]"
+                  src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
+                  alt="CloudMosa"
+                />
+              </a>
+            </div>
+            <div class="collaborator-item">
+              <a
+                href="https://www.facebook.com/nxpsemitaiwan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="!w-[15vw]"
+                  src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
+                  alt="NXP"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="collaborators">
+            <div class="collaborator-item">
+              <a href="https://www.tsmc.com/chinese" target="_blank" rel="noopener noreferrer">
+                <img class="!w-[15vw]" src="../../assets/Home/company/3_TSMC-01 1.svg" alt="TSMC" />
+              </a>
+            </div>
+            <div class="collaborator-item">
+              <a href="https://www.logitech.com/zh-tw" target="_blank" rel="noopener noreferrer">
+                <img
+                  class="!w-[25vw]"
+                  src="../../assets/Home/company/4_Logitech 1.svg"
+                  alt="Logitech"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="collaborators">
+            <div class="collaborator-item">
+              <a href="https://about.google/" target="_blank" rel="noopener noreferrer">
+                <img
+                  class="!w-[20vw]"
+                  src="../../assets/Home/company/5_Google 1.svg"
+                  alt="Google"
+                />
+              </a>
+            </div>
+            <div class="collaborator-item">
+              <a href="https://www.amd.com/zh-tw.html" target="_blank" rel="noopener noreferrer">
+                <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
+              </a>
+            </div>
+          </div>
+          <div class="collaborators !gap-0 special-coop">
+            <div class="collaborator-item !w-[18vw] pl-[3vw]">特別合作企業</div>
+            <div class="collaborator-item">
+              <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
+                <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="collaborators">
-          <div class="collaborator-item">
-            <a href="https://www.cloudmosa.com/about" target="_blank" rel="noopener noreferrer">
-              <!-- wasn't provided-->
+
+        <!-- Mobile collaborators -->
+        <div v-if="isMobile" class="mobile-collaborators">
+          <div class="mobile-row">
+            <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
               <img
-                class="!w-[22vw]"
+                class="mobile-img"
+                src="../../assets/Home/company/00_新竹市政府-01 1.svg"
+                alt="新竹市政府"
+              />
+            </a>
+            <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
+              <img
+                class="mobile-img"
+                src="../../assets/Home/company/00_新竹市政府-01 2.svg"
+                alt="新竹市政府"
+              />
+            </a>
+          </div>
+          <div class="mobile-row">
+            <a href="https://www.cloudmosa.com/about" target="_blank" rel="noopener noreferrer">
+              <img
+                class="mobile-img"
                 src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
                 alt="CloudMosa"
               />
             </a>
-          </div>
-          <div class="collaborator-item">
             <a
               href="https://www.facebook.com/nxpsemitaiwan"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                class="!w-[15vw]"
+                class="mobile-img !w-[28vw]"
                 src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
                 alt="NXP"
               />
             </a>
           </div>
-        </div>
-        <div class="collaborators">
-          <div class="collaborator-item">
+          <div class="mobile-row">
             <a href="https://www.tsmc.com/chinese" target="_blank" rel="noopener noreferrer">
-              <img class="!w-[15vw]" src="../../assets/Home/company/3_TSMC-01 1.svg" alt="TSMC" />
-              <!-- wasn't provided  -->
+              <img
+                class="mobile-img !w-[30vw]"
+                src="../../assets/Home/company/3_TSMC-01 1.svg"
+                alt="TSMC"
+              />
             </a>
-          </div>
-          <div class="collaborator-item">
             <a href="https://www.logitech.com/zh-tw" target="_blank" rel="noopener noreferrer">
               <img
-                class="!w-[25vw]"
+                class="mobile-img !w-[40vw]"
                 src="../../assets/Home/company/4_Logitech 1.svg"
                 alt="Logitech"
               />
             </a>
           </div>
-        </div>
-
-        <div class="collaborators">
-          <div class="collaborator-item">
+          <div class="mobile-row">
             <a href="https://about.google/" target="_blank" rel="noopener noreferrer">
-              <!-- wasn't provided -->
-              <img class="!w-[20vw]" src="../../assets/Home/company/5_Google 1.svg" alt="Google" />
+              <img
+                class="mobile-img !w-[30vw]"
+                src="../../assets/Home/company/5_Google 1.svg"
+                alt="Google"
+              />
             </a>
-          </div>
-          <div class="collaborator-item">
             <a href="https://www.amd.com/zh-tw.html" target="_blank" rel="noopener noreferrer">
-              <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
-              <!-- wasn't provided -->
+              <img
+                class="mobile-img !w-[30vw]"
+                src="../../assets/Home/company/6_AMD 1.svg"
+                alt="AMD"
+              />
             </a>
           </div>
-        </div>
-        <div class="collaborators !gap-0 special-coop">
-          <div class="collaborator-item !w-[18vw] pl-[3vw]">特別合作企業</div>
-          <div class="collaborator-item">
+          <div class="mobile-special-coop">
+            <span class="special-text">特別合作企業</span>
             <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
-              <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
+              <img class="mobile-img" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
             </a>
           </div>
         </div>
 
         <div>網路贊助</div>
-        <div class="collaborators">
+        <div v-if="isMobile" class="collaborators my-4">
           <div class="collaborator-item">
             <img class="!w-[20vw]" src="../../assets/Home/chunghwa.svg" alt="中華電信" />
+          </div>
+        </div>
+
+        <div v-if="!isMobile" class="collaborators">
+          <div class="collaborator-item">
+            <a href="https://www.chunghwa.com.tw/" target="_blank" rel="noopener noreferrer">
+              <img class="!w-[20vw]" src="../../assets/Home/chunghwa.svg" alt="中華電信" />
+            </a>
           </div>
         </div>
 
@@ -100,10 +200,19 @@
           <div class="marquee-content flex-shrink-0">
             <!-- Diamond Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Diamond</span>
+              <span v-if="!isMobile" class="sponsor-level">Diamond</span>
+              <span v-if="isMobile" class="sponsor-level" style="margin-left: 0.5rem">Diamond</span>
               <img
+                v-if="!isMobile"
                 class="inline-block"
-                style="transform: scale(3); padding-top: 0.8rem"
+                style="transform: scale(2.8); padding-top: 0.8rem"
+                src="../../assets/Home/sponsors/JUMBO_diamond.webp"
+                alt="JUMBO"
+              />
+              <img
+                v-else
+                class="inline-block"
+                style="transform: scale(2.5); padding-top: 0.1rem"
                 src="../../assets/Home/sponsors/JUMBO_diamond.webp"
                 alt="JUMBO"
               />
@@ -121,10 +230,22 @@
 
             <!-- Gold Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: 2rem">Gold</span>
+              <span v-if="!isMobile" class="sponsor-level" style="margin-left: 2rem">Gold</span>
+              <span v-else class="sponsor-level" style="margin-left: 1rem; margin-bottom: 0.4rem"
+                >Gold</span
+              >
+
               <img
+                v-if="!isMobile"
                 class="inline-block"
                 style="padding-top: 1rem"
+                src="../../assets/Home/sponsors/91APP_gold.webp"
+                alt="91APP"
+              />
+              <img
+                v-else
+                class="inline-block"
+                style="padding-top: 0.5rem"
                 src="../../assets/Home/sponsors/91APP_gold.webp"
                 alt="91APP"
               />
@@ -143,7 +264,9 @@
 
             <!-- Silver Sponsor 2 -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Silver</span>
+              <span v-if="!isMobile" class="sponsor-level">Silver</span>
+              <span v-else class="sponsor-level" style="margin-left: 1rem">Silver</span>
+
               <img
                 class="inline-block"
                 style="transform: scale(1.5); margin: 0 2rem 0 2rem"
@@ -165,10 +288,19 @@
           <div class="marquee-content flex-shrink-0">
             <!-- Diamond Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Diamond</span>
+              <span v-if="!isMobile" class="sponsor-level">Diamond</span>
+              <span v-if="isMobile" class="sponsor-level" style="margin-left: 0.5rem">Diamond</span>
               <img
+                v-if="!isMobile"
                 class="inline-block"
                 style="transform: scale(3); padding-top: 0.8rem"
+                src="../../assets/Home/sponsors/JUMBO_diamond.webp"
+                alt="JUMBO"
+              />
+              <img
+                v-else
+                class="inline-block"
+                style="transform: scale(2.5); padding-top: 0.1rem"
                 src="../../assets/Home/sponsors/JUMBO_diamond.webp"
                 alt="JUMBO"
               />
@@ -186,10 +318,22 @@
 
             <!-- Gold Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: 2rem">Gold</span>
+              <span v-if="!isMobile" class="sponsor-level" style="margin-left: 2rem">Gold</span>
+              <span v-else class="sponsor-level" style="margin-left: 1rem; margin-bottom: 0.4rem"
+                >Gold</span
+              >
+
               <img
+                v-if="!isMobile"
                 class="inline-block"
                 style="padding-top: 1rem"
+                src="../../assets/Home/sponsors/91APP_gold.webp"
+                alt="91APP"
+              />
+              <img
+                v-else
+                class="inline-block"
+                style="padding-top: 0.5rem"
                 src="../../assets/Home/sponsors/91APP_gold.webp"
                 alt="91APP"
               />
@@ -208,7 +352,9 @@
 
             <!-- Silver Sponsor 2 -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Silver</span>
+              <span v-if="!isMobile" class="sponsor-level">Silver</span>
+              <span v-else class="sponsor-level" style="margin-left: 1rem">Silver</span>
+
               <img
                 class="inline-block"
                 style="transform: scale(1.5); margin: 0 2rem 0 2rem"
@@ -366,7 +512,9 @@
           alt="star-02-02-1"
         />
 
-        <div class="w-[80vw] mt-[7vh] mb-[7vh] flex flex-row justify-around co-organizer-logos">
+        <div
+          class="w-[80vw] mx-auto mt-[2vh] mb-[7vh] flex flex-row justify-around co-organizer-logos"
+        >
           <div
             class="mt-[2vh] w-[28vw] flex flex-col justify-center text-[black] co-organizer-text"
           >
@@ -415,7 +563,7 @@
           <div>Colde Garage</div>
         </div>
 
-        <div class="mb-[20vh]"></div>
+        <div class="mb-[5vh]"></div>
       </div>
 
       <div
@@ -453,15 +601,29 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 
 defineOptions({
   name: 'BottomSection',
 })
 
 const Play = ref(false)
+const isMobile = ref(false)
+
+const checkMobile = () => {
+  isMobile.value = window.innerWidth <= 768
+}
+
+onMounted(() => {
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkMobile)
+})
+
 watch(Play, (newVal) => {
-  // console.log('Play 狀態變更為:', newVal)
   newVal
 })
 </script>
@@ -481,7 +643,6 @@ watch(Play, (newVal) => {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  column-gap: 3rem;
   gap: 5rem;
 }
 
@@ -518,7 +679,7 @@ watch(Play, (newVal) => {
 }
 
 .marquee-content {
-  animation-duration: 12s;
+  animation-duration: 18s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
@@ -527,7 +688,7 @@ watch(Play, (newVal) => {
 
 /* Add this to your existing CSS */
 .marquee-content-special-sponsor {
-  animation-duration: 6s; /* Half the speed of the normal 12s */
+  animation-duration: 9s; /* Half the speed of the normal 12s */
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
@@ -535,7 +696,7 @@ watch(Play, (newVal) => {
 }
 
 .marquee-content-media {
-  animation-duration: 4s; /* Half the speed of the normal 12s */
+  animation-duration: 6s; /* Half the speed of the normal 12s */
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
@@ -632,127 +793,119 @@ watch(Play, (newVal) => {
   opacity: 0.8;
 }
 
+/* Mobile collaborators styles */
+.mobile-collaborators {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.mobile-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mobile-img {
+  max-width: 35vw;
+  width: auto;
+  margin-bottom: 3vw;
+  height: auto;
+}
+
+.mobile-img:hover {
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+
+.mobile-special-coop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.special-text {
+  font-size: 4vw;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Hide desktop collaborators on mobile */
 @media (max-width: 768px) {
   .title {
     font-size: 6vw;
+    font-weight: 600;
   }
 
-  /* Stack collaborator logos vertically */
-  .collaborators {
-    flex-direction: column;
-    gap: 2rem;
+  .marquee-sponsors {
+    width: 80vw;
+    margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-  .collaborator-item,
-  .collaborators img {
-    width: 50vw;
+  .sponsor-item {
+    margin: 0 0rem;
+    display: inline-block;
   }
 
-  .collaborators.special-coop {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .special-coop .collaborator-item {
-    width: 40vw;
-    padding-left: 0;
-    text-align: center;
-  }
-
-  /* Adjust marquee sponsors */
-  .marquee-sponsors {
-    width: 90vw;
-  }
-  .marquee-sponsors img {
-    height: 18vw;
+  .sponsor-item img {
+    width: 35vw;
+    height: 22vw;
   }
 
   .sponsor-level {
     font-size: 2.5vw;
   }
 
-  .sponsor-placeholder {
-    width: 20vw;
-    height: 12vw;
-    background-color: #e5e7eb; /* Grey background */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0.5rem;
-    border-radius: 8px;
-    border: 2px dashed #9ca3af;
-    font-size: 1.2vw;
-    font-weight: 600;
-    color: #6b7280;
-    text-align: center;
-    position: relative;
-  }
-
-  .sponsor-placeholder::before {
-    content: attr(data-company);
-    white-space: nowrap;
-  }
-
-  /* Hide decorative images on mobile */
-  img[alt='red-back'],
-  img[alt='blue-back'],
-  img[alt='star-02-02-1'],
-  img[alt='star-06-1'],
-  img[alt='6star-14-3'],
-  img[alt='6star-14-4'] {
-    display: none;
-  }
-
-  /* Stack co-organizer sections */
-  .co-organizers,
-  .special-thanks-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    width: 90vw;
-    text-align: center;
-  }
-
-  .co-organizers > div,
-  .special-thanks-list > div {
-    width: 100%;
-    padding-left: 0;
-  }
-
   .co-organizer-logos {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+  }
+
+  .co-organizer-text {
+    width: 80vw;
+    text-align: center;
+  }
+
+  .co-organizer-text .font-bold.text-\[1\.8vw\] {
+    font-size: 4vw;
+  }
+
+  .co-organizer-text .font-bold.text-\[0\.7vw\] {
+    font-size: 2.5vw;
   }
 
   .co-organizer-logos img {
     width: 50vw;
   }
 
-  .co-organizer-text {
+  .text-list {
+    font-size: 3.5vw;
+  }
+
+  .co-organizers,
+  .special-thanks-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
     width: 100%;
     text-align: center;
   }
 
-  .co-organizer-text > div {
-    font-size: 4vw;
-  }
-  .co-organizer-text > div:last-child {
-    font-size: 2.5vw;
-  }
-
-  /* Adjust text lists */
-  .text-list {
-    font-size: 4vw;
-  }
-
-  /* Adjust placeholder boxes */
   .ad-placeholder,
   .video-placeholder {
-    width: 90vw;
-    height: 50vh;
+    width: 75vw;
+    height: 30vh;
   }
 }
 </style>
