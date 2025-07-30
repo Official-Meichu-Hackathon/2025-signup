@@ -1,17 +1,19 @@
 <template>
   <nav
-    class="w-full h-14 flex items-center justify-between px-6 fixed top-0 left-0 z-[1000] overflow-hidden"
+    class="w-full h-14 flex items-center justify-between md:px-6 px-3 fixed top-0 left-0 z-[1000] overflow-hidden"
   >
     <div
       class="absolute top-0 left-0 w-full h-full z-[-1] pointer-events-none bg-[linear-gradient(90deg,_#F4F5F5_0%,_#F4DAE1_33%,_#D3E4FC_61%,_#F4F5F5_100%)]"
     ></div>
-    <div class="navbar-left h-full flex items-center">
-      <img src="../assets/Navbar/logo.svg" alt="梅竹黑客松" class="h-10 w-auto" />
+    <div class="h-full flex items-center">
+      <router-link to="/">
+        <img src="../assets/Navbar/logo.svg" alt="梅竹黑客松" class="h-10 w-auto" />
+      </router-link>
     </div>
-    <div class="navbar-right h-full flex items-center gap-4">
+    <div class="navbar-right h-full flex items-center md:gap-4 gap-2">
       <!-- <router-link to="/signup-group"> -->
       <button
-        class="bg-[rgba(244,245,245,0.60)] rounded-[15px] border border-[rgba(255,255,255,0.20)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base h-9 px-5 flex items-center justify-center transition-colors duration-200 hover:bg-[#F4F5F5] hover:border-white"
+        class="bg-[rgba(244,245,245,0.60)] rounded-[15px] border border-[rgba(255,255,255,0.20)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base md:h-9 md:px-5 h-8 px-3 flex items-center justify-center transition-colors duration-200 hover:bg-[#F4F5F5] hover:border-white"
         @click="showOptions = true"
       >
         點我報名
