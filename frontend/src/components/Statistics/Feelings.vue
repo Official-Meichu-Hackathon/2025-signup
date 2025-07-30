@@ -45,10 +45,16 @@
                     class="w-full h-auto"
                   />
                   <img
-                    :src="getSparkleImageUrl(index)"
-                    :alt="index === 0 ? 'Sparkle Left' : 'Sparkle Right'"
-                    class="absolute sparkle-animation"
-                    :class="index === 0 ? 'sparkle-left' : 'sparkle-right'"
+                    src="../../assets/Statistics/sparkle-left.svg"
+                    alt="Sparkle Left"
+                    class="absolute sparkle-animation sparkle-left"
+                    v-if="index === 0"
+                  />
+                  <img
+                    src="../../assets/Statistics/sparkle-right.svg"
+                    alt="Sparkle Right"
+                    class="absolute sparkle-animation sparkle-right"
+                    v-if="index === 1"
                   />
                   <div
                     class="feeling-text feeling-textsize-pc absolute inset-0 flex items-center justify-center m-[1vw]"
@@ -113,10 +119,16 @@
                     class="w-full h-auto"
                   />
                   <img
-                    :src="getSparkleImageUrl(index)"
-                    :alt="index === 0 ? 'Sparkle Left' : 'Sparkle Right'"
-                    class="absolute sparkle-animation-mobile"
-                    :class="index === 0 ? 'sparkle-left-mobile' : 'sparkle-right-mobile'"
+                    src="../../assets/Statistics/sparkle-left.svg"
+                    alt="Sparkle Left"
+                    class="absolute sparkle-animation-mobile sparkle-left-mobile"
+                    v-if="index === 0"
+                  />
+                  <img
+                    src="../../assets/Statistics/sparkle-right.svg"
+                    alt="Sparkle Right"
+                    class="absolute sparkle-animation-mobile sparkle-right-mobile"
+                    v-if="index === 1"
                   />
                   <div
                     class="feeling-text feeling-textsize-mobile absolute inset-0 flex items-center justify-center m-[1vw]"
@@ -195,15 +207,6 @@ const getFeelingImageUrl = (index) => {
   const suffix = isMobile.value ? '-mobile' : '-pc'
   return new URL(`../../assets/Statistics/feeling-box${index + 1}${suffix}.svg`, import.meta.url)
     .href
-}
-
-const getSparkleImageUrl = (index) => {
-  return new URL(
-    index === 0
-      ? '../../assets/Statistics/sparkle-left.svg'
-      : '../../assets/Statistics/sparkle-right.svg',
-    import.meta.url
-  ).href
 }
 
 function toggleFeelings() {
