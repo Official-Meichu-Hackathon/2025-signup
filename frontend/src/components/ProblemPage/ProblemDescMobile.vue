@@ -79,7 +79,7 @@
           companyName="新竹市政府"
           problemTitle="題目"
           problem-content="題目題目題目之後改"
-          problemLink="https://example.com/problem"
+          :problemLink="GovernmentProblem"
         />
         <img
           src="../../assets/Problems/element/Frame51.svg"
@@ -102,6 +102,8 @@ import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
 import ProblemCard from '../ProblemPage/ProblemCard.vue'
 import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
+
+import GovernmentProblem from '../../assets/Problems/Problem/GovernmentProblem.pdf'
 </script>
 
 <style scoped>

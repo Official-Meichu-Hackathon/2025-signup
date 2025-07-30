@@ -112,6 +112,7 @@
 
 <script setup>
 import { inject } from 'vue'
+
 const isDesktop = inject('isDesktop')
 
 defineOptions({

@@ -95,6 +95,13 @@ import GoogleLogo from '../../assets/Problems/Logo/Google.webp'
 import LogitechLogo from '../../assets/Problems/Logo/Logitech.webp'
 import NXPLogo from '../../assets/Problems/Logo/NXP.webp'
 
+import AMDProblem from '../../assets/Problems/Problem/AMDProblem.pdf'
+import TSMCProblem from '../../assets/Problems/Problem/TSMCProblem.pdf'
+import CloudMosaProblem from '../../assets/Problems/Problem/CloudmosaProblem.pdf'
+import GooglePromblem from '../../assets/Problems/Problem/GoogleProblem.pdf'
+import LogitechProblem from '../../assets/Problems/Problem/LogitechProblem.pdf'
+import NXPProblem from '../../assets/Problems/Problem/NXPProblem.pdf'
+
 const isDesktop = inject('isDesktop')
 
 const cards = [
@@ -103,41 +110,42 @@ const cards = [
     companyName: 'AMD',
     problemTitle: '題目',
     problemContent: '題目題目題目之後改',
+    problemLink: AMDProblem,
   },
   {
     logo: TSMCLogo,
     companyName: 'TSMC',
     problemTitle: '題目',
     problemContent: '請描述問題內容',
-    problemLink: '',
+    problemLink: TSMCProblem,
   },
   {
     logo: CloudMosaLogo,
     companyName: 'CloudMosa',
     problemTitle: '題目',
     problemContent: '請描述問題內容',
-    problemLink: '',
+    problemLink: CloudMosaProblem,
   },
   {
     logo: GoogleLogo,
     companyName: 'Google',
     problemTitle: '題目',
     problemContent: '請描述問題內容',
-    problemLink: '',
+    problemLink: GooglePromblem,
   },
   {
     logo: LogitechLogo,
     companyName: 'Logitech',
     problemTitle: '題目',
     problemContent: '請描述問題內容',
-    problemLink: '',
+    problemLink: LogitechProblem,
   },
   {
     logo: NXPLogo,
     companyName: 'NXP',
     problemTitle: '題目',
     problemContent: '請描述問題內容',
-    problemLink: '',
+    problemLink: NXPProblem,
   },
 ]
 
