@@ -25,8 +25,7 @@ onMounted(() => {
     chartInstance = new Chart(canvasRef.value, {
       type: 'pie',
       data: {
-        labels: ['大四', '大一', '大三', '大二', '碩士'],
-        // labels: ['大一', '大二', '大三', '大四', '碩士'],
+        labels: ['大四', '大一', '大三', '大二', '碩博'],
         datasets: [
           {
             data: [26.7, 5.8, 46.9, 14.8, 5.8],
