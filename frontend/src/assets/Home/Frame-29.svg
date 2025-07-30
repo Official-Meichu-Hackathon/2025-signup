@@ -1,0 +1,29 @@
+<svg width="841" height="556" viewBox="0 0 841 556" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="62" width="735" height="427" fill="#F4DAE1"/>
+<g filter="url(#filter0_f_579_533)">
+<path d="M36 515.535V266.5C123.5 212 139 295.034 164.5 306.5C190 317.966 240 347 291 355.5C403.057 374.176 371.333 463.701 377.5 515.535L36 515.535Z" fill="#D3E4FC"/>
+</g>
+<g filter="url(#filter1_f_579_533)">
+<path d="M346.998 299.041C237.5 323.99 153.167 362.5 156 413L366.138 492.242L603.5 319C474 352 473.398 270.241 346.998 299.041Z" fill="#DB8396"/>
+</g>
+<g filter="url(#filter2_f_579_533)">
+<path d="M802 273.269V427.269H130V380.769C138.4 323.169 206.167 315.769 239 319.269C309.5 357.936 467.3 412.069 534.5 319.269C601.7 226.469 740.833 266.769 802 273.269Z" fill="#FFF2F4"/>
+</g>
+<defs>
+<filter id="filter0_f_579_533" x="-4" y="208.133" width="421.5" height="347.402" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="20" result="effect1_foregroundBlur_579_533"/>
+</filter>
+<filter id="filter1_f_579_533" x="115.931" y="252.778" width="527.569" height="279.464" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="20" result="effect1_foregroundBlur_579_533"/>
+</filter>
+<filter id="filter2_f_579_533" x="90" y="219" width="752" height="248.269" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="20" result="effect1_foregroundBlur_579_533"/>
+</filter>
+</defs>
+</svg>

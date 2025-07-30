@@ -8,4 +8,8 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+
+@theme {
+  --color-darkblue: #2d3e63;
+  --color-lightblue: #d3e4fc;
 }
