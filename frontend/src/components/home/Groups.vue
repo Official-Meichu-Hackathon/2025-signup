@@ -58,7 +58,13 @@
           <div class="justify-center h-[42vh] items-center flex flex-row">
             <!-- 內容區 -->
             <div v-if="activeTab === '黑客組'" class="card">
-              <div class="content w-[27vw] h-[30vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[27vw] h-[30vh] bg-zinc-300 rounded-[30px]">
+                <img
+                  src="../../assets/Home/group/group_hacker.jpg"
+                  alt="hacker_photo"
+                  class="w-full h-full object-cover object-[35%_center] rounded-[30px]"
+                />
+              </div>
 
               <div
                 class="content w-[26vw] text-[#656565] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"
@@ -150,7 +156,13 @@
           <div class="justify-center h-[42vh] items-center flex flex-row">
             <!-- 內容區 -->
             <div v-if="activeTab2 === '創客組'" class="card">
-              <div class="content w-[27vw] h-[32vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[27vw] h-[30vh] bg-zinc-300 rounded-[30px]">
+                <img
+                  src="../../assets/Home/group/group_maker.jpg"
+                  alt="macker_photo"
+                  class="w-full h-full object-cover object-[55%_center] rounded-[30px]"
+                />
+              </div>
 
               <div
                 class="content w-[26vw] text-[#656565] flex items-center justify-center font-bold font-[Chiron_Hei_HK]"

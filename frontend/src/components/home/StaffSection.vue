@@ -116,7 +116,13 @@
           <div class="pl-[3vw] pr-[3vw] pt-[5vh] pb-[5vh] flex flex-row">
             <!-- 內容區 -->
             <template v-if="activeTab === '行政部'">
-              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
+                <img
+                  src="../../assets/Home/staff/admin.jpg"
+                  alt="admin_photo"
+                  class="w-full h-full object-cover rounded-[30px] scale-[1.2] object-center object-[38%_center]"
+                />
+              </div>
 
               <div
                 class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
@@ -128,7 +134,13 @@
             </template>
 
             <template v-if="activeTab === '行銷部'">
-              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
+                <img
+                  src="../../assets/Home/staff/market.jpg"
+                  alt="market_photo"
+                  class="w-full h-full object-cover object-[75%_center] rounded-[30px]"
+                />
+              </div>
 
               <div
                 class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
@@ -143,7 +155,15 @@
             </template>
 
             <template v-if="activeTab === '公關部'">
-              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
+                <img
+                  src="../../assets/Home/staff/PR.jpg"
+                  alt="PR_photo"
+                  class="w-full h-full object-cover object-[35%_center] rounded-[30px]"
+                />
+              </div>
+
+              <!-- object-[75%_center] -->
 
               <div
                 class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
@@ -158,7 +178,13 @@
             </template>
 
             <template v-if="activeTab === '活動部'">
-              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
+                <img
+                  src="../../assets/Home/staff/activities.jpg"
+                  alt="act_photo"
+                  class="w-full h-full object-cover object-[35%_45%] rounded-[30px]"
+                />
+              </div>
 
               <div
                 class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
@@ -173,7 +199,13 @@
             </template>
 
             <template v-if="activeTab === '財務部'">
-              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
+                <img
+                  src="../../assets/Home/staff/finance.jpg"
+                  alt="finance_photo"
+                  class="w-full h-full object-cover object-[35%_0%] rounded-[30px]"
+                />
+              </div>
 
               <div
                 class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
@@ -185,7 +217,13 @@
             </template>
 
             <template v-if="activeTab === '設計部'">
-              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
+                <img
+                  src="../../assets/Home/staff/design.png"
+                  alt="design_photo"
+                  class="w-full h-full object-cover object-[45%_0%] rounded-[30px]"
+                />
+              </div>
 
               <div
                 class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
@@ -200,7 +238,18 @@
             </template>
 
             <template v-if="activeTab === '開發部'">
-              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
+              <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
+                <img
+                  src="../../assets/Home/staff/dev.png"
+                  alt="dev_photo"
+                  class="w-full h-full object-cover rounded-[30px] scale-[1.2] origin-bottom-left object-[38%_center]"
+                />
+              </div>
+
+              <!-- <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] 
+                    dev 
+                    bg-cover bg-[60%_center] bg-no-repeat">
+              </div> -->
 
               <div
                 class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
@@ -257,5 +306,11 @@ const activeTab = ref('行政部')
   margin-top: 1vh;
   margin-bottom: 1vh;
   font-size: clamp(16px, 1.8vw, 24px);
+}
+
+.dev {
+  background-image: url('../../assets/Home/staff/dev.png');
+  /* translate: 5vw 0; */
+  /* background-position: -4vw center; */
 }
 </style>
