@@ -117,7 +117,7 @@
           <!-- content -->
           <div class="pl-[3vw] pr-[3vw] pt-[5vh] pb-[5vh] flex flex-row">
             <!-- 內容區 -->
-            <template v-if="activeTab === '行政部'">
+            <div v-show="activeTab === '行政部'" class="flex flex-row">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
                   src="../../assets/Home/staff/webp/admin.webp"
@@ -133,9 +133,9 @@
                 <div>施閔智</div>
                 <div>溫沛晨</div>
               </div>
-            </template>
+            </div>
 
-            <template v-if="activeTab === '行銷部'">
+            <div v-show="activeTab === '行銷部'" class="flex flex-row">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
                   src="../../assets/Home/staff/webp/market.webp"
@@ -154,9 +154,9 @@
                   <div>樓映辰 / 林怡勳</div>
                 </div>
               </div>
-            </template>
+            </div>
 
-            <template v-if="activeTab === '公關部'">
+            <div v-show="activeTab === '公關部'" class="flex flex-row">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
                   src="../../assets/Home/staff/webp/PR.webp"
@@ -177,9 +177,9 @@
                   <div>羅翊嘉 / 林子羽</div>
                 </div>
               </div>
-            </template>
+            </div>
 
-            <template v-if="activeTab === '活動部'">
+            <div v-show="activeTab === '活動部'" class="flex flex-row">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
                   src="../../assets/Home/staff/webp/activities.webp"
@@ -198,9 +198,9 @@
                   <div>羅可芸 / 劉子筠</div>
                 </div>
               </div>
-            </template>
+            </div>
 
-            <template v-if="activeTab === '財務部'">
+            <div v-show="activeTab === '財務部'" class="flex flex-row">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
                   src="../../assets/Home/staff/webp/finance.webp"
@@ -216,9 +216,9 @@
                 <div>李采穗 / 陳翊嘉</div>
                 <div>王思問 / 黃嬿方 / 呂崧立 / 余定綸 / 黃荺捷</div>
               </div>
-            </template>
+            </div>
 
-            <template v-if="activeTab === '設計部'">
+            <div v-show="activeTab === '設計部'" class="flex flex-row">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
                   src="../../assets/Home/staff/webp/design.webp"
@@ -237,9 +237,9 @@
                   <div>范嘉恩 / 何昀臻</div>
                 </div>
               </div>
-            </template>
+            </div>
 
-            <template v-if="activeTab === '開發部'">
+            <div v-show="activeTab === '開發部'" class="flex flex-row">
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px] overflow-hidden">
                 <img
                   src="../../assets/Home/staff/webp/dev.webp"
@@ -263,7 +263,7 @@
                   <div>李聿宸 / 邱元廣</div>
                 </div>
               </div>
-            </template>
+            </div>
           </div>
         </div>
       </div>
