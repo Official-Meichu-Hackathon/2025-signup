@@ -1,4 +1,7 @@
+<!-- Staff Section : Apple -->
+
 <template>
+  <div id="staff"></div>
   <div class="flex justify-center relative w-full min-h-screen overflow-hidden">
     <div class="justify-center min-h-[calc(100vh-56px)] flex flex-col w-full">
       <div
@@ -16,8 +19,8 @@
         <div
           :class="[
             activeTab === '行政部'
-              ? 'bg-[#db8396] left-[0.7vw] text-[2vw] font-semibold'
-              : 'bg-[#F4DAE1] left-[0.7vw] text-[1.6vw] font-bold',
+              ? 'bg-[#db8396] left-[0.7vw] active font-semibold'
+              : 'bg-[#F4DAE1] left-[0.7vw] inactive font-bold',
             'w-[10vw] h-[9vh] pt-[1vh] border-[#F4F5F5] border-[1.5px] absolute rounded-tl-[28px] rounded-tr-[28px] cursor-pointer flex items-center justify-center text-[#F4F5F5] font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '行政部'"
@@ -29,8 +32,8 @@
         <div
           :class="[
             activeTab === '行銷部'
-              ? 'bg-[#db8396] left-[10.7vw] text-[2vw] font-semibold'
-              : 'bg-[#F4DAE1] left-[10.7vw] text-[1.6vw] font-bold',
+              ? 'bg-[#db8396] left-[10.7vw] active font-semibold'
+              : 'bg-[#F4DAE1] left-[10.7vw] inactive font-bold',
             'w-[10vw] h-[9vh] pt-[1vh] border-[#F4F5F5] border-[1.5px] absolute rounded-tl-[28px] rounded-tr-[28px] cursor-pointer flex items-center justify-center text-[#F4F5F5] font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '行銷部'"
@@ -42,8 +45,8 @@
         <div
           :class="[
             activeTab === '公關部'
-              ? 'bg-[#db8396] left-[20.7vw] text-[2vw] font-semibold'
-              : 'bg-[#F4DAE1] left-[20.7vw] text-[1.6vw] font-bold',
+              ? 'bg-[#db8396] left-[20.7vw] active font-semibold'
+              : 'bg-[#F4DAE1] left-[20.7vw] inactive font-bold',
             'w-[10vw] h-[9vh] pt-[1vh] border-[#F4F5F5] border-[1.5px] absolute rounded-tl-[28px] rounded-tr-[28px] cursor-pointer flex items-center justify-center text-[#F4F5F5] font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '公關部'"
@@ -55,8 +58,8 @@
         <div
           :class="[
             activeTab === '活動部'
-              ? 'bg-[#db8396] left-[30.7vw] text-[2vw] font-semibold'
-              : 'bg-[#F4DAE1] left-[30.7vw] text-[1.6vw] font-bold',
+              ? 'bg-[#db8396] left-[30.7vw] active font-semibold'
+              : 'bg-[#F4DAE1] left-[30.7vw] inactive font-bold',
             'w-[10vw] h-[9vh] pt-[1vh] border-[#F4F5F5] border-[1.5px] absolute rounded-tl-[28px] rounded-tr-[28px] cursor-pointer flex items-center justify-center text-[#F4F5F5] font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '活動部'"
@@ -68,8 +71,8 @@
         <div
           :class="[
             activeTab === '財務部'
-              ? 'bg-[#db8396] left-[40.7vw] text-[2vw] font-semibold'
-              : 'bg-[#F4DAE1] left-[40.7vw] text-[1.6vw] font-bold',
+              ? 'bg-[#db8396] left-[40.7vw] active font-semibold'
+              : 'bg-[#F4DAE1] left-[40.7vw] inactive font-bold',
             'w-[10vw] h-[9vh] pt-[1vh] border-[#F4F5F5] border-[1.5px] absolute rounded-tl-[28px] rounded-tr-[28px] cursor-pointer flex items-center justify-center text-[#F4F5F5] font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '財務部'"
@@ -81,8 +84,8 @@
         <div
           :class="[
             activeTab === '設計部'
-              ? 'bg-[#db8396] left-[50.7vw] text-[2vw] font-semibold'
-              : 'bg-[#F4DAE1] left-[50.7vw] text-[1.6vw] font-bold',
+              ? 'bg-[#db8396] left-[50.7vw] active font-semibold'
+              : 'bg-[#F4DAE1] left-[50.7vw] inactive font-bold',
             'w-[10vw] h-[9vh] pt-[1vh] border-[#F4F5F5] border-[1.5px] absolute rounded-tl-[28px] rounded-tr-[28px] cursor-pointer flex items-center justify-center text-[#F4F5F5] font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '設計部'"
@@ -94,8 +97,8 @@
         <div
           :class="[
             activeTab === '開發部'
-              ? 'bg-[#db8396] left-[60.7vw] text-[2vw] font-semibold'
-              : 'bg-[#F4DAE1] left-[60.7vw] text-[1.6vw] font-bold',
+              ? 'bg-[#db8396] left-[60.7vw] active font-semibold'
+              : 'bg-[#F4DAE1] left-[60.7vw] inactive font-bold',
             'w-[10vw] h-[9vh] pt-[1vh] border-[#F4F5F5] border-[1.5px] absolute shadow-[4px_4px_4px_0px_rgba(0,0,0,0.25)] border border-neutral-100 rounded-tl-[28px] rounded-tr-[28px] cursor-pointer flex items-center justify-center text-[#F4F5F5] font-[\'Chiron_Hei_HK\']',
           ]"
           @click="activeTab = '開發部'"
@@ -116,7 +119,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[1.6vw] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>施閔智</div>
@@ -128,7 +131,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[1.6vw] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>陳宣蓉 / 林昀澍</div>
@@ -143,7 +146,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[1.6vw] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>侯佑勳 / 蔡婕安 / 莊皓雯</div>
@@ -158,7 +161,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[1.6vw] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>范嘉尹 / 陳芃嬡 / 莊亦安</div>
@@ -173,7 +176,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[1.6vw] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>李采穗 / 陳翊嘉</div>
@@ -185,7 +188,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[1.6vw] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>陳婷祺 / 吳奕涔</div>
@@ -200,7 +203,7 @@
               <div class="content w-[29vw] h-[35vh] bg-zinc-300 rounded-[30px]"></div>
 
               <div
-                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[1.6vw] flex font-bold font-[Chiron_Hei_HK]"
+                class="pt-[10vh] content w-[30vw] space-y-[2vh] flex-col justify-start text-[#656565] text-[20px] flex font-bold font-[Chiron_Hei_HK]"
               >
                 <!-- 字置中 ! -->
                 <div>陳芝瑄 / 周廷威</div>
@@ -231,7 +234,17 @@ const activeTab = ref('行政部')
 <style scoped>
 .title {
   width: 90vw;
-  font-size: 2.5vw;
+  font-size: 32px;
+}
+
+.active {
+  /* font-size: 22px; */
+  font-size: clamp(20px, 1.6vw, 26px);
+}
+
+.inactive {
+  /* font-size: 18px; */
+  font-size: clamp(16px, 1.4vw, 22px);
 }
 
 .container {
@@ -243,5 +256,6 @@ const activeTab = ref('行政部')
   margin-right: 2vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
+  font-size: clamp(16px, 1.8vw, 24px);
 }
 </style>

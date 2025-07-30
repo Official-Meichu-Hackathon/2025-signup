@@ -11,10 +11,12 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref, inject } from 'vue'
 defineOptions({
   name: 'EntryAnimation',
 })
+
+const setEntryAnimationLoaded = inject('setEntryAnimationLoaded')
 
 const scrollContainer = ref(null)
 const canvasRef = ref(null)
@@ -22,14 +24,26 @@ const hasReachedEnd = ref(false)
 const lastScrollY = ref(0)
 const showScrollHint = ref(false)
 const isLocked = ref(false) // Add this new state
+const isLoaded = ref(false)
+const oneSecondLoaded = ref(false) // Track if one second has passed
 
-const frameCnt = 27 // 23
+const frameCnt = 23 // 27
 const imageSrc = []
 const loadedImages = []
 
 for (let i = 1; i <= frameCnt; i++) {
-  imageSrc.push(`/EntryAnimation/frame-${i}.png`)
+  imageSrc.push(`/EntryAnimation/frame-${i}_compressed.webp`)
 }
+
+// Preload images as soon as the script runs
+const imagePromises = imageSrc.map((src) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    img.src = src
+    img.onload = () => resolve(img)
+    img.onerror = reject
+  })
+})
 
 let context = null
 const isBreathing = ref(false)
@@ -181,7 +195,7 @@ class Particle {
         }
         break
       default:
-        // Add logic for other cases if needed
+        this.display = 0
         break
     }
   }
@@ -232,23 +246,23 @@ const animate = () => {
 
 onMounted(() => {
   context = canvasRef.value.getContext('2d')
-
   lastScrollY.value = window.scrollY
-
   canvasRef.value.width = 1440
   canvasRef.value.height = 1020
 
-  const imagePromises = imageSrc.map((src) => {
-    return new Promise((resolve, reject) => {
-      const img = new Image()
-      img.src = src
-      img.onload = () => resolve(img)
-      img.onerror = reject
-    })
+  // Create a promise that resolves after 1 second
+  const oneSecondPromise = new Promise((resolve) => {
+    setTimeout(resolve, 2000)
   })
 
-  Promise.all(imagePromises).then((images) => {
+  // Wait for both images and minimum time
+  Promise.all([Promise.all(imagePromises), oneSecondPromise]).then(([images]) => {
     loadedImages.push(...images)
+    isLoaded.value = true
+    oneSecondLoaded.value = true
+    if (setEntryAnimationLoaded) {
+      setEntryAnimationLoaded()
+    }
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle(canvasRef.value))
     }
@@ -348,6 +362,10 @@ body {
 
 @media (max-width: 768px) {
   .scroll-container {
+    display: none !important;
+  }
+
+  .loading-overlay {
     display: none !important;
   }
 }

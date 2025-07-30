@@ -1,3 +1,5 @@
+<!-- DarkBlue Section : Apple -->
+
 <template>
   <div class="relative w-full min-h-screen overflow-hidden">
     <!-- <img src="../../assets/Home/cursor.svg" alt="light-cursor" id="light-cursor" /> -->

@@ -230,7 +230,7 @@ const showOptions = ref(false)
 
 function closeMenu() {
   showOptions.value = false
-  console.log('close menu\n')
+  // console.log('close menu\n')
 }
 
 watch(showOptions, (val) => {
@@ -238,7 +238,7 @@ watch(showOptions, (val) => {
   document.body.style.overflow = val ? 'hidden' : '' // 鎖住滾輪
   // NEED !!! 監聽 showOptions 變化
   if (val) {
-    console.log('close light cursor') // 有印
+    // console.log('close light cursor') // 有印
     glow.style.display = 'none' // showOptions=true 時隱藏 => 但還是開了
   }
 })

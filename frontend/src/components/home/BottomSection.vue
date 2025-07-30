@@ -1,4 +1,5 @@
 <template>
+  <div id="sponsors"></div>
   <div class="flex justify-center relative w-full min-h-screen overflow-hidden">
     <div class="min-h-[calc(100vh-56px)] flex flex-col w-full">
       <div
@@ -6,89 +7,347 @@
       >
         <div>合作企業</div>
         <div class="collaborators">
-          <img src="../../assets/Home/company/00_新竹市政府-01 1.svg" alt="新竹市政府" />
-          <img src="../../assets/Home/company/00_新竹市政府-01 2.svg" alt="新竹市政府" />
-        </div>
-        <div class="collaborators">
-          <div class="collaborator-item">
+          <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
             <img
               class="!w-[22vw]"
-              src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
-              alt="CloudMosa"
+              src="../../assets/Home/company/00_新竹市政府-01 1.svg"
+              alt="新竹市政府"
             />
+          </a>
+          <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
+            <img
+              class="!w-[24vw]"
+              src="../../assets/Home/company/00_新竹市政府-01 2.svg"
+              alt="新竹市政府"
+            />
+          </a>
+        </div>
+        <div class="collaborators">
+          <div class="collaborator-item">
+            <a href="https://www.cloudmosa.com/about" target="_blank" rel="noopener noreferrer">
+              <!-- wasn't provided-->
+              <img
+                class="!w-[22vw]"
+                src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
+                alt="CloudMosa"
+              />
+            </a>
           </div>
           <div class="collaborator-item">
-            <img
-              class="!w-[15vw]"
-              src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
-              alt="NXP"
-            />
+            <a
+              href="https://www.facebook.com/nxpsemitaiwan"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="!w-[15vw]"
+                src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
+                alt="NXP"
+              />
+            </a>
           </div>
         </div>
         <div class="collaborators">
           <div class="collaborator-item">
-            <img class="!w-[15vw]" src="../../assets/Home/company/3_TSMC-01 1.svg" alt="TSMC" />
+            <a href="https://www.tsmc.com/chinese" target="_blank" rel="noopener noreferrer">
+              <img class="!w-[15vw]" src="../../assets/Home/company/3_TSMC-01 1.svg" alt="TSMC" />
+              <!-- wasn't provided  -->
+            </a>
           </div>
           <div class="collaborator-item">
-            <img
-              class="!w-[25vw]"
-              src="../../assets/Home/company/4_Logitech 1.svg"
-              alt="Logitech"
-            />
+            <a href="https://www.logitech.com/zh-tw" target="_blank" rel="noopener noreferrer">
+              <img
+                class="!w-[25vw]"
+                src="../../assets/Home/company/4_Logitech 1.svg"
+                alt="Logitech"
+              />
+            </a>
           </div>
         </div>
 
         <div class="collaborators">
           <div class="collaborator-item">
-            <img class="!w-[20vw]" src="../../assets/Home/company/5_Google 1.svg" alt="Google" />
+            <a href="https://about.google/" target="_blank" rel="noopener noreferrer">
+              <!-- wasn't provided -->
+              <img class="!w-[20vw]" src="../../assets/Home/company/5_Google 1.svg" alt="Google" />
+            </a>
           </div>
           <div class="collaborator-item">
-            <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
+            <a href="https://www.amd.com/zh-tw.html" target="_blank" rel="noopener noreferrer">
+              <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
+              <!-- wasn't provided -->
+            </a>
           </div>
         </div>
         <div class="collaborators !gap-0 special-coop">
           <div class="collaborator-item !w-[18vw] pl-[3vw]">特別合作企業</div>
           <div class="collaborator-item">
-            <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
+            <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
+              <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
+            </a>
+          </div>
+        </div>
+
+        <div>網路贊助</div>
+        <div class="collaborators">
+          <div class="collaborator-item">
+            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.svg" alt="中華電信" />
           </div>
         </div>
 
         <div>贊助企業</div>
         <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
           <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+            <!-- Diamond Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(3); padding-top: 0.8rem"
+                src="../../assets/Home/sponsors/JUMBO_diamond.webp"
+                alt="JUMBO"
+              />
+            </div>
+
+            <!-- Platinum Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/sponsors/Cathay_platinum.webp"
+                alt="Cathay"
+              />
+            </div>
+
+            <!-- Gold Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 2rem">Gold</span>
+              <img
+                class="inline-block"
+                style="padding-top: 1rem"
+                src="../../assets/Home/sponsors/91APP_gold.webp"
+                alt="91APP"
+              />
+            </div>
+
+            <!-- Silver Sponsor 1 -->
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: -1rem">Silver</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.95)"
+                src="../../assets/Home/sponsors/Phison_silver1.webp"
+                alt="Phison"
+              />
+            </div>
+
+            <!-- Silver Sponsor 2 -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Silver</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1.5); margin: 0 2rem 0 2rem"
+                src="../../assets/Home/sponsors/Pixart_silver2.webp"
+                alt="Pixart"
+              />
+            </div>
+
+            <!-- Bronze Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Bronze</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/sponsors/Ctbc_bronze.webp"
+                alt="CTBC"
+              />
+            </div>
           </div>
           <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+            <!-- Diamond Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(3); padding-top: 0.8rem"
+                src="../../assets/Home/sponsors/JUMBO_diamond.webp"
+                alt="JUMBO"
+              />
+            </div>
+
+            <!-- Platinum Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/sponsors/Cathay_platinum.webp"
+                alt="Cathay"
+              />
+            </div>
+
+            <!-- Gold Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 2rem">Gold</span>
+              <img
+                class="inline-block"
+                style="padding-top: 1rem"
+                src="../../assets/Home/sponsors/91APP_gold.webp"
+                alt="91APP"
+              />
+            </div>
+
+            <!-- Silver Sponsor 1 -->
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: -1rem">Silver</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.95)"
+                src="../../assets/Home/sponsors/Phison_silver1.webp"
+                alt="Phison"
+              />
+            </div>
+
+            <!-- Silver Sponsor 2 -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Silver</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1.5); margin: 0 2rem 0 2rem"
+                src="../../assets/Home/sponsors/Pixart_silver2.webp"
+                alt="Pixart"
+              />
+            </div>
+
+            <!-- Bronze Sponsor -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Bronze</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/sponsors/Ctbc_bronze.webp"
+                alt="CTBC"
+              />
+            </div>
           </div>
         </div>
 
         <div>特殊贊助</div>
         <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
-          <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+          <div class="marquee-content-special-sponsor flex-shrink-0">
+            <!-- First set of sponsors -->
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/BABI_platinum.svg"
+                alt="BABI"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Silver</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/GCOMM_silver.svg"
+                alt="GCOMM"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Others</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/hsinhao_others.svg"
+                alt="Hsinhao"
+              />
+            </div>
           </div>
-          <div class="marquee-content flex-shrink-0">
-            <img
-              class="inline-block h-[10vw]"
-              src="../../assets/Home/Sponsors.png"
-              alt="Sponsors"
-            />
+
+          <!-- Duplicate set for seamless loop -->
+          <div class="marquee-content-special-sponsor flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/BABI_platinum.svg"
+                alt="BABI"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Silver</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/GCOMM_silver.svg"
+                alt="GCOMM"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Others</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/hsinhao_others.svg"
+                alt="Hsinhao"
+              />
+            </div>
           </div>
         </div>
 
+        <div>媒體合作</div>
+        <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
+          <div class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/newstaiwan_diamond.svg"
+                alt="科技新報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/ettoday_platinum.svg"
+                alt="數位時代"
+              />
+            </div>
+          </div>
+
+          <!-- Second part of marquee-->
+          <div class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/newstaiwan_diamond.svg"
+                alt="科技新報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/ettoday_platinum.svg"
+                alt="數位時代"
+              />
+            </div>
+          </div>
+
+          <div class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/newstaiwan_diamond.svg"
+                alt="科技新報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/media/ettoday_platinum.svg"
+                alt="數位時代"
+              />
+            </div>
+          </div>
+        </div>
         <div>協辦單位</div>
 
         <img
@@ -111,7 +370,7 @@
           <div
             class="mt-[2vh] w-[28vw] flex flex-col justify-center text-[black] co-organizer-text"
           >
-            <div class="font-bold text-[1.8vw]">國立陽明交通大學資訊與工程學系</div>
+            <div class="font-bold text-[1.8vw]">國立陽明交通大學資訊工程學系</div>
             <div class="font-bold text-[0.7vw]">
               Department of Computer Science, National Yang Ming Chiao Tung University
             </div>
@@ -202,7 +461,8 @@ defineOptions({
 
 const Play = ref(false)
 watch(Play, (newVal) => {
-  console.log('Play 狀態變更為:', newVal)
+  // console.log('Play 狀態變更為:', newVal)
+  newVal
 })
 </script>
 
@@ -253,16 +513,59 @@ watch(Play, (newVal) => {
   display: flex;
   overflow: hidden;
   white-space: nowrap;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
 }
 
 .marquee-content {
-  animation-duration: 8s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
-  padding: 5px 15px 5px 15px;
+  padding: 5px 0px 5px 0px;
 }
+
+/* Add this to your existing CSS */
+.marquee-content-special-sponsor {
+  animation-duration: 6s; /* Half the speed of the normal 12s */
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  padding: 5px 0px 5px 0px;
+}
+
+.marquee-content-media {
+  animation-duration: 4s; /* Half the speed of the normal 12s */
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  padding: 5px 0px 5px 0px;
+}
+.sponsor-item {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.5rem; /* Adjust spacing between logos */
+}
+
+.sponsor-item img {
+  width: 20vw; /* Set consistent width */
+  height: 12vw; /* Set consistent height */
+  object-fit: contain; /* Scale to fit while maintaining aspect ratio */
+  object-position: center; /* Center the image */
+}
+
+.sponsor-level {
+  position: absolute;
+  top: -1px; /* Position at the very top */
+  left: 8%;
+  color: black;
+
+  font-size: 1.1vw;
+  font-weight: 600;
+  z-index: 1;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
 @keyframes color-shift {
   0%,
   100% {
@@ -316,6 +619,19 @@ watch(Play, (newVal) => {
   }
 }
 
+.collaborators a img,
+.collaborators img.cursor-pointer {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.collaborators a:hover img,
+.collaborators img.cursor-pointer:hover {
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 6vw;
@@ -351,6 +667,32 @@ watch(Play, (newVal) => {
   }
   .marquee-sponsors img {
     height: 18vw;
+  }
+
+  .sponsor-level {
+    font-size: 2.5vw;
+  }
+
+  .sponsor-placeholder {
+    width: 20vw;
+    height: 12vw;
+    background-color: #e5e7eb; /* Grey background */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    border-radius: 8px;
+    border: 2px dashed #9ca3af;
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #6b7280;
+    text-align: center;
+    position: relative;
+  }
+
+  .sponsor-placeholder::before {
+    content: attr(data-company);
+    white-space: nowrap;
   }
 
   /* Hide decorative images on mobile */
