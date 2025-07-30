@@ -17,7 +17,7 @@
         >
           <img
             src="../../assets/Home/Frame-30.svg"
-            class="bg2 absolute transform scale-300 md:scale-200 bottom-[5%] left-[30%] z-0"
+            class="bg2 absolute transform scale-250 md:scale-200 bottom-[5%] left-[30%] z-0"
             alt="bg2"
           />
           <img
@@ -133,6 +133,12 @@ function selectOption(option, id) {
   }
   50% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .option {
+    height: 10vh;
   }
 }
 </style>

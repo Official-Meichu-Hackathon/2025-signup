@@ -274,7 +274,13 @@
         <div class="pt-[3vh] pb-[3vh] pl-[3vw] pr-[3vw] relative">
           <!-- 內容區 -->
           <div v-if="activeTabPhone === '黑客組'" class="relative flex flex-col space-y-[1.5vh]">
-            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
+            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl">
+              <img
+                src="../../assets/Home/group/group_hacker.jpg"
+                alt="hacker_photo"
+                class="w-full h-full object-cover object-[55%_center] rounded-2xl"
+              />
+            </div>
 
             <div class="">
               <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
@@ -290,7 +296,13 @@
           </div>
 
           <div v-if="activeTabPhone === '創客組'" class="space-y-[1.5vh] relative flex flex-col">
-            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
+            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl">
+              <img
+                src="../../assets/Home/group/group_maker.JPG"
+                alt="macker_photo"
+                class="w-full h-full object-cover object-[55%_center] rounded-2xl"
+              />
+            </div>
 
             <div class="">
               <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
@@ -323,7 +335,7 @@
           </div> -->
 
           <!-- 工作坊 button -->
-          <div class="mx-auto justify-center flex" @click="handleClick">
+          <div class="mx-auto justify-center flex cursor-pointer" @click="handleClick">
             <div class="btn1">
               <svg
                 v-show="currentIndex === 0"
