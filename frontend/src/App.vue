@@ -22,9 +22,12 @@ provide('setEntryAnimationLoaded', setEntryAnimationLoaded)
 
 <template>
   <div>
+    <!-- Navbar shown during loading too -->
+    <Navbar />
+
     <!-- Loading Screen with transition -->
     <Transition name="loading-fade" appear>
-      <div v-if="shouldShowLoading" class="loading-screen">
+      <div v-if="shouldShowLoading" class="loading-screen-with-navbar">
         <div class="loading-content">
           <LoadingAnimation />
         </div>
@@ -32,15 +35,12 @@ provide('setEntryAnimationLoaded', setEntryAnimationLoaded)
     </Transition>
 
     <!-- Main Content -->
-    <div v-show="!shouldShowLoading">
-      <Navbar />
-      <div class="main-content">
-        <router-view v-slot="{ Component }">
-          <keep-alive>
-            <component :is="Component" />
-          </keep-alive>
-        </router-view>
-      </div>
+    <div v-show="!shouldShowLoading" class="main-content">
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
       <Footer />
     </div>
   </div>
@@ -57,13 +57,13 @@ provide('setEntryAnimationLoaded', setEntryAnimationLoaded)
   opacity: 0;
 }
 
-.loading-screen {
+.loading-screen-with-navbar {
   position: fixed;
-  top: 0;
+  top: 56px; /* Account for navbar height */
   left: 0;
   width: 100%;
-  height: 100vh;
-  background-color: #f4f5f4; /* Use the background color from LoadingAnimation */
+  height: calc(100vh - 56px);
+  background-color: #f4f5f4;
   display: flex;
   justify-content: center;
   align-items: center;
