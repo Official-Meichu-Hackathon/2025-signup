@@ -82,10 +82,12 @@ const applyPriorities = () => {
 <template>
   <div
     v-if="visible"
-    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50"
     @click.self="closeModal"
   >
-    <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4 max-h-[80vh] overflow-y-auto">
+    <div
+      class="bg-white rounded-lg p-6 max-w-md w-full mx-4 max-h-[80vh] overflow-y-auto border-2 shadow-md"
+    >
       <div class="flex justify-between items-center mb-4">
         <h4 class="text-lg font-bold">設定優先順序</h4>
         <button

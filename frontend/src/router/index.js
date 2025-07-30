@@ -31,6 +31,11 @@ const routes = [
     name: 'Data',
     component: () => import('../views/Data.vue'),
   },
+  {
+    path: '/success-signup',
+    name: 'SuccessSignup',
+    component: () => import('../views/SuccessSignup.vue'),
+  },
 ]
 
 const router = createRouter({

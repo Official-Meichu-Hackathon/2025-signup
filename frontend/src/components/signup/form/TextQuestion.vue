@@ -27,7 +27,7 @@ const text = defineModel()
     <input
       type="text"
       v-model="text"
-      class="bg-white border-1 rounded-lg mx-4 mt-3 p-2 text-lg w-full"
+      class="bg-white border-1 rounded-lg mx-4 mt-3 p-2 text-lg w-[95%] md:w-full"
       required
     />
     <p v-if="maxLength && text.length > maxLength" class="text-red-500 text-sm mt-2 mx-4">
