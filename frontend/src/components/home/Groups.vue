@@ -158,7 +158,7 @@
             <div v-if="activeTab2 === '創客組'" class="card">
               <div class="content w-[27vw] h-[30vh] bg-zinc-300 rounded-[30px]">
                 <img
-                  src="../../assets/Home/group/group_maker.jpg"
+                  src="../../assets/Home/group/group_maker.JPG"
                   alt="macker_photo"
                   class="w-full h-full object-cover object-[55%_center] rounded-[30px]"
                 />
