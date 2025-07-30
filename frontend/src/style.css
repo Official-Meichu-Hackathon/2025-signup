@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 @import 'tailwindcss';
+
+/* Chiron Hei HK Text font */
+@font-face {
+  font-family: 'Chiron_Hei_HK_Text';
+  src: url('./assets/fonts/chironheihk.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 
 @theme {
   --color-darkblue: #2d3e63;
