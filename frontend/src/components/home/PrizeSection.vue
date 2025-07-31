@@ -220,7 +220,7 @@
         <div
           :class="[
             activeTab === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'target-area tab w-[15vw] pt-[1vh]',
+            'target-area tab w-[15vw] pt-[0.25vh]',
           ]"
           @click="activeTab = '黑客組'"
         >
@@ -231,7 +231,7 @@
         <div
           :class="[
             activeTab === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'target-area tab w-[20vw] pt-[1vh]',
+            'target-area tab w-[20vw] pt-[0.25vh]',
           ]"
           @click="activeTab = '創客組'"
         >
@@ -241,7 +241,7 @@
         <div
           :class="[
             activeTab === '梅竹' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'target-area tab w-[16vw] pt-[1vh]',
+            'target-area tab w-[16vw] pt-[0.25vh]',
           ]"
           @click="activeTab = '梅竹'"
         >
@@ -303,7 +303,7 @@
       />
     </div>
 
-    <div class="mb-[20vh]"></div>
+    <div class="mb-[15vh]"></div>
   </div>
 </template>
 
@@ -647,20 +647,20 @@ onUnmounted(() => {
   }
 
   .active {
-    font-size: clamp(12px, 1vw, 14px);
+    font-size: clamp(11px, 1vw, 12px);
     /* font-size: 16px; */
   }
 
   .inactive {
-    font-size: clamp(10px, 0.8vw, 12px);
+    font-size: clamp(9px, 0.8vw, 10px);
     /* font-size: 14px; */
   }
 
   .tab {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    min-height: 5vh;
-    max-height: 7vh;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    min-height: 3.8vh;
+    max-height: 5vh;
     /* height:7vh; */
     /* padding: 1.5rem 1rem; */
     cursor: pointer;
@@ -717,8 +717,8 @@ onUnmounted(() => {
     align-items: stretch;
     /* align-items: center; */
     /* height: 34vh; */
-    min-height: 30vh;
-    padding: 1.5rem 1rem;
+    min-height: 22vh;
+    /* padding: rem ; */
     /* aspect-ratio: 16 / 7; */
     /* border: 3px solid pink; */
     flex-direction: column;

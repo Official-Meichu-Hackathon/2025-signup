@@ -180,7 +180,7 @@
         <div
           :class="[
             activeTabPhone === '黑客組' ? 'bg-[#5B74B0] active' : 'bg-[#D3E4FC] inactive',
-            'target-area tab left-[7.5vw] w-[15vw] pt-[1vh]',
+            'target-area tab left-[7.5vw] w-[15vw] pt-[0.25vh]',
           ]"
           @click="activeTabPhone = '黑客組'"
         >
@@ -191,7 +191,7 @@
         <div
           :class="[
             activeTabPhone === '創客組' ? 'bg-[#5B74B0] active' : 'bg-[#D3E4FC] inactive',
-            'target-area tab w-[20vw] pt-[1vh] left-[22.5vw]',
+            'target-area tab w-[20vw] pt-[0.25vh] left-[22.5vw]',
           ]"
           @click="activeTabPhone = '創客組'"
         >
@@ -466,20 +466,20 @@ onUnmounted(() => {
   }
 
   .active {
-    font-size: clamp(12px, 1vw, 14px);
+    font-size: clamp(11px, 1vw, 12px);
     /* font-size: 16px; */
   }
 
   .inactive {
-    font-size: clamp(10px, 0.8vw, 12px);
+    font-size: clamp(9px, 0.8vw, 10px);
     /* font-size: 14px; */
   }
 
   .tab {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    min-height: 5vh;
-    max-height: 7vh;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    min-height: 3.8vh;
+    max-height: 5vh;
     /* height:7vh; */
     /* padding: 1.5rem 1rem; */
     cursor: pointer;

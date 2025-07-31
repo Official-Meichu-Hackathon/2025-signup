@@ -18,7 +18,7 @@
       <div class="w-[80vw] relative mx-auto select-none">
         <!-- tab ! -->
 
-        <div class="tab-list flex flex-row">
+        <div class="tab-list flex flex-row h-[9vh]">
           <!-- tab 黑客組 -->
           <div
             :class="[
@@ -239,7 +239,7 @@
         <div
           :class="[
             activeTabPhone === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'target-area tab left-[7.5vw] w-[15vw] pt-[1vh]',
+            'target-area tab left-[7.5vw] w-[15vw] pt-[0.25vh]',
           ]"
           @click="activeTabPhone = '黑客組'"
         >
@@ -250,7 +250,7 @@
         <div
           :class="[
             activeTabPhone === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'target-area tab w-[20vw] pt-[1vh] left-[22.5vw]',
+            'target-area tab w-[20vw] pt-[0.25vh] left-[22.5vw]',
           ]"
           @click="activeTabPhone = '創客組'"
         >
@@ -773,7 +773,8 @@ onMounted(() => {
 
 .tab-list {
   margin-left: 7vw;
-  height: 9vh;
+  /* height: 9vh; */
+  max-height: 9vh;
   /* border: 3px solid red; */
   /* min-height: 7vh; */
 }
@@ -843,19 +844,20 @@ onMounted(() => {
   }
 
   .active {
-    font-size: clamp(12px, 1vw, 14px);
+    font-size: clamp(11px, 1vw, 12px);
     /* font-size: 16px; */
   }
 
   .inactive {
-    font-size: clamp(10px, 0.8vw, 12px);
+    font-size: clamp(9px, 0.8vw, 10px);
     /* font-size: 14px; */
   }
 
   .tab {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    /* height: 7vh; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-height: 5vh;
+    min-height: 3.8vh;
     cursor: pointer;
     display: flex;
     align-items: center;
