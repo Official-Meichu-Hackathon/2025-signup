@@ -1,9 +1,6 @@
 <script setup>
-defineOptions({
-  name: 'TextQuestionComponent',
-})
-
-defineProps({
+import { ref } from 'vue'
+const { verifyFunction, verifyMessage } = defineProps({
   title: {
     type: String,
     required: true,
@@ -11,11 +8,28 @@ defineProps({
   description: {
     type: String,
   },
-  maxLength: {
-    type: Number,
-    default: 100,
+  verifyFunction: {
+    type: Function,
+    default: () => true,
+  },
+  verifyMessage: {
+    type: String,
+    default: '你的輸入格式錯誤',
   },
 })
+
+const isNotVerify = ref(false)
+
+const handleVerify = () => {
+  if (!text.value || text.value.length === 0 || !verifyFunction) return
+  isNotVerify.value = !verifyFunction(text.value)
+}
+
+const handleInput = () => {
+  if (isNotVerify.value) {
+    handleVerify()
+  }
+}
 
 const text = defineModel()
 </script>
@@ -29,9 +43,11 @@ const text = defineModel()
       v-model="text"
       class="bg-white border-1 rounded-lg mx-4 mt-3 p-2 text-lg w-[95%] md:w-full"
       required
+      @blur="handleVerify"
+      @input="handleInput"
     />
-    <p v-if="maxLength && text.length > maxLength" class="text-red-500 text-sm mt-2 mx-4">
-      字數超過限制！請保持在 {{ maxLength }} 字以內
+    <p v-if="isNotVerify" class="text-red-500 text-sm mt-2 mx-4">
+      {{ verifyMessage }}
     </p>
   </div>
 </template>

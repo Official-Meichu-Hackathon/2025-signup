@@ -96,6 +96,16 @@ const handleStepClick = (stepOrder) => {
   }
 }
 
+const validateEmail = (email) => {
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  return emailPattern.test(email)
+}
+
+const validatePhoneNumber = (phone) => {
+  const phonePattern = /^09\d{8}$/
+  return phonePattern.test(phone)
+}
+
 const submit = async () => {
   if (isSubmitting.value) return
 
@@ -194,7 +204,16 @@ const submit = async () => {
       v-model:currentStepOrder="currentStepOrder"
       @submit="submit"
     >
-      <TextQuestion title="*隊伍名稱（上限20字）" :maxLength="20" v-model="groupName" />
+      <TextQuestion
+        title="*隊伍名稱（上限20字）"
+        v-model="groupName"
+        :verify-function="
+          () => {
+            return !groupName || groupName.length <= 20
+          }
+        "
+        verify-message="字數超過限制！請保持在 20 字以內"
+      />
 
       <ChoiceQuestion
         title="*隊伍人數"
@@ -257,7 +276,7 @@ const submit = async () => {
       />
 
       <TextQuestion
-        title="*生日（西元年月日）（格式：20040101）"
+        title="*生日（西元年月日 格式：20040101）"
         v-model="playerData[index].birthday"
       />
 
@@ -270,25 +289,35 @@ const submit = async () => {
       />
 
       <TextQuestion
-        title="*就讀學校（填寫全名 e.g.國立陽明交通大學）"
+        title="*就讀學校（填寫全名 e.g. 國立陽明交通大學）"
         v-model="playerData[index].school"
       />
 
       <TextQuestion
-        title="*科系（填寫全名 e.g.資訊工程學系）"
+        title="*科系（填寫全名 e.g. 資訊工程學系）"
         v-model="playerData[index].department"
       />
 
       <TextQuestion
-        title="*年級（格式：XX X年級 e.g.大學三年級、碩士二年級、已畢業）"
+        title="*年級（格式：XXX年級 e.g. 大學三年級、碩士二年級、已畢業）"
         v-model="playerData[index].grade"
       />
 
       <TextQuestion title="職業（社會人士填寫）" v-model="playerData[index].occupation" />
 
-      <TextQuestion title="*電子郵件信箱" v-model="playerData[index].email" />
+      <TextQuestion
+        title="*電子郵件信箱（格式：test@mail.com）"
+        v-model="playerData[index].email"
+        :verify-function="validateEmail"
+        verify-message="請輸入有效的電子郵件格式（例如：test@mail.com）"
+      />
 
-      <TextQuestion title="*手機號碼" v-model="playerData[index].phone" />
+      <TextQuestion
+        title="*手機號碼（十碼數字 格式：0921234567）"
+        v-model="playerData[index].phone"
+        :verify-function="validatePhoneNumber"
+        verify-message="請輸入有效的台灣手機號碼格式（09開頭，總共10碼數字）"
+      />
 
       <TextQuestion title="特殊飲食習慣" v-model="playerData[index].dietaryRestrictions" />
 
