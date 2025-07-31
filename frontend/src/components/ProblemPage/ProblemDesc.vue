@@ -111,10 +111,10 @@
       <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh] mt-[8vh]">
         <ProblemCard
           :logo="HsinchuLogo"
-          companyName="新竹市政府"
+          companyName="新竹市政府與新竹市青年發展中心"
           problemTitle="題目"
-          problem-content="題目題目題目之後改"
-          problemLink="https://example.com/problem"
+          problemContent="題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目"
+          :problemLink="GovernmentProblem"
         />
 
         <!-- 閃電 -->
@@ -154,6 +154,8 @@ import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
 import BackgroundOne from '../ProblemPage/Bg1.vue'
 import BackgroundTwo from '../ProblemPage/Bg2.vue'
 import BackgroundThree from '../ProblemPage/Bg3.vue'
+
+import GovernmentProblem from '../../assets/Problems/Problem/GovernmentProblem.pdf'
 
 defineOptions({
   name: 'ProblemDesc',

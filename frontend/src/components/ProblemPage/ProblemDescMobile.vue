@@ -76,10 +76,10 @@
       <div class="relative w-full flex items-center justify-center min-h-[50vh]">
         <ProblemCard
           :logo="HsinchuLogo"
-          companyName="新竹市政府"
+          companyName="新竹市政府與新竹市青年發展中心"
           problemTitle="題目"
-          problem-content="題目題目題目之後改"
-          problemLink="https://example.com/problem"
+          problem-content="題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目"
+          :problemLink="GovernmentProblem"
         />
         <img
           src="../../assets/Problems/element/Frame51.svg"
@@ -102,6 +102,8 @@ import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
 import ProblemCard from '../ProblemPage/ProblemCard.vue'
 import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
+
+import GovernmentProblem from '../../assets/Problems/Problem/GovernmentProblem.pdf'
 </script>
 
 <style scoped>

@@ -95,6 +95,13 @@ import GoogleLogo from '../../assets/Problems/Logo/Google.webp'
 import LogitechLogo from '../../assets/Problems/Logo/Logitech.webp'
 import NXPLogo from '../../assets/Problems/Logo/NXP.webp'
 
+import AMDProblem from '../../assets/Problems/Problem/AMDProblem.pdf'
+import TSMCProblem from '../../assets/Problems/Problem/TSMCProblem.pdf'
+import CloudMosaProblem from '../../assets/Problems/Problem/CloudmosaProblem.pdf'
+import GooglePromblem from '../../assets/Problems/Problem/GoogleProblem.pdf'
+import LogitechProblem from '../../assets/Problems/Problem/LogitechProblem.pdf'
+import NXPProblem from '../../assets/Problems/Problem/NXPProblem.pdf'
+
 const isDesktop = inject('isDesktop')
 
 const cards = [
@@ -102,42 +109,49 @@ const cards = [
     logo: AMDLogo,
     companyName: 'AMD',
     problemTitle: '題目',
-    problemContent: '題目題目題目之後改',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
+    problemLink: AMDProblem,
   },
   {
     logo: TSMCLogo,
-    companyName: 'TSMC',
+    companyName: '台灣積體電路股份有限公司',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
-    problemLink: '',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
+    problemLink: TSMCProblem,
   },
   {
     logo: CloudMosaLogo,
     companyName: 'CloudMosa',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
-    problemLink: '',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
+    problemLink: CloudMosaProblem,
   },
   {
     logo: GoogleLogo,
     companyName: 'Google',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
-    problemLink: '',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
+    problemLink: GooglePromblem,
   },
   {
     logo: LogitechLogo,
-    companyName: 'Logitech',
+    companyName: '羅技',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
-    problemLink: '',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
+    problemLink: LogitechProblem,
   },
   {
     logo: NXPLogo,
-    companyName: 'NXP',
+    companyName: '恩智浦半導體',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
-    problemLink: '',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
+    problemLink: NXPProblem,
   },
 ]
 

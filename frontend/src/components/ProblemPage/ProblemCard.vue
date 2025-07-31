@@ -19,27 +19,27 @@
     <!-- 卡片內容 -->
     <div class="relative flex flex-col items-center justify-between text-center w-[80%] h-[80%]">
       <!-- 公司 Logo -->
-      <div class="flex items-center justify-center w-full h-[33%]">
-        <img :src="logo" alt="公司 Logo" class="max-w-[80%] max-h-full" />
+      <div class="flex items-center justify-center w-[70%] h-[20%]">
+        <img :src="logo" alt="公司 Logo" class="max-h-full" />
       </div>
       <!-- 公司名稱 -->
-      <!-- <h2 class="absolute text-[2.0vh] font-bold text-[#CD8A98] font-[Chiron_Hei_HK] top-[27%]">
+      <h2
+        class="flex items-center text-[2.0vh] font-bold text-[#CD8A98] font-[Chiron_Hei_HK] m-[1vh]"
+      >
         {{ companyName }}
-      </h2> -->
+      </h2>
 
       <!-- 分隔線 -->
-      <div class="absolute bg-[#CD8A98] w-[90%] h-[0.2vh] top-[33%]"></div>
+      <div class="bg-[#CD8A98] w-[90%] h-[0.2vh]"></div>
 
       <!-- 題目標題 -->
-      <p
-        class="absolute text-[2vh] font-semibold text-[#2D3E63] m-[1.5vh] font-[Chiron_Hei_HK] top-[36%] h-[5%]"
-      >
+      <p class="text-[2vh] font-semibold text-[#2D3E63] font-[Chiron_Hei_HK] m-[0.5vh]">
         {{ problemTitle }}
       </p>
 
       <!-- 題目內容 -->
       <p
-        class="absolute text-[1.8vh] text-[#2D3E63] font-bold leading-relaxed font-[Chiron_Hei_HK] top-[50%] h-[27%]"
+        class="text-[1.8vh] text-[#2D3E63] font-bold tracking-wider leading-relaxed font-[Chiron_Hei_HK] w-[85%] m-[1vh]"
       >
         {{ problemContent }}
       </p>
@@ -48,7 +48,7 @@
       <a
         :href="problemLink"
         target="_blank"
-        class="text-[1.8vh] text-white font-bold font-[Chiron_Hei_HK] px-[2vw] py-[0.5vh] rounded-[1vh]"
+        class="text-[1.8vh] text-white font-bold font-[Chiron_Hei_HK] m-[2vw] m-[3vh] rounded-[1vh]"
       >
         詳細題目說明 >>
       </a>
@@ -79,9 +79,11 @@
       </div>
 
       <!-- 公司名稱 -->
-      <!-- <h2 class="absolute text-[2.0vh] font-bold text-[#CD8A98] font-[Chiron_Hei_HK] top-[27%]">
+      <h2
+        class="flex items-center text-[2.0vh] font-bold text-[#CD8A98] font-[Chiron_Hei_HK] top-[27%]"
+      >
         {{ companyName }}
-      </h2> -->
+      </h2>
 
       <!-- 分隔線 -->
       <div class="bg-[#CD8A98] w-[80%] h-[0.2vh]"></div>
@@ -112,6 +114,7 @@
 
 <script setup>
 import { inject } from 'vue'
+
 const isDesktop = inject('isDesktop')
 
 defineOptions({
