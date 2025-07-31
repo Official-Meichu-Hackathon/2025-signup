@@ -301,7 +301,7 @@
       <StarMove></StarMove>
     </div>
 
-    <div class="mb-[8vh]"></div>
+    <div class="mb-[3vh]"></div>
   </div>
 </template>
 

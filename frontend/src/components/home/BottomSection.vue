@@ -4,7 +4,19 @@
       <div
         class="relative mx-auto title md:mt-[8vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
-        <div>合作企業</div>
+        <div class="relative">
+          合作企業
+          <img
+            src="../../assets/Home/Ellipse-49.svg"
+            alt="Ellipse-49"
+            class="absolute blur-[40px] left-[90%] top-[-30%]"
+          />
+          <img
+            src="../../assets/Home/sparkle-10-1.svg"
+            alt="sparkle-10-1"
+            class="absolute top-[-50%] left-[80%]"
+          />
+        </div>
 
         <!-- Desktop collaborators -->
         <div v-if="!isMobile">
@@ -93,7 +105,19 @@
             </div>
           </div>
           <div class="collaborators !gap-0 special-coop">
-            <div class="collaborator-item !w-[18vw] pl-[3vw]">特別合作企業</div>
+            <div class="collaborator-item !w-[18vw] pl-[3vw] relative">
+              特別合作企業
+              <img
+                src="../../assets/Home/sparkle-12-3.svg"
+                alt=""
+                class="sparkle-12-3 absolute top-[10%] left-[-50%] scale-[0.5] rotate-70"
+              />
+              <img
+                src="../../assets/Home/sparkle-13-3.svg"
+                alt=""
+                class="sparkle-13-3 absolute left-[-130%] top-[-500%] scale-[0.4] rotate-70"
+              />
+            </div>
             <div class="collaborator-item">
               <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
                 <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
@@ -195,7 +219,16 @@
           </div>
         </div>
 
-        <div>贊助企業</div>
+        <div class="relative">
+          贊助企業
+
+          <img
+            src="../../assets/Home/6star-14-1.svg"
+            alt="6star-14-1"
+            class="absolute left-[55%] bottom-[63%]"
+          />
+        </div>
+
         <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
           <div class="marquee-content flex-shrink-0">
             <!-- Diamond Sponsor -->
@@ -375,7 +408,16 @@
           </div>
         </div>
 
-        <div>特殊贊助</div>
+        <div class="relative">
+          特殊贊助
+
+          <img
+            src="../../assets/Home/6star-14-2.svg"
+            alt="6star-14-2"
+            class="absolute left-[38%] bottom-[50%]"
+          />
+        </div>
+
         <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
           <div class="marquee-content-special-sponsor flex-shrink-0">
             <!-- First set of sponsors -->
@@ -434,7 +476,15 @@
           </div>
         </div>
 
-        <div>媒體合作</div>
+        <div class="relative">
+          媒體合作
+          <img
+            src="../../assets/Home/sparkle-5-05-2.svg"
+            alt="sparkle-5-05-2"
+            class="absolute left-[58%] top-[-10%]"
+          />
+        </div>
+
         <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
           <div class="marquee-content-media flex-shrink-0">
             <div class="sponsor-item">
@@ -494,23 +544,24 @@
             </div>
           </div>
         </div>
-        <div>協辦單位</div>
-
-        <img
-          class="red-back absolute bottom-[65%] left-[42%] w-[15vw] blur-[20px]"
-          src="../../assets/Home/red-back.svg"
-          alt="red-back"
-        />
-        <img
-          class="blue-back absolute bottom-[50%] left-[43%] w-[15vw] blur-[20px]"
-          src="../../assets/Home/blue-back.svg"
-          alt="blue-back"
-        />
-        <img
-          class="absolute w-[10vw] bottom-[70%] left-[35%]"
-          src="../../assets/Home/star-02-02-1.svg"
-          alt="star-02-02-1"
-        />
+        <div class="relative">
+          協辦單位
+          <img
+            class="red-back absolute top-[-150%] left-[42%] w-[15vw] blur-[20px]"
+            src="../../assets/Home/red-back.svg"
+            alt="red-back"
+          />
+          <img
+            class="blue-back absolute top-[-100%] left-[43%] w-[15vw] blur-[20px]"
+            src="../../assets/Home/blue-back.svg"
+            alt="blue-back"
+          />
+          <img
+            class="absolute w-[8vw] bottom-[20%] left-[35%]"
+            src="../../assets/Home/star-02-02-1.svg"
+            alt="star-02-02-1"
+          />
+        </div>
 
         <div
           class="w-[80vw] mx-auto mt-[2vh] mb-[7vh] flex flex-row justify-around co-organizer-logos"
@@ -537,9 +588,9 @@
       >
         特別感謝
         <img
-          class="absolute w-[10vw] brightness-[1.02] contrast-[0.9] left-[53%] top-[12%]"
-          src="../../assets/Home/star-06-1.svg"
-          alt="star-06-1"
+          class="absolute w-[13vw] left-[53%] top-[-180%]"
+          src="../../assets/Home/star-06-2.svg"
+          alt="star-06-2"
         />
       </div>
 
@@ -559,7 +610,8 @@
           <div>國立清華大學清華學院學士班系學會</div>
         </div>
 
-        <div class="mx-auto mt-[4vh]">
+        <div class="mx-auto mt-[4vh] w-[45vw] pr-[5vw] flex flex-row justify-between">
+          <div>國立清華大學資訊科學研究社</div>
           <div>Colde Garage</div>
         </div>
 
@@ -574,24 +626,37 @@
       <div class="mt-[8vh] mb-[10vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100 ad-placeholder"></div>
 
       <div
-        class="mx-auto title mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
+        class="mx-auto title relative mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
         Youtube 影片
+
+        <div>
+          <img
+            src="../../assets/Home/sparkle-12-3.svg"
+            alt="sparkle-12-3"
+            class="z-2 sparkle-12-3 absolute left-[92%] bottom-[100%]"
+          />
+          <img
+            src="../../assets/Home/sparkle-13-3.svg"
+            alt="sparkle-13-3"
+            class="z-2 sparkle-13-3 absolute left-[88%] top-[-10%]"
+          />
+        </div>
       </div>
 
       <div
         class="relative flex justify-center mt-[8vh] mb-[20vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100 video-placeholder"
         @click="Play = !Play"
       >
-        <img v-if="!Play" src="../../assets/Home/play_circle.svg" alt="play_circle" />
+        <img v-show="!Play" src="../../assets/Home/play_circle.svg" alt="play_circle" />
 
         <img
-          class="absolute top-[95%] right-[90%]"
+          class="absolute top-[95%] right-[95%]"
           src="../../assets/Home/6star-14-3.svg"
           alt="6star-14-3"
         />
         <img
-          class="absolute top-[110%] right-[85%]"
+          class="absolute top-[105%] right-[90%]"
           src="../../assets/Home/6star-14-4.svg"
           alt="6star-14-4"
         />
@@ -836,6 +901,64 @@ watch(Play, (newVal) => {
   font-size: 4vw;
   font-weight: bold;
   text-align: center;
+}
+
+.sparkle-12-3 {
+  transform-origin: top center;
+  animation: animSparkle-12-3 6s infinite;
+}
+
+.sparkle-13-3 {
+  transform-origin: bottom center;
+  animation: animSparkle-13-3 6s infinite;
+}
+
+@keyframes animSparkle-12-3 {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  25% {
+    transform: translateX(-50%) scale(1.3);
+  }
+  40% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1);
+  }
+  70% {
+    transform: translateX(-50%) scale(0.7);
+  }
+  80% {
+    transform: translateX(-50%) scale(0.7);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes animSparkle-13-3 {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  25% {
+    transform: translateX(-50%) scale(0.8);
+  }
+  40% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1);
+  }
+  70% {
+    transform: translateX(-50%) scale(1.3);
+  }
+  80% {
+    transform: translateX(-50%) scale(1.3);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
 }
 
 /* Hide desktop collaborators on mobile */

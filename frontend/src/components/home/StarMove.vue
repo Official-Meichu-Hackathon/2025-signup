@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-[110vw] h-[20vw] overflow-hidden ml-[0] pl-[0]">
+  <div class="relative w-[110vw] h-[25vw] overflow-hidden ml-[0] pl-[0]">
     <img
       v-for="(star, i) in starSequence"
       :key="i"
@@ -35,7 +35,7 @@ onMounted(() => {
 
 <style scoped>
 img {
-  width: 15vw;
+  width: 25vw;
   height: auto;
 }
 </style>

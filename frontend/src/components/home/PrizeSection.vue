@@ -207,7 +207,7 @@
   <div class="block md:hidden bg-[white] flex flex-col w-full overflow-hidden">
     <!-- <h1>手機板排版</h1> -->
     <div
-      class="w-[90vw] text-[20px] mx-auto text-center text-[#2D3E63] mt-[5vh] mb-[7vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      class="w-[90vw] text-[20px] mx-auto text-center text-[#2D3E63] mt-[2vh] mb-[7vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
     >
       獎項資訊
     </div>
