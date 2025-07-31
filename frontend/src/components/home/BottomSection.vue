@@ -1355,55 +1355,6 @@
       </div>
 
       <div
-        class="mx-auto title mt-[2vh] relative text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
-      >
-        企業廣告
-
-        <!-- light blue to dark blue ( 漸變 3 ) -->
-        <div v-if="!isMobile" class="absolute blur-[40px] left-[80%] top-[-80%]">
-          <svg
-            width="380"
-            height="400"
-            viewBox="0 0 391 473"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g filter="url(#filter0_f_702_646)">
-              <path
-                d="M181.14 111.611C123.205 130.448 38.1397 107.394 21.1396 187.612C4.13963 267.83 181.14 328.616 297.786 267.83C379.5 225.248 394.14 54.1115 334.14 25.6115C274.14 -2.8885 262.64 85.1113 181.14 111.611Z"
-                fill="#7EB9FF"
-              >
-                <animate
-                  attributeName="fill"
-                  values="#B0CEF9;#5C76B596;#B0CEF9;#B0CEF9;#B0CEF9"
-                  dur="6s"
-                  repeatCount="indefinite"
-                />
-              </path>
-            </g>
-            <defs>
-              <filter
-                id="filter0_f_702_646"
-                x="-160"
-                y="-160"
-                width="710.821"
-                height="632.543"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="90" result="effect1_foregroundBlur_702_646" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
-      <div
-        class="z-2 mt-[8vh] mb-[10vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100 ad-placeholder"
-      ></div>
-
-      <div
         class="mx-auto title relative mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
         Youtube 影片
@@ -1428,12 +1379,20 @@
           class="z-2 relative flex justify-center mt-[8vh] mb-[20vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100 video-placeholder"
           @click="Play = !Play"
         >
-          <img
+          <!-- <img
             v-show="!Play"
             src="../../assets/Home/play_circle.svg"
             alt="play_circle"
             class="w-[10vw]"
-          />
+          /> -->
+
+          <!-- youtube video -->
+          <iframe
+            class="w-full h-full border-none"
+            :src="`https://www.youtube.com/embed/jGHvV1Y9B-E`"
+            allow="fullscreen"
+            allowfullscreen
+          ></iframe>
           <div v-if="!isMobile">
             <img
               class="z-2 w-[15vw] absolute bottom-[-5%] left-[-20%]"
