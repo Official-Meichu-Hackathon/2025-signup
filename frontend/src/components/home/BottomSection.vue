@@ -24,7 +24,7 @@
             </div>
             <div class="collaborator-item">
               <a
-                href="https://www.hccg.gov.tw/hccg/index"
+                href="https://www.facebook.com/share/1D5ppcCNFf/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -112,7 +112,11 @@
                 alt="新竹市政府"
               />
             </a>
-            <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.facebook.com/share/1D5ppcCNFf/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 class="mobile-img"
                 src="../../assets/Home/company/00_新竹市政府-01 2.svg"
@@ -796,8 +800,8 @@ watch(Play, (newVal) => {
 }
 
 .mobile-img {
-  max-width: 35vw;
-  width: auto;
+  width: 35vw; /* Keep this for responsive scaling */
+  max-width: 150px; /* Add a max-width in pixels */
   margin-bottom: 3vw;
   height: auto;
 }
