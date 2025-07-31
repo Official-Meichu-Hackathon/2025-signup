@@ -1376,7 +1376,7 @@
 
       <div class="relative">
         <div
-          class="z-2 relative flex justify-center mt-[8vh] mb-[20vh] mx-auto w-[65vw] h-[70vh] bg-neutral-100 video-placeholder"
+          class="z-2 relative flex justify-center mt-[8vh] mb-[20vh] mx-auto w-[65vw] bg-neutral-100 video-placeholder"
           @click="Play = !Play"
         >
           <!-- <img
@@ -1388,10 +1388,12 @@
 
           <!-- youtube video -->
           <iframe
-            class="w-full h-full border-none"
+            class="w-full border-none aspect-16/9 z-50"
             :src="`https://www.youtube.com/embed/jGHvV1Y9B-E`"
-            allow="fullscreen"
+            title="YouTube video player"
+            allow="picture-in-picture"
             allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
           ></iframe>
           <div v-if="!isMobile">
             <img
