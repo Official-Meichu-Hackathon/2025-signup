@@ -181,11 +181,11 @@ const submit = async () => {
       },
       redirect: 'follow',
     })
+    location.href = '/success-signup'
   } catch (err) {
     console.log(err)
     alert('報名失敗，請直接用email聯絡我們: \n2025mchackathon@gmail.com\n造成您的不便，深感抱歉')
   } finally {
-    location.href = '/success-signup'
     isSubmitting.value = false
   }
 }
@@ -338,7 +338,7 @@ const submit = async () => {
       :formStepOrder="totalStepOrder - 1"
       :total-step-order="totalStepOrder"
       stepName="填寫同意書"
-      :required-values="[]"
+      :required-values="[assentFirst, assentSecond]"
       :isSubmitting="isSubmitting"
       v-model:currentStepOrder="currentStepOrder"
       @submit="submit"
