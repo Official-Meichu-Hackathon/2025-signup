@@ -16,15 +16,31 @@
           class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
         >
           <img
+            v-show="!isMobile"
             src="../../assets/Home/Frame-30.svg"
             class="bg2 absolute transform scale-250 md:scale-200 bottom-[5%] left-[30%] z-0"
             alt="bg2"
           />
           <img
+            v-show="!isMobile"
             src="../../assets/Home/Frame-29.svg"
             class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
             alt="bg1"
           />
+
+          <img
+            v-show="isMobile"
+            src="../../assets/Home/phoneGroup-btn2.svg"
+            class="bg2 absolute scale-150 top-[-15%] left-[10%]"
+            alt="phoneGroup-btn2"
+          />
+          <img
+            v-show="isMobile"
+            src="../../assets/Home/phoneGroup-btn1.svg"
+            class="bg1 absolute top-[-15%] scale-150"
+            alt="phoneGroup-btn1"
+          />
+
           <span
             class="text-shadow w-[30vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
             >黑客組</span
@@ -39,14 +55,29 @@
           class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
         >
           <img
+            v-show="!isMobile"
             src="../../assets/Home/Frame-30.svg"
-            class="bg2 absolute transform scale-300 md:scale-200 bottom-[5%] left-[30%] z-0"
+            class="bg2 absolute transform scale-250 md:scale-200 bottom-[5%] left-[30%] z-0"
             alt="bg2"
           />
           <img
+            v-show="!isMobile"
             src="../../assets/Home/Frame-29.svg"
             class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
             alt="bg1"
+          />
+
+          <img
+            v-show="isMobile"
+            src="../../assets/Home/phoneGroup-btn2.svg"
+            class="bg2 absolute scale-150 top-[-15%] left-[10%]"
+            alt="phoneGroup-btn2"
+          />
+          <img
+            v-show="isMobile"
+            src="../../assets/Home/phoneGroup-btn1.svg"
+            class="bg1 absolute top-[-15%] scale-150"
+            alt="phoneGroup-btn1"
           />
 
           <span
@@ -60,9 +91,13 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+
 defineOptions({
   name: 'SignupGroup',
 })
+
+const isMobile = ref(false)
 
 const emit = defineEmits(['close', 'select'])
 
@@ -76,6 +111,17 @@ function selectOption(option, id) {
   emit('select', { option, id })
   emit('close')
 }
+
+onMounted(() => {
+  // 判斷裝置寬度是否小於某個值，例如 768px
+  isMobile.value = window.innerWidth <= 768
+
+  // 如果你想要即時監聽視窗大小改變
+  window.addEventListener('resize', () => {
+    isMobile.value = window.innerWidth <= 768
+    console.log('isMobile', isMobile.value)
+  })
+})
 </script>
 
 <style scoped>
@@ -116,6 +162,10 @@ function selectOption(option, id) {
   animation-fill-mode: forwards;
 }
 
+.container {
+  border: red solid 3px;
+}
+
 @keyframes showbg1 {
   0%,
   100% {
@@ -138,7 +188,8 @@ function selectOption(option, id) {
 
 @media (max-width: 768px) {
   .option {
-    height: 10vh;
+    height: 7vh;
+    border: 5px solid #d9d9d9;
   }
 }
 </style>
