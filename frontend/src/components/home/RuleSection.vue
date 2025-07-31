@@ -157,7 +157,7 @@
   <!-- layout for phone -->
   <div class="block md:hidden relative w-full overflow-hidden bg-[white]">
     <div
-      class="w-[90vw] text-[20px] mx-auto relative text-center text-[#2D3E63] mt-[5vh] mb-[3vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      class="w-[90vw] text-[20px] mx-auto relative text-center text-[#2D3E63] mt-[5vh] mb-[5vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
     >
       比賽規則
       <img
