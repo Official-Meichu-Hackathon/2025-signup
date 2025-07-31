@@ -110,6 +110,25 @@ const validatePhoneNumber = (phone) => {
   return phonePattern.test(phone)
 }
 
+const validateBirthday = (birthday) => {
+  if (!birthday) return false
+
+  const birthdayPattern = /^\d{8}$/
+  if (!birthdayPattern.test(birthday)) return false
+
+  const year = parseInt(birthday.substring(0, 4))
+  const month = parseInt(birthday.substring(4, 6))
+  const day = parseInt(birthday.substring(6, 8))
+
+  const currentYear = new Date().getFullYear()
+  if (year < 1900 || year > currentYear) return false
+  if (month < 1 || month > 12) return false
+  if (day < 1 || day > 31) return false
+
+  const date = new Date(year, month - 1, day)
+  return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day
+}
+
 const submit = async () => {
   if (isSubmitting.value) return
 
@@ -257,7 +276,7 @@ const submit = async () => {
       :required-values="[
         playerData[index].name,
         playerData[index].gender,
-        playerData[index].birthday,
+        validateBirthday(playerData[index].birthday) ? playerData[index].birthday : '',
         playerData[index].idNumber,
         playerData[index].identity,
         playerData[index].school,
@@ -282,6 +301,8 @@ const submit = async () => {
       <TextQuestion
         title="*生日（西元年月日 格式：20040101）"
         v-model="playerData[index].birthday"
+        :verify-function="validateBirthday"
+        verify-message="請輸入有效的生日格式（8位數字，例如：20040101）"
       />
 
       <TextQuestion title="*身分證字號" v-model="playerData[index].idNumber" />

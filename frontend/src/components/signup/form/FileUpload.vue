@@ -107,6 +107,7 @@ const uploadFile = async (fileToUpload) => {
       if (!response.ok) {
         console.error(`上傳失敗: ${response.status} ${response.statusText}`)
         uploadError.value = '檔案上傳失敗，請重試'
+        return
       }
 
       const result = await response.json()
