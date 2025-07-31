@@ -109,42 +109,48 @@ const cards = [
     logo: AMDLogo,
     companyName: 'AMD',
     problemTitle: '題目',
-    problemContent: '題目題目題目之後改',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
     problemLink: AMDProblem,
   },
   {
     logo: TSMCLogo,
-    companyName: 'TSMC',
+    companyName: '台灣積體電路股份有限公司',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
     problemLink: TSMCProblem,
   },
   {
     logo: CloudMosaLogo,
     companyName: 'CloudMosa',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
     problemLink: CloudMosaProblem,
   },
   {
     logo: GoogleLogo,
     companyName: 'Google',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
     problemLink: GooglePromblem,
   },
   {
     logo: LogitechLogo,
-    companyName: 'Logitech',
+    companyName: '羅技',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
     problemLink: LogitechProblem,
   },
   {
     logo: NXPLogo,
-    companyName: 'NXP',
+    companyName: '恩智浦半導體',
     problemTitle: '題目',
-    problemContent: '請描述問題內容',
+    problemContent:
+      '題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目',
     problemLink: NXPProblem,
   },
 ]

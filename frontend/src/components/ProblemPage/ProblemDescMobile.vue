@@ -76,9 +76,9 @@
       <div class="relative w-full flex items-center justify-center min-h-[50vh]">
         <ProblemCard
           :logo="HsinchuLogo"
-          companyName="新竹市政府"
+          companyName="新竹市政府與新竹市青年發展中心"
           problemTitle="題目"
-          problem-content="題目題目題目之後改"
+          problem-content="題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目"
           :problemLink="GovernmentProblem"
         />
         <img
