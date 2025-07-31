@@ -36,7 +36,7 @@
             </div>
             <div class="collaborator-item">
               <a
-                href="https://www.hccg.gov.tw/hccg/index"
+                href="https://www.facebook.com/share/1D5ppcCNFf/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -136,7 +136,11 @@
                 alt="新竹市政府"
               />
             </a>
-            <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.facebook.com/share/1D5ppcCNFf/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 class="mobile-img"
                 src="../../assets/Home/company/00_新竹市政府-01 2.svg"
@@ -418,62 +422,47 @@
           />
         </div>
 
-        <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
+        <div class="marquee-sponsors mx-auto flex justify-center w-[60vw]">
           <div class="marquee-content-special-sponsor flex-shrink-0">
             <!-- First set of sponsors -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
+              <span class="sponsor-level" style="margin-left: -0.4rem">Platinum</span>
               <img
                 class="inline-block"
-                src="../../assets/Home/special_sponsors/BABI_platinum.svg"
+                src="../../assets/Home/special_sponsors/BABI_platinum.webp"
                 alt="BABI"
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level">Silver</span>
+              <span class="sponsor-level" style="margin-left: 1.4rem">Silver</span>
               <img
                 class="inline-block"
-                src="../../assets/Home/special_sponsors/GCOMM_silver.svg"
+                src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
                 alt="GCOMM"
-              />
-            </div>
-            <div class="sponsor-item">
-              <span class="sponsor-level">Others</span>
-              <img
-                class="inline-block"
-                src="../../assets/Home/special_sponsors/hsinhao_others.svg"
-                alt="Hsinhao"
               />
             </div>
           </div>
 
           <!-- Duplicate set for seamless loop -->
-          <div class="marquee-content-special-sponsor flex-shrink-0">
+          <!-- <div class="marquee-content-special-sponsor flex-shrink-0">
             <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
+              <span class="sponsor-level" style="margin-left: -0.2rem;">Platinum</span>
+
               <img
                 class="inline-block"
-                src="../../assets/Home/special_sponsors/BABI_platinum.svg"
+                src="../../assets/Home/special_sponsors/BABI_platinum.webp"
                 alt="BABI"
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level">Silver</span>
+              <span class="sponsor-level" style="margin-left: 0.4rem;">Silver</span>
               <img
                 class="inline-block"
-                src="../../assets/Home/special_sponsors/GCOMM_silver.svg"
+                src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
                 alt="GCOMM"
               />
             </div>
-            <div class="sponsor-item">
-              <span class="sponsor-level">Others</span>
-              <img
-                class="inline-block"
-                src="../../assets/Home/special_sponsors/hsinhao_others.svg"
-                alt="Hsinhao"
-              />
-            </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="relative">
@@ -753,7 +742,6 @@ watch(Play, (newVal) => {
 
 /* Add this to your existing CSS */
 .marquee-content-special-sponsor {
-  animation-duration: 9s; /* Half the speed of the normal 12s */
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
@@ -877,8 +865,8 @@ watch(Play, (newVal) => {
 }
 
 .mobile-img {
-  max-width: 35vw;
-  width: auto;
+  width: 35vw; /* Keep this for responsive scaling */
+  max-width: 150px; /* Add a max-width in pixels */
   margin-bottom: 3vw;
   height: auto;
 }
