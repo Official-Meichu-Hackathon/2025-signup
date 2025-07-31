@@ -96,6 +96,10 @@ const handleStepClick = (stepOrder) => {
   }
 }
 
+const validateGroupName = (name) => {
+  return !name || name.length <= 20
+}
+
 const validateEmail = (email) => {
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
   return emailPattern.test(email)
@@ -199,7 +203,11 @@ const submit = async () => {
       :formStepOrder="1"
       :totalStepOrder
       stepName="報名選項"
-      :requiredValues="[groupName.length > 20 ? '' : groupName, playerCountChoice, isCrossDomain]"
+      :requiredValues="[
+        validateGroupName(groupName) ? groupName : '',
+        playerCountChoice,
+        isCrossDomain,
+      ]"
       :isSubmitting="isSubmitting"
       v-model:currentStepOrder="currentStepOrder"
       @submit="submit"
@@ -207,11 +215,7 @@ const submit = async () => {
       <TextQuestion
         title="*隊伍名稱（上限20字）"
         v-model="groupName"
-        :verify-function="
-          () => {
-            return !groupName || groupName.length <= 20
-          }
-        "
+        :verify-function="validateGroupName"
         verify-message="字數超過限制！請保持在 20 字以內"
       />
 
@@ -259,13 +263,13 @@ const submit = async () => {
         playerData[index].school,
         playerData[index].department,
         playerData[index].grade,
-        playerData[index].email,
-        playerData[index].phone,
+        validateEmail(playerData[index].email) ? playerData[index].email : '',
+        validatePhone(playerData[index].phone) ? playerData[index].phone : '',
         playerData[index].shirtSize,
       ]"
       :isSubmitting="isSubmitting"
       v-model:currentStepOrder="currentStepOrder"
-      @sumbit="submit"
+      @submit="submit"
     >
       <TextQuestion title="*姓名" v-model="playerData[index].name" />
 
