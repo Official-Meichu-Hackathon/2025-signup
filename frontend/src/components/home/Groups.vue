@@ -18,7 +18,7 @@
       <div class="w-[80vw] relative mx-auto select-none">
         <!-- tab ! -->
 
-        <div class="tab-list flex flex-row">
+        <div class="tab-list flex flex-row h-[9vh]">
           <!-- tab 黑客組 -->
           <div
             :class="[
@@ -50,7 +50,7 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[63vw] h-[42vh] ml-[7vw] bg-card relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl justify-center items-center"
+          class="target-area w-[63vw] h-[42vh] ml-[7vw] relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl justify-center items-center"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
@@ -148,7 +148,7 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] bg-card relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
+          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
@@ -239,7 +239,7 @@
         <div
           :class="[
             activeTabPhone === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'target-area tab left-[7.5vw] w-[15vw] pt-[1vh]',
+            'target-area tab left-[7.5vw] w-[15vw] pt-[0.25vh]',
           ]"
           @click="activeTabPhone = '黑客組'"
         >
@@ -250,7 +250,7 @@
         <div
           :class="[
             activeTabPhone === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'target-area tab w-[20vw] pt-[1vh] left-[22.5vw]',
+            'target-area tab w-[20vw] pt-[0.25vh] left-[22.5vw]',
           ]"
           @click="activeTabPhone = '創客組'"
         >
@@ -274,7 +274,13 @@
         <div class="pt-[3vh] pb-[3vh] pl-[3vw] pr-[3vw] relative">
           <!-- 內容區 -->
           <div v-if="activeTabPhone === '黑客組'" class="relative flex flex-col space-y-[1.5vh]">
-            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
+            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl">
+              <img
+                src="../../assets/Home/group/group_hacker.jpg"
+                alt="hacker_photo"
+                class="w-full h-full object-cover object-[55%_center] rounded-2xl"
+              />
+            </div>
 
             <div class="">
               <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
@@ -290,7 +296,13 @@
           </div>
 
           <div v-if="activeTabPhone === '創客組'" class="space-y-[1.5vh] relative flex flex-col">
-            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl"></div>
+            <div class="mx-auto w-[52vw] h-[25vh] bg-zinc-300 rounded-2xl">
+              <img
+                src="../../assets/Home/group/group_maker.JPG"
+                alt="macker_photo"
+                class="w-full h-full object-cover object-[55%_center] rounded-2xl"
+              />
+            </div>
 
             <div class="">
               <div class="content text-[#656565] flex flex-col font-bold font-[Chiron_Hei_HK]">
@@ -323,7 +335,7 @@
           </div> -->
 
           <!-- 工作坊 button -->
-          <div class="mx-auto justify-center flex" @click="handleClick">
+          <div class="mx-auto justify-center flex cursor-pointer" @click="handleClick">
             <div class="btn1">
               <svg
                 v-show="currentIndex === 0"
@@ -761,7 +773,8 @@ onMounted(() => {
 
 .tab-list {
   margin-left: 7vw;
-  height: 9vh;
+  /* height: 9vh; */
+  max-height: 9vh;
   /* border: 3px solid red; */
   /* min-height: 7vh; */
 }
@@ -802,10 +815,6 @@ onMounted(() => {
   /* flex-direction: column; */
 }
 
-.bg-card {
-  /* padding: 1.5rem 1rem; */
-}
-
 .target-area {
   /* border: 3px solid red; */
   z-index: 2;
@@ -835,19 +844,20 @@ onMounted(() => {
   }
 
   .active {
-    font-size: clamp(12px, 1vw, 14px);
+    font-size: clamp(11px, 1vw, 12px);
     /* font-size: 16px; */
   }
 
   .inactive {
-    font-size: clamp(10px, 0.8vw, 12px);
+    font-size: clamp(9px, 0.8vw, 10px);
     /* font-size: 14px; */
   }
 
   .tab {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    /* height: 7vh; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-height: 5vh;
+    min-height: 3.8vh;
     cursor: pointer;
     display: flex;
     align-items: center;

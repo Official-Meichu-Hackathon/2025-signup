@@ -157,7 +157,7 @@
   <!-- layout for phone -->
   <div class="block md:hidden relative w-full overflow-hidden bg-[white]">
     <div
-      class="w-[90vw] text-[20px] mx-auto relative text-center text-[#2D3E63] mt-[5vh] mb-[3vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
+      class="w-[90vw] text-[20px] mx-auto relative text-center text-[#2D3E63] mt-[5vh] mb-[5vh] text-slate-700 text-base font-bold font-['Chiron_Hei_HK']"
     >
       比賽規則
       <img
@@ -180,7 +180,7 @@
         <div
           :class="[
             activeTabPhone === '黑客組' ? 'bg-[#5B74B0] active' : 'bg-[#D3E4FC] inactive',
-            'target-area tab left-[7.5vw] w-[15vw] pt-[1vh]',
+            'target-area tab left-[7.5vw] w-[15vw] pt-[0.25vh]',
           ]"
           @click="activeTabPhone = '黑客組'"
         >
@@ -191,7 +191,7 @@
         <div
           :class="[
             activeTabPhone === '創客組' ? 'bg-[#5B74B0] active' : 'bg-[#D3E4FC] inactive',
-            'target-area tab w-[20vw] pt-[1vh] left-[22.5vw]',
+            'target-area tab w-[20vw] pt-[0.25vh] left-[22.5vw]',
           ]"
           @click="activeTabPhone = '創客組'"
         >
@@ -287,18 +287,21 @@
           </div>
         </div>
       </div>
-
-      <!-- moving star -->
-      <div v-if="activeTabPhone === '創客組'" class="w-screen relative flex flex-col ml-[0]">
-        <!-- <div class="relative flex">
-          <img src="../../assets/Home/bluestar-10-1.svg" alt="bluestar-10-1" class="bluestar-1">
-          <img src="../../assets/Home/bluestar-11-3.svg" alt="bluestar-11-3" class="bluestar-2">
-        </div> -->
-        <StarMove></StarMove>
-      </div>
     </div>
 
-    <div class="mb-[8vh]"></div>
+    <!-- moving star => 原本被-->
+    <div
+      v-if="activeTabPhone === '創客組'"
+      class="w-[110vw] relative flex flex-col px-0 ml-0 mr-0 pl-[0]"
+    >
+      <!-- <div class="relative flex">
+        <img src="../../assets/Home/bluestar-10-1.svg" alt="bluestar-10-1" class="bluestar-1">
+        <img src="../../assets/Home/bluestar-11-3.svg" alt="bluestar-11-3" class="bluestar-2">
+      </div> -->
+      <StarMove></StarMove>
+    </div>
+
+    <div class="mb-[3vh]"></div>
   </div>
 </template>
 
@@ -463,20 +466,20 @@ onUnmounted(() => {
   }
 
   .active {
-    font-size: clamp(12px, 1vw, 14px);
+    font-size: clamp(11px, 1vw, 12px);
     /* font-size: 16px; */
   }
 
   .inactive {
-    font-size: clamp(10px, 0.8vw, 12px);
+    font-size: clamp(9px, 0.8vw, 10px);
     /* font-size: 14px; */
   }
 
   .tab {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    min-height: 5vh;
-    max-height: 7vh;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    min-height: 3.8vh;
+    max-height: 5vh;
     /* height:7vh; */
     /* padding: 1.5rem 1rem; */
     cursor: pointer;
