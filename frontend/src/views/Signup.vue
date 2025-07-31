@@ -201,7 +201,7 @@ const submit = async () => {
     />
     <FormItem
       :formStepOrder="1"
-      :totalStepOrder
+      :total-step-order="totalStepOrder"
       stepName="報名選項"
       :requiredValues="[
         validateGroupName(groupName) ? groupName : '',
@@ -252,7 +252,7 @@ const submit = async () => {
       v-for="(step, index) in playerSteps"
       :key="step.stepOrder"
       :formStepOrder="step.stepOrder"
-      :total-step-order
+      :total-step-order="totalStepOrder"
       :stepName="step.stepName"
       :required-values="[
         playerData[index].name,
@@ -264,7 +264,7 @@ const submit = async () => {
         playerData[index].department,
         playerData[index].grade,
         validateEmail(playerData[index].email) ? playerData[index].email : '',
-        validatePhone(playerData[index].phone) ? playerData[index].phone : '',
+        validatePhoneNumber(playerData[index].phone) ? playerData[index].phone : '',
         playerData[index].shirtSize,
       ]"
       :isSubmitting="isSubmitting"
@@ -336,7 +336,7 @@ const submit = async () => {
 
     <FormItem
       :formStepOrder="totalStepOrder - 1"
-      :total-step-order
+      :total-step-order="totalStepOrder"
       stepName="填寫同意書"
       :required-values="[]"
       :isSubmitting="isSubmitting"
@@ -361,7 +361,7 @@ const submit = async () => {
 
     <FormItem
       :formStepOrder="totalStepOrder"
-      :total-step-order
+      :total-step-order="totalStepOrder"
       stepName="其他"
       :required-values="[otherAssent]"
       :isSubmitting="isSubmitting"
