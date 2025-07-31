@@ -7,86 +7,95 @@
       class="menu2 absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300"
     ></div>
 
-    <!-- 彈出選單 -->
-    <div class="relative z-10 p-6 flex flex-col md:flex-row gap-[10vw]">
-      <router-link :to="{ path: '/signup', query: { ref: 'hacker' } }">
-        <!-- 黑客組 button -->
-        <button
-          @click="selectOption('選項一', 0)"
-          class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
-        >
-          <img
-            v-show="!isMobile"
-            src="../../assets/Home/Frame-30.svg"
-            class="bg2 absolute transform scale-250 md:scale-200 bottom-[5%] left-[30%] z-0"
-            alt="bg2"
-          />
-          <img
-            v-show="!isMobile"
-            src="../../assets/Home/Frame-29.svg"
-            class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
-            alt="bg1"
-          />
-
-          <img
-            v-show="isMobile"
-            src="../../assets/Home/phoneGroup-btn2.svg"
-            class="bg2 absolute scale-150 top-[-15%] left-[10%]"
-            alt="phoneGroup-btn2"
-          />
-          <img
-            v-show="isMobile"
-            src="../../assets/Home/phoneGroup-btn1.svg"
-            class="bg1 absolute top-[-15%] scale-150"
-            alt="phoneGroup-btn1"
-          />
-
-          <span
-            class="text-shadow w-[30vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
-            >黑客組</span
+    <transition
+      enter-active-class="transition-all duration-500 ease-out"
+      leave-active-class="transition-all duration-400 ease-in"
+      enter-from-class="translate-y-[50%] opacity-0"
+      enter-to-class="translate-y-0 opacity-100"
+      leave-from-class="translate-y-0 opacity-100"
+      leave-to-class="translate-y-[50%] opacity-0"
+    >
+      <!-- 彈出選單 -->
+      <div v-if="showOptions" class="relative z-10 p-6 flex flex-col md:flex-row gap-[10vw]">
+        <router-link :to="{ path: '/signup', query: { ref: 'hacker' } }">
+          <!-- 黑客組 button -->
+          <button
+            @click="selectOption('選項一', 0)"
+            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
           >
-        </button>
-      </router-link>
+            <img
+              v-show="!isMobile"
+              src="../../assets/Home/Frame-30.svg"
+              class="bg2 absolute transform scale-250 md:scale-200 bottom-[5%] left-[30%] z-0"
+              alt="bg2"
+            />
+            <img
+              v-show="!isMobile"
+              src="../../assets/Home/Frame-29.svg"
+              class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
+              alt="bg1"
+            />
 
-      <!-- 創客組 button -->
-      <router-link :to="{ path: '/signup', query: { ref: 'maker' } }">
-        <button
-          @click="selectOption('選項二', 1)"
-          class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
-        >
-          <img
-            v-show="!isMobile"
-            src="../../assets/Home/Frame-30.svg"
-            class="bg2 absolute transform scale-250 md:scale-200 bottom-[5%] left-[30%] z-0"
-            alt="bg2"
-          />
-          <img
-            v-show="!isMobile"
-            src="../../assets/Home/Frame-29.svg"
-            class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
-            alt="bg1"
-          />
+            <img
+              v-show="isMobile"
+              src="../../assets/Home/phoneGroup-btn2.svg"
+              class="bg2 absolute scale-150 top-[-15%] left-[10%]"
+              alt="phoneGroup-btn2"
+            />
+            <img
+              v-show="isMobile"
+              src="../../assets/Home/phoneGroup-btn1.svg"
+              class="bg1 absolute top-[-15%] scale-150"
+              alt="phoneGroup-btn1"
+            />
 
-          <img
-            v-show="isMobile"
-            src="../../assets/Home/phoneGroup-btn2.svg"
-            class="bg2 absolute scale-150 top-[-15%] left-[10%]"
-            alt="phoneGroup-btn2"
-          />
-          <img
-            v-show="isMobile"
-            src="../../assets/Home/phoneGroup-btn1.svg"
-            class="bg1 absolute top-[-15%] scale-150"
-            alt="phoneGroup-btn1"
-          />
+            <span
+              class="text-shadow w-[30vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+              >黑客組</span
+            >
+          </button>
+        </router-link>
 
-          <span
-            class="text-shadow w-[50vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
-            >創客交流組</span
+        <!-- 創客組 button -->
+        <router-link :to="{ path: '/signup', query: { ref: 'maker' } }">
+          <button
+            @click="selectOption('選項二', 1)"
+            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
           >
-        </button>
-      </router-link>
-    </div>
+            <img
+              v-show="!isMobile"
+              src="../../assets/Home/Frame-30.svg"
+              class="bg2 absolute transform scale-250 md:scale-200 bottom-[5%] left-[30%] z-0"
+              alt="bg2"
+            />
+            <img
+              v-show="!isMobile"
+              src="../../assets/Home/Frame-29.svg"
+              class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
+              alt="bg1"
+            />
+
+            <img
+              v-show="isMobile"
+              src="../../assets/Home/phoneGroup-btn2.svg"
+              class="bg2 absolute scale-150 top-[-15%] left-[10%]"
+              alt="phoneGroup-btn2"
+            />
+            <img
+              v-show="isMobile"
+              src="../../assets/Home/phoneGroup-btn1.svg"
+              class="bg1 absolute top-[-15%] scale-150"
+              alt="phoneGroup-btn1"
+            />
+
+            <span
+              class="text-shadow w-[50vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+              >創客交流組</span
+            >
+          </button>
+        </router-link>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -98,12 +107,16 @@ defineOptions({
 })
 
 const isMobile = ref(false)
+const showOptions = ref(false)
 
 const emit = defineEmits(['close', 'select'])
 
 function closeMenu() {
-  // console.log('close menu')
-  emit('close')
+  showOptions.value = false
+  // console.log("close menu");
+  setTimeout(() => {
+    emit('close')
+  }, 400)
 }
 
 function selectOption(option, id) {
@@ -113,14 +126,16 @@ function selectOption(option, id) {
 }
 
 onMounted(() => {
-  // 判斷裝置寬度是否小於某個值，例如 768px
   isMobile.value = window.innerWidth <= 768
 
-  // 如果你想要即時監聽視窗大小改變
   window.addEventListener('resize', () => {
     isMobile.value = window.innerWidth <= 768
     console.log('isMobile', isMobile.value)
   })
+
+  setTimeout(() => {
+    showOptions.value = true
+  }, 50)
 })
 </script>
 
