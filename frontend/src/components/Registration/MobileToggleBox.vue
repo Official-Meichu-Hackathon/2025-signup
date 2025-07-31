@@ -12,7 +12,7 @@
         {{ title }}
       </span>
       <svg
-        class="w-6 h-6 transition-transform duration-300 toggle-flicker"
+        class="w-6 h-6 transition-transform duration-300"
         fill="none"
         :stroke="isActive ? '#FFFFFF' : '#2D3E63'"
         viewBox="0 0 24 24"
@@ -102,10 +102,6 @@ export default {
   50% {
     opacity: 0;
   }
-}
-
-::v-deep(.toggle-flicker:hover) {
-  animation: flicker 0.6s ease-in-out infinite;
 }
 
 .expandable-content {
