@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import '../assets/css/signup.css'
 import TitleHeader from '../components/signup/TitleHeader.vue'
 import StepCardsHeader from '../components/signup/StepCardsHeader.vue'
@@ -8,10 +8,23 @@ import TextQuestion from '../components/signup/form/TextQuestion.vue'
 import ChoiceQuestion from '../components/signup/form/ChoiceQuestion.vue'
 import SortableQuestion from '../components/signup/form/SortableQuestion.vue'
 import FileUpload from '../components/signup/form/FileUpload.vue'
+import { useRoute } from 'vue-router'
 
 defineOptions({
   name: 'SignupPage',
 })
+
+const route = useRoute()
+const isMaker = ref(route.query.ref === 'maker')
+
+watch(
+  () => route.query,
+  (newQuery) => {
+    isMaker.value = newQuery.ref === 'maker'
+    priorityOrder.value = null
+  },
+  { deep: true }
+)
 
 const playerCount = ref(null)
 const currentStepOrder = ref(1)
@@ -81,6 +94,39 @@ const handleStepClick = (stepOrder) => {
   if (currentStepOrder.value > stepOrder) {
     currentStepOrder.value = stepOrder
   }
+}
+
+const validateGroupName = (name) => {
+  return !name || name.length <= 20
+}
+
+const validateEmail = (email) => {
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  return emailPattern.test(email)
+}
+
+const validatePhoneNumber = (phone) => {
+  const phonePattern = /^09\d{8}$/
+  return phonePattern.test(phone)
+}
+
+const validateBirthday = (birthday) => {
+  if (!birthday) return false
+
+  const birthdayPattern = /^\d{8}$/
+  if (!birthdayPattern.test(birthday)) return false
+
+  const year = parseInt(birthday.substring(0, 4))
+  const month = parseInt(birthday.substring(4, 6))
+  const day = parseInt(birthday.substring(6, 8))
+
+  const currentYear = new Date().getFullYear()
+  if (year < 1900 || year > currentYear) return false
+  if (month < 1 || month > 12) return false
+  if (day < 1 || day > 31) return false
+
+  const date = new Date(year, month - 1, day)
+  return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day
 }
 
 const submit = async () => {
@@ -154,11 +200,11 @@ const submit = async () => {
       },
       redirect: 'follow',
     })
+    location.href = '/success-signup'
   } catch (err) {
     console.log(err)
     alert('報名失敗，請直接用email聯絡我們: \n2025mchackathon@gmail.com\n造成您的不便，深感抱歉')
   } finally {
-    location.href = '/success-signup'
     isSubmitting.value = false
   }
 }
@@ -174,14 +220,23 @@ const submit = async () => {
     />
     <FormItem
       :formStepOrder="1"
-      :totalStepOrder
+      :total-step-order="totalStepOrder"
       stepName="報名選項"
-      :requiredValues="[groupName.length > 20 ? '' : groupName, playerCountChoice, isCrossDomain]"
+      :requiredValues="[
+        validateGroupName(groupName) ? groupName : '',
+        playerCountChoice,
+        isCrossDomain,
+      ]"
       :isSubmitting="isSubmitting"
       v-model:currentStepOrder="currentStepOrder"
       @submit="submit"
     >
-      <TextQuestion title="*隊伍名稱（上限20字）" :maxLength="20" v-model="groupName" />
+      <TextQuestion
+        title="*隊伍名稱（上限20字）"
+        v-model="groupName"
+        :verify-function="validateGroupName"
+        verify-message="字數超過限制！請保持在 20 字以內"
+      />
 
       <ChoiceQuestion
         title="*隊伍人數"
@@ -204,7 +259,7 @@ const submit = async () => {
 (1) 企業題目或組別將依據隊伍的志願序分發。若單一企業或組別超額，將亂數抽籤決定。
 (2) 未報名創客交流組則將創客交流組的志願序填為 7。"
         :options="
-          $route.query.ref === 'maker'
+          isMaker
             ? ['創客交流組', 'CloudMosa', 'NXP', 'TSMC', 'Logitech', 'Google', 'AMD']
             : ['CloudMosa', 'NXP', 'TSMC', 'Logitech', 'Google', 'AMD', '創客交流組']
         "
@@ -216,24 +271,24 @@ const submit = async () => {
       v-for="(step, index) in playerSteps"
       :key="step.stepOrder"
       :formStepOrder="step.stepOrder"
-      :total-step-order
+      :total-step-order="totalStepOrder"
       :stepName="step.stepName"
       :required-values="[
         playerData[index].name,
         playerData[index].gender,
-        playerData[index].birthday,
+        validateBirthday(playerData[index].birthday) ? playerData[index].birthday : '',
         playerData[index].idNumber,
         playerData[index].identity,
         playerData[index].school,
         playerData[index].department,
         playerData[index].grade,
-        playerData[index].email,
-        playerData[index].phone,
+        validateEmail(playerData[index].email) ? playerData[index].email : '',
+        validatePhoneNumber(playerData[index].phone) ? playerData[index].phone : '',
         playerData[index].shirtSize,
       ]"
       :isSubmitting="isSubmitting"
       v-model:currentStepOrder="currentStepOrder"
-      @sumbit="submit"
+      @submit="submit"
     >
       <TextQuestion title="*姓名" v-model="playerData[index].name" />
 
@@ -244,8 +299,10 @@ const submit = async () => {
       />
 
       <TextQuestion
-        title="*生日（西元年月日）（格式：20040101）"
+        title="*生日（西元年月日 格式：20040101）"
         v-model="playerData[index].birthday"
+        :verify-function="validateBirthday"
+        verify-message="請輸入有效的生日格式（8位數字，例如：20040101）"
       />
 
       <TextQuestion title="*身分證字號" v-model="playerData[index].idNumber" />
@@ -257,25 +314,35 @@ const submit = async () => {
       />
 
       <TextQuestion
-        title="*就讀學校（填寫全名 e.g.國立陽明交通大學）"
+        title="*就讀學校（填寫全名 e.g. 國立陽明交通大學）"
         v-model="playerData[index].school"
       />
 
       <TextQuestion
-        title="*科系（填寫全名 e.g.資訊工程學系）"
+        title="*科系（填寫全名 e.g. 資訊工程學系）"
         v-model="playerData[index].department"
       />
 
       <TextQuestion
-        title="*年級（格式：XX X年級 e.g.大學三年級、碩士二年級、已畢業）"
+        title="*年級（格式：XXX年級 e.g. 大學三年級、碩士二年級、已畢業）"
         v-model="playerData[index].grade"
       />
 
       <TextQuestion title="職業（社會人士填寫）" v-model="playerData[index].occupation" />
 
-      <TextQuestion title="*電子郵件信箱" v-model="playerData[index].email" />
+      <TextQuestion
+        title="*電子郵件信箱（格式：test@mail.com）"
+        v-model="playerData[index].email"
+        :verify-function="validateEmail"
+        verify-message="請輸入有效的電子郵件格式（例如：test@mail.com）"
+      />
 
-      <TextQuestion title="*手機號碼" v-model="playerData[index].phone" />
+      <TextQuestion
+        title="*手機號碼（十碼數字 格式：0921234567）"
+        v-model="playerData[index].phone"
+        :verify-function="validatePhoneNumber"
+        verify-message="請輸入有效的台灣手機號碼格式（09開頭，總共10碼數字）"
+      />
 
       <TextQuestion title="特殊飲食習慣" v-model="playerData[index].dietaryRestrictions" />
 
@@ -290,9 +357,9 @@ const submit = async () => {
 
     <FormItem
       :formStepOrder="totalStepOrder - 1"
-      :total-step-order
+      :total-step-order="totalStepOrder"
       stepName="填寫同意書"
-      :required-values="[]"
+      :required-values="[assentFirst, assentSecond]"
       :isSubmitting="isSubmitting"
       v-model:currentStepOrder="currentStepOrder"
       @submit="submit"
@@ -315,7 +382,7 @@ const submit = async () => {
 
     <FormItem
       :formStepOrder="totalStepOrder"
-      :total-step-order
+      :total-step-order="totalStepOrder"
       stepName="其他"
       :required-values="[otherAssent]"
       :isSubmitting="isSubmitting"
