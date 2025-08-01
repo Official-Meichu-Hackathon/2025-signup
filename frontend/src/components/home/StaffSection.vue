@@ -274,9 +274,10 @@
 
   <!-- layout for phone -->
   <div
-    class="block md:hidden mb-[3vh] flex flex-col justify-center items-center relative w-full overflow-hidden h-[80vh]"
+    class="block md:hidden mb-[3vh] flex flex-col justify-center items-center relative w-full overflow-hidden"
   >
-    <div class="mb-[15px] title text-center font-['Chiron_Hei_HK'] font-bold">工作人員名單</div>
+    <img src="../../assets/Home/sparkle-12-4.svg" alt="sparkle" class="absolute left-3 top-7" />
+    <div class="mb-[30px] title text-center font-['Chiron_Hei_HK'] font-bold">工作人員名單</div>
     <div class="w-[80vw]">
       <ToggleBox
         title="行政部"
