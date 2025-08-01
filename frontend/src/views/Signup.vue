@@ -9,6 +9,7 @@ import ChoiceQuestion from '../components/signup/form/ChoiceQuestion.vue'
 import SortableQuestion from '../components/signup/form/SortableQuestion.vue'
 import FileUpload from '../components/signup/form/FileUpload.vue'
 import { useRoute } from 'vue-router'
+import { isValidId } from '../assets/signup/taiwan-id-validator'
 
 defineOptions({
   name: 'SignupPage',
@@ -305,7 +306,12 @@ const submit = async () => {
         verify-message="請輸入有效的生日格式（8位數字，例如：20040101）"
       />
 
-      <TextQuestion title="*身分證字號" v-model="playerData[index].idNumber" />
+      <TextQuestion
+        title="*身分證字號"
+        v-model="playerData[index].idNumber"
+        :verify-function="isValidId"
+        verify-message="請輸入有效的身分證或居留證"
+      />
 
       <ChoiceQuestion
         title="*身份"
@@ -348,7 +354,7 @@ const submit = async () => {
 
       <ChoiceQuestion
         title="*衣服尺寸"
-        :options="['S', 'M', 'L', 'XL']"
+        :options="['S', 'M', 'L', 'XL', '2XL']"
         v-model="playerData[index].shirtSize"
       />
 

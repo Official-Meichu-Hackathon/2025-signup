@@ -25,9 +25,11 @@ const handleVerify = () => {
   isNotVerify.value = !verifyFunction(text.value)
 }
 
-const handleInput = () => {
+const handleInput = (event) => {
   if (isNotVerify.value) {
-    handleVerify()
+    const currentValue = event.target.value
+    if (!currentValue || currentValue.length === 0 || !verifyFunction) return
+    isNotVerify.value = !verifyFunction(currentValue)
   }
 }
 
