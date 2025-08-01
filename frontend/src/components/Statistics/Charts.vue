@@ -19,49 +19,46 @@
       </div>
       <transition name="slide-down">
         <div v-if="isOpen" class="flex justify-center items-center mb-8">
-          <div class="chart-box">
-            <!-- 1x4 Flex Row Layout -->
-            <div class="chart-grid flex flex-row flex-wrap justify-center items-center">
-              <!-- 上半部左側 -->
-              <div class="flex flex-col items-center justify-center">
-                <div class="text-center">
-                  <h3 class="blue-text chart-title upper-chart-title">參賽者年級比</h3>
-                </div>
-                <div class="chart-image">
-                  <ChartAge />
-                </div>
+          <div class="chart-box chart-grid justify-center items-center">
+            <!-- 上半部左側 -->
+            <div class="flex flex-col items-center justify-center">
+              <div class="text-center">
+                <h3 class="blue-text chart-title">參賽者年級比</h3>
               </div>
-
-              <!-- 上半部右側 -->
-              <div class="flex flex-col items-center justify-center">
-                <div class="text-center">
-                  <h3 class="blue-text chart-title upper-chart-title">參賽者學校分佈</h3>
-                </div>
-                <div class="chart-image">
-                  <ChartSchool />
-                </div>
+              <div class="chart-image">
+                <ChartAge />
               </div>
+            </div>
 
-              <!-- 下半部左側 -->
-              <div class="flex flex-col items-center justify-center">
-                <div class="text-center">
-                  <h3 class="blue-text chart-title lower-chart-title">參賽者科系分佈</h3>
-                  <p class="pink-text chart-subtitle text-gray-600">【黑客組】</p>
-                </div>
-                <div class="chart-image">
-                  <ChartHacker />
-                </div>
+            <!-- 上半部右側 -->
+            <div class="flex flex-col items-center justify-center">
+              <div class="text-center">
+                <h3 class="blue-text chart-title">參賽者學校分佈</h3>
               </div>
+              <div class="chart-image">
+                <ChartSchool />
+              </div>
+            </div>
 
-              <!-- 下半部右側 -->
-              <div class="flex flex-col items-center justify-center">
-                <div class="text-center">
-                  <h3 class="blue-text chart-title lower-chart-title">參賽者科系分佈</h3>
-                  <p class="pink-text chart-subtitle text-gray-600">【創客交流組】</p>
-                </div>
-                <div class="chart-image">
-                  <ChartMaker />
-                </div>
+            <!-- 下半部左側 -->
+            <div class="flex flex-col items-center justify-center">
+              <div class="text-center">
+                <h3 class="blue-text chart-title">參賽者科系分佈</h3>
+                <p class="pink-text chart-subtitle text-gray-600">【黑客組】</p>
+              </div>
+              <div class="chart-image">
+                <ChartHacker />
+              </div>
+            </div>
+
+            <!-- 下半部右側 -->
+            <div class="flex flex-col items-center justify-center">
+              <div class="text-center">
+                <h3 class="blue-text chart-title">參賽者科系分佈</h3>
+                <p class="pink-text chart-subtitle text-gray-600">【創客交流組】</p>
+              </div>
+              <div class="chart-image">
+                <ChartMaker />
               </div>
             </div>
           </div>
@@ -166,6 +163,10 @@ function toggleStats() {
   font-size: 3.5vw;
   margin: 1.7vw 0;
 }
+.chart-title {
+  font-size: 2vw;
+}
+
 .chart-subtitle-mobile {
   font-size: 3vw;
   margin-top: -1vw;
@@ -195,53 +196,32 @@ body {
 .svg-container {
   background: transparent !important;
 }
-
-.chart-box {
-  /* 背景圖片 */
-  background-image: url('../../assets/Statistics/chart-background.svg');
+.chart-box,
+.chart-box-mobile {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  width: 80vw;
-  height: 60vw;
-  padding: 3vw 4vw; /* 上下2vw 左右5vw */
-  margin-bottom: 6vw;
-
   border-radius: 24px;
   position: relative;
+  margin-bottom: 6vw;
 }
+
+.chart-box {
+  background-image: url('../../assets/Statistics/chart-background.svg');
+  width: 80vw;
+  height: 60vw;
+  padding: 3vw 4vw;
+}
+
 .chart-box-mobile {
   background-image: url('../../assets/Statistics/chart-background-mobile.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   width: 70vw;
   height: 200vw;
   padding: 3vw;
-  margin-bottom: 6vw;
-  border-radius: 24px;
-  position: relative;
 }
+
 /* 自定義虛線邊框 */
-.chart-box::before {
-  content: '';
-  position: absolute;
-  top: -0.8px;
-  left: -0.8px;
-  right: -0.8px;
-  bottom: -0.8px;
-  background: repeating-linear-gradient(
-    -45deg,
-    #d6a0b2 0,
-    #d6a0b2 7px,
-    transparent 5px,
-    /* 虛線長度 */ transparent 12px /* 虛線間距 */
-  );
-  border-radius: 24px;
-  pointer-events: none;
-  z-index: -1;
-}
+.chart-box::before,
 .chart-box-mobile::before {
   content: '';
   position: absolute;
@@ -260,18 +240,20 @@ body {
   pointer-events: none;
   z-index: -1;
 }
+
 /* Grid layout with custom proportions */
 .chart-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 columns */
   grid-template-rows: 10fr 10.5fr;
-  gap: 2vw;
+  gap: 3vw;
   height: 100%;
 }
 
 .chart-image {
-  max-width: 20vw;
-  height: auto;
+  margin-top: 1.5vw;
+  width: 20vw;
+  height: 20vw;
 }
 
 /* 折疊動畫 */
@@ -307,24 +289,26 @@ body {
   margin: 0.5rem 0;
 }
 
-.chartbg-left-mobile {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 350px;
-  height: auto;
-  border-top-left-radius: 24px;
-  z-index: 0;
-}
+.chartbg-left-mobile,
 .chartbg-right-mobile {
   position: absolute;
-  bottom: 0;
-  right: 0;
   width: 350px;
   height: auto;
-  border-bottom-right-radius: 24px;
   z-index: 0;
 }
+
+.chartbg-left-mobile {
+  top: 0;
+  left: 0;
+  border-top-left-radius: 24px;
+}
+
+.chartbg-right-mobile {
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 24px;
+}
+
 .pie-chart-mobile {
   width: 30vw;
   height: 30vw;

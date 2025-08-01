@@ -57,9 +57,11 @@
               style="margin-top: -1.5vw"
             >
               <a
-                href="#"
+                href="https://tenyear.meichuhackathon.org/"
                 class="pink-text hover:underline transition-all duration-200"
                 style="font-size: 1.7vw"
+                target="_blank"
+                rel="noopener"
               >
                 點擊文字即可進入
               </a>
@@ -108,9 +110,11 @@
             </div>
             <div class="relative flex items-center justify-center top-[13%]">
               <a
-                href="#"
+                href="https://tenyear.meichuhackathon.org/"
                 class="pink-text hover:underline transition-all duration-200"
                 style="font-size: 2.7vw"
+                target="_blank"
+                rel="noopener"
               >
                 點擊文字即可進入
               </a>
