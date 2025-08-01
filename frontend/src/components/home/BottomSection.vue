@@ -1774,19 +1774,6 @@ onMounted(() => {
   }
 }
 
-.collaborators a img,
-.collaborators img.cursor-pointer {
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-
-.collaborators a:hover img,
-.collaborators img.cursor-pointer:hover {
-  transform: scale(1.02);
-  opacity: 0.8;
-}
-
 /* Mobile collaborators styles */
 .mobile-collaborators {
   display: flex;
