@@ -97,7 +97,7 @@
           </div>
           <div class="collaborators">
             <div class="collaborator-item">
-              <a href="https://www.cloudmosa.com/about" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.cloudmosa.com/jobs" target="_blank" rel="noopener noreferrer">
                 <img
                   class="!w-[22vw]"
                   src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
@@ -137,7 +137,11 @@
           </div>
           <div class="collaborators">
             <div class="collaborator-item">
-              <a href="https://about.google/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.google.com/about/careers/applications/jobs/results/?location=Taiwan&utm_source=partnership&utm_medium=website&utm_campaign=tw_campus_outreach&src=Online/TOPs/campus-partnership"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   class="!w-[20vw]"
                   src="../../assets/Home/company/5_Google 1.svg"
@@ -146,7 +150,11 @@
               </a>
             </div>
             <div class="collaborator-item">
-              <a href="https://www.amd.com/zh-tw.html" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.amd.com/zh-tw/products/processors/laptop/ryzen.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
               </a>
             </div>
@@ -467,7 +475,7 @@
             </a>
           </div>
           <div class="mobile-row">
-            <a href="https://www.cloudmosa.com/about" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.cloudmosa.com/jobs" target="_blank" rel="noopener noreferrer">
               <img
                 class="mobile-img"
                 src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
@@ -503,14 +511,22 @@
             </a>
           </div>
           <div class="mobile-row">
-            <a href="https://about.google/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.google.com/about/careers/applications/jobs/results/?location=Taiwan&utm_source=partnership&utm_medium=website&utm_campaign=tw_campus_outreach&src=Online/TOPs/campus-partnership"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 class="mobile-img !w-[30vw]"
                 src="../../assets/Home/company/5_Google 1.svg"
                 alt="Google"
               />
             </a>
-            <a href="https://www.amd.com/zh-tw.html" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.amd.com/zh-tw/products/processors/laptop/ryzen.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 class="mobile-img !w-[30vw]"
                 src="../../assets/Home/company/6_AMD 1.svg"
@@ -529,14 +545,14 @@
         <div>網路贊助</div>
         <div v-if="isMobile" class="collaborators my-6">
           <div class="collaborator-item">
-            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.svg" alt="中華電信" />
+            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.webp" alt="中華電信" />
           </div>
         </div>
 
-        <div v-if="!isMobile" class="collaborators">
+        <div v-if="!isMobile" class="collaborators my-8">
           <div class="collaborator-item">
             <a href="https://www.chunghwa.com.tw/" target="_blank" rel="noopener noreferrer">
-              <img class="!w-[20vw]" src="../../assets/Home/chunghwa.svg" alt="中華電信" />
+              <img class="!w-[20vw]" src="../../assets/Home/chunghwa.webp" alt="中華電信" />
             </a>
           </div>
         </div>
@@ -732,7 +748,7 @@
               <img
                 v-if="!isMobile"
                 class="inline-block"
-                style="transform: scale(3); padding-top: 0.8rem"
+                style="transform: scale(2.8); padding-top: 0.8rem"
                 src="../../assets/Home/sponsors/JUMBO_diamond.webp"
                 alt="JUMBO"
               />
@@ -996,60 +1012,23 @@
           />
         </div>
 
-        <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
+        <div class="mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
           <div class="marquee-content-media flex-shrink-0">
             <div class="sponsor-item">
               <span class="sponsor-level">Diamond</span>
               <img
                 class="inline-block"
-                src="../../assets/Home/media/newstaiwan_diamond.svg"
-                alt="科技新報"
+                style="transform: scale(0.85)"
+                src="../../assets/Home/media/newstaiwan_diamond.webp"
+                alt="台灣好報"
               />
             </div>
             <div class="sponsor-item">
               <span class="sponsor-level">Platinum</span>
               <img
                 class="inline-block"
-                src="../../assets/Home/media/ettoday_platinum.svg"
-                alt="數位時代"
-              />
-            </div>
-          </div>
-
-          <!-- Second part of marquee-->
-          <div class="marquee-content-media flex-shrink-0">
-            <div class="sponsor-item">
-              <span class="sponsor-level">Diamond</span>
-              <img
-                class="inline-block"
-                src="../../assets/Home/media/newstaiwan_diamond.svg"
-                alt="科技新報"
-              />
-            </div>
-            <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
-              <img
-                class="inline-block"
-                src="../../assets/Home/media/ettoday_platinum.svg"
-                alt="數位時代"
-              />
-            </div>
-          </div>
-
-          <div class="marquee-content-media flex-shrink-0">
-            <div class="sponsor-item">
-              <span class="sponsor-level">Diamond</span>
-              <img
-                class="inline-block"
-                src="../../assets/Home/media/newstaiwan_diamond.svg"
-                alt="科技新報"
-              />
-            </div>
-            <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
-              <img
-                class="inline-block"
-                src="../../assets/Home/media/ettoday_platinum.svg"
+                style="transform: scale(0.9)"
+                src="../../assets/Home/media/ettoday_platinum.webp"
                 alt="數位時代"
               />
             </div>
@@ -1710,11 +1689,10 @@ onMounted(() => {
 }
 
 .marquee-content-media {
-  animation-duration: 6s; /* Half the speed of the normal 12s */
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
-  padding: 5px 0px 5px 0px;
+  padding: 80px 0px 80px 0px;
 }
 .sponsor-item {
   position: relative;
@@ -1794,19 +1772,6 @@ onMounted(() => {
   50% {
     opacity: 1;
   }
-}
-
-.collaborators a img,
-.collaborators img.cursor-pointer {
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-}
-
-.collaborators a:hover img,
-.collaborators img.cursor-pointer:hover {
-  transform: scale(1.02);
-  opacity: 0.8;
 }
 
 /* Mobile collaborators styles */
