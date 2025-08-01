@@ -5,8 +5,7 @@
       class="w-full flex justify-between items-center text-left text-[#2D3E63] text-2xl font-bold font-['Chiron_Hei_HK_Text'] hover:text-[#2D3E63] transition-colors"
     >
       <div
-        class="w-40 h-12 flex items-center justify-start text-[#2D3E63] text-4xl font-bold whitespace-nowrap pl-3 mb-[2px]"
-        style="font-family: 'Noto Serif', serif"
+        class="w-40 h-12 flex items-center justify-start text-[#2D3E63] text-4xl font-bold whitespace-nowrap pl-3 mb-[2px] font-['Chiron_Hei_HK_Text',sans-serif]"
       >
         {{ title }}
       </div>
