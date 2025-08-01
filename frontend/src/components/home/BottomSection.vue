@@ -1071,25 +1071,45 @@
       <div
         class="relative text-[1.8vw] mx-auto flex flex-col text-[black] font-bold font-['Chiron_Hei_HK'] text-list"
       >
-        <div class="z-2 mt-[5vh] w-[80vw] flex flex-row justify-around co-organizers">
+        <div
+          v-if="!isMobile"
+          class="z-2 mt-[5vh] w-[80vw] flex flex-row justify-around co-organizers"
+        >
           <div>國立陽明交通大學產學運籌中心</div>
           <div>國立陽明交通大學電機工程學系</div>
           <div>國立清華大學資訊工程學系</div>
         </div>
 
         <div
+          v-if="!isMobile"
           class="z-2 pl-[3vw] mx-auto mt-[4vh] w-[63vw] flex flex-row justify-between special-thanks-list"
         >
           <div>國立清華大學電機資訊學院學士班</div>
           <div>國立清華大學清華學院學士班系學會</div>
         </div>
 
-        <div class="z-2 mx-auto mt-[4vh] w-[45vw] pr-[5vw] flex flex-row justify-between">
+        <div
+          v-if="!isMobile"
+          class="z-2 mx-auto mt-[4vh] w-[45vw] pr-[5vw] flex flex-row justify-between"
+        >
           <div>國立清華大學資訊科學研究社</div>
           <div>Colde Garage</div>
         </div>
 
-        <div class="mb-[20vh]"></div>
+        <div
+          v-if="isMobile"
+          class="z-2 mt-[5vh] w-[80vw] flex flex-col justify-center co-organizers"
+        >
+          <div class="text-center">國立陽明交通大學產學運籌中心</div>
+          <div class="text-center">國立陽明交通大學電機工程學系</div>
+          <div class="text-center">國立清華大學資訊工程學系</div>
+          <div class="text-center">國立清華大學電機資訊學院學士班</div>
+          <div class="text-center">國立清華大學清華學院學士班系學會</div>
+          <div class="text-center">國立清華大學資訊科學研究社</div>
+          <div class="text-center">Colde Garage</div>
+        </div>
+        <div v-if="!isMobile" class="mb-[20vh]"></div>
+        <div v-if="isMobile" class="mb-[3vh]"></div>
 
         <!-- flowers anim -->
         <div v-if="!isMobile" class="z-1">
@@ -1818,6 +1838,10 @@ onMounted(() => {
 
   .text-list {
     font-size: 3.5vw;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .co-organizers,
