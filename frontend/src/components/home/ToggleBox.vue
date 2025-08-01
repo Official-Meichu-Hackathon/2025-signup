@@ -38,7 +38,7 @@
       :class="[{ expanded: isActive }, isActive ? expandedBackgroundClass : '']"
     >
       <div
-        class="px-8 text-base font-['Chiron_Hei_HK']"
+        class="px-4 text-base font-['Chiron_Hei_HK'] text-left"
         :class="[isActive ? 'text-[#FFFFFF]' : 'text-[#2D3E63]', contentPadding]"
       >
         <slot></slot>

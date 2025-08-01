@@ -285,41 +285,41 @@
         @toggle="toggleBox"
         margin-class="-mt-0"
       >
-        <div class="space-y-[0.8vh] text-neutral-100 text-[12px] font-bold font-['Chiron_Hei_HK']">
+        <div class="space-y-[0.8vh] text-neutral-100 name font-bold font-['Chiron_Hei_HK']">
           <div>施閔智</div>
           <div>溫沛晨</div>
         </div>
       </ToggleBox>
       <ToggleBox title="行銷部" :index="1" :is-active="activeBox === 1" @toggle="toggleBox">
-        <div class="space-y-[0.8vh] text-neutral-100 text-[12px] font-bold font-['Chiron_Hei_HK']">
+        <div class="space-y-[0.8vh] text-neutral-100 name font-bold font-['Chiron_Hei_HK']">
           <div>陳宣蓉 / 林昀澍</div>
           <div>張佳妮 / 張庭綸 / 張庭軒 / 簡瑀岑 / 樓映辰 / 林怡勳</div>
         </div>
       </ToggleBox>
 
       <ToggleBox title="公關部" :index="2" :is-active="activeBox === 2" @toggle="toggleBox">
-        <div class="space-y-[0.8vh] text-neutral-100 text-[12px] font-bold font-['Chiron_Hei_HK']">
+        <div class="space-y-[0.8vh] text-neutral-100 name font-bold font-['Chiron_Hei_HK']">
           <div>侯佑勳 / 蔡婕安 / 莊皓雯</div>
           <div>吳季瑾 / 陳緯均 / 陳凱薇 / 張恩睿 / 羅翊嘉 /林子羽</div>
         </div>
       </ToggleBox>
 
       <ToggleBox title="活動部" :index="3" :is-active="activeBox === 3" @toggle="toggleBox">
-        <div class="space-y-[0.8vh] text-neutral-100 text-[12px] font-bold font-['Chiron_Hei_HK']">
+        <div class="space-y-[0.8vh] text-neutral-100 name font-bold font-['Chiron_Hei_HK']">
           <div>范嘉尹 / 陳芃嬡 / 莊亦安</div>
           <div>黃紹捷 / 吳欣諭 / 吳品臻 / 鐘郁涵 / 羅可芸 / 劉子筠</div>
         </div>
       </ToggleBox>
 
       <ToggleBox title="財務部" :index="4" :is-active="activeBox === 4" @toggle="toggleBox">
-        <div class="space-y-[0.8vh] text-neutral-100 text-[12px] font-bold font-['Chiron_Hei_HK']">
+        <div class="space-y-[0.8vh] text-neutral-100 name font-bold font-['Chiron_Hei_HK']">
           <div>李采穗 / 陳翊嘉</div>
           <div>王思問 / 黃嬿方 / 呂崧立 / 余定綸 / 黃荺捷</div>
         </div>
       </ToggleBox>
 
       <ToggleBox title="設計部" :index="5" :is-active="activeBox === 5" @toggle="toggleBox">
-        <div class="space-y-[0.8vh] text-neutral-100 text-[12px] font-bold font-['Chiron_Hei_HK']">
+        <div class="space-y-[0.8vh] text-neutral-100 name font-bold font-['Chiron_Hei_HK']">
           <div>陳婷祺 / 吳奕涔</div>
           <div>黃鈺淇 / 黃子瑄 / 何昀蓁 / 陳雅妮 / 范嘉恩 / 葉彤妤</div>
         </div>
@@ -338,7 +338,7 @@
         "
       >
         <!-- transition: 'background 0.2s ease-in-out' 原本是為了背景轉換但好像有點怪 ... ? -->
-        <div class="space-y-[0.8vh] text-neutral-100 text-[10px] font-bold font-['Chiron_Hei_HK']">
+        <div class="space-y-[0.8vh] text-neutral-100 name font-bold font-['Chiron_Hei_HK']">
           <div>陳芝瑄 / 周廷威</div>
           <div>施又歆 / 徐匯傑 / 陳品卉 / 陳彥廷 / 李聿宸 / 邱元廣</div>
         </div>
@@ -400,6 +400,10 @@ function toggleBox(index) {
     width: 90vw;
     font-size: 20px;
     /* font-size: clamp(20px, 2.3vw, 20px); */
+  }
+
+  .name {
+    font-size: clamp(10px, 0.8vw, 12px);
   }
 }
 </style>
