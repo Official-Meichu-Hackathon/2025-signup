@@ -944,7 +944,7 @@
         </div>
 
         <div class="relative">
-          媒體合作
+          <div class="relative z-5">媒體合作</div>
 
           <!-- blue back to red back ( 漸變 5 ) -->
           <div v-if="!isMobile" class="z-1 absolute top-[-190%] left-[40%] w-[13vw] blur-[20px]">
@@ -1055,65 +1055,8 @@
             </div>
           </div>
         </div>
-        <div class="z-2 relative">
-          協辦單位
-
-          <svg
-            v-if="isMobile"
-            xmlns="http://www.w3.org/2000/svg"
-            width="120"
-            height="221"
-            viewBox="0 0 120 221"
-            fill="none"
-            class="absolute -left-[5%] top-30 z-0"
-          >
-            <g filter="url(#filter0_f_2010_1767)">
-              <path
-                d="M20.559 92.3971C31.8634 115.069 24.3243 136.74 4.9965 136.453C-14.3313 136.167 -29.7174 116.908 -29.3691 93.4389C-29.0209 69.9694 -11.969 45.0254 6.25754 51.4628C23.5401 57.5669 10.0852 71.3914 20.559 92.3971Z"
-                fill="#43548D"
-                fill-opacity="0.64"
-              />
-            </g>
-            <g filter="url(#filter1_f_2010_1767)">
-              <ellipse
-                cx="37.4056"
-                cy="144.633"
-                rx="33"
-                ry="25"
-                transform="rotate(-17.6665 37.4056 144.633)"
-                fill="#D6A0B2"
-                fill-opacity="0.8"
-              />
-            </g>
-            <defs>
-              <filter
-                id="filter0_f_2010_1767"
-                x="-79.375"
-                y="0.433594"
-                width="155.229"
-                height="186.022"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_2010_1767" />
-              </filter>
-              <filter
-                id="filter1_f_2010_1767"
-                x="-44.9482"
-                y="68.7856"
-                width="164.707"
-                height="151.694"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_2010_1767" />
-              </filter>
-            </defs>
-          </svg>
+        <div class="relative">
+          <div class="z-5 relative">協辦單位</div>
 
           <!-- red back to blue back ( 漸變 4 ) -->
           <div v-if="!isMobile" class="z-1 absolute top-[-200%] left-[44%] w-[13vw] blur-[20px]">

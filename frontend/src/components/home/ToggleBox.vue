@@ -12,7 +12,7 @@
         {{ title }}
       </span>
       <svg
-        class="w-6 h-6 transition-transform duration-300"
+        class="w-[3w] h-[3vw] transition-transform duration-300"
         fill="none"
         :stroke="isActive ? '#FFFFFF' : '#2D3E63'"
         viewBox="0 0 24 24"
@@ -38,7 +38,7 @@
       :class="[{ expanded: isActive }, isActive ? expandedBackgroundClass : '']"
     >
       <div
-        class="px-8 text-base font-['Chiron_Hei_HK']"
+        class="px-4 text-base font-['Chiron_Hei_HK'] text-left"
         :class="[isActive ? 'text-[#FFFFFF]' : 'text-[#2D3E63]', contentPadding]"
       >
         <slot></slot>
