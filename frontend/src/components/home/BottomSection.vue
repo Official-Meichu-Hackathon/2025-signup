@@ -1055,8 +1055,8 @@
             </div>
           </div>
         </div>
-        <div class="z-2 relative">
-          協辦單位
+        <div class="relative">
+          <div class="z-5 relative">協辦單位</div>
 
           <!-- red back to blue back ( 漸變 4 ) -->
           <div v-if="!isMobile" class="z-1 absolute top-[-200%] left-[44%] w-[13vw] blur-[20px]">
