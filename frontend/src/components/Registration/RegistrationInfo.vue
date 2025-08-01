@@ -42,7 +42,7 @@
       <div class="space-y-8">
         <!-- 報名費用 -->
         <ExpandableItem title="報名費用" :expanded="expandedItems.fee" @toggle="handleItemToggle">
-          ＄900／人（含保證金 ＄200 ）<br />
+          ＄900／人（另收取保證金 ＄200 ）<br />
           <ul class="list-disc pl-12 mt-2">
             <li>
               跨域組隊：隊伍成員每人減免＄100
