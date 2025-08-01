@@ -306,7 +306,7 @@
       />
     </div>
 
-    <div class="mb-[15vh]"></div>
+    <div class="md:mb-[15vh] mb-[5vh]"></div>
   </div>
 </template>
 
