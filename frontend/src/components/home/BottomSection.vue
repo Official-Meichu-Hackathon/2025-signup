@@ -1889,6 +1889,7 @@ onMounted(() => {
   max-width: 150px; /* Add a max-width in pixels */
   margin-bottom: 3vw;
   height: auto;
+  transform: translateZ(0);
 }
 
 .mobile-img:hover {
