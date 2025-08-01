@@ -527,7 +527,7 @@
         </div>
 
         <div>網路贊助</div>
-        <div v-if="isMobile" class="collaborators my-4">
+        <div v-if="isMobile" class="collaborators my-6">
           <div class="collaborator-item">
             <img class="!w-[20vw]" src="../../assets/Home/chunghwa.svg" alt="中華電信" />
           </div>
@@ -541,18 +541,17 @@
           </div>
         </div>
 
-        <div class="relative">
+        <div v-if="!isMobile" class="relative">
           贊助企業
 
           <img
-            v-if="!isMobile"
             src="../../assets/Home/6star-14-1.svg"
             alt="6star-14-1"
             class="absolute left-[55%] bottom-[63%]"
           />
 
           <!-- light blue to dark blue ( 漸變 3 ) -->
-          <div v-if="!isMobile" class="absolute blur-[40px] left-[75%] top-[-400%]">
+          <div class="absolute blur-[40px] left-[75%] top-[-400%]">
             <svg
               width="391"
               height="473"
@@ -595,6 +594,45 @@
               </defs>
             </svg>
           </div>
+        </div>
+
+        <div v-if="isMobile" class="relative z-10">
+          <span class="relative z-10">贊助企業</span>
+
+          <img
+            src="../../assets/Home/0707-16-1.svg"
+            alt="0707-16-1"
+            class="absolute -left-[5%] -bottom-[200%] z-10"
+          />
+
+          <!-- mobile blue blur-->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="119"
+            height="93"
+            viewBox="0 0 119 93"
+            fill="none"
+            class="absolute blur-[40%] left-[45%] -bottom-[90%] z-0"
+          >
+            <g filter="url(#filter0_f_2137_1790)">
+              <ellipse cx="59.5" cy="46.5" rx="29.5" ry="16.5" fill="#BFCAE7" />
+            </g>
+            <defs>
+              <filter
+                id="filter0_f_2137_1790"
+                x="0"
+                y="0"
+                width="119"
+                height="93"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_2137_1790" />
+              </filter>
+            </defs>
+          </svg>
         </div>
 
         <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
@@ -777,9 +815,43 @@
         </div>
 
         <div class="relative">
-          特殊贊助
-
+          <span class="relative z-10">特殊贊助</span>
           <!-- red back to blue back ( 漸變 4 ) -->
+
+          <div v-if="isMobile">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="119"
+              height="93"
+              viewBox="0 0 119 93"
+              fill="none"
+              class="absolute left-[20%] -bottom-[90%] z-0"
+            >
+              <g filter="url(#filter0_f_2137_1792)">
+                <ellipse cx="59.5" cy="46.5" rx="29.5" ry="16.5" fill="#EBD5D8" />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_f_2137_1792"
+                  x="0"
+                  y="0"
+                  width="119"
+                  height="93"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="BackgroundImageFix"
+                    result="shape"
+                  />
+                  <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_2137_1792" />
+                </filter>
+              </defs>
+            </svg>
+          </div>
           <div v-if="!isMobile" class="z-1 absolute top-[-200%] left-[44%] w-[13vw] blur-[20px]">
             <svg
               width="228"
@@ -986,6 +1058,63 @@
         <div class="z-2 relative">
           協辦單位
 
+          <svg
+            v-if="isMobile"
+            xmlns="http://www.w3.org/2000/svg"
+            width="120"
+            height="221"
+            viewBox="0 0 120 221"
+            fill="none"
+            class="absolute -left-[5%] top-30 z-0"
+          >
+            <g filter="url(#filter0_f_2010_1767)">
+              <path
+                d="M20.559 92.3971C31.8634 115.069 24.3243 136.74 4.9965 136.453C-14.3313 136.167 -29.7174 116.908 -29.3691 93.4389C-29.0209 69.9694 -11.969 45.0254 6.25754 51.4628C23.5401 57.5669 10.0852 71.3914 20.559 92.3971Z"
+                fill="#43548D"
+                fill-opacity="0.64"
+              />
+            </g>
+            <g filter="url(#filter1_f_2010_1767)">
+              <ellipse
+                cx="37.4056"
+                cy="144.633"
+                rx="33"
+                ry="25"
+                transform="rotate(-17.6665 37.4056 144.633)"
+                fill="#D6A0B2"
+                fill-opacity="0.8"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_f_2010_1767"
+                x="-79.375"
+                y="0.433594"
+                width="155.229"
+                height="186.022"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_2010_1767" />
+              </filter>
+              <filter
+                id="filter1_f_2010_1767"
+                x="-44.9482"
+                y="68.7856"
+                width="164.707"
+                height="151.694"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_2010_1767" />
+              </filter>
+            </defs>
+          </svg>
+
           <!-- red back to blue back ( 漸變 4 ) -->
           <div v-if="!isMobile" class="z-1 absolute top-[-200%] left-[44%] w-[13vw] blur-[20px]">
             <svg
@@ -1037,7 +1166,7 @@
         </div>
 
         <div
-          class="w-[80vw] mx-auto mt-[2vh] mb-[7vh] flex flex-row justify-around co-organizer-logos"
+          class="w-[80vw] mx-auto mt-[2vh] md:mb-[7vh] flex flex-row justify-around co-organizer-logos"
         >
           <div
             class="mt-[2vh] w-[28vw] flex flex-col justify-center text-[black] co-organizer-text"
@@ -1057,9 +1186,66 @@
       </div>
 
       <div
-        class="relative mx-auto title mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
+        class="relative mx-auto title md:mt-[2vh] mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
         特別感謝
+
+        <svg
+          v-if="isMobile"
+          xmlns="http://www.w3.org/2000/svg"
+          width="120"
+          height="217"
+          viewBox="0 0 120 217"
+          fill="none"
+          class="absolute -right-[5%] top-35 z-0"
+        >
+          <g filter="url(#filter0_f_2011_1773)">
+            <path
+              d="M81.6809 117.35C97.2675 97.3785 120.072 94.842 128.143 112.407C136.214 129.971 125.466 152.154 104.138 161.955C82.8096 171.755 52.9522 167.117 50.9063 147.896C48.9664 129.67 67.2397 135.854 81.6809 117.35Z"
+              fill="#43548D"
+              fill-opacity="0.64"
+            />
+          </g>
+          <g filter="url(#filter1_f_2011_1773)">
+            <ellipse
+              cx="121.557"
+              cy="79.6361"
+              rx="33"
+              ry="25"
+              transform="rotate(-133.195 121.557 79.6361)"
+              fill="#D6A0B2"
+              fill-opacity="0.8"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_2011_1773"
+              x="0.763672"
+              y="50.6626"
+              width="180.062"
+              height="166.275"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_2011_1773" />
+            </filter>
+            <filter
+              id="filter1_f_2011_1773"
+              x="42.5322"
+              y="0.11084"
+              width="158.05"
+              height="159.051"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_2011_1773" />
+            </filter>
+          </defs>
+        </svg>
         <img
           v-if="!isMobile"
           class="absolute w-[13vw] left-[53%] top-[-180%]"
@@ -1071,25 +1257,44 @@
       <div
         class="relative text-[1.8vw] mx-auto flex flex-col text-[black] font-bold font-['Chiron_Hei_HK'] text-list"
       >
-        <div class="z-2 mt-[5vh] w-[80vw] flex flex-row justify-around co-organizers">
+        <div
+          v-if="!isMobile"
+          class="z-2 mt-[5vh] w-[80vw] flex flex-row justify-around co-organizers"
+        >
           <div>國立陽明交通大學產學運籌中心</div>
           <div>國立陽明交通大學電機工程學系</div>
           <div>國立清華大學資訊工程學系</div>
         </div>
 
         <div
+          v-if="!isMobile"
           class="z-2 pl-[3vw] mx-auto mt-[4vh] w-[63vw] flex flex-row justify-between special-thanks-list"
         >
           <div>國立清華大學電機資訊學院學士班</div>
           <div>國立清華大學清華學院學士班系學會</div>
         </div>
 
-        <div class="z-2 mx-auto mt-[4vh] w-[45vw] pr-[5vw] flex flex-row justify-between">
+        <div
+          v-if="!isMobile"
+          class="z-2 mx-auto mt-[4vh] w-[45vw] pr-[5vw] flex flex-row justify-between"
+        >
           <div>國立清華大學資訊科學研究社</div>
           <div>Colde Garage</div>
         </div>
 
-        <div class="mb-[20vh]"></div>
+        <div
+          v-if="isMobile"
+          class="z-2 mt-[3vh] w-[80vw] flex flex-col justify-center co-organizers"
+        >
+          <div class="text-center">國立陽明交通大學產學運籌中心</div>
+          <div class="text-center">國立陽明交通大學電機工程學系</div>
+          <div class="text-center">國立清華大學資訊工程學系</div>
+          <div class="text-center">國立清華大學電機資訊學院學士班</div>
+          <div class="text-center">國立清華大學清華學院學士班系學會</div>
+          <div class="text-center">國立清華大學資訊科學研究社</div>
+          <div class="text-center">Colde Garage</div>
+        </div>
+        <div class="md:mb-[20vh] mb-[3vh]"></div>
 
         <!-- flowers anim -->
         <div v-if="!isMobile" class="z-1">
@@ -1375,8 +1580,14 @@
       </div>
 
       <div class="relative">
+        <img
+          v-if="isMobile"
+          class="absolute right-0 bottom-0"
+          src="../../assets/Home/sparkle-13-4.svg"
+          alt="star-06-2"
+        />
         <div
-          class="z-2 relative flex justify-center mt-[8vh] mb-[20vh] mx-auto w-[65vw] bg-neutral-100 video-placeholder"
+          class="z-2 relative flex justify-center md:mt-[8vh] mt-[4vh] md:mb-[20vh] mx-auto w-[65vw] bg-neutral-100 video-placeholder"
           @click="Play = !Play"
         >
           <!-- <img
@@ -1445,11 +1656,11 @@
             </defs>
           </svg>
         </div>
-        <div class="mb-[8vh]"></div>
+        <div class="md:mb-[8vh] mb-[7vh]"></div>
       </div>
     </div>
 
-    <div class="mb-[5vh]"></div>
+    <div class="md:mb-[5vh] mb-[2vh]"></div>
   </div>
 </template>
 
@@ -1484,7 +1695,7 @@ watch(Play, (newVal) => {
 onMounted(() => {
   setInterval(() => {
     current.value = (current.value + 1) % 4
-    console.log(current.value)
+    // console.log(current.value)
   }, 1500) // 每 1.5 秒換一次
 })
 </script>
@@ -1661,7 +1872,7 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0rem;
   margin: 1rem 0;
 }
 
@@ -1678,6 +1889,7 @@ onMounted(() => {
   max-width: 150px; /* Add a max-width in pixels */
   margin-bottom: 3vw;
   height: auto;
+  transform: translateZ(0);
 }
 
 .mobile-img:hover {
@@ -1768,8 +1980,8 @@ onMounted(() => {
 /* Hide desktop collaborators on mobile */
 @media (max-width: 768px) {
   .title {
-    font-size: 6vw;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 800;
   }
 
   .marquee-sponsors {
@@ -1796,7 +2008,7 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0rem;
   }
 
   .co-organizer-text {
@@ -1818,13 +2030,17 @@ onMounted(() => {
 
   .text-list {
     font-size: 3.5vw;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .co-organizers,
   .special-thanks-list {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.8rem;
     width: 100%;
     text-align: center;
   }
@@ -1832,7 +2048,7 @@ onMounted(() => {
   .ad-placeholder,
   .video-placeholder {
     width: 75vw;
-    height: 30vh;
+    height: 25vh;
   }
 }
 </style>
