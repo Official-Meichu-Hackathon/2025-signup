@@ -78,7 +78,7 @@
           :logo="HsinchuLogo"
           companyName="新竹市政府與新竹市青年發展中心"
           problemTitle="題目"
-          problem-content="題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目題目"
+          problem-content="在四個子題中，運用 AI、大數據、物聯網等技術，針對市政服務提出創新解方，從智慧交通、公共安全到環境檢測，打造更即時、便利、貼近市民需求的智慧應用，共創友善高效的未來城市。"
           :problemLink="GovernmentProblem"
         />
         <img

@@ -96,7 +96,9 @@
       </div>
 
       <!-- 題目內容 -->
-      <p class="text-[1.3vh] text-[#2D3E63] font-bold leading-relaxed font-[Chiron_Hei_HK] h-[27%]">
+      <p
+        class="text-[1.3vh] text-[#2D3E63] font-bold leading-relaxed font-[Chiron_Hei_HK] h-[30%] small-screen-text"
+      >
         {{ problemContent }}
       </p>
 
@@ -104,7 +106,7 @@
       <a
         :href="problemLink"
         target="_blank"
-        class="text-[1.3vh] text-white font-bold font-[Chiron_Hei_HK] px-[2vw] py-[-0.3vh] rounded-[1vh]"
+        class="text-[1.3vh] text-white font-bold font-[Chiron_Hei_HK] rounded-[1vh] mt-[5%]"
       >
         詳細題目說明 >>
       </a>
@@ -143,3 +145,11 @@ defineProps({
   },
 })
 </script>
+
+<style scoped>
+@media (max-width: 768px) {
+  .small-screen-text {
+    font-size: 1vh;
+  }
+}
+</style>
