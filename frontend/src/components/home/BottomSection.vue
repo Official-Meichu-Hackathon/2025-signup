@@ -1057,7 +1057,7 @@
       </div>
 
       <div
-        class="relative mx-auto title text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
+        class="relative mx-auto title mt-[2vh] text-center text-[#2D3E63] font-black font-['Chiron_Hei_HK']"
       >
         特別感謝
         <img
@@ -1108,7 +1108,8 @@
           <div class="text-center">國立清華大學資訊科學研究社</div>
           <div class="text-center">Colde Garage</div>
         </div>
-        <div class="mb-[2vh]"></div>
+        <div v-if="!isMobile" class="mb-[20vh]"></div>
+        <div v-if="isMobile" class="mb-[3vh]"></div>
 
         <!-- flowers anim -->
         <div v-if="!isMobile" class="z-1">
