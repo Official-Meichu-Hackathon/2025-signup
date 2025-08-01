@@ -29,10 +29,13 @@
       >
         <div>
           <!-- img 加 overflow 是沒用的 !!! -->
-          <img src="../../assets/Home/Ellipse-29.svg" class="absolute left-[94%] bottom-[5%]" />
+          <img
+            src="../../assets/Home/Ellipse-29.svg"
+            class="absolute left-[94%] bottom-[5%] pointer-events-none"
+          />
           <img
             src="../../assets/Home/star-02-02-1.svg"
-            class="absolute w-[250px] left-[100%] top-[40%]"
+            class="absolute w-[250px] left-[100%] top-[40%] pointer-events-none"
           />
         </div>
 
@@ -74,12 +77,12 @@
           <img
             src="../../assets/Home/Ellipse-30.svg"
             alt="ellipse-30"
-            class="absolute right-[90%] bottom-[5%]"
+            class="absolute right-[90%] bottom-[5%] pointer-events-none"
           />
           <img
             src="../../assets/Home/star1.svg"
             alt="star1-anim"
-            class="absolute star1-anim right-[83%]"
+            class="absolute star1-anim right-[83%] pointer-events-none"
           />
         </div>
 
@@ -135,12 +138,12 @@
           <img
             src="../../assets/Home/Vector_red.svg"
             alt="vector_red"
-            class="absolute left-[80%] top-[10%] w-[40vw]"
+            class="absolute left-[80%] top-[10%] w-[40vw] pointer-events-none"
           />
           <img
             src="../../assets/Home/Vector_blue.svg"
             alt="vector_blue"
-            class="absolute left-[120%] top-[10%] w-[40vw]"
+            class="absolute left-[120%] top-[10%] w-[40vw] pointer-events-none"
           />
           <img
             src="../../assets/Home/curve.svg"

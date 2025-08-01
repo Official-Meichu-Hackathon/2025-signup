@@ -1484,7 +1484,7 @@ watch(Play, (newVal) => {
 onMounted(() => {
   setInterval(() => {
     current.value = (current.value + 1) % 4
-    console.log(current.value)
+    // console.log(current.value)
   }, 1500) // 每 1.5 秒換一次
 })
 </script>
