@@ -777,7 +777,7 @@
         </div>
 
         <div class="relative">
-          特殊贊助
+          <div class="relative z-5">特殊贊助</div>
 
           <!-- red back to blue back ( 漸變 4 ) -->
           <div v-if="!isMobile" class="z-1 absolute top-[-200%] left-[44%] w-[13vw] blur-[20px]">
@@ -872,7 +872,7 @@
         </div>
 
         <div class="relative">
-          媒體合作
+          <div class="relative z-5">媒體合作</div>
 
           <!-- blue back to red back ( 漸變 5 ) -->
           <div v-if="!isMobile" class="z-1 absolute top-[-190%] left-[40%] w-[13vw] blur-[20px]">
@@ -983,8 +983,8 @@
             </div>
           </div>
         </div>
-        <div class="z-2 relative">
-          協辦單位
+        <div class="relative">
+          <div class="z-5 relative">協辦單位</div>
 
           <!-- red back to blue back ( 漸變 4 ) -->
           <div v-if="!isMobile" class="z-1 absolute top-[-200%] left-[44%] w-[13vw] blur-[20px]">
