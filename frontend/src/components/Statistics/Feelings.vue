@@ -57,7 +57,7 @@
                     v-if="index === 1"
                   />
                   <div
-                    class="feeling-text feeling-textsize-pc absolute inset-0 flex items-center justify-center m-[1vw]"
+                    class="feeling-text absolute inset-0 flex items-center justify-center m-[1vw]"
                   >
                     <pre class="whitespace-pre-wrap">{{
                       category.feelings[currentFeelings[index]]
@@ -131,7 +131,7 @@
                     v-if="index === 1"
                   />
                   <div
-                    class="feeling-text feeling-textsize-mobile absolute inset-0 flex items-center justify-center m-[1vw]"
+                    class="feeling-text absolute inset-0 flex items-center justify-center m-[1vw]"
                   >
                     <pre class="whitespace-pre-wrap">{{
                       category.feelings[currentFeelings[index]]
@@ -321,12 +321,19 @@ function previousFeeling(boxIndex) {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  font-size: 2.5vw; /* default: mobile */
 }
-.feeling-textsize-mobile {
-  font-size: 2.5vw;
+
+@media (min-width: 768px) {
+  .feeling-text {
+    font-size: 1.6vw;
+  }
 }
-.feeling-textsize-pc {
-  font-size: 1.6vw;
+
+@media (min-width: 1536px) {
+  .feeling-text {
+    font-size: min(1.5vw, 23px);
+  }
 }
 
 @keyframes rotate {
