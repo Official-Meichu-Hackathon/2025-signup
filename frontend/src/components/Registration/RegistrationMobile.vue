@@ -237,7 +237,7 @@ export default {
 }
 
 .animate-fade-in-left {
-  animation: fade-in-left 0.6s cubic-bezier(0.4, 0.2, 0.2, 1) both;
+  animation: fade-in-left 1.2s cubic-bezier(0.4, 0.2, 0.2, 1) both;
 }
 
 .hollow-circle-list {
