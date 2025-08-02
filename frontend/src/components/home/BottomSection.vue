@@ -549,13 +549,21 @@
         <div>網路贊助</div>
         <div v-if="isMobile" class="collaborators my-6">
           <div class="collaborator-item">
-            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.png" alt="中華電信" />
+            <img
+              src="../../assets/Home/chunghwa.webp"
+              alt="中華電信"
+              style="transform: scale(2.5)"
+            />
           </div>
         </div>
 
         <div v-if="!isMobile" class="collaborators my-8">
           <div class="collaborator-item">
-            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.png" alt="中華電信" />
+            <img
+              src="../../assets/Home/chunghwa.webp"
+              alt="中華電信"
+              style="transform: scale(1.6)"
+            />
           </div>
         </div>
 
@@ -657,8 +665,13 @@
           <div class="marquee-content flex-shrink-0">
             <!-- Diamond Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level">Diamond</span>
-              <span v-if="isMobile" class="sponsor-level" style="margin-left: 0.5rem">Diamond</span>
+              <span v-if="!isMobile" class="sponsor-level sponsor-diamond">Diamond</span>
+              <span
+                v-if="isMobile"
+                class="sponsor-level sponsor-diamond"
+                style="margin-left: 0.5rem"
+                >Diamond</span
+              >
               <img
                 v-if="!isMobile"
                 class="inline-block"
@@ -677,7 +690,7 @@
 
             <!-- Platinum Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
+              <span class="sponsor-level sponsor-platinum">Platinum</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/sponsors/Cathay_platinum.webp"
@@ -687,8 +700,13 @@
 
             <!-- Gold Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level" style="margin-left: 2rem">Gold</span>
-              <span v-else class="sponsor-level" style="margin-left: 1rem; margin-bottom: 0.4rem"
+              <span v-if="!isMobile" class="sponsor-level sponsor-gold" style="margin-left: 2rem"
+                >Gold</span
+              >
+              <span
+                v-else
+                class="sponsor-level sponsor-gold"
+                style="margin-left: 1rem; margin-bottom: 0.4rem"
                 >Gold</span
               >
 
@@ -710,7 +728,7 @@
 
             <!-- Silver Sponsor 1 -->
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: -1rem">Silver</span>
+              <span class="sponsor-level sponsor-silver" style="margin-left: -1rem">Silver</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.95)"
@@ -721,8 +739,10 @@
 
             <!-- Silver Sponsor 2 -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level">Silver</span>
-              <span v-else class="sponsor-level" style="margin-left: 1rem">Silver</span>
+              <span v-if="!isMobile" class="sponsor-level sponsor-silver">Silver</span>
+              <span v-else class="sponsor-level sponsor-silver" style="margin-left: 1rem"
+                >Silver</span
+              >
 
               <img
                 class="inline-block"
@@ -734,7 +754,7 @@
 
             <!-- Bronze Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Bronze</span>
+              <span class="sponsor-level sponsor-bronze">Bronze</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/sponsors/Ctbc_bronze.webp"
@@ -745,8 +765,13 @@
           <div class="marquee-content flex-shrink-0">
             <!-- Diamond Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level">Diamond</span>
-              <span v-if="isMobile" class="sponsor-level" style="margin-left: 0.5rem">Diamond</span>
+              <span v-if="!isMobile" class="sponsor-level sponsor-diamond">Diamond</span>
+              <span
+                v-if="isMobile"
+                class="sponsor-level sponsor-diamond"
+                style="margin-left: 0.5rem"
+                >Diamond</span
+              >
               <img
                 v-if="!isMobile"
                 class="inline-block"
@@ -765,7 +790,7 @@
 
             <!-- Platinum Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
+              <span class="sponsor-level sponsor-platinum">Platinum</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/sponsors/Cathay_platinum.webp"
@@ -775,8 +800,13 @@
 
             <!-- Gold Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level" style="margin-left: 2rem">Gold</span>
-              <span v-else class="sponsor-level" style="margin-left: 1rem; margin-bottom: 0.4rem"
+              <span v-if="!isMobile" class="sponsor-level sponsor-gold" style="margin-left: 2rem"
+                >Gold</span
+              >
+              <span
+                v-else
+                class="sponsor-level sponsor-gold"
+                style="margin-left: 1rem; margin-bottom: 0.4rem"
                 >Gold</span
               >
 
@@ -798,7 +828,7 @@
 
             <!-- Silver Sponsor 1 -->
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: -1rem">Silver</span>
+              <span class="sponsor-level sponsor-silver" style="margin-left: -1rem">Silver</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.95)"
@@ -809,8 +839,10 @@
 
             <!-- Silver Sponsor 2 -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level">Silver</span>
-              <span v-else class="sponsor-level" style="margin-left: 1rem">Silver</span>
+              <span v-if="!isMobile" class="sponsor-level sponsor-silver">Silver</span>
+              <span v-else class="sponsor-level sponsor-silver" style="margin-left: 1rem"
+                >Silver</span
+              >
 
               <img
                 class="inline-block"
@@ -822,7 +854,7 @@
 
             <!-- Bronze Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Bronze</span>
+              <span class="sponsor-level sponsor-bronze">Bronze</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/sponsors/Ctbc_bronze.webp"
@@ -922,7 +954,9 @@
           <div class="marquee-content-special-sponsor flex-shrink-0">
             <!-- First set of sponsors -->
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: -0.4rem">Platinum</span>
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
+              >
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/BABI_platinum.webp"
@@ -930,7 +964,7 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: 1.4rem">Silver</span>
+              <span class="sponsor-level sponsor-silver" style="margin-left: 1.4rem">Silver</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
@@ -1017,7 +1051,7 @@
         <div class="mx-auto overflow-hidden whitespace-nowrap md:w-[60vw] w-[80vw]">
           <div v-if="!isMobile" class="marquee-content-media flex-shrink-0">
             <div class="sponsor-item">
-              <span class="sponsor-level">Diamond</span>
+              <span class="sponsor-level sponsor-diamond">Diamond</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.85)"
@@ -1026,7 +1060,7 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
+              <span class="sponsor-level sponsor-platinum">Platinum</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.9)"
@@ -1038,7 +1072,7 @@
 
           <div v-if="isMobile" class="marquee-content-media flex-shrink-0">
             <div class="sponsor-item">
-              <span class="sponsor-level">Diamond</span>
+              <span class="sponsor-level sponsor-diamond">Diamond</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.8)"
@@ -1047,7 +1081,7 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
+              <span class="sponsor-level sponsor-platinum">Platinum</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.8)"
@@ -1742,6 +1776,35 @@ onMounted(() => {
   white-space: nowrap; /* Prevent text from wrapping */
 }
 
+/* .sponsor-level {
+  font-weight: extrabold;
+  text-transform: uppercase;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 30px !important;
+}
+
+.sponsor-diamond {
+  color: #B9F2FF;
+  background-color: #B9F2FF;
+}
+
+.sponsor-platinum {
+  color: #B9F2FF;
+}
+
+.sponsor-gold {
+color: #FFD700;
+}
+
+.sponsor-silver {
+color: #C0C0C0;
+}
+
+.sponsor-bronze {
+color: #CE8946;
+} */
 @keyframes color-shift {
   0%,
   100% {
