@@ -261,8 +261,8 @@ const submit = async () => {
 (2) 未報名創客交流組則將創客交流組的志願序填為 7。"
         :options="
           isMaker
-            ? ['創客交流組', 'CloudMosa', 'NXP', 'TSMC', 'Logitech', 'Google', 'AMD']
-            : ['CloudMosa', 'NXP', 'TSMC', 'Logitech', 'Google', 'AMD', '創客交流組']
+            ? ['創客交流組', 'AMD', 'CloudMosa', 'Google', '恩智浦半導體', '台積電', '羅技']
+            : ['AMD', 'CloudMosa', 'Google', '恩智浦半導體', '台積電', '羅技', '創客交流組']
         "
         v-model="priorityOrder"
       />
