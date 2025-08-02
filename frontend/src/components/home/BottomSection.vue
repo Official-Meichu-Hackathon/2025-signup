@@ -449,13 +449,7 @@
               </div>
             </div>
             <div class="collaborator-item">
-              <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
-                <img
-                  class="!w-[18vw]"
-                  src="../../assets/Home/company/7_文曄-02 1.webp"
-                  alt="文曄"
-                />
-              </a>
+              <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.webp" alt="文曄" />
             </div>
           </div>
         </div>
@@ -544,24 +538,24 @@
           </div>
           <div class="mobile-special-coop">
             <span class="special-text">特別合作企業</span>
-            <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
-              <img class="mobile-img" src="../../assets/Home/company/7_文曄-02 1.webp" alt="文曄" />
-            </a>
+            <img
+              class="mobile-img-no-hover"
+              src="../../assets/Home/company/7_文曄-02 1.webp"
+              alt="文曄"
+            />
           </div>
         </div>
 
         <div>網路贊助</div>
         <div v-if="isMobile" class="collaborators my-6">
           <div class="collaborator-item">
-            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.webp" alt="中華電信" />
+            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.png" alt="中華電信" />
           </div>
         </div>
 
         <div v-if="!isMobile" class="collaborators my-8">
           <div class="collaborator-item">
-            <a href="https://www.chunghwa.com.tw/" target="_blank" rel="noopener noreferrer">
-              <img class="!w-[20vw]" src="../../assets/Home/chunghwa.webp" alt="中華電信" />
-            </a>
+            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.png" alt="中華電信" />
           </div>
         </div>
 
@@ -1834,6 +1828,13 @@ onMounted(() => {
   opacity: 0.8;
 }
 
+.mobile-img-no-hover {
+  width: 35vw; /* Keep this for responsive scaling */
+  max-width: 150px; /* Add a max-width in pixels */
+  margin-bottom: 3vw;
+  height: auto;
+  transform: translateZ(0);
+}
 .mobile-special-coop {
   display: flex;
   flex-direction: row;
