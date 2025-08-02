@@ -1012,8 +1012,8 @@
           />
         </div>
 
-        <div class="mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
-          <div class="marquee-content-media flex-shrink-0">
+        <div class="mx-auto overflow-hidden whitespace-nowrap md:w-[60vw] w-[80vw]">
+          <div v-if="!isMobile" class="marquee-content-media flex-shrink-0">
             <div class="sponsor-item">
               <span class="sponsor-level">Diamond</span>
               <img
@@ -1028,6 +1028,27 @@
               <img
                 class="inline-block"
                 style="transform: scale(0.9)"
+                src="../../assets/Home/media/ettoday_platinum.webp"
+                alt="數位時代"
+              />
+            </div>
+          </div>
+
+          <div v-if="isMobile" class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/newstaiwan_diamond.webp"
+                alt="台灣好報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">Platinum</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
                 src="../../assets/Home/media/ettoday_platinum.webp"
                 alt="數位時代"
               />
