@@ -76,7 +76,7 @@
               >
                 <img
                   class="!w-[22vw]"
-                  src="../../assets/Home/company/00_新竹市政府-01 1.svg"
+                  src="../../assets/Home/company/00_新竹市政府-01 1.webp"
                   alt="新竹市政府"
                 />
               </a>
@@ -89,7 +89,7 @@
               >
                 <img
                   class="!w-[24vw]"
-                  src="../../assets/Home/company/00_新竹市政府-01 2.svg"
+                  src="../../assets/Home/company/00_新竹市政府-01 2.webp"
                   alt="新竹市政府"
                 />
               </a>
@@ -100,7 +100,7 @@
               <a href="https://www.cloudmosa.com/jobs" target="_blank" rel="noopener noreferrer">
                 <img
                   class="!w-[22vw]"
-                  src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
+                  src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.webp"
                   alt="CloudMosa"
                 />
               </a>
@@ -113,7 +113,7 @@
               >
                 <img
                   class="!w-[15vw]"
-                  src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
+                  src="../../assets/Home/company/2_NXP_Colour-CMYK 1.webp"
                   alt="NXP"
                 />
               </a>
@@ -122,14 +122,18 @@
           <div class="collaborators">
             <div class="collaborator-item">
               <a href="https://www.tsmc.com/chinese" target="_blank" rel="noopener noreferrer">
-                <img class="!w-[15vw]" src="../../assets/Home/company/3_TSMC-01 1.svg" alt="TSMC" />
+                <img
+                  class="!w-[15vw]"
+                  src="../../assets/Home/company/3_TSMC-01 1.webp"
+                  alt="TSMC"
+                />
               </a>
             </div>
             <div class="collaborator-item">
               <a href="https://www.logitech.com/zh-tw" target="_blank" rel="noopener noreferrer">
                 <img
                   class="!w-[25vw]"
-                  src="../../assets/Home/company/4_Logitech 1.svg"
+                  src="../../assets/Home/company/4_Logitech 1.webp"
                   alt="Logitech"
                 />
               </a>
@@ -144,7 +148,7 @@
               >
                 <img
                   class="!w-[20vw]"
-                  src="../../assets/Home/company/5_Google 1.svg"
+                  src="../../assets/Home/company/5_Google 1.webp"
                   alt="Google"
                 />
               </a>
@@ -155,7 +159,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
+                <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.webp" alt="AMD" />
               </a>
             </div>
           </div>
@@ -446,7 +450,11 @@
             </div>
             <div class="collaborator-item">
               <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
-                <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
+                <img
+                  class="!w-[18vw]"
+                  src="../../assets/Home/company/7_文曄-02 1.webp"
+                  alt="文曄"
+                />
               </a>
             </div>
           </div>
@@ -458,7 +466,7 @@
             <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
               <img
                 class="mobile-img"
-                src="../../assets/Home/company/00_新竹市政府-01 1.svg"
+                src="../../assets/Home/company/00_新竹市政府-01 1.webp"
                 alt="新竹市政府"
               />
             </a>
@@ -469,7 +477,7 @@
             >
               <img
                 class="mobile-img"
-                src="../../assets/Home/company/00_新竹市政府-01 2.svg"
+                src="../../assets/Home/company/00_新竹市政府-01 2.webp"
                 alt="新竹市政府"
               />
             </a>
@@ -478,7 +486,7 @@
             <a href="https://www.cloudmosa.com/jobs" target="_blank" rel="noopener noreferrer">
               <img
                 class="mobile-img"
-                src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
+                src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.webp"
                 alt="CloudMosa"
               />
             </a>
@@ -489,7 +497,7 @@
             >
               <img
                 class="mobile-img !w-[28vw]"
-                src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
+                src="../../assets/Home/company/2_NXP_Colour-CMYK 1.webp"
                 alt="NXP"
               />
             </a>
@@ -498,14 +506,14 @@
             <a href="https://www.tsmc.com/chinese" target="_blank" rel="noopener noreferrer">
               <img
                 class="mobile-img !w-[30vw]"
-                src="../../assets/Home/company/3_TSMC-01 1.svg"
+                src="../../assets/Home/company/3_TSMC-01 1.webp"
                 alt="TSMC"
               />
             </a>
             <a href="https://www.logitech.com/zh-tw" target="_blank" rel="noopener noreferrer">
               <img
                 class="mobile-img !w-[40vw]"
-                src="../../assets/Home/company/4_Logitech 1.svg"
+                src="../../assets/Home/company/4_Logitech 1.webp"
                 alt="Logitech"
               />
             </a>
@@ -518,7 +526,7 @@
             >
               <img
                 class="mobile-img !w-[30vw]"
-                src="../../assets/Home/company/5_Google 1.svg"
+                src="../../assets/Home/company/5_Google 1.webp"
                 alt="Google"
               />
             </a>
@@ -529,7 +537,7 @@
             >
               <img
                 class="mobile-img !w-[30vw]"
-                src="../../assets/Home/company/6_AMD 1.svg"
+                src="../../assets/Home/company/6_AMD 1.webp"
                 alt="AMD"
               />
             </a>
@@ -537,7 +545,7 @@
           <div class="mobile-special-coop">
             <span class="special-text">特別合作企業</span>
             <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
-              <img class="mobile-img" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
+              <img class="mobile-img" src="../../assets/Home/company/7_文曄-02 1.webp" alt="文曄" />
             </a>
           </div>
         </div>
@@ -1121,10 +1129,10 @@
           </div>
           <img
             class="w-[23vw]"
-            src="../../assets/Home/company/NCTU-foundation.svg"
+            src="../../assets/Home/company/NCTU-foundation.webp"
             alt="NCTU-foundation"
           />
-          <img class="w-[23vw]" src="../../assets/Home/company/ita.svg" alt="ita" />
+          <img class="w-[23vw]" src="../../assets/Home/company/ita.webp" alt="ita" />
         </div>
       </div>
 
