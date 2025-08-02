@@ -2,7 +2,7 @@
   <!-- Big Word-->
   <div
     ref="bigWordContainer"
-    class="w-full min-h-[1000px] bg-cover bg-center bg-no-repeat flex items-center justify-center"
+    class="w-full min-h-[800px] bg-cover bg-center bg-no-repeat flex items-center justify-center"
     style="background-color: white; position: relative"
   >
     <!-- Wings -->
