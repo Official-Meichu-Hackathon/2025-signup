@@ -33,13 +33,13 @@
               src="../assets/Schedule/twinkle_1.svg"
               alt="Twinkle decoration"
               :class="showTwinkle1 ? 'opacity-100' : 'opacity-0'"
-              class="absolute top-[-90px] left-[100px] w-[128.447px] h-[116.625px] transition-opacity duration-100 hidden sm:block"
+              class="absolute top-[-12.82vh] left-[8.46vw] w-[128.447px] h-[116.625px] transition-opacity duration-600 ease-in hidden sm:block"
             />
             <img
               src="../assets/Schedule/twinkle_2.svg"
               alt="Twinkle decoration"
               :class="!showTwinkle1 ? 'opacity-100' : 'opacity-0'"
-              class="absolute top-[-50px] left-[130px] w-[100.781px] h-[65.445px] transition-opacity duration-100 animate-scale-y hidden sm:block"
+              class="absolute top-[-60px] left-[11.0677vw] w-[100.781px] h-[65.445px] transition-opacity duration-600 ease-in hidden sm:block"
             />
           </h1>
           <div class="text-[#2D3E63] font-chiron text-xl sm:text-2xl mt-4 space-y-2">
@@ -103,8 +103,8 @@
                         <div
                           class="absolute"
                           :style="{
-                            width: '1.56vw', // 30px / 1920
-                            height: '1.56vw', // Make it a perfect circle
+                            width: '1.4vw', // 30px / 1920
+                            height: '1.4vw', // Make it a perfect circle
                             backgroundColor: getCircleColor(index),
                             borderRadius: '50%',
                             right: '2.45vw', // 47px / 1920
@@ -219,7 +219,7 @@
           @click="selectedDay = '0920'"
         >
           <span
-            class="font-chiron text-white pt-[1vh]"
+            class="font-chiron text-white pt-[0.3vh]"
             :class="
               selectedDay === '0920'
                 ? 'opacity-100 text-[4.1vw] pt-[0.7vh]'
@@ -238,7 +238,7 @@
           @click="selectedDay = '0921'"
         >
           <span
-            class="font-chiron text-white pt-[1vh]"
+            class="font-chiron text-white pt-[0.3vh]"
             :class="
               selectedDay === '0921'
                 ? 'opacity-100 text-[4.1vw] pt-[0.7vh]'
@@ -314,7 +314,7 @@
               </div>
             </template>
           </div>
-          <div class="text-center mt-[3vh] text-[3.1vw] text-[#656565] font-bold">
+          <div class="text-center mt-[3vh] text-[16px] text-[#656565] font-bold">
             <p class="font-chiron">實際流程將以現場公佈為準，<br />屆時請參賽者留意大會推播通知</p>
           </div>
         </div>
@@ -490,6 +490,18 @@ const getCircleColor = computed(() => (index) => {
 
 const showTwinkle1 = ref(true)
 
+let animationFrameId = null
+let lastToggleTime = performance.now()
+const interval = 1100 // 閃爍周期時間（應大於 transition-duration）
+
+function tick(time) {
+  if (time - lastToggleTime >= interval) {
+    showTwinkle1.value = !showTwinkle1.value
+    lastToggleTime = time
+  }
+  animationFrameId = requestAnimationFrame(tick)
+}
+
 const isMobile = ref(false)
 
 const checkMobile = () => {
@@ -497,14 +509,13 @@ const checkMobile = () => {
 }
 
 onMounted(() => {
+  animationFrameId = requestAnimationFrame(tick)
   checkMobile()
   window.addEventListener('resize', checkMobile)
-  setInterval(() => {
-    showTwinkle1.value = !showTwinkle1.value
-  }, 2000)
 })
 
 onBeforeUnmount(() => {
+  cancelAnimationFrame(animationFrameId)
   window.removeEventListener('resize', checkMobile)
 })
 </script>
