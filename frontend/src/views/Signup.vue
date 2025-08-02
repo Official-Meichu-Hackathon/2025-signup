@@ -279,7 +279,7 @@ const submit = async () => {
         playerData[index].gender,
         validateBirthday(playerData[index].birthday) ? playerData[index].birthday : '',
         playerData[index].idNumber,
-        playerData[index].identity,
+        isValidId(playerData[index].identity) ? playerData[index].identity : '',
         playerData[index].school,
         playerData[index].department,
         playerData[index].grade,
@@ -365,7 +365,10 @@ const submit = async () => {
       :formStepOrder="totalStepOrder - 1"
       :total-step-order="totalStepOrder"
       stepName="填寫同意書"
-      :required-values="[assentFirst, assentSecond]"
+      :required-values="[
+        assentFirst === '是' ? assentFirst : '',
+        assentSecond === '是' ? assentSecond : '',
+      ]"
       :isSubmitting="isSubmitting"
       v-model:currentStepOrder="currentStepOrder"
       @submit="submit"
