@@ -801,7 +801,7 @@ onMounted(() => {
   margin-right: 1vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
-  font-size: clamp(16px, 1.8vw, 22.5px);
+  font-size: clamp(16px, 1.8vw, 22px);
   text-align: justify;
   /* border: 3px solid blue; */
 }
