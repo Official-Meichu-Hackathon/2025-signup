@@ -86,7 +86,7 @@
         >
           黑客組：全台大專院校生以及碩博士生，每隊至少需有一人員具備使用企業提供之資源的能力，黑客組全面不允許影片Demo。
           <br />創客交流組：高中職、大專院校及碩博士、社會人士皆可報名，參賽者需於比賽 Demo
-          時讓評審實際操作作品。（參考工具：figma、Miro、Webflow、Sketch）
+          時讓評審實際操作作品。（參考工具：Figma、Miro、Webflow、Sketch）
         </ExpandableItem>
 
         <!-- 報名方式 -->
@@ -112,11 +112,8 @@
               <li>黑客組報名採志願排序制，須將創客交流組加入排序中</li>
             </ul>
             <li>若黑客組之單一企業超額，將採亂數分發</li>
-            <li>創客交流組另需提交一頁式企劃方案，方完成報名手續</li>
+            <li>創客交流組需於工作坊後提交一頁式企劃方案，參賽者務必參加工作坊以完成選題程序。</li>
             <ul class="list-circle pl-12 mt-1 hollow-circle-list">
-              <li>
-                黑客創客混合報名之志願序排列，若將創客交流組志願序排至前三（含），亦需繳交一頁式企劃方案
-              </li>
               <li>一頁式企劃方案僅供新竹市政府了解貴隊伍之初步構思，無篩選之用意</li>
             </ul>
           </ul>
@@ -145,7 +142,7 @@
             <li>
               得獎同學需將作品上傳至
               <a
-                href="https://https://tenyear.meichuhackathon.org/"
+                href="https://tenyear.meichuhackathon.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-[#2D3E63] hover:text-gray-800 underline"
