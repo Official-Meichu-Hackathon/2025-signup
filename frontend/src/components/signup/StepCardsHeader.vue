@@ -40,8 +40,12 @@ const handleStepClick = (stepOrder) => {
   }
 }
 
-const firstRowSteps = computed(() => steps.value.slice(0, 6))
-const secondRowSteps = computed(() => steps.value.slice(6))
+const firstRowSteps = computed(() =>
+  playerCount === 3 ? steps.value.slice(0, 6) : steps.value.slice(0, 4)
+)
+const secondRowSteps = computed(() =>
+  playerCount === 3 ? steps.value.slice(6) : steps.value.slice(4)
+)
 
 const mobileFirstRowSteps = computed(() => steps.value.slice(0, 4))
 const mobileSecondRowSteps = computed(() => steps.value.slice(4))
