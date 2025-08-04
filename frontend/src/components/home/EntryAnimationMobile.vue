@@ -14,7 +14,9 @@ const loadedImages = []
 let animationId = null
 let currentFrame = 0
 const fps = 10 // Frames per second
+const slowFps = 5 // Slower FPS for frames 11-14
 const frameInterval = 1000 / fps
+const slowFrameInterval = 1000 / slowFps
 let lastFrameTime = 0
 
 // Inject the function to notify parent that animation is loaded
@@ -34,7 +36,8 @@ const imagePromises = imageSrc.map((src) => {
 })
 
 const animate = (timestamp) => {
-  if (timestamp - lastFrameTime >= frameInterval) {
+  const currentInterval = currentFrame >= 10 ? slowFrameInterval : frameInterval
+  if (timestamp - lastFrameTime >= currentInterval) {
     const ctx = canvas.value.getContext('2d')
     const currentImage = loadedImages[currentFrame]
 
