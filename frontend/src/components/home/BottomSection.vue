@@ -146,12 +146,8 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  class="!w-[20vw]"
-                  src="../../assets/Home/company/5_Google 1.webp"
-                  alt="Google"
-                />
               </a>
+              <img class="!w-[24vw]" src="../../assets/Home/company/5_Google 1.webp" alt="Google" />
             </div>
             <div class="collaborator-item">
               <a
@@ -1908,7 +1904,7 @@ color: #CE8946;
 }
 
 .special-text {
-  font-size: 4vw;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
 }
