@@ -84,7 +84,8 @@
           :expanded="expandedItems.qualification"
           @toggle="handleItemToggle"
         >
-          黑客組：全台大專院校生以及碩博士生，每隊至少需有一人員具備使用企業提供之資源的能力，黑客組全面不允許影片Demo。
+          黑客組：全台大專院校生以及碩博士生，每隊至少需有一人員具備使用企業提供之資源的能力，黑客組全面不允許影片
+          Demo。
           <br />創客交流組：高中職、大專院校及碩博士、社會人士皆可報名，參賽者需於比賽 Demo
           時讓評審實際操作作品。（參考工具：Figma、Miro、Webflow、Sketch）
         </ExpandableItem>
