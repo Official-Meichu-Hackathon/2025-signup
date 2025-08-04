@@ -88,7 +88,7 @@
 <script setup>
 import { ref, inject } from 'vue'
 import ProblemCard from './ProblemCard.vue'
-import AMDLogo from '../../assets/Problems/Logo/AMD 1.webp'
+import AMDLogo from '../../assets/Problems/Logo/AMD_ITRI.webp'
 import TSMCLogo from '../../assets/Problems/Logo/TSMC.webp'
 import CloudMosaLogo from '../../assets/Problems/Logo/CloudMosa.webp'
 import GoogleLogo from '../../assets/Problems/Logo/Google.webp'
@@ -106,22 +106,6 @@ const isDesktop = inject('isDesktop')
 
 const cards = [
   {
-    logo: AMDLogo,
-    companyName: 'AMD',
-    problemTitle: '題目',
-    problemContent:
-      'AMD 將提供每組一台 AI PC Laptop (ASUS M5606W HX370/0001DA/32G/T) ，請運用本地算力，開發能夠協助生活的 AI Agent。在旅遊規劃、自動發文、個人活安排或校園活動整合中，創造一個更加便利的生活模式。你將利用Lemonade server 來發揮 Ryzen AI PC 的潛力，並通過串流工具，將其連接到 Hugging Face 的 Tiny Agents 等內容，打造多樣的AI Agents。',
-    problemLink: AMDProblem,
-  },
-  {
-    logo: TSMCLogo,
-    companyName: '台灣積體電路股份有限公司',
-    problemTitle: '題目',
-    problemContent:
-      '透過數位化技術，設計一款針對新進員工的「生活小助手」數位夥伴解決方案。參賽者需以新進員工的角度出發，聚焦於入職後的實際需求與痛點,結合創新技術與使用者體驗,打造一個可以支援新員工快速適應職場生活的多功能平台或服務。此方案應涵蓋「食衣住行育樂」及「工作支持」相關的功能整合，並提供即時問題解決與資訊導航，讓員工能感受到台積電對於新人的支持與關懷。',
-    problemLink: TSMCProblem,
-  },
-  {
     logo: CloudMosaLogo,
     companyName: 'CloudMosa',
     problemTitle: '題目',
@@ -130,12 +114,20 @@ const cards = [
     problemLink: CloudMosaProblem,
   },
   {
-    logo: GoogleLogo,
-    companyName: 'Google',
+    logo: NXPLogo,
+    companyName: '恩智浦半導體',
     problemTitle: '題目',
     problemContent:
-      '運用 Gemini 模型，發揮創意,將智慧應用帶入每個人的手機中。例如，即時語音描述路況系統、處理複雜文件內容、結合手機鏡頭辨識垃圾種類、電話詐騙預防系統等等。在手機的應用場景上，使用指定模型、結合其他輔助領域之技術，解決真實世界的問題，提升弱勢社群的無障礙體驗。',
-    problemLink: GooglePromblem,
+      '善用邊緣運算與人工智慧、結合語音影像等感測辨識，兼顧功能與資訊安全，打造具即時反應的智慧創新應用。例如，使用 FRDM i.MX93 開發板做為感測中心，以 Wi-Fi 方式連接各式感測器(如:攝影鏡頭)，進行物品辨識以判斷物品是否正常運作。這些感測器資料可以結合在一起，透過大數據、AI 演算法,做出更多不同的應用，亦可連接到手機 APP 控制，相關資料在各設備間的連結，可透過 Wi-Fi 進行安全傳輸。',
+    problemLink: NXPProblem,
+  },
+  {
+    logo: TSMCLogo,
+    companyName: '台積電',
+    problemTitle: '題目',
+    problemContent:
+      '透過數位化技術，設計一款針對新進員工的「生活小助手」數位夥伴解決方案。參賽者需以新進員工的角度出發，聚焦於入職後的實際需求與痛點,結合創新技術與使用者體驗,打造一個可以支援新員工快速適應職場生活的多功能平台或服務。此方案應涵蓋「食衣住行育樂」及「工作支持」相關的功能整合，並提供即時問題解決與資訊導航，讓員工能感受到台積電對於新人的支持與關懷。',
+    problemLink: TSMCProblem,
   },
   {
     logo: LogitechLogo,
@@ -146,12 +138,20 @@ const cards = [
     problemLink: LogitechProblem,
   },
   {
-    logo: NXPLogo,
-    companyName: '恩智浦半導體',
+    logo: GoogleLogo,
+    companyName: 'Google',
     problemTitle: '題目',
     problemContent:
-      '善用邊緣運算與人工智慧、結合語音影像等感測辨識，兼顧功能與資訊安全，打造具即時反應的智慧創新應用。例如，使用 FRDM i.MX93 開發板做為感測中心，以 Wi-Fi 方式連接各式感測器(如:攝影鏡頭)，進行物品辨識以判斷物品是否正常運作。這些感測器資料可以結合在一起，透過大數據、AI 演算法,做出更多不同的應用，亦可連接到手機 APP 控制，相關資料在各設備間的連結，可透過 IW416 Wi-Fi 進行安全傳輸。',
-    problemLink: NXPProblem,
+      '運用 Gemini 模型，發揮創意,將智慧應用帶入每個人的手機中。例如，即時語音描述路況系統、處理複雜文件內容、結合手機鏡頭辨識垃圾種類、電話詐騙預防系統等等。在手機的應用場景上，使用指定模型、結合其他輔助領域之技術，解決真實世界的問題，提升弱勢社群的無障礙體驗。',
+    problemLink: GooglePromblem,
+  },
+  {
+    logo: AMDLogo,
+    companyName: 'AMD',
+    problemTitle: '題目',
+    problemContent:
+      'AMD 將提供每組一台 AI PC Laptop (ASUS M5606W HX370/0001DA/32G/T) ，請運用本地算力，開發能夠協助生活的 AI Agent。在旅遊規劃、自動發文、個人活安排或校園活動整合中，創造一個更加便利的生活模式。你將利用Lemonade server 來發揮 Ryzen AI PC 的潛力，並通過串流工具，將其連接到 Hugging Face 的 Tiny Agents 等內容，打造多樣的AI Agents。',
+    problemLink: AMDProblem,
   },
 ]
 
