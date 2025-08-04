@@ -94,7 +94,7 @@
 
           <!-- content -->
           <div
-            class="content2 flex text-white font-bold font-['Chiron_Hei_HK'] leading-10 justify-between"
+            class="content2 flex gap-[5vw] text-white font-bold font-['Chiron_Hei_HK'] leading-10 justify-between"
           >
             <!-- justify between 各自對齊左右側的排版
                     <div class="flex justify-between">
@@ -391,9 +391,9 @@ onUnmounted(() => {
 .hacker {
   /* border: 3px solid pink; */
   margin-top: 5vh;
-  width: 50vw;
+  width: 51vw;
   margin-left: 15vw;
-  padding: 3vh 2vh;
+  padding: 3vh 0.6vw;
 }
 
 .maker {
@@ -402,7 +402,7 @@ onUnmounted(() => {
   width: 50vw;
   margin-left: 35vw;
   padding: 3vh 2vh;
-  padding-right: 5vh;
+  padding-right: 2vw;
   z-index: 2;
 }
 

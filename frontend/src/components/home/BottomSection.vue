@@ -76,7 +76,7 @@
               >
                 <img
                   class="!w-[22vw]"
-                  src="../../assets/Home/company/00_新竹市政府-01 1.svg"
+                  src="../../assets/Home/company/00_新竹市政府-01 1.webp"
                   alt="新竹市政府"
                 />
               </a>
@@ -89,7 +89,7 @@
               >
                 <img
                   class="!w-[24vw]"
-                  src="../../assets/Home/company/00_新竹市政府-01 2.svg"
+                  src="../../assets/Home/company/00_新竹市政府-01 2.webp"
                   alt="新竹市政府"
                 />
               </a>
@@ -100,7 +100,7 @@
               <a href="https://www.cloudmosa.com/jobs" target="_blank" rel="noopener noreferrer">
                 <img
                   class="!w-[22vw]"
-                  src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
+                  src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.webp"
                   alt="CloudMosa"
                 />
               </a>
@@ -113,7 +113,7 @@
               >
                 <img
                   class="!w-[15vw]"
-                  src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
+                  src="../../assets/Home/company/2_NXP_Colour-CMYK 1.webp"
                   alt="NXP"
                 />
               </a>
@@ -122,14 +122,18 @@
           <div class="collaborators">
             <div class="collaborator-item">
               <a href="https://www.tsmc.com/chinese" target="_blank" rel="noopener noreferrer">
-                <img class="!w-[15vw]" src="../../assets/Home/company/3_TSMC-01 1.svg" alt="TSMC" />
+                <img
+                  class="!w-[15vw]"
+                  src="../../assets/Home/company/3_TSMC-01 1.webp"
+                  alt="TSMC"
+                />
               </a>
             </div>
             <div class="collaborator-item">
               <a href="https://www.logitech.com/zh-tw" target="_blank" rel="noopener noreferrer">
                 <img
                   class="!w-[25vw]"
-                  src="../../assets/Home/company/4_Logitech 1.svg"
+                  src="../../assets/Home/company/4_Logitech 1.webp"
                   alt="Logitech"
                 />
               </a>
@@ -142,12 +146,8 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  class="!w-[20vw]"
-                  src="../../assets/Home/company/5_Google 1.svg"
-                  alt="Google"
-                />
               </a>
+              <img class="!w-[24vw]" src="../../assets/Home/company/5_Google 1.webp" alt="Google" />
             </div>
             <div class="collaborator-item">
               <a
@@ -155,7 +155,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.svg" alt="AMD" />
+                <img class="!w-[20vw]" src="../../assets/Home/company/6_AMD 1.webp" alt="AMD" />
               </a>
             </div>
           </div>
@@ -445,9 +445,7 @@
               </div>
             </div>
             <div class="collaborator-item">
-              <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
-                <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
-              </a>
+              <img class="!w-[18vw]" src="../../assets/Home/company/7_文曄-02 1.webp" alt="文曄" />
             </div>
           </div>
         </div>
@@ -458,7 +456,7 @@
             <a href="https://www.hccg.gov.tw/hccg/index" target="_blank" rel="noopener noreferrer">
               <img
                 class="mobile-img"
-                src="../../assets/Home/company/00_新竹市政府-01 1.svg"
+                src="../../assets/Home/company/00_新竹市政府-01 1.webp"
                 alt="新竹市政府"
               />
             </a>
@@ -469,7 +467,7 @@
             >
               <img
                 class="mobile-img"
-                src="../../assets/Home/company/00_新竹市政府-01 2.svg"
+                src="../../assets/Home/company/00_新竹市政府-01 2.webp"
                 alt="新竹市政府"
               />
             </a>
@@ -478,7 +476,7 @@
             <a href="https://www.cloudmosa.com/jobs" target="_blank" rel="noopener noreferrer">
               <img
                 class="mobile-img"
-                src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.svg"
+                src="../../assets/Home/company/CloudMosa logo digital_Primary logo 2.webp"
                 alt="CloudMosa"
               />
             </a>
@@ -489,7 +487,7 @@
             >
               <img
                 class="mobile-img !w-[28vw]"
-                src="../../assets/Home/company/2_NXP_Colour-CMYK 1.svg"
+                src="../../assets/Home/company/2_NXP_Colour-CMYK 1.webp"
                 alt="NXP"
               />
             </a>
@@ -498,14 +496,14 @@
             <a href="https://www.tsmc.com/chinese" target="_blank" rel="noopener noreferrer">
               <img
                 class="mobile-img !w-[30vw]"
-                src="../../assets/Home/company/3_TSMC-01 1.svg"
+                src="../../assets/Home/company/3_TSMC-01 1.webp"
                 alt="TSMC"
               />
             </a>
             <a href="https://www.logitech.com/zh-tw" target="_blank" rel="noopener noreferrer">
               <img
                 class="mobile-img !w-[40vw]"
-                src="../../assets/Home/company/4_Logitech 1.svg"
+                src="../../assets/Home/company/4_Logitech 1.webp"
                 alt="Logitech"
               />
             </a>
@@ -518,7 +516,7 @@
             >
               <img
                 class="mobile-img !w-[30vw]"
-                src="../../assets/Home/company/5_Google 1.svg"
+                src="../../assets/Home/company/5_Google 1.webp"
                 alt="Google"
               />
             </a>
@@ -529,31 +527,39 @@
             >
               <img
                 class="mobile-img !w-[30vw]"
-                src="../../assets/Home/company/6_AMD 1.svg"
+                src="../../assets/Home/company/6_AMD 1.webp"
                 alt="AMD"
               />
             </a>
           </div>
           <div class="mobile-special-coop">
             <span class="special-text">特別合作企業</span>
-            <a href="https://www.wtmec.com/" target="_blank" rel="noopener noreferrer">
-              <img class="mobile-img" src="../../assets/Home/company/7_文曄-02 1.svg" alt="文曄" />
-            </a>
+            <img
+              class="mobile-img-no-hover"
+              src="../../assets/Home/company/7_文曄-02 1.webp"
+              alt="文曄"
+            />
           </div>
         </div>
 
         <div>網路贊助</div>
-        <div v-if="isMobile" class="collaborators my-6">
+        <div v-if="isMobile" class="collaborators my-8">
           <div class="collaborator-item">
-            <img class="!w-[20vw]" src="../../assets/Home/chunghwa.webp" alt="中華電信" />
+            <img
+              src="../../assets/Home/chunghwa.webp"
+              alt="中華電信"
+              style="transform: scale(2.5)"
+            />
           </div>
         </div>
 
         <div v-if="!isMobile" class="collaborators my-8">
           <div class="collaborator-item">
-            <a href="https://www.chunghwa.com.tw/" target="_blank" rel="noopener noreferrer">
-              <img class="!w-[20vw]" src="../../assets/Home/chunghwa.webp" alt="中華電信" />
-            </a>
+            <img
+              src="../../assets/Home/chunghwa.webp"
+              alt="中華電信"
+              style="transform: scale(1.6)"
+            />
           </div>
         </div>
 
@@ -655,8 +661,13 @@
           <div class="marquee-content flex-shrink-0">
             <!-- Diamond Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level">Diamond</span>
-              <span v-if="isMobile" class="sponsor-level" style="margin-left: 0.5rem">Diamond</span>
+              <span v-if="!isMobile" class="sponsor-level sponsor-diamond">Diamond</span>
+              <span
+                v-if="isMobile"
+                class="sponsor-level sponsor-diamond"
+                style="margin-left: 0.5rem"
+                >Diamond</span
+              >
               <img
                 v-if="!isMobile"
                 class="inline-block"
@@ -675,7 +686,7 @@
 
             <!-- Platinum Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
+              <span class="sponsor-level sponsor-platinum">Platinum</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/sponsors/Cathay_platinum.webp"
@@ -685,8 +696,13 @@
 
             <!-- Gold Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level" style="margin-left: 2rem">Gold</span>
-              <span v-else class="sponsor-level" style="margin-left: 1rem; margin-bottom: 0.4rem"
+              <span v-if="!isMobile" class="sponsor-level sponsor-gold" style="margin-left: 2rem"
+                >Gold</span
+              >
+              <span
+                v-else
+                class="sponsor-level sponsor-gold"
+                style="margin-left: 1rem; margin-bottom: 0.4rem"
                 >Gold</span
               >
 
@@ -708,7 +724,7 @@
 
             <!-- Silver Sponsor 1 -->
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: -1rem">Silver</span>
+              <span class="sponsor-level sponsor-silver" style="margin-left: -1rem">Silver</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.95)"
@@ -719,8 +735,10 @@
 
             <!-- Silver Sponsor 2 -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level">Silver</span>
-              <span v-else class="sponsor-level" style="margin-left: 1rem">Silver</span>
+              <span v-if="!isMobile" class="sponsor-level sponsor-silver">Silver</span>
+              <span v-else class="sponsor-level sponsor-silver" style="margin-left: 1rem"
+                >Silver</span
+              >
 
               <img
                 class="inline-block"
@@ -732,7 +750,7 @@
 
             <!-- Bronze Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Bronze</span>
+              <span class="sponsor-level sponsor-bronze">Bronze</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/sponsors/Ctbc_bronze.webp"
@@ -743,8 +761,13 @@
           <div class="marquee-content flex-shrink-0">
             <!-- Diamond Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level">Diamond</span>
-              <span v-if="isMobile" class="sponsor-level" style="margin-left: 0.5rem">Diamond</span>
+              <span v-if="!isMobile" class="sponsor-level sponsor-diamond">Diamond</span>
+              <span
+                v-if="isMobile"
+                class="sponsor-level sponsor-diamond"
+                style="margin-left: 0.5rem"
+                >Diamond</span
+              >
               <img
                 v-if="!isMobile"
                 class="inline-block"
@@ -763,7 +786,7 @@
 
             <!-- Platinum Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
+              <span class="sponsor-level sponsor-platinum">Platinum</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/sponsors/Cathay_platinum.webp"
@@ -773,8 +796,13 @@
 
             <!-- Gold Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level" style="margin-left: 2rem">Gold</span>
-              <span v-else class="sponsor-level" style="margin-left: 1rem; margin-bottom: 0.4rem"
+              <span v-if="!isMobile" class="sponsor-level sponsor-gold" style="margin-left: 2rem"
+                >Gold</span
+              >
+              <span
+                v-else
+                class="sponsor-level sponsor-gold"
+                style="margin-left: 1rem; margin-bottom: 0.4rem"
                 >Gold</span
               >
 
@@ -796,7 +824,7 @@
 
             <!-- Silver Sponsor 1 -->
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: -1rem">Silver</span>
+              <span class="sponsor-level sponsor-silver" style="margin-left: -1rem">Silver</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.95)"
@@ -807,8 +835,10 @@
 
             <!-- Silver Sponsor 2 -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level">Silver</span>
-              <span v-else class="sponsor-level" style="margin-left: 1rem">Silver</span>
+              <span v-if="!isMobile" class="sponsor-level sponsor-silver">Silver</span>
+              <span v-else class="sponsor-level sponsor-silver" style="margin-left: 1rem"
+                >Silver</span
+              >
 
               <img
                 class="inline-block"
@@ -820,7 +850,7 @@
 
             <!-- Bronze Sponsor -->
             <div class="sponsor-item">
-              <span class="sponsor-level">Bronze</span>
+              <span class="sponsor-level sponsor-bronze">Bronze</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/sponsors/Ctbc_bronze.webp"
@@ -920,7 +950,9 @@
           <div class="marquee-content-special-sponsor flex-shrink-0">
             <!-- First set of sponsors -->
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: -0.4rem">Platinum</span>
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
+              >
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/BABI_platinum.webp"
@@ -928,7 +960,7 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: 1.4rem">Silver</span>
+              <span class="sponsor-level sponsor-silver" style="margin-left: 1.4rem">Silver</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
@@ -1012,10 +1044,10 @@
           />
         </div>
 
-        <div class="mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
-          <div class="marquee-content-media flex-shrink-0">
+        <div class="mx-auto overflow-hidden whitespace-nowrap md:w-[60vw] w-[80vw] flex">
+          <div v-if="!isMobile" class="marquee-content-media flex-shrink-0">
             <div class="sponsor-item">
-              <span class="sponsor-level">Diamond</span>
+              <span class="sponsor-level sponsor-diamond">Diamond</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.85)"
@@ -1024,12 +1056,148 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level">Platinum</span>
+              <span class="sponsor-level sponsor-platinum">Platinum</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.9)"
                 src="../../assets/Home/media/ettoday_platinum.webp"
                 alt="數位時代"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/tiea.webp"
+                alt="數位人才聯盟"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1)"
+                src="../../assets/Home/media/taipei_logo.webp"
+                alt="台北市政府資訊局"
+              />
+            </div>
+          </div>
+          <div v-if="!isMobile" class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-diamond">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.85)"
+                src="../../assets/Home/media/newstaiwan_diamond.webp"
+                alt="台灣好報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum">Platinum</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.9)"
+                src="../../assets/Home/media/ettoday_platinum.webp"
+                alt="數位時代"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/tiea.webp"
+                alt="數位人才聯盟"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1)"
+                src="../../assets/Home/media/taipei_logo.webp"
+                alt="台北市政府資訊局"
+              />
+            </div>
+          </div>
+          <div v-if="isMobile" class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-diamond">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/newstaiwan_diamond.webp"
+                alt="台灣好報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum" style="margin-left: 0.5rem"
+                >Platinum</span
+              >
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/ettoday_platinum.webp"
+                alt="數位時代"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 0.3rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/tiea.webp"
+                alt="數位人才聯盟"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1)"
+                src="../../assets/Home/media/taipei_logo.webp"
+                alt="台北市政府資訊局"
+              />
+            </div>
+          </div>
+          <div v-if="isMobile" class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-diamond">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/newstaiwan_diamond.webp"
+                alt="台灣好報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum" style="margin-left: 0.5rem"
+                >Platinum</span
+              >
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/ettoday_platinum.webp"
+                alt="數位時代"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 0.3rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/tiea.webp"
+                alt="數位人才聯盟"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1)"
+                src="../../assets/Home/media/taipei_logo.webp"
+                alt="台北市政府資訊局"
               />
             </div>
           </div>
@@ -1100,10 +1268,10 @@
           </div>
           <img
             class="w-[23vw]"
-            src="../../assets/Home/company/NCTU-foundation.svg"
+            src="../../assets/Home/company/NCTU-foundation.webp"
             alt="NCTU-foundation"
           />
-          <img class="w-[23vw]" src="../../assets/Home/company/ita.svg" alt="ita" />
+          <img class="w-[23vw]" src="../../assets/Home/company/ita.webp" alt="ita" />
         </div>
       </div>
 
@@ -1668,12 +1836,12 @@ onMounted(() => {
   display: flex;
   overflow: hidden;
   white-space: nowrap;
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .marquee-content {
-  animation-duration: 18s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
@@ -1689,10 +1857,18 @@ onMounted(() => {
 }
 
 .marquee-content-media {
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
-  padding: 80px 0px 80px 0px;
+  padding: 3rem 0px 3rem 0px;
+}
+
+.marquee-content-others {
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  padding: 2.5rem 0px 2.5rem 0px;
 }
 .sponsor-item {
   position: relative;
@@ -1719,6 +1895,35 @@ onMounted(() => {
   white-space: nowrap; /* Prevent text from wrapping */
 }
 
+/* .sponsor-level {
+  font-weight: extrabold;
+  text-transform: uppercase;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 30px !important;
+}
+
+.sponsor-diamond {
+  color: #B9F2FF;
+  background-color: #B9F2FF;
+}
+
+.sponsor-platinum {
+  color: #B9F2FF;
+}
+
+.sponsor-gold {
+color: #FFD700;
+}
+
+.sponsor-silver {
+color: #C0C0C0;
+}
+
+.sponsor-bronze {
+color: #CE8946;
+} */
 @keyframes color-shift {
   0%,
   100% {
@@ -1805,6 +2010,13 @@ onMounted(() => {
   opacity: 0.8;
 }
 
+.mobile-img-no-hover {
+  width: 35vw; /* Keep this for responsive scaling */
+  max-width: 150px; /* Add a max-width in pixels */
+  margin-bottom: 3vw;
+  height: auto;
+  transform: translateZ(0);
+}
 .mobile-special-coop {
   display: flex;
   flex-direction: row;
@@ -1815,7 +2027,7 @@ onMounted(() => {
 }
 
 .special-text {
-  font-size: 4vw;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
 }
