@@ -78,7 +78,7 @@
 <style scoped>
 .fade-in-up {
   opacity: 0;
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .fade-in-up.show {
   opacity: 1;
