@@ -247,7 +247,7 @@ const submit = async () => {
 
       <ChoiceQuestion
         title="*跨域組隊"
-        description="備註：符合以下任一條件，全隊報名費可減免 100 元
+        description="備註：隊伍成員每人減免 $100
 (1) 報名隊伍內有三個（含）以上不同科系
 (2) 組內含高中職、大專院校生或碩博生、社會人士兩種（含）以上身份別之參賽者（限創客交流組）"
         :options="['是', '否']"
@@ -261,8 +261,8 @@ const submit = async () => {
 (2) 未報名創客交流組則將創客交流組的志願序填為 7。"
         :options="
           isMaker
-            ? ['創客交流組', 'CloudMosa', 'NXP', 'TSMC', 'Logitech', 'Google', 'AMD']
-            : ['CloudMosa', 'NXP', 'TSMC', 'Logitech', 'Google', 'AMD', '創客交流組']
+            ? ['創客交流組', 'AMD', 'CloudMosa', 'Google', '恩智浦半導體', '台積電', '羅技']
+            : ['AMD', 'CloudMosa', 'Google', '恩智浦半導體', '台積電', '羅技', '創客交流組']
         "
         v-model="priorityOrder"
       />
@@ -279,7 +279,7 @@ const submit = async () => {
         playerData[index].gender,
         validateBirthday(playerData[index].birthday) ? playerData[index].birthday : '',
         playerData[index].idNumber,
-        playerData[index].identity,
+        isValidId(playerData[index].identity) ? playerData[index].identity : '',
         playerData[index].school,
         playerData[index].department,
         playerData[index].grade,
@@ -365,7 +365,10 @@ const submit = async () => {
       :formStepOrder="totalStepOrder - 1"
       :total-step-order="totalStepOrder"
       stepName="填寫同意書"
-      :required-values="[assentFirst, assentSecond]"
+      :required-values="[
+        assentFirst === '是' ? assentFirst : '',
+        assentSecond === '是' ? assentSecond : '',
+      ]"
       :isSubmitting="isSubmitting"
       v-model:currentStepOrder="currentStepOrder"
       @submit="submit"
