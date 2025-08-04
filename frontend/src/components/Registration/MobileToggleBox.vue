@@ -6,13 +6,13 @@
   >
     <div class="p-4 flex justify-between items-center">
       <span
-        class="font-bold text-xl font-['Chiron_Hei_HK_Text']"
+        class="font-bold text-xl font-['Chiron_Hei_HK']"
         :class="isActive ? 'text-[#FFFFFF]' : 'text-[#2D3E63]'"
       >
         {{ title }}
       </span>
       <svg
-        class="w-6 h-6 transition-transform duration-300"
+        class="w-5 h-5 transition-transform duration-300"
         fill="none"
         :stroke="isActive ? '#FFFFFF' : '#2D3E63'"
         viewBox="0 0 24 24"
@@ -38,7 +38,7 @@
       :class="[{ expanded: isActive }, isActive ? expandedBackgroundClass : '']"
     >
       <div
-        class="px-8 text-base font-['Chiron_Hei_HK_Text']"
+        class="px-8 text-base font-['Chiron_Hei_HK']"
         :class="[isActive ? 'text-[#FFFFFF]' : 'text-[#2D3E63]', contentPadding]"
       >
         <slot></slot>

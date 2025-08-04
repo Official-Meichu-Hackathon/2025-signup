@@ -48,7 +48,7 @@
         <div
           v-for="(item, idx) in scheduleItems"
           :key="idx"
-          class="justify-start text-slate-700 text-xl sm:text-2xl md:text-5xl font-bold font-['Chiron_Hei_HK_Text'] animate-fade-in-left"
+          class="justify-start text-slate-700 text-lg sm:text-2xl md:text-5xl font-bold font-['Chiron_Hei_HK'] animate-fade-in-left"
           :style="{ animationDelay: `${idx * 0.2}s` }"
         >
           <div>{{ item.date }}</div>
