@@ -10,6 +10,13 @@ defineProps({
   description: {
     type: String,
   },
+  referenceLink: {
+    type: String,
+  },
+  referenceLinkText: {
+    type: String,
+    default: '參考連結',
+  },
   options: {
     type: Array,
     required: true,
@@ -38,6 +45,12 @@ const selectedValue = defineModel()
       >（在新分頁中開啟）
     </p>
     <p v-if="description" class="mx-4 mt-2 whitespace-pre-line">{{ description }}</p>
+    <p v-if="referenceLink" class="mx-4 mt-2">
+      <a :href="referenceLink" class="text-blue-600 hover:underline" target="_blank">{{
+        referenceLinkText
+      }}</a
+      >（在新分頁中開啟）
+    </p>
 
     <div class="mx-4 mt-3 flex flex-wrap gap-4">
       <div v-for="(option, index) in options" :key="index" class="cursor-pointer">
