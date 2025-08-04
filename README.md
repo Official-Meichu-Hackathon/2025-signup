@@ -1,4 +1,5 @@
 # 2025-signup
+[![Netlify Status](https://api.netlify.com/api/v1/badges/773b0908-d4b8-41f7-b6ff-f4d752b702c6/deploy-status)](https://app.netlify.com/projects/2025-meichuhackathon/deploys)
 
 ## Project setup
 
