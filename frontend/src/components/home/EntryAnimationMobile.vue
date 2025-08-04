@@ -22,8 +22,41 @@ let lastFrameTime = 0
 // Inject the function to notify parent that animation is loaded
 const setEntryAnimationLoaded = inject('setEntryAnimationLoaded', null)
 
+const getQualityForBandwidth = () => {
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+  if (connection && connection.downlink) {
+    const downlinkMbps = connection.downlink
+    if (downlinkMbps < 1.5) {
+      // Speeds below 1.5 Mbps get low quality
+      return 'low'
+    }
+    if (downlinkMbps < 5) {
+      // Speeds between 1.5 and 5 Mbps get medium quality
+      return 'medium'
+    }
+    // Speeds above 5 Mbps get high quality
+    return 'high'
+  }
+  // Fallback to a default if the API isn't supported
+  return 'medium'
+}
+
+const quality = getQualityForBandwidth()
+
 for (let i = 1; i <= frameCnt; i++) {
-  imageSrc.push(`/EntryAnimationMobile/frame-${i}.webp`)
+  let path = ''
+  switch (quality) {
+    case 'high':
+      path = `/EntryAnimationMobile/high/frame-${i}.webp`
+      break
+    case 'medium':
+      path = `/EntryAnimationMobile/medium/frame-${i}.webp`
+      break
+    case 'low':
+      path = `/EntryAnimationMobile/medium/frame-${i}.webp`
+      break
+  }
+  imageSrc.push(path)
 }
 
 const imagePromises = imageSrc.map((src) => {

@@ -24,8 +24,47 @@ const frameCnt = 23 // 27
 const imageSrc = []
 const loadedImages = []
 
+const getQualityForBandwidth = () => {
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+  if (connection && connection.downlink) {
+    const downlinkMbps = connection.downlink
+    if (downlinkMbps < 1.5) {
+      // Speeds below 1.5 Mbps get low quality
+      return 'low'
+    }
+    if (downlinkMbps < 8) {
+      // Speeds between 1.5 and 5 Mbps get medium quality
+      return 'medium'
+    }
+    // Speeds above 5 Mbps get high quality
+    return 'high'
+  }
+  // Fallback to a default if the API isn't supported
+  return 'medium'
+}
+
+const quality = getQualityForBandwidth()
+
+// NOTE: You will need to organize your images into subfolders and name them accordingly.
+// Example structure:
+// - /public/EntryAnimation/high/frame-1.webp
+// - /public/EntryAnimation/medium/frame-1_compressed.webp
+// - /public/EntryAnimation/low/frame-1_very_compressed.webp
+
 for (let i = 1; i <= frameCnt; i++) {
-  imageSrc.push(`/EntryAnimation/frame-${i}_compressed.webp`)
+  let path = ''
+  switch (quality) {
+    case 'high':
+      path = `/EntryAnimation/high/frame-${i}.webp`
+      break
+    case 'medium':
+      path = `/EntryAnimation/medium/frame-${i}_compressed.webp`
+      break
+    case 'low':
+      path = `/EntryAnimation/medium/frame-${i}_compressed.webp`
+      break
+  }
+  imageSrc.push(path)
 }
 
 // Preload images as soon as the script runs
