@@ -354,7 +354,9 @@ const submit = async () => {
 
       <ChoiceQuestion
         title="*衣服尺寸"
-        :options="['S', 'M', 'L', 'XL', '2XL']"
+        :options="['XS', 'S', 'M', 'L', 'XL', '2XL']"
+        referenceLink="https://drive.google.com/file/d/1Ys_c5HXW83OYPsSQK-GT3Wzm2ysvnOne/view"
+        referenceLinkText="尺寸對照表"
         v-model="playerData[index].shirtSize"
       />
 
