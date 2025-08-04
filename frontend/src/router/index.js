@@ -31,11 +31,25 @@ const routes = [
     name: 'Data',
     component: () => import('../views/Data.vue'),
   },
+  {
+    path: '/success-signup',
+    name: 'SuccessSignup',
+    component: () => import('../views/SuccessSignup.vue'),
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+    return { top: 0 }
+  },
 })
 
 export default router

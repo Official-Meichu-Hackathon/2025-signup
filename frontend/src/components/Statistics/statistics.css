@@ -1,0 +1,13 @@
+/* Statistics 專用樣式 */
+@layer utilities {
+  .text-responsive-title {
+    font-size: clamp(18px, 2.5vw, 32px);
+  }
+  .chart-subtitle {
+    font-size: 1.5vw;
+    margin-top: 0.5vw;
+  }
+  .text-responsive-small {
+    font-size: clamp(12px, 1.2vw, 16px);
+  }
+}

@@ -1,21 +1,31 @@
 <template>
   <nav
-    class="w-full h-14 flex items-center justify-between px-6 fixed top-0 left-0 z-[1000] overflow-hidden"
+    class="w-full h-14 flex items-center justify-between md:px-6 px-3 fixed top-0 left-0 z-[1000] overflow-hidden"
   >
     <div
-      class="absolute top-0 left-0 w-full h-full z-[-1] pointer-events-none bg-[linear-gradient(90deg,_#F4F5F5_0%,_#F4DAE1_33%,_#D3E4FC_61%,_#F4F5F5_100%)]"
+      class="absolute top-0 left-0 w-full h-full z-[-1] pointer-events-none bg-gradient-animation"
     ></div>
-    <div class="navbar-left h-full flex items-center">
-      <img src="../assets/Navbar/logo.svg" alt="梅竹賽客松" class="h-10 w-auto" />
-    </div>
-    <div class="navbar-right h-full flex items-center gap-4">
-      <router-link to="/signup">
-        <button
-          class="bg-[rgba(244,245,245,0.60)] rounded-[15px] border border-[rgba(255,255,255,0.20)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base h-9 px-5 flex items-center justify-center transition-colors duration-200 hover:bg-[#F4F5F5] hover:border-white"
-        >
-          點我報名
-        </button>
+    <div class="h-full flex items-center">
+      <router-link to="/" class="flex items-center gap-2">
+        <img src="../assets/Navbar/logo 2_t.png" alt="梅竹黑客松" class="h-10 w-auto" />
+        <img src="../assets/Navbar/logo 3_t.png" alt="梅竹黑客松" class="h-10 w-auto" />
       </router-link>
+    </div>
+    <div class="navbar-right h-full flex items-center md:gap-4 gap-2">
+      <!-- <router-link to="/signup-group"> -->
+      <button
+        class="relative bg-[#F4F5F533] rounded-[30px] border border-[rgba(211,228,252,0.80)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base md:h-11 md:px-6 h-10 px-4 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:bg-[#F4F5F5] hover:border-white overflow-hidden group"
+        @click="showOptions = true"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-tr from-[#F4DAE1] to-[#7B8EBF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-[rgba(211,228,252,0.80)]"
+        ></div>
+        <span class="relative z-10 group-hover:text-white transition-colors duration-300"
+          >點我報名</span
+        >
+      </button>
+      <SignUpGroup v-if="showOptions" @close="showOptions = false"> </SignUpGroup>
+      <!-- </router-link> -->
       <button
         class="menu-btn bg-none border-none h-14 w-14 flex items-center justify-center p-0 cursor-pointer"
         @click="drawerOpen = !drawerOpen"
@@ -94,13 +104,15 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import SignUpGroup from './home/SignUpGroup.vue'
 
 defineOptions({
   name: 'NavbarComponent',
 })
 
 const drawerOpen = ref(false)
+const showOptions = ref(false)
 const menu = [
   {
     title: '首頁',
@@ -130,6 +142,10 @@ const open = ref({})
 function toggle(idx) {
   open.value[idx] = !open.value[idx]
 }
+
+watch(showOptions, (val) => {
+  document.body.style.overflow = val ? 'hidden' : ''
+})
 </script>
 
 <style>
@@ -148,5 +164,23 @@ function toggle(idx) {
 .drawer-slide-leave-from {
   transform: translateX(0);
   opacity: 1;
+}
+
+.bg-gradient-animation {
+  background: linear-gradient(90deg, #f4f5f5 0%, #f4dae1 33%, #d3e4fc 61%, #f4f5f5 100%);
+  background-size: 200% 100%;
+  animation: gradientShift 10s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>

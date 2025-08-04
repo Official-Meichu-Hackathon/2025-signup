@@ -1,0 +1,34 @@
+<svg width="393" height="162" viewBox="0 0 393 162" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1996_2210)" filter="url(#filter0_n_1996_2210)">
+<rect width="1440" height="950" fill="#EDDEE1"/>
+<g filter="url(#filter1_f_1996_2210)">
+<path d="M44.3318 283.099C401.493 247.994 667.674 198.971 756.119 178.848C842.743 162.902 999.774 130.333 934.904 127.625C870.035 124.916 784.692 132.372 750.129 136.438C681.396 144.911 516.415 161.684 406.36 161.001C268.791 160.147 30.908 188.066 -159.667 214.353C-350.242 240.641 -649.116 297.697 -765.445 330.153C-858.508 356.117 -800.745 365.581 -760.231 367.067C-733.118 368.789 -634.427 366.568 -456.568 343.907C-234.244 315.582 -402.12 326.981 44.3318 283.099Z" fill="white" fill-opacity="0.8"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_n_1996_2210" x="0" y="0" width="393" height="162" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="7647" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_1996_2210">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<filter id="filter1_f_1996_2210" x="-975.485" y="-32.9536" width="2085.69" height="560.477" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="80" result="effect1_foregroundBlur_1996_2210"/>
+</filter>
+<clipPath id="clip0_1996_2210">
+<rect width="393" height="162" fill="white"/>
+</clipPath>
+</defs>
+</svg>
