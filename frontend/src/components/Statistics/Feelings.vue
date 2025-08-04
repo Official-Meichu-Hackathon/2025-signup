@@ -322,11 +322,13 @@ function previousFeeling(boxIndex) {
   font-weight: 700;
   line-height: normal;
   font-size: 2.5vw; /* default: mobile */
+  letter-spacing: 0.03em;
+  line-height: 1.5;
 }
 
 @media (min-width: 768px) {
   .feeling-text {
-    font-size: 1.6vw;
+    font-size: 1.5vw;
   }
 }
 
