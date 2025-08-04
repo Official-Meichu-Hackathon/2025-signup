@@ -1044,7 +1044,7 @@
           />
         </div>
 
-        <div class="mx-auto overflow-hidden whitespace-nowrap md:w-[60vw] w-[80vw]">
+        <div class="mx-auto overflow-hidden whitespace-nowrap md:w-[60vw] w-[80vw] flex">
           <div v-if="!isMobile" class="marquee-content-media flex-shrink-0">
             <div class="sponsor-item">
               <span class="sponsor-level sponsor-diamond">Diamond</span>
@@ -1064,8 +1064,63 @@
                 alt="數位時代"
               />
             </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/tiea.webp"
+                alt="數位人才聯盟"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1)"
+                src="../../assets/Home/media/taipei_logo.webp"
+                alt="台北市政府資訊局"
+              />
+            </div>
           </div>
-
+          <div v-if="!isMobile" class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-diamond">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.85)"
+                src="../../assets/Home/media/newstaiwan_diamond.webp"
+                alt="台灣好報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum">Platinum</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.9)"
+                src="../../assets/Home/media/ettoday_platinum.webp"
+                alt="數位時代"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/tiea.webp"
+                alt="數位人才聯盟"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1)"
+                src="../../assets/Home/media/taipei_logo.webp"
+                alt="台北市政府資訊局"
+              />
+            </div>
+          </div>
           <div v-if="isMobile" class="marquee-content-media flex-shrink-0">
             <div class="sponsor-item">
               <span class="sponsor-level sponsor-diamond">Diamond</span>
@@ -1077,12 +1132,72 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level sponsor-platinum">Platinum</span>
+              <span class="sponsor-level sponsor-platinum" style="margin-left: 0.5rem"
+                >Platinum</span
+              >
               <img
                 class="inline-block"
                 style="transform: scale(0.8)"
                 src="../../assets/Home/media/ettoday_platinum.webp"
                 alt="數位時代"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 0.3rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/tiea.webp"
+                alt="數位人才聯盟"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1)"
+                src="../../assets/Home/media/taipei_logo.webp"
+                alt="台北市政府資訊局"
+              />
+            </div>
+          </div>
+          <div v-if="isMobile" class="marquee-content-media flex-shrink-0">
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-diamond">Diamond</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/newstaiwan_diamond.webp"
+                alt="台灣好報"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum" style="margin-left: 0.5rem"
+                >Platinum</span
+              >
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/ettoday_platinum.webp"
+                alt="數位時代"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level" style="margin-left: 0.3rem">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(0.8)"
+                src="../../assets/Home/media/tiea.webp"
+                alt="數位人才聯盟"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level">共同發聲</span>
+              <img
+                class="inline-block"
+                style="transform: scale(1)"
+                src="../../assets/Home/media/taipei_logo.webp"
+                alt="台北市政府資訊局"
               />
             </div>
           </div>
@@ -1726,7 +1841,7 @@ onMounted(() => {
 }
 
 .marquee-content {
-  animation-duration: 18s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
@@ -1742,10 +1857,18 @@ onMounted(() => {
 }
 
 .marquee-content-media {
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
   padding: 3rem 0px 3rem 0px;
+}
+
+.marquee-content-others {
+  animation-iteration-count: infinite;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  padding: 2.5rem 0px 2.5rem 0px;
 }
 .sponsor-item {
   position: relative;
