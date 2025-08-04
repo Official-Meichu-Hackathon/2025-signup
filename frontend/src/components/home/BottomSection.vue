@@ -543,7 +543,7 @@
         </div>
 
         <div>網路贊助</div>
-        <div v-if="isMobile" class="collaborators my-6">
+        <div v-if="isMobile" class="collaborators my-8">
           <div class="collaborator-item">
             <img
               src="../../assets/Home/chunghwa.webp"
@@ -1721,8 +1721,8 @@ onMounted(() => {
   display: flex;
   overflow: hidden;
   white-space: nowrap;
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .marquee-content {
@@ -1745,7 +1745,7 @@ onMounted(() => {
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
-  padding: 80px 0px 80px 0px;
+  padding: 3rem 0px 3rem 0px;
 }
 .sponsor-item {
   position: relative;
