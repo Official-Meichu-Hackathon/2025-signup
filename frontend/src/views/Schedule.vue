@@ -33,17 +33,17 @@
               src="../assets/Schedule/twinkle_1.svg"
               alt="Twinkle decoration"
               :class="showTwinkle1 ? 'opacity-100' : 'opacity-0'"
-              class="absolute top-[-90px] left-[100px] w-[128.447px] h-[116.625px] transition-opacity duration-100 hidden sm:block"
+              class="absolute top-[-12.82vh] left-[8.46vw] w-[128.447px] h-[116.625px] transition-opacity duration-600 ease-in hidden sm:block"
             />
             <img
               src="../assets/Schedule/twinkle_2.svg"
               alt="Twinkle decoration"
               :class="!showTwinkle1 ? 'opacity-100' : 'opacity-0'"
-              class="absolute top-[-50px] left-[130px] w-[100.781px] h-[65.445px] transition-opacity duration-100 animate-scale-y hidden sm:block"
+              class="absolute top-[-60px] left-[11.0677vw] w-[100.781px] h-[65.445px] transition-opacity duration-600 ease-in hidden sm:block"
             />
           </h1>
           <div class="text-[#2D3E63] font-chiron text-xl sm:text-2xl mt-4 space-y-2">
-            <p>地點｜國立清華大學</p>
+            <p>地點｜國立清華大學體育館</p>
             <p>時間｜2025. 09. 20 (六) - 09. 21 (日)</p>
           </div>
         </div>
@@ -103,8 +103,8 @@
                         <div
                           class="absolute"
                           :style="{
-                            width: '1.56vw', // 30px / 1920
-                            height: '1.56vw', // Make it a perfect circle
+                            width: '1.4vw', // 30px / 1920
+                            height: '1.4vw', // Make it a perfect circle
                             backgroundColor: getCircleColor(index),
                             borderRadius: '50%',
                             right: '2.45vw', // 47px / 1920
@@ -202,7 +202,7 @@
         <div
           class="relative z-10 text-[#2D3E63] font-bold font-chiron text-[3.1vw] mt-[1.7vh] space-y-1 ml-[9.7vw]"
         >
-          <p>地點｜國立清華大學</p>
+          <p>地點｜國立清華大學體育館</p>
           <p>時間｜2025. 09. 20 (六) - 09. 21 (日)</p>
         </div>
       </div>
@@ -210,42 +210,18 @@
       <div class="relative min-h-full">
         <!-- Mobile Decorative rectangles (behind) -->
         <div
-          class="absolute cursor-pointer w-[22.1vw] h-[8.1vh] rounded-2xl flex justify-center items-start z-0 mt-[-4.1vh] right-[32.3vw]"
-          :class="
-            selectedDay === '0920'
-              ? 'bg-[#DB8396] shadow-[2px_-2px_5px_rgba(0,0,0,0.22)]'
-              : 'bg-[#F4DAE1]'
-          "
-          @click="selectedDay = '0920'"
+          class="absolute cursor-pointer"
+          :style="mobileDecorativeRectStyle"
+          @click="toggleDay0920"
         >
-          <span
-            class="font-chiron text-white pt-[1vh]"
-            :class="
-              selectedDay === '0920'
-                ? 'opacity-100 text-[4.1vw] pt-[0.7vh]'
-                : 'opacity-75 text-[3.6vw] pt-[1vh]'
-            "
-            >0920 Sat.</span
-          >
+          <span :style="mobilDateTextStyle">0920 Sat.</span>
         </div>
         <div
-          class="absolute cursor-pointer w-[22.1vw] h-[8.1vh] rounded-2xl flex justify-center items-start z-0 mt-[-4.1vh] right-[10.3vw]"
-          :class="
-            selectedDay === '0921'
-              ? 'bg-[#DB8396] shadow-[2px_-2px_5px_rgba(0,0,0,0.22)]'
-              : 'bg-[#F4DAE1]'
-          "
-          @click="selectedDay = '0921'"
+          class="absolute cursor-pointer"
+          :style="mobileDecorativeRectStyle2"
+          @click="toggleDay0921"
         >
-          <span
-            class="font-chiron text-white pt-[1vh]"
-            :class="
-              selectedDay === '0921'
-                ? 'opacity-100 text-[4.1vw] pt-[0.7vh]'
-                : 'opacity-75 text-[3.6vw] pt-[1vh]'
-            "
-            >0921 Sun.</span
-          >
+          <span :style="mobilDateTextStyle2">0921 Sun.</span>
         </div>
 
         <!-- Mobile Schedule List -->
@@ -314,7 +290,7 @@
               </div>
             </template>
           </div>
-          <div class="text-center mt-[3vh] text-[3.1vw] text-[#656565] font-bold">
+          <div class="text-center mt-[3vh] text-[16px] text-[#656565] font-bold">
             <p class="font-chiron">實際流程將以現場公佈為準，<br />屆時請參賽者留意大會推播通知</p>
           </div>
         </div>
@@ -331,51 +307,99 @@ defineOptions({
 })
 
 const decorativeRectStyle = computed(() => ({
-  width: '9.27vw',
-  height: '18.33vh',
+  width: '11.588vw',
+  height: '11.396vh',
   backgroundColor: selectedDay.value === '0920' ? '#DB8396' : '#F4DAE1',
-  borderRadius: '2.34vw',
+  borderTopLeftRadius: '2.92vw',
+  borderTopRightRadius: '2.92vw',
   boxShadow: selectedDay.value === '0920' ? '2px -2px 5px rgba(0, 0, 0, 0.22)' : 'none',
-  top: '-8.36vh',
-  right: '11.72vw', // Moved right by one rectangle width
+  top: '-11.396vh',
+  right: 'calc(3.755vw + 11.588vw)',
   zIndex: 5,
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'flex-start',
+  alignItems: 'center',
 }))
 
 const decorativeRectStyle2 = computed(() => ({
-  width: '9.27vw',
-  height: '18.33vh',
+  width: '11.588vw',
+  height: '11.396vh',
   backgroundColor: selectedDay.value === '0920' ? '#F4DAE1' : '#DB8396',
-  borderRadius: '2.34vw',
+  borderTopLeftRadius: '2.92vw',
+  borderTopRightRadius: '2.92vw',
   boxShadow: selectedDay.value === '0920' ? 'none' : '2px -2px 5px rgba(0, 0, 0, 0.22)',
-  top: '-8.36vh',
-  right: '2.45vw', // Moved right by one rectangle width
+  top: '-11.396vh',
+  right: '3.755vw',
   zIndex: 4,
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'flex-start',
+  alignItems: 'center',
+}))
+
+const mobileDecorativeRectStyle = computed(() => ({
+  width: '20.0vw',
+  height: '3.65vh',
+  backgroundColor: selectedDay.value === '0920' ? '#DB8396' : '#F4DAE1',
+  borderTopLeftRadius: '2.92vw',
+  borderTopRightRadius: '2.92vw',
+  boxShadow: selectedDay.value === '0920' ? '2px -2px 5px rgba(0, 0, 0, 0.22)' : 'none',
+  top: '-3.65vh',
+  right: 'calc(3.65vh + 20.0vw)',
+  zIndex: 5,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}))
+
+const mobileDecorativeRectStyle2 = computed(() => ({
+  width: '20.0vw',
+  height: '3.65vh',
+  backgroundColor: selectedDay.value === '0920' ? '#F4DAE1' : '#DB8396',
+  borderTopLeftRadius: '2.92vw',
+  borderTopRightRadius: '2.92vw',
+  boxShadow: selectedDay.value === '0920' ? 'none' : '2px -2px 5px rgba(0, 0, 0, 0.22)',
+  top: '-3.65vh',
+  right: '3.65vh',
+  zIndex: 4,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 }))
 
 const dateTextStyle = computed(() => ({
   color: '#FFF',
   fontFamily: '"Chiron Hei HK Text", sans-serif',
-  fontSize: selectedDay.value === '0920' ? '1.56vw' : '1.25vw',
+  fontSize: selectedDay.value === '0920' ? '1.95vw' : '1.56vw',
   fontStyle: 'normal',
   fontWeight: '700',
   lineHeight: 'normal',
-  paddingTop: '2.56vh',
 }))
 
 const dateTextStyle2 = computed(() => ({
   color: '#FFF',
   fontFamily: '"Chiron Hei HK Text", sans-serif',
-  fontSize: selectedDay.value === '0920' ? '1.25vw' : '1.56vw',
+  fontSize: selectedDay.value === '0920' ? '1.56vw' : '1.95vw',
   fontStyle: 'normal',
   fontWeight: '700',
   lineHeight: 'normal',
-  paddingTop: '2.56vh',
+}))
+
+const mobilDateTextStyle = computed(() => ({
+  color: '#FFF',
+  fontFamily: '"Chiron Hei HK Text", sans-serif',
+  fontSize: selectedDay.value === '0920' ? '3.7vw' : '3.5vw',
+  fontStyle: 'normal',
+  fontWeight: '700',
+  lineHeight: 'normal',
+}))
+
+const mobilDateTextStyle2 = computed(() => ({
+  color: '#FFF',
+  fontFamily: '"Chiron Hei HK Text", sans-serif',
+  fontSize: selectedDay.value === '0920' ? '3.5vw' : '3.7vw',
+  fontStyle: 'normal',
+  fontWeight: '700',
+  lineHeight: 'normal',
 }))
 
 const timeStyle = ref({
@@ -412,32 +436,32 @@ const noticeStyle = ref({
 })
 
 const scheduleItems0920 = [
-  { time: '0830 - 0900', title: '參賽者報到' },
+  { time: '0830 - 0900', title: '報到' },
   { time: '0900 - 1030', title: '開幕式' },
-  { time: '1030 - 1200', title: 'Coding / 企業博覽會 / 娛樂交流活動' },
+  { time: '1030 - 1200', title: 'Coding...... / 企業博覽會 / 娛樂交流活動' },
   { time: '1200 - 1330', title: '午餐' },
-  { time: '1330 - 1800', title: 'Coding / 企業博覽會 / 娛樂交流活動' },
+  { time: '1330 - 1800', title: 'Coding...... / 企業博覽會 (-1700) / 娛樂交流活動' },
   { time: '1800 - 1930', title: '晚餐' },
-  { time: '1930 - 2200', title: 'Coding / 娛樂交流活動' },
-  { time: '2200 - 2230', title: '宵夜' },
-  { time: '2200 - 2230', title: '參賽者休息' },
+  { time: '1930 - 2100', title: 'Coding / 娛樂交流活動' },
+  { time: '2100 - 2130', title: '發宵夜、散場' },
 ]
 
 const scheduleItems0921 = [
-  { time: '0000 - 0800', title: '參賽者休息' },
-  { time: '0800 - 0900', title: '早餐' },
-  { time: '0900 - 1100', title: 'Coding / 企業博覽會 / 娛樂交流活動' },
-  { time: '1100 - 1150', title: '午餐 / 活動攤位' },
+  { time: '0800 - 0900', title: '簽到 / 早餐' },
+  { time: '0900 - 1100', title: 'Coding...... / 企業博覽會 / 娛樂交流活動' },
+  { time: '1100 - 1200', title: '午餐' },
+  { time: '1130 - 1200', title: '黑客組 / 創客組 設備測試 (1130 - 1150)' },
   {
-    time: '1150 - 1510',
-    title: '創客交流組決賽',
+    time: '1210 - 1510',
+    title: '創客決賽',
     isSplit: true,
-    time2: '1210 - 1400',
-    title2: '黑客組初賽',
+    time2: '1210 - 1430',
+    title2: '黑客初賽',
   },
-  { time: '1520 - 1730', title: '黑客組決賽' },
-  { time: '1730 - 1830', title: '頒獎 / 抽獎' },
-  { time: '1830 - 1930', title: '閉幕式' },
+  { time: '1510 - 1530', title: '黑客組決賽設備測試' },
+  { time: '1530 - 1730', title: '黑客組決賽' },
+  { time: '1730 - 1800', title: '人氣獎投票 / 結算' },
+  { time: '1810 - 2000', title: '閉幕式 / 簽退' },
 ]
 
 const selectedDay = ref('0920')
@@ -490,6 +514,18 @@ const getCircleColor = computed(() => (index) => {
 
 const showTwinkle1 = ref(true)
 
+let animationFrameId = null
+let lastToggleTime = performance.now()
+const interval = 1100 // 閃爍周期時間（應大於 transition-duration）
+
+function tick(time) {
+  if (time - lastToggleTime >= interval) {
+    showTwinkle1.value = !showTwinkle1.value
+    lastToggleTime = time
+  }
+  animationFrameId = requestAnimationFrame(tick)
+}
+
 const isMobile = ref(false)
 
 const checkMobile = () => {
@@ -497,14 +533,13 @@ const checkMobile = () => {
 }
 
 onMounted(() => {
+  animationFrameId = requestAnimationFrame(tick)
   checkMobile()
   window.addEventListener('resize', checkMobile)
-  setInterval(() => {
-    showTwinkle1.value = !showTwinkle1.value
-  }, 2000)
 })
 
 onBeforeUnmount(() => {
+  cancelAnimationFrame(animationFrameId)
   window.removeEventListener('resize', checkMobile)
 })
 </script>
