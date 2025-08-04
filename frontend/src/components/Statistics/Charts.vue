@@ -11,7 +11,7 @@
           alt="背景裝飾"
         />
         <div class="relative z-10 flex items-center justify-center top-[20%]">
-          <h3 class="blue-text bar-title-pc shadow-text">梅竹黑客松參賽數據</h3>
+          <h3 class="blue-text bar-title-pc shadow-text">2024 年梅竹黑客松參賽數據</h3>
           <span class="absolute toggle-icon-pc" @click="toggleStats">
             {{ isOpen ? '−' : '+' }}
           </span>
