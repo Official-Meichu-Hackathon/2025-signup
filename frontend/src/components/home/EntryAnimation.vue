@@ -1,6 +1,24 @@
 <template>
   <div>
     <div ref="scrollContainer" class="scroll-container">
+      <div v-if="showScrollIndicator" class="scroll-indicator">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="arrow-icon"
+        >
+          <path
+            d="M12 5V19M12 19L19 12M12 19L5 12"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
       <canvas ref="canvasRef" :class="['sticky-canvas', { breathing: isBreathing }]"></canvas>
     </div>
   </div>
@@ -19,6 +37,7 @@ const canvasRef = ref(null)
 const lastScrollY = ref(0)
 const isLoaded = ref(false)
 const oneSecondLoaded = ref(false) // Track if one second has passed
+const showScrollIndicator = ref(false)
 
 const frameCnt = 23 // 27
 const imageSrc = []
@@ -103,6 +122,9 @@ const drawFrame = (idx) => {
 }
 
 const handleScroll = () => {
+  if (showScrollIndicator.value) {
+    showScrollIndicator.value = false
+  }
   if (!scrollContainer.value) {
     return
   }
@@ -274,6 +296,7 @@ onMounted(() => {
     if (setEntryAnimationLoaded) {
       setEntryAnimationLoaded()
     }
+    showScrollIndicator.value = true
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle(canvasRef.value))
     }
@@ -314,6 +337,37 @@ body {
   top: -56px;
   width: 100%;
   background-color: #f0f0f0;
+}
+
+.scroll-indicator {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: black;
+  font-family: sans-serif;
+  z-index: 10;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -20px);
+  }
+  60% {
+    transform: translate(-50%, -10px);
+  }
 }
 
 .sticky-canvas {
