@@ -184,7 +184,7 @@ const handleScroll = () => {
     lockScroll()
     setTimeout(() => {
       unlockScroll()
-    }, 1500)
+    }, 1000)
   }
 
   requestAnimationFrame(() => {
