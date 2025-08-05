@@ -341,8 +341,8 @@ body {
 
 .scroll-indicator {
   position: fixed;
-  bottom: 40px;
-  left: 50%;
+  bottom: 30px;
+  right: 1%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
