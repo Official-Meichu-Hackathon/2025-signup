@@ -234,7 +234,7 @@
               <div
                 v-for="(item, index) in scheduleItems"
                 :key="index"
-                class="flex items-center relative py-[1.5vh] w-[85.9vw] h-[8.3vh] flex-none mx-auto"
+                class="flex items-center relative py-[1.5vh] w-[85.9vw] h-[9.05vh] flex-none mx-auto"
                 :class="{ 'bg-transparent': item.isSplit, 'bg-[#E9E9E9]': !item.isSplit }"
               >
                 <!-- Small circle for mobile -->
@@ -247,7 +247,7 @@
                   <div class="flex flex-row justify-center space-x-[2.8vw] w-full">
                     <!-- First split item for mobile -->
                     <div
-                      class="bg-[#E9E9E9] py-[1vh] pl-[4.9vw] pr-[3vw] flex flex-col justify-center w-[41.5vw] h-[8.3vh] flex-none relative"
+                      class="bg-[#E9E9E9] py-[1vh] pl-[4.9vw] pr-[3vw] flex flex-col justify-center w-[41.5vw] h-[9.05vh] flex-none relative"
                     >
                       <!-- Small circle for split box -->
                       <div
@@ -264,7 +264,7 @@
                     </div>
                     <!-- Second split item for mobile -->
                     <div
-                      class="bg-[#E9E9E9] py-[1vh] pl-[4.9vw] pr-[3vw] flex flex-col justify-center w-[41.5vw] h-[8.3vh] flex-none"
+                      class="bg-[#E9E9E9] py-[1vh] pl-[4.9vw] pr-[3vw] flex flex-col justify-center w-[41.5vw] h-[9.05vh] flex-none"
                     >
                       <div class="text-[3.1vw] font-bold font-chiron text-[#656565]">
                         {{ item.time2 }}
@@ -440,9 +440,9 @@ const scheduleItems0920 = [
   { time: '0900 - 1030', title: '開幕式' },
   { time: '1030 - 1200', title: 'Coding...... / 企業博覽會 / 娛樂交流活動' },
   { time: '1200 - 1330', title: '午餐' },
-  { time: '1330 - 1800', title: 'Coding...... / 企業博覽會 (-1700) / 娛樂交流活動' },
+  { time: '1330 - 1800', title: 'Coding...... / 企業博覽會（-1700）/ 娛樂交流活動' },
   { time: '1800 - 1930', title: '晚餐' },
-  { time: '1930 - 2100', title: 'Coding / 娛樂交流活動' },
+  { time: '1930 - 2100', title: 'Coding...... / 娛樂交流活動' },
   { time: '2100 - 2130', title: '發宵夜、散場' },
 ]
 
