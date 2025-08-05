@@ -49,13 +49,10 @@
               class="absolute inset-0 w-full h-full object-cover"
               alt="背景裝飾"
             />
-            <div class="relative z-10 flex items-center justify-center top-[20%]">
+            <div class="relative z-10 flex items-center justify-center" style="padding-top: 3vw">
               <h3 class="blue-text bar-title-pc shadow-text">成果平台網址</h3>
             </div>
-            <div
-              class="relative flex items-center justify-center top-[40%]"
-              style="margin-top: -1.5vw"
-            >
+            <div class="relative flex items-center justify-center" style="padding-top: 1vw">
               <a
                 href="https://tenyear.meichuhackathon.org/"
                 class="pink-text hover:underline transition-all duration-200"
@@ -105,10 +102,10 @@
               class="absolute inset-0 w-full h-full object-cover"
               alt="背景裝飾"
             />
-            <div class="relative z-10 flex items-center justify-center top-[7%]">
+            <div class="relative z-10 flex items-center justify-center" style="padding-top: 4vw">
               <h3 class="blue-text bar-title-mobile shadow-text">成果平台網址</h3>
             </div>
-            <div class="relative flex items-center justify-center top-[13%]">
+            <div class="relative flex items-center justify-center" style="padding-top: 1vw">
               <a
                 href="https://tenyear.meichuhackathon.org/"
                 class="pink-text hover:underline transition-all duration-200"

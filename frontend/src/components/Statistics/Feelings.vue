@@ -10,7 +10,7 @@
           class="absolute inset-0 w-full h-full object-cover"
           alt="背景裝飾"
         />
-        <div class="relative z-10 flex items-center justify-center top-[20%]">
+        <div class="relative z-10 flex items-center justify-center" style="padding-top: 3vw">
           <h3 class="blue-text bar-title-pc shadow-text">參賽者感言</h3>
           <span class="absolute toggle-icon-pc" @click="toggleFeelings">
             {{ isOpen ? '−' : '+' }}
@@ -83,7 +83,7 @@
           class="absolute inset-0 w-full h-full object-cover"
           alt="背景裝飾"
         />
-        <div class="relative z-10 flex items-center justify-center top-[20%]">
+        <div class="relative z-10 flex items-center justify-center" style="padding-top: 4vw">
           <h3 class="blue-text bar-title-mobile shadow-text">參賽者感言</h3>
           <span class="absolute toggle-icon-mobile" @click="toggleFeelings">
             {{ isOpen ? '−' : '+' }}
