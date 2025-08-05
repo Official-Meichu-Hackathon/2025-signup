@@ -1841,6 +1841,19 @@ onMounted(() => {
   text-decoration: none; /* Ensure no underline */
   border: none; /* Ensure no border */
   box-shadow: none; /* Ensure no shadow */
+  transition:
+    transform 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+.collaborator-item > a:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.collaborator-item > a:active {
+  transform: scale(0.98);
+  opacity: 0.75;
 }
 
 @keyframes marquee {
