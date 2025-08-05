@@ -1,7 +1,10 @@
 <template>
   <div>
     <div ref="scrollContainer" class="scroll-container">
-      <div v-if="showScrollIndicator" class="scroll-indicator">
+      <div
+        v-if="showScrollIndicator || (isAnimationComplete && !userScrolls)"
+        :class="['scroll-indicator']"
+      >
         <svg
           width="24"
           height="24"
@@ -12,7 +15,7 @@
         >
           <path
             d="M12 5V19M12 19L19 12M12 19L5 12"
-            stroke="white"
+            :stroke="showScrollIndicator ? '#FFFFFF' : '#2D3E63'"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -38,6 +41,10 @@ const lastScrollY = ref(0)
 const isLoaded = ref(false)
 const oneSecondLoaded = ref(false) // Track if one second has passed
 const showScrollIndicator = ref(false)
+// Add new reactive variables for scroll locking
+const isScrollLocked = ref(false)
+const isAnimationComplete = ref(false)
+const userScrolls = ref(false)
 
 const frameCnt = 23 // 27
 const imageSrc = []
@@ -121,7 +128,35 @@ const drawFrame = (idx) => {
   }
 }
 
+// Add scroll lock function
+const lockScroll = () => {
+  isScrollLocked.value = true
+  document.body.style.overflow = 'hidden'
+  document.body.style.position = 'fixed'
+  document.body.style.top = `-${window.scrollY}px`
+  document.body.style.width = '100%'
+}
+
+// Add scroll unlock function
+const unlockScroll = () => {
+  const scrollY = document.body.style.top
+  document.body.style.overflow = ''
+  document.body.style.position = ''
+  document.body.style.top = ''
+  document.body.style.width = ''
+  window.scrollTo(0, parseInt(scrollY || '0') * -1)
+  isScrollLocked.value = false
+}
+
 const handleScroll = () => {
+  // Prevent scrolling if locked
+  if (isScrollLocked.value) {
+    return
+  }
+
+  if (isAnimationComplete.value) {
+    userScrolls.value = true
+  }
   if (showScrollIndicator.value) {
     showScrollIndicator.value = false
   }
@@ -136,6 +171,20 @@ const handleScroll = () => {
 
   let scrollProgress = rawScrollProgress
   const frameIndex = Math.min(frameCnt - 1, Math.floor(scrollProgress * frameCnt))
+
+  // Check if we've reached the last frame
+  if (frameIndex === frameCnt - 1 && !isAnimationComplete.value) {
+    isAnimationComplete.value = true
+
+    // Change scroll container height to 100vh
+    scrollContainer.value.style.height = '100vh'
+
+    // Lock scrolling for 0.3 seconds
+    lockScroll()
+    setTimeout(() => {
+      unlockScroll()
+    }, 1500)
+  }
 
   requestAnimationFrame(() => {
     drawFrame(frameIndex)
@@ -312,6 +361,10 @@ onBeforeUnmount(() => {
   if (animationFrameId) {
     cancelAnimationFrame(animationFrameId)
   }
+  // Clean up scroll lock if component unmounts
+  if (isScrollLocked.value) {
+    unlockScroll()
+  }
 })
 </script>
 
@@ -352,6 +405,7 @@ body {
   font-family: sans-serif;
   z-index: 10;
   animation: bounce 2s infinite;
+  transition: opacity 0.5s ease-out;
 }
 
 @keyframes bounce {
