@@ -146,8 +146,12 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <img
+                  class="!w-[24vw]"
+                  src="../../assets/Home/company/5_Google 1.webp"
+                  alt="Google"
+                />
               </a>
-              <img class="!w-[24vw]" src="../../assets/Home/company/5_Google 1.webp" alt="Google" />
             </div>
             <div class="collaborator-item">
               <a
@@ -960,7 +964,15 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level sponsor-silver" style="margin-left: 1.4rem">Silver</span>
+              <span
+                v-if="!isMobile"
+                class="sponsor-level sponsor-silver"
+                style="margin-left: 1.4rem"
+                >Silver</span
+              >
+              <span v-else class="sponsor-level sponsor-silver" style="margin-left: 0.4rem"
+                >Silver</span
+              >
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
@@ -1821,6 +1833,27 @@ onMounted(() => {
   width: 25vw;
   margin-bottom: 3vw;
   height: auto;
+  display: block;
+}
+
+.collaborator-item > a {
+  display: block; /* Treat the link itself as a block */
+  text-decoration: none; /* Ensure no underline */
+  border: none; /* Ensure no border */
+  box-shadow: none; /* Ensure no shadow */
+  transition:
+    transform 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+.collaborator-item > a:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.collaborator-item > a:active {
+  transform: scale(0.98);
+  opacity: 0.75;
 }
 
 @keyframes marquee {
@@ -1889,9 +1922,19 @@ onMounted(() => {
   left: 8%;
   color: black;
 
-  font-size: 1.1vw;
-  font-weight: 600;
+  color: #2d3e63;
+
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
   z-index: 1;
+
   white-space: nowrap; /* Prevent text from wrapping */
 }
 
