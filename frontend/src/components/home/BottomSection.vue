@@ -1922,9 +1922,19 @@ onMounted(() => {
   left: 8%;
   color: black;
 
-  font-size: 1.1vw;
-  font-weight: 600;
+  color: #2d3e63;
+
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
   z-index: 1;
+
   white-space: nowrap; /* Prevent text from wrapping */
 }
 
