@@ -57,7 +57,7 @@
 
           <!-- Right Column -->
           <div
-            class="text-white text-2xl font-bold font-['Chiron_Hei_HK_Text'] space-y-12 text-left pl-12"
+            class="text-white text-2xl font-bold font-['Chiron_Hei_HK'] space-y-12 text-left pl-12"
           >
             <div
               v-for="(item, idx) in rightSchedule"
