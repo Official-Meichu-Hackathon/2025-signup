@@ -278,8 +278,8 @@ const submit = async () => {
         playerData[index].name,
         playerData[index].gender,
         validateBirthday(playerData[index].birthday) ? playerData[index].birthday : '',
-        playerData[index].idNumber,
-        isValidId(playerData[index].identity) ? playerData[index].identity : '',
+        isValidId(playerData[index].idNumber) ? playerData[index].idNumber : '',
+        playerData[index].identity,
         playerData[index].school,
         playerData[index].department,
         playerData[index].grade,
@@ -354,7 +354,9 @@ const submit = async () => {
 
       <ChoiceQuestion
         title="*衣服尺寸"
-        :options="['S', 'M', 'L', 'XL', '2XL']"
+        :options="['XS', 'S', 'M', 'L', 'XL', '2XL']"
+        referenceLink="https://drive.google.com/file/d/1Ys_c5HXW83OYPsSQK-GT3Wzm2ysvnOne/view"
+        referenceLinkText="尺寸對照表"
         v-model="playerData[index].shirtSize"
       />
 

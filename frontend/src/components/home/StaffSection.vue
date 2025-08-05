@@ -214,7 +214,7 @@
               >
                 <!-- 字置中 ! -->
                 <div>李采穗 / 陳翊嘉</div>
-                <div>王思問 / 黃嬿方 / 呂崧立 / 余定綸 / 黃荺捷</div>
+                <div>王思問 / 黃嬿方 / 呂崧立 / 余定綸 / 黃筠捷</div>
               </div>
             </div>
 
@@ -259,7 +259,7 @@
                 <!-- 字置中 ! -->
                 <div>陳芝瑄 / 周廷威</div>
                 <div class="space-y-[1vh]">
-                  <div>施又歆 / 徐匯傑 / 陳品卉 / 陳彥廷</div>
+                  <div>施又歆 / 徐滙傑 / 陳品卉 / 陳彥廷</div>
                   <div>李聿宸 / 邱元廣</div>
                 </div>
               </div>
@@ -315,7 +315,7 @@
       <ToggleBox title="財務部" :index="4" :is-active="activeBox === 4" @toggle="toggleBox">
         <div class="space-y-[0.8vh] text-neutral-100 name font-bold font-['Chiron_Hei_HK']">
           <div>李采穗 / 陳翊嘉</div>
-          <div>王思問 / 黃嬿方 / 呂崧立 / 余定綸 / 黃荺捷</div>
+          <div>王思問 / 黃嬿方 / 呂崧立 / 余定綸 / 黃筠捷</div>
         </div>
       </ToggleBox>
 
@@ -341,7 +341,7 @@
         <!-- transition: 'background 0.2s ease-in-out' 原本是為了背景轉換但好像有點怪 ... ? -->
         <div class="space-y-[0.8vh] text-neutral-100 name font-bold font-['Chiron_Hei_HK']">
           <div>陳芝瑄 / 周廷威</div>
-          <div>施又歆 / 徐匯傑 / 陳品卉 / 陳彥廷 / 李聿宸 / 邱元廣</div>
+          <div>施又歆 / 徐滙傑 / 陳品卉 / 陳彥廷 / 李聿宸 / 邱元廣</div>
         </div>
       </ToggleBox>
     </div>
