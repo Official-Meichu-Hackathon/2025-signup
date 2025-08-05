@@ -156,6 +156,7 @@ const handleScroll = () => {
 
   if (isAnimationComplete.value) {
     userScrolls.value = true
+    return
   }
   if (showScrollIndicator.value) {
     showScrollIndicator.value = false
