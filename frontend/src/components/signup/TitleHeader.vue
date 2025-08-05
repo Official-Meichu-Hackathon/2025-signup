@@ -11,7 +11,7 @@ defineOptions({
     </div>
 
     <div class="relative z-10">
-      <h1 class="text-darkblue text-5xl font-bold">報名黑客松</h1>
+      <h1 class="text-darkblue text-4xl md:text-5xl font-bold">報名黑客松</h1>
     </div>
   </div>
 </template>

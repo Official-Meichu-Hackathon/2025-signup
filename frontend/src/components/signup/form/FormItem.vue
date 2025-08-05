@@ -88,7 +88,7 @@ watch(
     >
       <div
         v-if="formStepOrder === currentStepOrder"
-        class="bg-lightblue shadow-lg px-7 py-15 md:p-15 rounded-3xl font-bold text-darkblue"
+        class="bg-lightblue shadow-lg px-7 py-11 md:p-15 rounded-3xl font-bold text-darkblue"
       >
         <div class="pb-4 flex items-center">
           <div
@@ -120,11 +120,13 @@ watch(
       <div
         ref="formRef"
         v-if="formStepOrder !== currentStepOrder"
-        class="bg-[#D9D9D9] rounded-3xl px-15 py-8 font-bold text-white transition-colors duration-200"
+        class="bg-[#D9D9D9] rounded-3xl px-13 md:px-15 py-8 font-bold text-white transition-colors duration-200"
         :class="canClickCollapsed ? 'cursor-pointer hover:bg-[#C0C0C0]' : 'cursor-default'"
         @click="handleClickCollapsed"
       >
-        <p class="text-3xl whitespace-pre">{{ formStepOrder }}&nbsp;&nbsp;{{ stepName }}</p>
+        <p class="text-2xl md:text-3xl whitespace-pre">
+          {{ formStepOrder }}&nbsp;&nbsp;{{ stepName }}
+        </p>
       </div>
     </Transition>
   </div>
