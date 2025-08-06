@@ -950,47 +950,7 @@
           />
         </div>
 
-        <!-- Desktop version (no marquee) -->
-        <div v-if="!isMobile" class="mx-auto flex justify-center w-[60vw]">
-          <div class="flex">
-            <!-- Static sponsors for desktop -->
-            <div class="sponsor-item">
-              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
-                >Platinum</span
-              >
-              <img
-                class="inline-block"
-                src="../../assets/Home/special_sponsors/BABI_platinum.webp"
-                alt="BABI"
-              />
-            </div>
-            <div class="sponsor-item">
-              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
-                >Platinum</span
-              >
-              <img
-                class="inline-block"
-                src="../../assets/Home/special_sponsors/activity_king.svg"
-                style="transform: scale(0.65)"
-                alt="活動王"
-              />
-            </div>
-            <div class="sponsor-item">
-              <span class="sponsor-level sponsor-silver" style="margin-left: 1.4rem">Silver</span>
-              <img
-                class="inline-block"
-                src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
-                alt="GCOMM"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile version (with marquee) -->
-        <div
-          v-if="isMobile"
-          class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]"
-        >
+        <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
           <div class="marquee-content-special-sponsor flex-shrink-0">
             <!-- First set of sponsors -->
             <div class="sponsor-item">
@@ -1011,7 +971,7 @@
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/activity_king.svg"
                 style="transform: scale(0.65)"
-                alt="活動王"
+                alt="Activity King"
               />
             </div>
             <div class="sponsor-item">
@@ -1020,6 +980,15 @@
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
                 alt="GCOMM"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem">Null</span>
+              <img
+                class="inline-block"
+                src="https://placehold.co/150x80?text=Dominos"
+                style="transform: scale(0.65)"
+                alt="Dominos"
               />
             </div>
           </div>
@@ -1044,7 +1013,7 @@
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/activity_king.svg"
                 style="transform: scale(0.65)"
-                alt="活動王"
+                alt="Activity King"
               />
             </div>
             <div class="sponsor-item">
@@ -1053,6 +1022,15 @@
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
                 alt="GCOMM"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem">Null</span>
+              <img
+                class="inline-block"
+                src="https://placehold.co/150x80?text=Dominos"
+                style="transform: scale(0.65)"
+                alt="Dominos"
               />
             </div>
           </div>
@@ -1938,7 +1916,7 @@ onMounted(() => {
 
 /* Add this to your existing CSS */
 .marquee-content-special-sponsor {
-  animation-duration: 9s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
