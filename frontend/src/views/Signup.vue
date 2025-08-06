@@ -138,12 +138,17 @@ const submit = async () => {
   try {
     const playersSlice = playerData.value.slice(0, playerCount.value)
 
+    const priorityArray = (priorityOrder.value || []).slice()
+    while (priorityArray.length < 7) {
+      priorityArray.push(null)
+    }
+
     const firstRow = [
       null,
       groupName.value,
       playerCountChoice.value,
       isCrossDomain.value,
-      ...(priorityOrder.value || []),
+      ...priorityArray,
       ...(playersSlice.length > 0
         ? [
             playersSlice[0].name,
@@ -256,12 +261,14 @@ const submit = async () => {
 
       <SortableQuestion
         title="*組別或企業志願序"
-        description="備註：
-(1) 企業題目或組別將依據隊伍的志願序分發。若單一企業或組別超額，將亂數抽籤決定。
-(2) 未報名創客交流組則將創客交流組的志願序填為 7。"
+        :description="
+          isMaker
+            ? ''
+            : '備註：\n(1) 企業題目或組別將依據隊伍的志願序分發。若單一企業或組別超額，將亂數抽籤決定。\n(2) 未報名創客交流組則將創客交流組的志願序填為 7。'
+        "
         :options="
           isMaker
-            ? ['創客交流組', 'AMD', 'CloudMosa', 'Google', '恩智浦半導體', '台積電', '羅技']
+            ? ['創客交流組']
             : ['AMD', 'CloudMosa', 'Google', '恩智浦半導體', '台積電', '羅技', '創客交流組']
         "
         v-model="priorityOrder"
