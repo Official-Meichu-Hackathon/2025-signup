@@ -1089,7 +1089,7 @@
               <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
               <img
                 class="inline-block"
-                style="transform: scale(1)"
+                style="transform: scale(0.9)"
                 src="../../assets/Home/media/taipei_logo.webp"
                 alt="台北市政府資訊局"
               />
@@ -1127,7 +1127,7 @@
               <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
               <img
                 class="inline-block"
-                style="transform: scale(1)"
+                style="transform: scale(0.9)"
                 src="../../assets/Home/media/taipei_logo.webp"
                 alt="台北市政府資訊局"
               />
