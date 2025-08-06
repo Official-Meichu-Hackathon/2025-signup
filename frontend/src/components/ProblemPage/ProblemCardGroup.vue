@@ -23,11 +23,13 @@
         :style="getCardStyleWeb(index)"
       >
         <ProblemCard
+          ref="cardRefs"
           :logo="card.logo"
           :companyName="card.companyName"
           :problemTitle="card.problemTitle"
           :problemContent="card.problemContent"
           :problemLink="card.problemLink"
+          :maxHeight="maxCardHeight"
         />
       </div>
     </div>
@@ -64,11 +66,13 @@
         :style="getCardStyleMobile(index)"
       >
         <ProblemCard
+          ref="cardRefs"
           :logo="card.logo"
           :companyName="card.companyName"
           :problemTitle="card.problemTitle"
           :problemContent="card.problemContent"
           :problemLink="card.problemLink"
+          :maxHeight="maxCardHeight"
         />
       </div>
     </div>
@@ -86,7 +90,7 @@
 </template>
 
 <script setup>
-import { ref, inject } from 'vue'
+import { ref, inject, onMounted, nextTick } from 'vue'
 import ProblemCard from './ProblemCard.vue'
 import AMDLogo from '../../assets/Problems/Logo/AMD_ITRI.webp'
 import TSMCLogo from '../../assets/Problems/Logo/TSMC.webp'
@@ -156,6 +160,8 @@ const cards = [
 ]
 
 const currentIndex = ref(0)
+const cardRefs = ref([])
+const maxCardHeight = ref(null)
 
 const getCardStyleWeb = (index) => {
   const totalCards = cards.length
@@ -166,7 +172,7 @@ const getCardStyleWeb = (index) => {
       transform: 'translateX(0) scale(1)',
       zIndex: 20,
       opacity: 1,
-      top: '0', // 原本 -5vh 改成 0
+      top: '0',
     }
   } else if (diff === 1 || diff === totalCards - 1) {
     return {
@@ -226,6 +232,32 @@ const nextCard = () => {
 const prevCard = () => {
   currentIndex.value = (currentIndex.value - 1 + cards.length) % cards.length
 }
+
+const calculateMaxHeight = async () => {
+  await nextTick()
+
+  if (!cardRefs.value || cardRefs.value.length === 0) return
+
+  const heights = []
+
+  for (const cardRef of cardRefs.value) {
+    if (cardRef && cardRef.calculateNaturalHeight) {
+      const height = await cardRef.calculateNaturalHeight()
+      heights.push(height)
+    }
+  }
+
+  if (heights.length > 0) {
+    const calculatedMaxHeight = Math.max(...heights)
+    const minHeight = isDesktop.value ? window.innerWidth * 0.45 : window.innerWidth * 0.7
+    maxCardHeight.value = Math.max(calculatedMaxHeight, minHeight)
+  }
+}
+
+onMounted(async () => {
+  await nextTick()
+  setTimeout(calculateMaxHeight, 100)
+})
 </script>
 
 <style scoped>
