@@ -126,12 +126,12 @@
 </template>
 
 <script setup>
-import { inject, ref, onMounted, nextTick, watch } from 'vue'
+import { inject, ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
 
 const isDesktop = inject('isDesktop')
 const cardContainer = ref(null)
-const minHeight = isDesktop.value ? window.innerWidth * 0.45 : window.innerWidth * 0.7
-const cardHeight = ref(minHeight)
+const minHeight = ref(isDesktop.value ? window.innerWidth * 0.45 : window.innerWidth * 0.7)
+const cardHeight = ref(minHeight.value)
 
 defineOptions({
   name: 'ProblemCard',
@@ -178,11 +178,24 @@ const calculateNaturalHeight = async () => {
   return naturalHeight
 }
 
+const updateMinHeight = () => {
+  minHeight.value = isDesktop.value ? window.innerWidth * 0.45 : window.innerWidth * 0.7
+  if (props.maxHeight) {
+    cardHeight.value = Math.max(props.maxHeight, minHeight.value)
+  } else {
+    cardHeight.value = minHeight.value
+  }
+}
+
+const handleResize = () => {
+  updateMinHeight()
+}
+
 watch(
   () => props.maxHeight,
   (newMaxHeight) => {
     if (newMaxHeight) {
-      cardHeight.value = Math.max(newMaxHeight, minHeight)
+      cardHeight.value = Math.max(newMaxHeight, minHeight.value)
     }
   },
   { immediate: true }
@@ -193,10 +206,16 @@ defineExpose({
 })
 
 onMounted(async () => {
+  window.addEventListener('resize', handleResize)
+
   if (!props.maxHeight) {
     const naturalHeight = await calculateNaturalHeight()
-    cardHeight.value = Math.max(naturalHeight, minHeight)
+    cardHeight.value = Math.max(naturalHeight, minHeight.value)
   }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
 })
 </script>
 

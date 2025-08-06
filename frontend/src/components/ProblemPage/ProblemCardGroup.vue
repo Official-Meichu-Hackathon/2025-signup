@@ -90,7 +90,7 @@
 </template>
 
 <script setup>
-import { ref, inject, onMounted, nextTick } from 'vue'
+import { ref, inject, onMounted, onUnmounted, nextTick } from 'vue'
 import ProblemCard from './ProblemCard.vue'
 import AMDLogo from '../../assets/Problems/Logo/AMD_ITRI.webp'
 import TSMCLogo from '../../assets/Problems/Logo/TSMC.webp'
@@ -254,9 +254,18 @@ const calculateMaxHeight = async () => {
   }
 }
 
+const handleResize = () => {
+  setTimeout(calculateMaxHeight, 100)
+}
+
 onMounted(async () => {
   await nextTick()
   setTimeout(calculateMaxHeight, 100)
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
 })
 </script>
 
