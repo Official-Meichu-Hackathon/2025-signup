@@ -950,7 +950,47 @@
           />
         </div>
 
-        <div class="marquee-sponsors mx-auto flex justify-center w-[60vw]">
+        <!-- Desktop version (no marquee) -->
+        <div v-if="!isMobile" class="mx-auto flex justify-center w-[60vw]">
+          <div class="flex">
+            <!-- Static sponsors for desktop -->
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
+              >
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/BABI_platinum.webp"
+                alt="BABI"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
+              >
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/activity_king.svg"
+                style="transform: scale(0.65)"
+                alt="活動王"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-silver" style="margin-left: 1.4rem">Silver</span>
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
+                alt="GCOMM"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile version (with marquee) -->
+        <div
+          v-if="isMobile"
+          class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]"
+        >
           <div class="marquee-content-special-sponsor flex-shrink-0">
             <!-- First set of sponsors -->
             <div class="sponsor-item">
@@ -964,15 +1004,18 @@
               />
             </div>
             <div class="sponsor-item">
-              <span
-                v-if="!isMobile"
-                class="sponsor-level sponsor-silver"
-                style="margin-left: 1.4rem"
-                >Silver</span
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
               >
-              <span v-else class="sponsor-level sponsor-silver" style="margin-left: 0.4rem"
-                >Silver</span
-              >
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/activity_king.svg"
+                style="transform: scale(0.65)"
+                alt="活動王"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-silver" style="margin-left: 0.4rem">Silver</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
@@ -982,10 +1025,11 @@
           </div>
 
           <!-- Duplicate set for seamless loop -->
-          <!-- <div class="marquee-content-special-sponsor flex-shrink-0">
+          <div class="marquee-content-special-sponsor flex-shrink-0">
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: -0.2rem;">Platinum</span>
-
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
+              >
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/BABI_platinum.webp"
@@ -993,14 +1037,25 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: 0.4rem;">Silver</span>
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
+              >
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/activity_king.svg"
+                style="transform: scale(0.65)"
+                alt="活動王"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-silver" style="margin-left: 0.4rem">Silver</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
                 alt="GCOMM"
               />
             </div>
-          </div> -->
+          </div>
         </div>
 
         <div class="relative">
@@ -1883,6 +1938,7 @@ onMounted(() => {
 
 /* Add this to your existing CSS */
 .marquee-content-special-sponsor {
+  animation-duration: 9s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
