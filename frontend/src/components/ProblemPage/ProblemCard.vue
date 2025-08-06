@@ -23,8 +23,8 @@
       class="relative flex flex-col items-center justify-center text-center w-[80%] h-[90%] gap-[1vh]"
     >
       <!-- 公司 Logo -->
-      <div class="flex items-center justify-center w-[70%] h-[15%] flex-shrink-0">
-        <img :src="logo" alt="公司 Logo" class="max-h-full" />
+      <div class="flex items-center justify-center w-[70%] min-h-[15%] flex-shrink-0">
+        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[12vh] object-contain" />
       </div>
       <!-- 公司名稱 -->
       <h2
@@ -85,8 +85,8 @@
       class="relative flex flex-col items-center justify-center text-center w-[80%] h-[90%] gap-[1.5vh]"
     >
       <!-- 公司 Logo -->
-      <div class="flex items-center justify-center w-[70%] h-[15%] flex-shrink-0">
-        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-full" />
+      <div class="flex items-center justify-center w-[70%] min-h-[15%] flex-shrink-0">
+        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[8vh] object-contain" />
       </div>
 
       <!-- 公司名稱 -->
