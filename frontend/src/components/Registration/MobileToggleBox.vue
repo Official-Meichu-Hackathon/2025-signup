@@ -12,7 +12,7 @@
         {{ title }}
       </span>
       <svg
-        class="w-5 h-5 transition-transform duration-300"
+        class="w-4 h-4 transition-transform duration-300"
         fill="none"
         :stroke="isActive ? '#FFFFFF' : '#2D3E63'"
         viewBox="0 0 24 24"

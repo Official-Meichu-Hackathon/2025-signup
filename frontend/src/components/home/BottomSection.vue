@@ -950,7 +950,7 @@
           />
         </div>
 
-        <div class="marquee-sponsors mx-auto flex justify-center w-[60vw]">
+        <div class="marquee-sponsors mx-auto overflow-hidden whitespace-nowrap w-[60vw]">
           <div class="marquee-content-special-sponsor flex-shrink-0">
             <!-- First set of sponsors -->
             <div class="sponsor-item">
@@ -964,28 +964,41 @@
               />
             </div>
             <div class="sponsor-item">
-              <span
-                v-if="!isMobile"
-                class="sponsor-level sponsor-silver"
-                style="margin-left: 1.4rem"
-                >Silver</span
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
               >
-              <span v-else class="sponsor-level sponsor-silver" style="margin-left: 0.4rem"
-                >Silver</span
-              >
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/activity_king.svg"
+                style="transform: scale(0.65)"
+                alt="Activity King"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-silver" style="margin-left: 0.4rem">Silver</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
                 alt="GCOMM"
               />
             </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem">Null</span>
+              <img
+                class="inline-block"
+                src="https://placehold.co/150x80?text=Dominos"
+                style="transform: scale(0.65)"
+                alt="Dominos"
+              />
+            </div>
           </div>
 
           <!-- Duplicate set for seamless loop -->
-          <!-- <div class="marquee-content-special-sponsor flex-shrink-0">
+          <div class="marquee-content-special-sponsor flex-shrink-0">
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: -0.2rem;">Platinum</span>
-
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
+              >
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/BABI_platinum.webp"
@@ -993,14 +1006,34 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level" style="margin-left: 0.4rem;">Silver</span>
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Platinum</span
+              >
+              <img
+                class="inline-block"
+                src="../../assets/Home/special_sponsors/activity_king.svg"
+                style="transform: scale(0.65)"
+                alt="Activity King"
+              />
+            </div>
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-silver" style="margin-left: 0.4rem">Silver</span>
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/GCOMM_silver.webp"
                 alt="GCOMM"
               />
             </div>
-          </div> -->
+            <div class="sponsor-item">
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem">Null</span>
+              <img
+                class="inline-block"
+                src="https://placehold.co/150x80?text=Dominos"
+                style="transform: scale(0.65)"
+                alt="Dominos"
+              />
+            </div>
+          </div>
         </div>
 
         <div class="relative">
@@ -1089,7 +1122,7 @@
               <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
               <img
                 class="inline-block"
-                style="transform: scale(1)"
+                style="transform: scale(0.9)"
                 src="../../assets/Home/media/taipei_logo.webp"
                 alt="台北市政府資訊局"
               />
@@ -1127,7 +1160,7 @@
               <span class="sponsor-level" style="margin-left: 1rem">共同發聲</span>
               <img
                 class="inline-block"
-                style="transform: scale(1)"
+                style="transform: scale(0.9)"
                 src="../../assets/Home/media/taipei_logo.webp"
                 alt="台北市政府資訊局"
               />
@@ -1883,6 +1916,7 @@ onMounted(() => {
 
 /* Add this to your existing CSS */
 .marquee-content-special-sponsor {
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-name: marquee;
   animation-timing-function: linear;
