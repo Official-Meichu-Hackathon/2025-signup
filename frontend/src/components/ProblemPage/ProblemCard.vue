@@ -2,12 +2,10 @@
   <div
     v-if="isDesktop"
     ref="cardContainer"
-    class="relative w-[45vw] overflow-hidden flex items-start justify-center bg-white rounded-[2vw] shadow-lg border-[2px] border-dashed border-[#EBD5D8] pt-[2vw]"
+    class="relative w-[45vw] flex items-start justify-center bg-white rounded-[2vw] shadow-lg border-[2px] border-dashed border-[#EBD5D8] pt-[5vh] overflow-hidden"
     :style="{ height: cardHeight + 'px' }"
   >
     <!-- 卡片背景 -->
-
-    <!-- 左下角漸層 -->
     <img
       src="../../assets/Problems/Card/Cardleft.svg"
       alt="左下角漸層"
@@ -20,11 +18,11 @@
     />
     <!-- 卡片內容 -->
     <div
-      class="relative flex flex-col items-center justify-center text-center w-[80%] h-[90%] gap-[1vh]"
+      class="relative z-10 flex flex-col items-center justify-center text-center w-[80%] min-h-[90%] gap-[1vh] pb-[2vw]"
     >
       <!-- 公司 Logo -->
-      <div class="flex items-center justify-center w-[70%] min-h-[15%] flex-shrink-0">
-        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[12vh] object-contain" />
+      <div class="flex items-center justify-center w-[70%] min-h-[15%] flex-shrink-0 mt-[2vh]">
+        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[15vh] object-contain" />
       </div>
       <!-- 公司名稱 -->
       <h2
@@ -66,10 +64,10 @@
   <div
     v-else
     ref="cardContainer"
-    class="relative w-[70vw] overflow-hidden flex items-start justify-center bg-white rounded-[5vw] shadow-lg border-[2px] border-dashed border-[#EBD5D8] pt-[3vw]"
+    class="relative w-[70vw] flex items-start justify-center bg-white rounded-[5vw] shadow-lg border-[2px] border-dashed border-[#EBD5D8] pt-[3vw] overflow-hidden"
     :style="{ height: cardHeight + 'px' }"
   >
-    <!-- 左下角漸層 -->
+    <!-- 卡片背景 -->
     <img
       src="../../assets/Problems/Card/Cardleft.svg"
       alt="左下角漸層"
@@ -82,11 +80,11 @@
     />
     <!-- 卡片內容 -->
     <div
-      class="relative flex flex-col items-center justify-center text-center w-[80%] h-[90%] gap-[1.5vh]"
+      class="relative z-10 flex flex-col items-center justify-center text-center w-[80%] min-h-[90%] gap-[1.5vh] pb-[3vw]"
     >
       <!-- 公司 Logo -->
-      <div class="flex items-center justify-center w-[70%] min-h-[15%] flex-shrink-0">
-        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[8vh] object-contain" />
+      <div class="flex items-center justify-center w-[70%] min-h-[15%] flex-shrink-0 mt-[1.5vh]">
+        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[10vh] object-contain" />
       </div>
 
       <!-- 公司名稱 -->
@@ -128,12 +126,12 @@
 </template>
 
 <script setup>
-import { inject, ref, onMounted, nextTick, watch } from 'vue'
+import { inject, ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
 
 const isDesktop = inject('isDesktop')
 const cardContainer = ref(null)
-const minHeight = isDesktop.value ? window.innerWidth * 0.45 : window.innerWidth * 0.7
-const cardHeight = ref(minHeight)
+const minHeight = ref(isDesktop.value ? window.innerWidth * 0.45 : window.innerWidth * 0.7)
+const cardHeight = ref(minHeight.value)
 
 defineOptions({
   name: 'ProblemCard',
@@ -180,11 +178,24 @@ const calculateNaturalHeight = async () => {
   return naturalHeight
 }
 
+const updateMinHeight = () => {
+  minHeight.value = isDesktop.value ? window.innerWidth * 0.45 : window.innerWidth * 0.7
+  if (props.maxHeight) {
+    cardHeight.value = Math.max(props.maxHeight, minHeight.value)
+  } else {
+    cardHeight.value = minHeight.value
+  }
+}
+
+const handleResize = () => {
+  updateMinHeight()
+}
+
 watch(
   () => props.maxHeight,
   (newMaxHeight) => {
     if (newMaxHeight) {
-      cardHeight.value = Math.max(newMaxHeight, minHeight)
+      cardHeight.value = Math.max(newMaxHeight, minHeight.value)
     }
   },
   { immediate: true }
@@ -195,10 +206,16 @@ defineExpose({
 })
 
 onMounted(async () => {
+  window.addEventListener('resize', handleResize)
+
   if (!props.maxHeight) {
     const naturalHeight = await calculateNaturalHeight()
-    cardHeight.value = Math.max(naturalHeight, minHeight)
+    cardHeight.value = Math.max(naturalHeight, minHeight.value)
   }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
 })
 </script>
 
