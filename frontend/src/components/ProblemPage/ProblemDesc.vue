@@ -109,12 +109,13 @@
 
       <!-- 卡片 -->
       <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh] mt-[8vh]">
-        <ProblemCard
+        <ProblemCardGovernment
           :logo="HsinchuLogo"
           companyName="新竹市政府與新竹市青年發展中心"
           problemTitle="題目"
           problemContent="在四個子題中，運用 AI、大數據、物聯網等技術，針對市政服務提出創新解方，從智慧交通、公共安全到環境檢測，打造更即時、便利、貼近市民需求的智慧應用，共創友善高效的未來城市。"
           :problemLink="GovernmentProblem"
+          :maxHeight="maxCardHeight"
         />
 
         <!-- 閃電 -->
@@ -149,7 +150,7 @@
 import Background from '../ProblemPage/Background.vue'
 import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
-import ProblemCard from '../ProblemPage/ProblemCard.vue'
+import ProblemCardGovernment from '../ProblemPage/ProblemCardGovernment.vue'
 import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
 import BackgroundOne from '../ProblemPage/Bg1.vue'
 import BackgroundTwo from '../ProblemPage/Bg2.vue'
@@ -166,6 +167,7 @@ defineOptions({
     BackgroundOne,
     BackgroundTwo,
     BackgroundThree,
+    ProblemCardGovernment,
   },
 })
 </script>
