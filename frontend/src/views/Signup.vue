@@ -214,6 +214,8 @@ const submit = async () => {
     isSubmitting.value = false
   }
 }
+
+window.onbeforeunload = () => ''
 </script>
 
 <template>
