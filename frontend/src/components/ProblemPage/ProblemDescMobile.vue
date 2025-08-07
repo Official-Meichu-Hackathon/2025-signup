@@ -74,7 +74,7 @@
 
       <!-- 卡片 -->
       <div class="relative w-full flex items-center justify-center min-h-[50vh]">
-        <ProblemCard
+        <ProblemCardGovernment
           :logo="HsinchuLogo"
           companyName="新竹市政府與新竹市青年發展中心"
           problemTitle="題目"
@@ -100,8 +100,8 @@
 import BackgroundMobile from './BackgroundMobile.vue'
 import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
-import ProblemCard from '../ProblemPage/ProblemCard.vue'
 import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
+import ProblemCardGovernment from '../ProblemPage/ProblemCardGovernment.vue'
 
 import GovernmentProblem from '../../assets/Problems/Problem/GovernmentProblem.pdf'
 </script>

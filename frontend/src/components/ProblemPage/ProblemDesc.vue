@@ -109,7 +109,7 @@
 
       <!-- 卡片 -->
       <div class="relative w-full h-[70vh] flex items-center justify-center mb-[6vh] mt-[8vh]">
-        <ProblemCard
+        <ProblemCardGovernment
           :logo="HsinchuLogo"
           companyName="新竹市政府與新竹市青年發展中心"
           problemTitle="題目"
@@ -149,7 +149,7 @@
 import Background from '../ProblemPage/Background.vue'
 import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
-import ProblemCard from '../ProblemPage/ProblemCard.vue'
+import ProblemCardGovernment from '../ProblemPage/ProblemCardGovernment.vue'
 import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
 import BackgroundOne from '../ProblemPage/Bg1.vue'
 import BackgroundTwo from '../ProblemPage/Bg2.vue'
@@ -166,6 +166,7 @@ defineOptions({
     BackgroundOne,
     BackgroundTwo,
     BackgroundThree,
+    ProblemCardGovernment,
   },
 })
 </script>
