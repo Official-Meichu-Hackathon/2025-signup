@@ -706,7 +706,7 @@
               <span
                 v-else
                 class="sponsor-level sponsor-gold"
-                style="margin-left: 1rem; margin-bottom: 0.4rem"
+                style="margin-left: 0.8rem; margin-bottom: 0.4rem"
                 >Gold</span
               >
 
@@ -720,7 +720,7 @@
               <img
                 v-else
                 class="inline-block"
-                style="padding-top: 0.5rem"
+                style="padding-top: 0.5rem; margin: 0 1rem 0 0"
                 src="../../assets/Home/sponsors/91APP_gold.webp"
                 alt="91APP"
               />
@@ -728,7 +728,7 @@
 
             <!-- Silver Sponsor 1 -->
             <div class="sponsor-item">
-              <span class="sponsor-level sponsor-silver" style="margin-left: -1rem">Silver</span>
+              <span class="sponsor-level sponsor-silver" style="margin-left: -0.7rem">Silver</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.95)"
@@ -745,10 +745,43 @@
               >
 
               <img
+                v-if="!isMobile"
                 class="inline-block"
                 style="transform: scale(1.5); margin: 0 2rem 0 2rem"
                 src="../../assets/Home/sponsors/Pixart_silver2.webp"
                 alt="Pixart"
+              />
+
+              <img
+                v-else
+                class="inline-block"
+                style="transform: scale(1.1); margin: 0 1rem 0 1rem"
+                src="../../assets/Home/sponsors/Pixart_silver2.webp"
+                alt="Pixart"
+              />
+            </div>
+
+            <!-- Silver Sponsor 3 -->
+            <div class="sponsor-item">
+              <span v-if="!isMobile" class="sponsor-level sponsor-silver">Silver</span>
+              <span v-else class="sponsor-level sponsor-silver" style="margin-left: 0rem"
+                >Silver</span
+              >
+
+              <img
+                v-if="!isMobile"
+                class="inline-block"
+                style="transform: scale(1.3); margin: 0 2rem 0 2rem"
+                src="../../assets/Home/sponsors/Qualcomm_silver3.webp"
+                alt="Qualcomm"
+              />
+
+              <img
+                v-else
+                class="inline-block"
+                style="transform: scale(1.1); margin: 0 0rem 0 0.3em"
+                src="../../assets/Home/sponsors/Qualcomm_silver3.webp"
+                alt="Qualcomm"
               />
             </div>
 
@@ -806,7 +839,7 @@
               <span
                 v-else
                 class="sponsor-level sponsor-gold"
-                style="margin-left: 1rem; margin-bottom: 0.4rem"
+                style="margin-left: 0.8rem; margin-bottom: 0.4rem"
                 >Gold</span
               >
 
@@ -820,7 +853,7 @@
               <img
                 v-else
                 class="inline-block"
-                style="padding-top: 0.5rem"
+                style="padding-top: 0.5rem; margin: 0 1rem 0 0"
                 src="../../assets/Home/sponsors/91APP_gold.webp"
                 alt="91APP"
               />
@@ -828,7 +861,7 @@
 
             <!-- Silver Sponsor 1 -->
             <div class="sponsor-item">
-              <span class="sponsor-level sponsor-silver" style="margin-left: -1rem">Silver</span>
+              <span class="sponsor-level sponsor-silver" style="margin-left: -0.7rem">Silver</span>
               <img
                 class="inline-block"
                 style="transform: scale(0.95)"
@@ -845,10 +878,41 @@
               >
 
               <img
+                v-if="!isMobile"
                 class="inline-block"
                 style="transform: scale(1.5); margin: 0 2rem 0 2rem"
                 src="../../assets/Home/sponsors/Pixart_silver2.webp"
                 alt="Pixart"
+              />
+              <img
+                v-else
+                class="inline-block"
+                style="transform: scale(1.1); margin: 0 1rem 0 1em"
+                src="../../assets/Home/sponsors/Pixart_silver2.webp"
+                alt="Pixart"
+              />
+            </div>
+
+            <div class="sponsor-item">
+              <span v-if="!isMobile" class="sponsor-level sponsor-silver">Silver</span>
+              <span v-else class="sponsor-level sponsor-silver" style="margin-left: 0rem"
+                >Silver</span
+              >
+
+              <img
+                v-if="!isMobile"
+                class="inline-block"
+                style="transform: scale(1.3); margin: 0 2rem 0 2rem"
+                src="../../assets/Home/sponsors/Qualcomm_silver3.webp"
+                alt="Qualcomm"
+              />
+
+              <img
+                v-else
+                class="inline-block"
+                style="transform: scale(1.1); margin: 0 0rem 0 0.3rem"
+                src="../../assets/Home/sponsors/Qualcomm_silver3.webp"
+                alt="Qualcomm"
               />
             </div>
 
@@ -964,9 +1028,16 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+              <span
+                v-if="!isMobile"
+                class="sponsor-level sponsor-platinum"
+                style="margin-left: 2.7rem"
                 >Platinum</span
               >
+              <span v-else class="sponsor-level sponsor-platinum" style="margin-left: 1rem"
+                >Platinum</span
+              >
+
               <img
                 class="inline-block"
                 src="../../assets/Home/special_sponsors/activity_king.svg"
@@ -1006,7 +1077,13 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+              <span
+                v-if="!isMobile"
+                class="sponsor-level sponsor-platinum"
+                style="margin-left: 2.7rem"
+                >Platinum</span
+              >
+              <span v-else class="sponsor-level sponsor-platinum" style="margin-left: 1rem"
                 >Platinum</span
               >
               <img
@@ -1940,7 +2017,7 @@ onMounted(() => {
 .sponsor-item {
   position: relative;
   display: inline-block;
-  margin: 0 0.5rem; /* Adjust spacing between logos */
+  margin: 0 0.8rem; /* Adjust spacing between logos */
 }
 
 .sponsor-item img {
@@ -2188,7 +2265,7 @@ color: #CE8946;
   }
 
   .sponsor-item {
-    margin: 0 0rem;
+    margin: 0 0.2rem;
     display: inline-block;
   }
 
