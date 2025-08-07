@@ -54,7 +54,7 @@
       <a
         :href="problemLink"
         target="_blank"
-        class="text-[1.8vh] text-white font-bold font-[Chiron_Hei_HK] m-[2vw] rounded-[1vh] flex-shrink-0"
+        class="text-[1.8vh] text-[#C27992] font-bold font-[Chiron_Hei_HK] m-[2vw] rounded-[1vh] flex-shrink-0"
       >
         詳細題目說明 >>
       </a>
@@ -117,7 +117,7 @@
       <a
         :href="problemLink"
         target="_blank"
-        class="text-[1.3vh] text-white font-bold font-[Chiron_Hei_HK] rounded-[1vh] mt-[2vh] flex-shrink-0"
+        class="text-[1.3vh] text-[#C27992] font-bold font-[Chiron_Hei_HK] rounded-[1vh] mt-[2vh] flex-shrink-0"
       >
         詳細題目說明 >>
       </a>
