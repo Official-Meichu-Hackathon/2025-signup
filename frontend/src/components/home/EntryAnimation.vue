@@ -1,4 +1,5 @@
 <template>
+  <Navbar @navigateToSection="handleNavigateToSection" />
   <div>
     <div ref="scrollContainer" class="scroll-container">
       <div
@@ -28,7 +29,10 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref, inject } from 'vue'
+import { onBeforeUnmount, onMounted, ref, inject, watch, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
+import Navbar from '../Navbar.vue'
+
 defineOptions({
   name: 'EntryAnimation',
 })
@@ -39,14 +43,17 @@ const scrollContainer = ref(null)
 const canvasRef = ref(null)
 const lastScrollY = ref(0)
 const isLoaded = ref(false)
-const oneSecondLoaded = ref(false) // Track if one second has passed
+const oneSecondLoaded = ref(false)
 const showScrollIndicator = ref(false)
-// Add new reactive variables for scroll locking
 const isScrollLocked = ref(false)
 const isAnimationComplete = ref(false)
 const userScrolls = ref(false)
+const navbarScroll = ref(false)
+const unlockScrollTimer = ref(null) // NEW: To hold the setTimeout ID
+const isUserScrolling = ref(false)
+let scrollDetectionTimer = null
 
-const frameCnt = 23 // 27
+const frameCnt = 23
 const imageSrc = []
 const loadedImages = []
 
@@ -55,27 +62,17 @@ const getQualityForBandwidth = () => {
   if (connection && connection.downlink) {
     const downlinkMbps = connection.downlink
     if (downlinkMbps < 1.5) {
-      // Speeds below 1.5 Mbps get low quality
       return 'low'
     }
     if (downlinkMbps < 8) {
-      // Speeds between 1.5 and 5 Mbps get medium quality
       return 'medium'
     }
-    // Speeds above 5 Mbps get high quality
     return 'high'
   }
-  // Fallback to a default if the API isn't supported
   return 'medium'
 }
 
 const quality = getQualityForBandwidth()
-
-// NOTE: You will need to organize your images into subfolders and name them accordingly.
-// Example structure:
-// - /public/EntryAnimation/high/frame-1.webp
-// - /public/EntryAnimation/medium/frame-1_compressed.webp
-// - /public/EntryAnimation/low/frame-1_very_compressed.webp
 
 for (let i = 1; i <= frameCnt; i++) {
   let path = ''
@@ -93,7 +90,6 @@ for (let i = 1; i <= frameCnt; i++) {
   imageSrc.push(path)
 }
 
-// Preload images as soon as the script runs
 const imagePromises = imageSrc.map((src) => {
   return new Promise((resolve, reject) => {
     const img = new Image()
@@ -128,7 +124,6 @@ const drawFrame = (idx) => {
   }
 }
 
-// Add scroll lock function
 const lockScroll = () => {
   isScrollLocked.value = true
   document.body.style.overflow = 'hidden'
@@ -137,20 +132,74 @@ const lockScroll = () => {
   document.body.style.width = '100%'
 }
 
-// Add scroll unlock function
+// --- MODIFIED FUNCTION ---
+// Restored the scroll position restoration logic for the normal unlock flow.
 const unlockScroll = () => {
-  const scrollY = document.body.style.top
-  document.body.style.overflow = ''
-  document.body.style.position = ''
-  document.body.style.top = ''
-  document.body.style.width = ''
-  window.scrollTo(0, parseInt(scrollY || '0') * -1)
-  isScrollLocked.value = false
+  // The check for `navbarScroll.value` is no longer needed here
+  // as we handle the scroll unlocking directly in the watcher.
+  if (isScrollLocked.value) {
+    const scrollY = document.body.style.top
+    document.body.style.overflow = ''
+    document.body.style.position = ''
+    document.body.style.top = ''
+    document.body.style.width = ''
+    window.scrollTo(0, parseInt(scrollY || '0') * -1) // Restore scroll position
+    isScrollLocked.value = false
+  }
 }
 
+const route = useRoute()
+
+watch(
+  () => route.hash,
+  (newHash) => {
+    if (newHash && scrollContainer.value) {
+      navbarScroll.value = true // Signal that this is a programmatic scroll
+
+      // This function encapsulates the logic to scroll to the correct position
+      // after the layout is stable.
+      const scrollToTarget = () => {
+        nextTick(() => {
+          const element = document.querySelector(newHash)
+          if (element) {
+            // The scroll position is determined here.
+            // It calculates the element's top position relative to the document,
+            // accounting for the fixed navbar height.
+            const top = element.getBoundingClientRect().top + window.scrollY - 56
+            window.scrollTo({ top, behavior: 'smooth' })
+          }
+        })
+      }
+
+      // If the entry animation isn't finished, complete it instantly.
+      if (!isAnimationComplete.value) {
+        isAnimationComplete.value = true
+        scrollContainer.value.style.height = '100vh' // Shrink container
+        drawFrame(frameCnt - 1) // Draw the final frame
+        // Then scroll. The nextTick ensures the layout is updated.
+        scrollToTarget()
+      } else {
+        // If animation is already complete, the layout is stable, so we can scroll immediately.
+        scrollToTarget()
+      }
+
+      // Clear any pending scroll lock timers from user interaction
+      if (unlockScrollTimer.value) {
+        clearTimeout(unlockScrollTimer.value)
+        unlockScrollTimer.value = null
+      }
+
+      // If scroll was locked, unlock it
+      if (isScrollLocked.value) {
+        unlockScroll()
+      }
+    }
+  },
+  { immediate: true }
+)
+
 const handleScroll = () => {
-  // Prevent scrolling if locked
-  if (isScrollLocked.value) {
+  if (isScrollLocked.value && !navbarScroll.value) {
     return
   }
 
@@ -173,18 +222,20 @@ const handleScroll = () => {
   let scrollProgress = rawScrollProgress
   const frameIndex = Math.min(frameCnt - 1, Math.floor(scrollProgress * frameCnt))
 
-  // Check if we've reached the last frame
   if (frameIndex === frameCnt - 1 && !isAnimationComplete.value) {
     isAnimationComplete.value = true
-
-    // Change scroll container height to 100vh
     scrollContainer.value.style.height = '100vh'
 
-    // Lock scrolling for 0.3 seconds
-    lockScroll()
-    setTimeout(() => {
-      unlockScroll()
-    }, 1000)
+    // Only call lockScroll if the scroll was initiated by the user.
+    if (isUserScrolling.value) {
+      lockScroll()
+      // --- MODIFIED LOGIC ---
+      // Store the timer ID so we can cancel it if needed.
+      unlockScrollTimer.value = setTimeout(() => {
+        unlockScroll()
+        unlockScrollTimer.value = null
+      }, 1000)
+    }
   }
 
   requestAnimationFrame(() => {
@@ -195,14 +246,12 @@ const handleScroll = () => {
   lastScrollY.value = window.scrollY
 }
 
-const particles = []
-const particleCount = 150
-
+// The Particle class and other logic remains the same...
 class Particle {
   constructor(canvas) {
     this.canvas = canvas
     this.display = 0
-    this.reset() // Initialize with random position
+    this.reset()
   }
 
   update() {
@@ -215,19 +264,16 @@ class Particle {
     if (!this.display) {
       this.opacity = 0
     } else if (this.life > this.maxLife - fadeInDuration) {
-      // Fade in
       const timePassed = this.maxLife - this.life
       const fadeRatio = Math.min(1, timePassed / fadeInDuration)
       this.opacity = this.maxOpacity * (fadeRatio * fadeRatio * fadeRatio) + 0.3
     } else if (this.life < fadeOutDuration) {
-      // Fade out
       const fadeRatio = Math.max(0, this.life / fadeOutDuration)
       this.opacity = this.maxOpacity * (fadeRatio * fadeRatio * fadeRatio)
     } else {
       this.opacity = this.maxOpacity
     }
 
-    // Reset particle if it's dead or off-screen
     if (this.life <= 0) {
       this.reset()
     }
@@ -236,14 +282,11 @@ class Particle {
   updatePosition(frameIndex) {
     const centerX = this.canvas.width / 2
     const centerY = this.canvas.height / 2
-
     const radius = (radiusPercentage) => {
       const maxRadius = Math.min(centerX, centerY)
       return maxRadius * radiusPercentage
     }
-
     const distanceFromCenter = Math.sqrt((this.x - centerX) ** 2 + (this.y - centerY) ** 2)
-
     const inRadius = (radiusPercentage) => {
       return distanceFromCenter < radius(radiusPercentage)
     }
@@ -298,27 +341,25 @@ class Particle {
   reset() {
     this.x = Math.random() * this.canvas.width
     this.y = Math.random() * this.canvas.height
-    this.vx = (Math.random() - 0.5) * 0.3 // Slower movement
+    this.vx = (Math.random() - 0.5) * 0.3
     this.vy = (Math.random() - 0.5) * 0.3
-    this.size = Math.random() * 1.5 + 0.5 // Smaller particles
-    this.maxLife = Math.random() * 200 + 200 // Longer life
+    this.size = Math.random() * 1.5 + 0.5
+    this.maxLife = Math.random() * 200 + 200
     this.life = this.maxLife
-    this.opacity = 0 // Start transparent for fade-in
-    this.maxOpacity = Math.random() * 0.5 + 0.2 // Target opacity
-    const baseColors = [
-      '255, 255, 255', // White
-      '173, 216, 230', // Light Blue
-      '220, 220, 255', // Light Lavender
-    ]
+    this.opacity = 0
+    this.maxOpacity = Math.random() * 0.5 + 0.2
+    const baseColors = ['255, 255, 255', '173, 216, 230', '220, 220, 255']
     this.baseColor = baseColors[Math.floor(Math.random() * baseColors.length)]
   }
 }
-
+const particles = []
+const particleCount = 150
 let animationFrameId
+
 const animate = () => {
   const rect = scrollContainer.value.getBoundingClientRect()
   if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-    // It's in the main viewport and being scrolled, so handleScroll will manage drawing
+    //
   } else {
     const currentFrame = isBreathing.value ? 0 : frameCnt - 1
     drawFrame(currentFrame)
@@ -327,18 +368,24 @@ const animate = () => {
   animationFrameId = requestAnimationFrame(animate)
 }
 
+const handleUserScrollInput = () => {
+  isUserScrolling.value = true
+  if (scrollDetectionTimer) clearTimeout(scrollDetectionTimer)
+  scrollDetectionTimer = setTimeout(() => {
+    isUserScrolling.value = false
+  }, 150) // Reset after a short delay
+}
+
 onMounted(() => {
   context = canvasRef.value.getContext('2d')
   lastScrollY.value = window.scrollY
   canvasRef.value.width = 1440
   canvasRef.value.height = 1020
 
-  // Create a promise that resolves after 1 second
   const oneSecondPromise = new Promise((resolve) => {
     setTimeout(resolve, 2000)
   })
 
-  // Wait for both images and minimum time
   Promise.all([Promise.all(imagePromises), oneSecondPromise]).then(([images]) => {
     loadedImages.push(...images)
     isLoaded.value = true
@@ -353,16 +400,28 @@ onMounted(() => {
     drawFrame(0)
     animate()
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('wheel', handleUserScrollInput, { passive: true })
+    window.addEventListener('keydown', handleUserScrollInput, { passive: true })
+    window.addEventListener('touchstart', handleUserScrollInput, { passive: true })
   })
-  //loads scroll event listener for scrolling animation
 })
 
+// --- MODIFIED LIFECYCLE HOOK ---
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('wheel', handleUserScrollInput)
+  window.removeEventListener('keydown', handleUserScrollInput)
+  window.removeEventListener('touchstart', handleUserScrollInput)
   if (animationFrameId) {
     cancelAnimationFrame(animationFrameId)
   }
-  // Clean up scroll lock if component unmounts
+  // NEW: Clean up the timer on unmount
+  if (unlockScrollTimer.value) {
+    clearTimeout(unlockScrollTimer.value)
+  }
+  if (scrollDetectionTimer) {
+    clearTimeout(scrollDetectionTimer)
+  }
   if (isScrollLocked.value) {
     unlockScroll()
   }

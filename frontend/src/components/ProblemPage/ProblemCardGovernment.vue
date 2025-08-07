@@ -21,8 +21,8 @@
       class="relative z-10 flex flex-col items-center justify-center text-center w-[80%] min-h-[90%] gap-[1vh] pb-[2vw]"
     >
       <!-- 公司 Logo -->
-      <div class="flex items-center justify-center w-[70%] min-h-[15%] flex-shrink-0 mt-[2vh]">
-        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[15vh] object-contain" />
+      <div class="flex items-center justify-center w-[100%] min-h-[30%] flex-shrink-0 mt-[2vh]">
+        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[20vh] object-contain" />
       </div>
       <!-- 公司名稱 -->
       <h2
@@ -80,16 +80,16 @@
     />
     <!-- 卡片內容 -->
     <div
-      class="relative z-10 flex flex-col items-center justify-center text-center w-[80%] min-h-[90%] gap-[1.5vh] pb-[3vw]"
+      class="relative z-10 flex flex-col items-center justify-center text-center w-[90%] min-h-[90%] gap-[1.5vh] pb-[3vw]"
     >
       <!-- 公司 Logo -->
-      <div class="flex items-center justify-center w-[70%] min-h-[15%] flex-shrink-0 mt-[1.5vh]">
-        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[10vh] object-contain" />
+      <div class="flex items-center justify-center w-[100%] min-h-[30%] flex-shrink-0 mt-[1.5vh]">
+        <img :src="logo" alt="公司 Logo" class="max-w-full max-h-[20vh] object-contain" />
       </div>
 
       <!-- 公司名稱 -->
       <h2
-        class="flex items-center text-[1.5vh] md:text-[2.0vh] font-bold text-[#CD8A98] font-[Chiron_Hei_HK] flex-shrink-0"
+        class="flex items-center text-[1.0vh] md:text-[1.0vh] font-bold text-[#CD8A98] font-[Chiron_Hei_HK] flex-shrink-0"
       >
         {{ companyName }}
       </h2>

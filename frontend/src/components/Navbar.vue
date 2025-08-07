@@ -85,11 +85,16 @@
                   v-for="sub in item.children"
                   :key="sub.title"
                   class="text-base font-normal text-[#656565] p-2 cursor-pointer transition-colors duration-200 hover:bg-[#f5f5f5]"
+                  @click="
+                    () => {
+                      drawerOpen = false
+                      if (sub.hash && item.title === '首頁') emit('navigateToSection', sub.hash)
+                    }
+                  "
                 >
                   <router-link
                     :to="{ path: item.path || '/', hash: sub.hash }"
                     class="block w-full h-full"
-                    @click="drawerOpen = false"
                   >
                     {{ sub.title }}
                   </router-link>
@@ -104,12 +109,14 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, defineEmits } from 'vue'
 import SignUpGroup from './home/SignUpGroup.vue'
 
 defineOptions({
   name: 'NavbarComponent',
 })
+
+const emit = defineEmits(['navigateToSection'])
 
 const drawerOpen = ref(false)
 const showOptions = ref(false)
