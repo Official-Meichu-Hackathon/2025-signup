@@ -80,7 +80,7 @@
                   @click="
                     () => {
                       drawerOpen = false
-                      if (item.title === '首頁') emit('navigateToSection')
+                      if (sub.hash && item.title === '首頁') emit('navigateToSection', sub.hash)
                     }
                   "
                 >

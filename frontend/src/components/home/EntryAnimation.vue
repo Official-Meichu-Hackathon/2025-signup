@@ -49,6 +49,8 @@ const isAnimationComplete = ref(false)
 const userScrolls = ref(false)
 const navbarScroll = ref(false)
 const unlockScrollTimer = ref(null) // NEW: To hold the setTimeout ID
+const isUserScrolling = ref(false)
+let scrollDetectionTimer = null
 
 const frameCnt = 23
 const imageSrc = []
@@ -121,30 +123,7 @@ const drawFrame = (idx) => {
   }
 }
 
-// --- MODIFIED FUNCTION ---
-function handleNavigateToSection() {
-  navbarScroll.value = true
-  console.log('Navigating to section, bypassing scroll lock.')
-
-  // Clear the scheduled unlock to prevent it from interfering.
-  if (unlockScrollTimer.value) {
-    clearTimeout(unlockScrollTimer.value)
-    unlockScrollTimer.value = null
-  }
-
-  // If locked, just undo the lock styles. DO NOT scroll.
-  // The browser will handle scrolling to the new section.
-  if (isScrollLocked.value) {
-    document.body.style.overflow = ''
-    document.body.style.position = ''
-    document.body.style.top = ''
-    document.body.style.width = ''
-    isScrollLocked.value = false
-  }
-}
-
 const lockScroll = () => {
-  if (navbarScroll.value) return
   isScrollLocked.value = true
   document.body.style.overflow = 'hidden'
   document.body.style.position = 'fixed'
@@ -195,16 +174,16 @@ const handleScroll = () => {
     isAnimationComplete.value = true
     scrollContainer.value.style.height = '100vh'
 
-    if (navbarScroll.value) {
-      return
+    // Only call lockScroll if the scroll was initiated by the user.
+    if (isUserScrolling.value) {
+      lockScroll()
+      // --- MODIFIED LOGIC ---
+      // Store the timer ID so we can cancel it if needed.
+      unlockScrollTimer.value = setTimeout(() => {
+        unlockScroll()
+        unlockScrollTimer.value = null
+      }, 1000)
     }
-    lockScroll()
-    // --- MODIFIED LOGIC ---
-    // Store the timer ID so we can cancel it if needed.
-    unlockScrollTimer.value = setTimeout(() => {
-      unlockScroll()
-      unlockScrollTimer.value = null
-    }, 1000)
   }
 
   requestAnimationFrame(() => {
@@ -337,6 +316,14 @@ const animate = () => {
   animationFrameId = requestAnimationFrame(animate)
 }
 
+const handleUserScrollInput = () => {
+  isUserScrolling.value = true
+  if (scrollDetectionTimer) clearTimeout(scrollDetectionTimer)
+  scrollDetectionTimer = setTimeout(() => {
+    isUserScrolling.value = false
+  }, 150) // Reset after a short delay
+}
+
 onMounted(() => {
   context = canvasRef.value.getContext('2d')
   lastScrollY.value = window.scrollY
@@ -361,18 +348,27 @@ onMounted(() => {
     drawFrame(0)
     animate()
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('wheel', handleUserScrollInput, { passive: true })
+    window.addEventListener('keydown', handleUserScrollInput, { passive: true })
+    window.addEventListener('touchstart', handleUserScrollInput, { passive: true })
   })
 })
 
 // --- MODIFIED LIFECYCLE HOOK ---
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('wheel', handleUserScrollInput)
+  window.removeEventListener('keydown', handleUserScrollInput)
+  window.removeEventListener('touchstart', handleUserScrollInput)
   if (animationFrameId) {
     cancelAnimationFrame(animationFrameId)
   }
   // NEW: Clean up the timer on unmount
   if (unlockScrollTimer.value) {
     clearTimeout(unlockScrollTimer.value)
+  }
+  if (scrollDetectionTimer) {
+    clearTimeout(scrollDetectionTimer)
   }
   if (isScrollLocked.value) {
     unlockScroll()
