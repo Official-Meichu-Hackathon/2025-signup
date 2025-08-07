@@ -73,7 +73,7 @@
 import { ref, inject, onMounted, onUnmounted, nextTick } from 'vue'
 import ProblemCardGovernment from './ProblemCardGovernment.vue'
 
-import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
+import HsinchuLogo from '../../assets/Problems/Logo/Government.webp'
 
 import GovernmentProblem from '../../assets/Problems/Problem/GovernmentProblem.pdf'
 

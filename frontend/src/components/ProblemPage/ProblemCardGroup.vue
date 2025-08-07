@@ -92,7 +92,7 @@
 <script setup>
 import { ref, inject, onMounted, onUnmounted, nextTick } from 'vue'
 import ProblemCard from './ProblemCard.vue'
-import AMDLogo from '../../assets/Problems/Logo/AMD_ITRI.webp'
+import AMDLogo from '../../assets/Problems/Logo/AMD 1.webp'
 import TSMCLogo from '../../assets/Problems/Logo/TSMC.webp'
 import CloudMosaLogo from '../../assets/Problems/Logo/CloudMosa.webp'
 import GoogleLogo from '../../assets/Problems/Logo/Google.webp'
