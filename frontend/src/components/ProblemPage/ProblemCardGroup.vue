@@ -92,7 +92,7 @@
 <script setup>
 import { ref, inject, onMounted, onUnmounted, nextTick } from 'vue'
 import ProblemCard from './ProblemCard.vue'
-import AMDLogo from '../../assets/Problems/Logo/AMD_ITRI.webp'
+import AMDLogo from '../../assets/Problems/Logo/AMD 1.webp'
 import TSMCLogo from '../../assets/Problems/Logo/TSMC.webp'
 import CloudMosaLogo from '../../assets/Problems/Logo/CloudMosa.webp'
 import GoogleLogo from '../../assets/Problems/Logo/Google.webp'
@@ -154,7 +154,7 @@ const cards = [
     companyName: 'AMD',
     problemTitle: '題目',
     problemContent:
-      '請利用AMD Ryzen AI PC的本地算力資源，開發能夠協助生活的 AI Agent。你將利用Lemonade server 來發揮 Ryzen AI PC 的潛力，並通過串流工具，將其連接到 Hugging Face 的 Tiny Agents 等內容，打造多樣的AI Agents。不論是在旅遊規劃、自動發文、個人活安排或校園活動整合等應用場景，創造更加便利的生活模式。 ',
+      '請利用 AMD Ryzen AI PC 的本地算力資源，開發能夠協助生活的 AI Agent。你將利用 Lemonade server 來發揮 Ryzen AI PC 的潛力，並通過串流工具，將其連接到 Hugging Face 的 Tiny Agents 等內容，打造多樣的 AI Agents。不論是在旅遊規劃、自動發文、個人活動安排或校園活動整合等應用場景，創造更加便利的生活模式。 ',
     problemLink: AMDProblem,
   },
 ]
