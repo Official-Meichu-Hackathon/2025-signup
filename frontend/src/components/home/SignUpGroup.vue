@@ -16,14 +16,14 @@
       leave-to-class="translate-y-[50%] opacity-0"
     >
       <!-- 彈出選單 -->
-      <div v-if="showOptions" class="relative z-10 p-6 flex flex-col md:flex-row gap-[10vw]">
+      <div v-if="showOptions" class="relative z-10 p-6 flex flex-col md:flex-row gap-[15vw]">
         <router-link :to="{ path: '/signup', query: { ref: 'hacker' } }">
           <!-- 黑客組 button -->
           <button
             @click="selectOption('選項一', 0)"
-            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
+            class="option relative overflow-hidden rounded-[80px] text-white cursor-pointer"
           >
-            <img
+            <!-- <img
               v-show="!isMobile"
               src="../../assets/Home/Frame-30.svg"
               class="bg2 absolute transform scale-250 md:scale-200 bottom-[5%] left-[30%] z-0"
@@ -34,23 +34,36 @@
               src="../../assets/Home/Frame-29.svg"
               class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
               alt="bg1"
+            /> -->
+
+            <img
+              v-show="!isMobile"
+              src="../../assets/Home/Frame101.svg"
+              class="bg2 absolute transform scale-100 md:scale-250 bottom-[-50%] left-[30%] z-0"
+              alt="bg2"
+            />
+            <img
+              v-show="!isMobile"
+              src="../../assets/Home/Frame100.svg"
+              class="bg1 absolute transform scale-250 bottom-[-65%] left-[40%] z-0"
+              alt="bg1"
             />
 
             <img
               v-show="isMobile"
               src="../../assets/Home/phoneGroup-btn2.svg"
-              class="bg2 absolute scale-150 top-[-15%] left-[10%]"
+              class="bg2 absolute scale-250 top-[-10%] left-[10%]"
               alt="phoneGroup-btn2"
             />
             <img
               v-show="isMobile"
               src="../../assets/Home/phoneGroup-btn1.svg"
-              class="bg1 absolute top-[-15%] scale-150"
+              class="bg1 absolute top-[-10%] scale-150"
               alt="phoneGroup-btn1"
             />
 
             <span
-              class="text-shadow w-[30vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+              class="text-shadow w-[30vw] text-[2.5vw] font-black font-['Chiron_Hei_HK'] relative z-50"
               >黑客組</span
             >
           </button>
@@ -60,9 +73,9 @@
         <router-link :to="{ path: '/signup', query: { ref: 'maker' } }">
           <button
             @click="selectOption('選項二', 1)"
-            class="option relative overflow-hidden rounded-[30px] text-white cursor-pointer"
+            class="option relative overflow-hidden rounded-[80px] text-white cursor-pointer"
           >
-            <img
+            <!-- <img
               v-show="!isMobile"
               src="../../assets/Home/Frame-30.svg"
               class="bg2 absolute transform scale-250 md:scale-200 bottom-[5%] left-[30%] z-0"
@@ -73,12 +86,25 @@
               src="../../assets/Home/Frame-29.svg"
               class="bg1 absolute transform scale-200 bottom-[5%] left-[30%] z-0"
               alt="bg1"
+            /> -->
+
+            <img
+              v-show="!isMobile"
+              src="../../assets/Home/Frame101.svg"
+              class="bg2 absolute transform scale-100 md:scale-250 bottom-[-50%] left-[30%] z-0"
+              alt="bg2"
+            />
+            <img
+              v-show="!isMobile"
+              src="../../assets/Home/Frame100.svg"
+              class="bg1 absolute transform scale-200 bottom-[-65%] left-[40%] z-0"
+              alt="bg1"
             />
 
             <img
               v-show="isMobile"
               src="../../assets/Home/phoneGroup-btn2.svg"
-              class="bg2 absolute scale-150 top-[-15%] left-[10%]"
+              class="bg2 absolute scale-250 top-[-15%] left-[10%]"
               alt="phoneGroup-btn2"
             />
             <img
@@ -89,7 +115,7 @@
             />
 
             <span
-              class="text-shadow w-[50vw] text-[3vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+              class="text-shadow w-[50vw] text-[2.5vw] font-black font-['Chiron_Hei_HK'] relative z-50"
               >創客交流組</span
             >
           </button>
@@ -141,9 +167,10 @@ onMounted(() => {
 
 <style scoped>
 .option {
-  border: 3px solid #d9d9d9;
-  width: 32vw;
-  height: 20vh;
+  border: 4px solid #d9d9d9;
+  width: 22vw;
+  /* height: 12vh; */
+  height: 120px;
 }
 
 .text-shadow {
@@ -203,7 +230,8 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .option {
-    height: 7vh;
+    /* height: 7vh; */
+    height: 50px;
     border: 5px solid #d9d9d9;
   }
 }
