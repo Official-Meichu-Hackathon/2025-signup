@@ -29,7 +29,8 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref, inject } from 'vue'
+import { onBeforeUnmount, onMounted, ref, inject, watch, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 import Navbar from '../Navbar.vue'
 
 defineOptions({
@@ -134,7 +135,8 @@ const lockScroll = () => {
 // --- MODIFIED FUNCTION ---
 // Restored the scroll position restoration logic for the normal unlock flow.
 const unlockScroll = () => {
-  if (navbarScroll.value) return
+  // The check for `navbarScroll.value` is no longer needed here
+  // as we handle the scroll unlocking directly in the watcher.
   if (isScrollLocked.value) {
     const scrollY = document.body.style.top
     document.body.style.overflow = ''
@@ -145,6 +147,56 @@ const unlockScroll = () => {
     isScrollLocked.value = false
   }
 }
+
+const route = useRoute()
+
+watch(
+  () => route.hash,
+  (newHash) => {
+    if (newHash && scrollContainer.value) {
+      navbarScroll.value = true // Signal that this is a programmatic scroll
+
+      // This function encapsulates the logic to scroll to the correct position
+      // after the layout is stable.
+      const scrollToTarget = () => {
+        nextTick(() => {
+          const element = document.querySelector(newHash)
+          if (element) {
+            // The scroll position is determined here.
+            // It calculates the element's top position relative to the document,
+            // accounting for the fixed navbar height.
+            const top = element.getBoundingClientRect().top + window.scrollY - 56
+            window.scrollTo({ top, behavior: 'smooth' })
+          }
+        })
+      }
+
+      // If the entry animation isn't finished, complete it instantly.
+      if (!isAnimationComplete.value) {
+        isAnimationComplete.value = true
+        scrollContainer.value.style.height = '100vh' // Shrink container
+        drawFrame(frameCnt - 1) // Draw the final frame
+        // Then scroll. The nextTick ensures the layout is updated.
+        scrollToTarget()
+      } else {
+        // If animation is already complete, the layout is stable, so we can scroll immediately.
+        scrollToTarget()
+      }
+
+      // Clear any pending scroll lock timers from user interaction
+      if (unlockScrollTimer.value) {
+        clearTimeout(unlockScrollTimer.value)
+        unlockScrollTimer.value = null
+      }
+
+      // If scroll was locked, unlock it
+      if (isScrollLocked.value) {
+        unlockScroll()
+      }
+    }
+  },
+  { immediate: true }
+)
 
 const handleScroll = () => {
   if (isScrollLocked.value && !navbarScroll.value) {
