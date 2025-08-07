@@ -80,7 +80,7 @@
     />
     <!-- 卡片內容 -->
     <div
-      class="relative z-10 flex flex-col items-center justify-center text-center w-[80%] min-h-[90%] gap-[1.5vh] pb-[3vw]"
+      class="relative z-10 flex flex-col items-center justify-center text-center w-[90%] min-h-[90%] gap-[1.5vh] pb-[3vw]"
     >
       <!-- 公司 Logo -->
       <div class="flex items-center justify-center w-[100%] min-h-[30%] flex-shrink-0 mt-[1.5vh]">

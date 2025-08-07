@@ -73,14 +73,26 @@
       </div>
 
       <!-- 卡片 -->
-      <div class="relative w-full flex items-center justify-center min-h-[50vh]">
-        <ProblemCardGovernment
+      <div class="w-full flex flex-col items-center justify-center min-h-[50vh]">
+        <!-- <ProblemCardGovernment
           :logo="HsinchuLogo"
           companyName="新竹市政府與新竹市青年發展中心"
           problemTitle="題目"
           problem-content="在四個子題中，運用 AI、大數據、物聯網等技術，針對市政服務提出創新解方，從智慧交通、公共安全到環境檢測，打造更即時、便利、貼近市民需求的智慧應用，共創友善高效的未來城市。"
           :problemLink="GovernmentProblem"
-        />
+          :maxHeight="maxCardHeight"
+        /> -->
+        <!-- <ProblemCardGroup /> -->
+        <ProblemCardGovernment />
+        <!-- <ProblemCard
+          ref="cardRefs"
+          :logo="HsinchuLogo"
+          :companyName="'新竹市政府與新竹市青年發展中心'"
+          :problemTitle="'題目'"
+          :problemContent="'在四個子題中，運用 AI、大數據、物聯網等技術，針對市政服務提出創新解方，從智慧交通、公共安全到環境檢測，打造更即時、便利、貼近市民需求的智慧應用，共創友善高效的未來城市。'"
+          :problemLink="GovernmentProblem"
+          :maxHeight="maxCardHeight"
+        /> -->
         <img
           src="../../assets/Problems/element/Frame51.svg"
           alt="閃電"
@@ -100,10 +112,11 @@
 import BackgroundMobile from './BackgroundMobile.vue'
 import NoticeBar from '../ProblemPage/NoticeBar.vue'
 import ProblemCardGroup from '../ProblemPage/ProblemCardGroup.vue'
-import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
-import ProblemCardGovernment from '../ProblemPage/ProblemCardGovernment.vue'
+import ProblemCardGovernment from '../ProblemPage/ProblemCardGroupGov.vue'
+// import HsinchuLogo from '../../assets/Problems/Card/Hsinchulogo.svg'
+// import ProblemCardGovernment from '../ProblemPage/ProblemCardGovernment.vue'
 
-import GovernmentProblem from '../../assets/Problems/Problem/GovernmentProblem.pdf'
+// import GovernmentProblem from '../../assets/Problems/Problem/GovernmentProblem.pdf'
 </script>
 
 <style scoped>
