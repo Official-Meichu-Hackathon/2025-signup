@@ -18,7 +18,6 @@ import '../assets/css/signup.css'
       />
       <img src="/src/assets/signup/success-creatures.svg" alt="Cute creatures" class="w-48 z-10" />
       <a
-        target="_blank"
         href="/"
         class="text-[#B4B4B4] z-10 mt-12 px-12 py-3 font-black"
         style="
