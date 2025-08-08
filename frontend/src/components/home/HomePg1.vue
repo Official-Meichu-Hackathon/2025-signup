@@ -1,6 +1,6 @@
 <template>
   <div id="intro"></div>
-  <div class="bg-[#fff] flex flex-col justify-center">
+  <div class="bg-[#fff] flex flex-col justify-center overflow-hidden">
     <div
       class="typing-container flex items-center justify-start pl-[clamp(0rem,15vw,60rem)] py-[clamp(3rem,10vw,5rem)] overflow-hidden"
     >
