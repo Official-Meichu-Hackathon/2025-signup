@@ -218,7 +218,7 @@
     <!-- Card : 獎項 -->
     <div class="w-[80vw] relative mx-auto select-none">
       <!-- tab ! -->
-      <div class="flex flex-row tab-list justify-start">
+      <div class="flex flex-row tab-list justify-start items-end">
         <!-- tab 黑客組 -->
         <div
           :class="[
@@ -651,18 +651,24 @@ onUnmounted(() => {
 
   .active {
     font-size: clamp(11px, 1vw, 12px);
+    height: 4vh;
     /* font-size: 16px; */
   }
 
   .inactive {
     font-size: clamp(9px, 0.8vw, 10px);
+    height: 3.3vh;
     /* font-size: 14px; */
+  }
+
+  .inactive:hover {
+    color: #db8396;
   }
 
   .tab {
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
-    min-height: 3.8vh;
+    min-height: 3vh;
     max-height: 5vh;
     /* height:7vh; */
     /* padding: 1.5rem 1rem; */

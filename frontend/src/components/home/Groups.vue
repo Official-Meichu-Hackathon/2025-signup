@@ -18,11 +18,13 @@
       <div class="w-[80vw] relative mx-auto select-none">
         <!-- tab ! -->
 
-        <div class="tab-list flex flex-row h-[9vh]">
+        <div class="tab-list items-end flex flex-row">
           <!-- tab 黑客組 -->
           <div
             :class="[
-              activeTab === '黑客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+              activeTab === '黑客組'
+                ? 'bg-[#db8396] active'
+                : 'bg-[#F4DAE1] !font-semibold inactive',
               'target-area tab pt-[1vh] w-[12vw]',
             ]"
             @click="activeTab = '黑客組'"
@@ -35,7 +37,9 @@
           <!-- tab 工作坊 -->
           <div
             :class="[
-              activeTab === '工作坊' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+              activeTab === '工作坊'
+                ? 'bg-[#db8396] active'
+                : 'bg-[#F4DAE1] !font-semibold inactive',
               'target-area tab pt-[1vh] w-[12vw]',
             ]"
             @click="activeTab = '工作坊'"
@@ -116,37 +120,41 @@
         alt="star07-2"
         class="absolute right-[15%] top-[13%] scale-[0.8]"
       />
-      <div class="mt-[8vh]"></div>
+      <div class="mt-[10vh]"></div>
 
       <!-- Card 2 : 創客組 -->
       <div class="w-[80vw] relative mx-auto select-none">
         <!-- tab ! -->
         <!-- tab 創客組 -->
-        <div
-          :class="[
-            activeTab2 === '創客組' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'tab target-area pt-[1vh] left-[55vw] w-[15vw] h-[9vh] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
-          ]"
-          @click="activeTab2 = '創客組'"
-          @mouseenter="showCursor = true"
-          @mouseleave="showCursor = false"
-        >
-          創客交流組
-        </div>
+        <div class="tab-list items-end flex flex-row">
+          <div
+            :class="[
+              activeTab2 === '創客組'
+                ? 'bg-[#db8396] active'
+                : 'bg-[#F4DAE1] !font-semibold inactive',
+              'tab target-area pt-[1vh] left-[43vw] w-[15vw] absolute rounded-tl-[30px] rounded-tr-[30px] cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            ]"
+            @click="activeTab2 = '創客組'"
+            @mouseenter="showCursor = true"
+            @mouseleave="showCursor = false"
+          >
+            創客交流組
+          </div>
 
-        <!-- tab 工作坊 -->
-        <div
-          :class="[
-            activeTab2 === '工作坊'
-              ? 'bg-[#db8396] left-[7vw] active'
-              : 'bg-[#F4DAE1] left-[7vw] inactive',
-            'target-area tab pt-[1vh] left-[43vw] w-[12vw] h-[9vh] absolute',
-          ]"
-          @click="activeTab2 = '工作坊'"
-          @mouseenter="showCursor = true"
-          @mouseleave="showCursor = false"
-        >
-          工作坊
+          <!-- tab 工作坊 -->
+          <div
+            :class="[
+              activeTab2 === '工作坊'
+                ? 'bg-[#db8396] left-[7vw] active'
+                : 'bg-[#F4DAE1] left-[7vw] !font-semibold inactive',
+              'tab target-area pt-[1vh] left-[58vw] w-[12vw] absolute',
+            ]"
+            @click="activeTab2 = '工作坊'"
+            @mouseenter="showCursor = true"
+            @mouseleave="showCursor = false"
+          >
+            工作坊
+          </div>
         </div>
 
         <!-- 卡片背景 -->
@@ -154,7 +162,7 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[63vw] h-[42vh] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
+          class="target-area w-[63vw] h-[42vh] ml-[7vw] relative bg-neutral-100 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
@@ -246,7 +254,7 @@
     <!-- Card 組別介紹 -->
     <div class="w-[80vw] relative mx-auto select-none">
       <!-- tab ! -->
-      <div class="tab-list flex flex-row">
+      <div class="tab-list flex flex-row items-end">
         <!-- tab 黑客組 -->
         <div
           :class="[
@@ -784,18 +792,26 @@ onMounted(() => {
 
 .active {
   font-size: clamp(20px, 1.6vw, 26px);
+  height: 9vh;
   /* font-size: 24px; */
 }
 
 .inactive {
   font-size: clamp(16px, 1.4vw, 22px);
+  font-weight: 500; /* font-medium */
+  height: 7.3vh;
   /* font-size: 20px; */
+}
+
+.inactive:hover {
+  color: #2d3e63;
+  /* 用 .inactive :hover 會套用的是 class inactive 的後代元素，所以不要有空格 */
 }
 
 .tab-list {
   margin-left: 7vw;
-  /* height: 9vh; */
-  max-height: 9vh;
+  height: 15vh;
+  /* max-height: 9vh; */
   /* border: 3px solid red; */
   /* min-height: 7vh; */
 }
@@ -866,19 +882,25 @@ onMounted(() => {
 
   .active {
     font-size: clamp(11px, 1vw, 12px);
+    height: 4vh;
     /* font-size: 16px; */
   }
 
   .inactive {
     font-size: clamp(9px, 0.8vw, 10px);
+    height: 3.3vh;
     /* font-size: 14px; */
+  }
+
+  .inactive:hover {
+    color: #db8396;
   }
 
   .tab {
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
     max-height: 5vh;
-    min-height: 3.8vh;
+    min-height: 3vh;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -891,7 +913,7 @@ onMounted(() => {
 
   .tab-list {
     /* height:; */
-    max-height: 5vh;
+    max-height: 6vh;
     padding-left: 0.5vw;
   }
 

@@ -21,7 +21,7 @@
           <!-- 黑客組 button -->
           <button
             @click="selectOption('選項一', 0)"
-            class="option relative overflow-hidden rounded-[80px] text-white cursor-pointer"
+            class="option relative overflow-hidden rounded-[80px] text-white cursor-pointer flex items-center justify-center"
           >
             <!-- <img
               v-show="!isMobile"
@@ -51,19 +51,13 @@
 
             <img
               v-show="isMobile"
-              src="../../assets/Home/phoneGroup-btn2.svg"
-              class="bg2 absolute scale-250 top-[-10%] left-[10%]"
-              alt="phoneGroup-btn2"
-            />
-            <img
-              v-show="isMobile"
               src="../../assets/Home/phoneGroup-btn1.svg"
-              class="bg1 absolute top-[-10%] scale-150"
+              class="bg1 absolute top-[-10%] left-[10%] scale-150"
               alt="phoneGroup-btn1"
             />
 
             <span
-              class="text-shadow w-[30vw] text-[2.5vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+              class="text-shadow w-[30vw] md:text-[2.5vw] text-[5vw] leading-none font-black font-['Chiron_Hei_HK'] relative z-50"
               >黑客組</span
             >
           </button>
@@ -73,7 +67,7 @@
         <router-link :to="{ path: '/signup', query: { ref: 'maker' } }">
           <button
             @click="selectOption('選項二', 1)"
-            class="option relative overflow-hidden rounded-[80px] text-white cursor-pointer"
+            class="option relative overflow-hidden rounded-[80px] text-white cursor-pointer flex items-center justify-center"
           >
             <!-- <img
               v-show="!isMobile"
@@ -104,18 +98,12 @@
             <img
               v-show="isMobile"
               src="../../assets/Home/phoneGroup-btn2.svg"
-              class="bg2 absolute scale-250 top-[-15%] left-[10%]"
+              class="bg2 absolute top-[-15%] left-[10%] scale-150"
               alt="phoneGroup-btn2"
-            />
-            <img
-              v-show="isMobile"
-              src="../../assets/Home/phoneGroup-btn1.svg"
-              class="bg1 absolute top-[-15%] scale-150"
-              alt="phoneGroup-btn1"
             />
 
             <span
-              class="text-shadow w-[50vw] text-[2.5vw] font-black font-['Chiron_Hei_HK'] relative z-50"
+              class="text-shadow w-[50vw] md:text-[2.5vw] text-[5vw] leading-none font-black font-['Chiron_Hei_HK'] relative z-50"
               >創客交流組</span
             >
           </button>
@@ -230,8 +218,8 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .option {
-    /* height: 7vh; */
-    height: 50px;
+    width: 60vw;
+    height: 64px;
     border: 5px solid #d9d9d9;
   }
 }
