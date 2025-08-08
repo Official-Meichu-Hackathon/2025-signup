@@ -38,7 +38,7 @@ provide('setEntryAnimationLoaded', setEntryAnimationLoaded)
     <div v-show="!shouldShowLoading" class="main-content">
       <router-view v-slot="{ Component }">
         <keep-alive>
-          <component :is="Component" />
+          <component :is="Component" :key="route.fullPath" />
         </keep-alive>
       </router-view>
       <Footer />

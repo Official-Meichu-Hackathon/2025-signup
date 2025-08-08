@@ -173,23 +173,33 @@ onMounted(() => {
 }
 
 .bg2 {
-  opacity: 1; /* 這個 opacity 設成 0 的話就會在需要出現的時候疑似因為這裡是 0 出現不了 ! */
+  opacity: 1;
   animation-play-state: paused;
   animation: none;
 }
 
-/* hover 時啟動動畫 */
-.bg1:hover {
-  animation: showbg1 4s infinite;
-  animation-play-state: running;
-  animation-fill-mode: forwards;
+@media (hover: hover) and (pointer: fine) {
+  .bg1:hover {
+    animation: showbg1 4s infinite;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+  }
+
+  .bg2:hover {
+    animation: showbg2 4s infinite;
+    animation-delay: 2s;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+  }
 }
 
-.bg2:hover {
-  animation: showbg2 4s infinite;
-  animation-delay: 2s;
-  animation-play-state: running;
-  animation-fill-mode: forwards;
+@media (hover: none), (pointer: coarse) {
+  .bg1,
+  .bg2 {
+    opacity: 1;
+    animation: none !important;
+    animation-play-state: paused !important;
+  }
 }
 
 .container {
