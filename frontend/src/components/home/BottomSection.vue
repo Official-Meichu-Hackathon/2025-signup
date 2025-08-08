@@ -665,7 +665,12 @@
           <div class="marquee-content flex-shrink-0">
             <!-- Diamond Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level sponsor-diamond">Diamond</span>
+              <span
+                v-if="!isMobile"
+                class="sponsor-level sponsor-diamond"
+                style="margin-left: 0.3rem"
+                >Diamond</span
+              >
               <span
                 v-if="isMobile"
                 class="sponsor-level sponsor-diamond"
@@ -700,27 +705,32 @@
 
             <!-- Gold Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level sponsor-gold" style="margin-left: 2rem"
+              <span v-if="!isMobile" class="sponsor-level sponsor-gold" style="margin-left: 1rem"
                 >Gold</span
               >
               <span
                 v-else
                 class="sponsor-level sponsor-gold"
-                style="margin-left: 0.8rem; margin-bottom: 0.4rem"
+                style="margin-left: 0.4rem; margin-bottom: 0rem"
                 >Gold</span
               >
 
               <img
                 v-if="!isMobile"
                 class="inline-block"
-                style="padding-top: 1rem"
+                style="padding-top: 0rem; transform: scale(1.4)"
                 src="../../assets/Home/sponsors/91APP_gold.webp"
                 alt="91APP"
               />
               <img
                 v-else
                 class="inline-block"
-                style="padding-top: 0.5rem; margin: 0 1rem 0 0"
+                style="
+                  padding-top: 0.5rem;
+                  margin: 0 1rem 0 0;
+                  padding-bottom: 0.5rem;
+                  transform: scale(1.4);
+                "
                 src="../../assets/Home/sponsors/91APP_gold.webp"
                 alt="91APP"
               />
@@ -731,7 +741,7 @@
               <span class="sponsor-level sponsor-silver" style="margin-left: -0.7rem">Silver</span>
               <img
                 class="inline-block"
-                style="transform: scale(0.95)"
+                style="transform: scale(0.9)"
                 src="../../assets/Home/sponsors/Phison_silver1.webp"
                 alt="Phison"
               />
@@ -798,7 +808,12 @@
           <div class="marquee-content flex-shrink-0">
             <!-- Diamond Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level sponsor-diamond">Diamond</span>
+              <span
+                v-if="!isMobile"
+                class="sponsor-level sponsor-diamond"
+                style="margin-left: 0.3rem"
+                >Diamond</span
+              >
               <span
                 v-if="isMobile"
                 class="sponsor-level sponsor-diamond"
@@ -833,27 +848,32 @@
 
             <!-- Gold Sponsor -->
             <div class="sponsor-item">
-              <span v-if="!isMobile" class="sponsor-level sponsor-gold" style="margin-left: 2rem"
+              <span v-if="!isMobile" class="sponsor-level sponsor-gold" style="margin-left: 1rem"
                 >Gold</span
               >
               <span
                 v-else
                 class="sponsor-level sponsor-gold"
-                style="margin-left: 0.8rem; margin-bottom: 0.4rem"
+                style="margin-left: 0.4rem; margin-bottom: 0rem"
                 >Gold</span
               >
 
               <img
                 v-if="!isMobile"
                 class="inline-block"
-                style="padding-top: 1rem"
+                style="padding-top: 0rem; transform: scale(1.4)"
                 src="../../assets/Home/sponsors/91APP_gold.webp"
                 alt="91APP"
               />
               <img
                 v-else
                 class="inline-block"
-                style="padding-top: 0.5rem; margin: 0 1rem 0 0"
+                style="
+                  padding-top: 0.5rem;
+                  margin: 0 1rem 0 0;
+                  padding-bottom: 0.5rem;
+                  transform: scale(1.4);
+                "
                 src="../../assets/Home/sponsors/91APP_gold.webp"
                 alt="91APP"
               />
@@ -864,7 +884,7 @@
               <span class="sponsor-level sponsor-silver" style="margin-left: -0.7rem">Silver</span>
               <img
                 class="inline-block"
-                style="transform: scale(0.95)"
+                style="transform: scale(0.9)"
                 src="../../assets/Home/sponsors/Phison_silver1.webp"
                 alt="Phison"
               />
