@@ -476,8 +476,8 @@ onUnmounted(() => {
   }
 
   .tab {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
     min-height: 3.8vh;
     max-height: 5vh;
     /* height:7vh; */

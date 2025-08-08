@@ -875,8 +875,8 @@ onMounted(() => {
   }
 
   .tab {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
     max-height: 5vh;
     min-height: 3.8vh;
     cursor: pointer;
