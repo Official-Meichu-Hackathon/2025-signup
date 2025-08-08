@@ -206,6 +206,7 @@ const submit = async () => {
       },
       redirect: 'follow',
     })
+    window.onbeforeunload = null
     location.href = '/success-signup'
   } catch (err) {
     console.log(err)
