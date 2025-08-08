@@ -17,9 +17,10 @@ import '../assets/css/signup.css'
         class="absolute top-3/7 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 pointer-events-none"
       />
       <img src="/src/assets/signup/success-creatures.svg" alt="Cute creatures" class="w-48 z-10" />
+      <p class="text-[#B4B4B4] z-10 mt-10">您可以到電子郵件確認報名資料都是否正確，謝謝！</p>
       <a
         href="/"
-        class="text-[#B4B4B4] z-10 mt-12 px-12 py-3 font-black"
+        class="text-[#B4B4B4] z-10 mt-10 px-12 py-3 font-black"
         style="
           border-radius: 40px;
           background: rgba(244, 218, 225, 0.02);
