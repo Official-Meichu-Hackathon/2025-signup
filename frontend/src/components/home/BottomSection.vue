@@ -1,3 +1,4 @@
+o
 <template>
   <div id="sponsors"></div>
 
@@ -1074,10 +1075,12 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem">Null</span>
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Silver</span
+              >
               <img
                 class="inline-block"
-                src="https://placehold.co/150x80?text=Dominos"
+                src="../../assets/Home/special_sponsors/dominos.png"
                 style="transform: scale(0.65)"
                 alt="Dominos"
               />
@@ -1122,10 +1125,12 @@
               />
             </div>
             <div class="sponsor-item">
-              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem">Null</span>
+              <span class="sponsor-level sponsor-platinum" style="margin-left: -0.4rem"
+                >Silver</span
+              >
               <img
                 class="inline-block"
-                src="https://placehold.co/150x80?text=Dominos"
+                src="../../assets/Home/special_sponsors/dominos.png"
                 style="transform: scale(0.65)"
                 alt="Dominos"
               />
