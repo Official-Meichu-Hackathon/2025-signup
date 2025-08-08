@@ -80,7 +80,7 @@
     />
     <!-- 卡片內容 -->
     <div
-      class="relative z-10 flex flex-col items-center justify-center text-center w-[80%] min-h-[90%] gap-[1.5vh] pb-[3vw]"
+      class="relative z-10 flex flex-col items-center justify-center text-center w-[85%] min-h-[90%] gap-[1.5vh] pb-[3vw]"
     >
       <!-- 公司 Logo -->
       <div class="flex items-center justify-center w-[70%] min-h-[15%] flex-shrink-0 mt-[1.5vh]">
@@ -107,7 +107,7 @@
       <!-- 題目內容 -->
       <div class="w-full px-[2%]">
         <p
-          class="text-[1.0vh] sm:text-[1.1vh] md:text-[1.3vh] text-[#2D3E63] font-bold leading-[1.3] font-[Chiron_Hei_HK] break-words"
+          class="problem-content-mobile text-[#2D3E63] font-bold leading-[1.3] font-[Chiron_Hei_HK] break-words"
         >
           {{ problemContent }}
         </p>
@@ -247,5 +247,19 @@ onUnmounted(() => {
 
 .scrollbar-auto::-webkit-scrollbar-thumb:hover {
   background-color: rgba(205, 138, 152, 0.5);
+}
+
+.problem-content-mobile {
+  font-size: 1.2vh;
+}
+@media (min-width: 390px) {
+  .problem-content-mobile {
+    font-size: 1.3vh;
+  }
+}
+@media (min-width: 440px) {
+  .problem-content-mobile {
+    font-size: 1.4vh;
+  }
 }
 </style>
