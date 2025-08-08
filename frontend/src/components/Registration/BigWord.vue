@@ -8,11 +8,11 @@
     <!-- Wings -->
     <img
       src="/src/assets/Registration/wingleft.svg"
-      class="absolute pointer-events-none z-20 h-auto scale-175 top-[50%] right-[54%] w-[20vw] wing-animate-left"
+      class="absolute pointer-events-none z-20 h-auto scale-150 top-[50%] right-[51.5%] w-[20vw] wing-animate-left"
     />
     <img
       src="/src/assets/Registration/wingright.svg"
-      class="absolute pointer-events-none z-20 h-auto scale-175 top-[50%] left-[54%] w-[20vw] wing-animate-right"
+      class="absolute pointer-events-none z-20 h-auto scale-150 top-[50%] left-[51.5%] w-[20vw] wing-animate-right"
     />
 
     <div class="relative z-10 flex items-center justify-center w-full">
@@ -20,7 +20,7 @@
         ref="titleImage"
         src="/src/assets/Registration/Title.svg"
         alt="報名方式"
-        class="w-[40vw] h-auto scale-84"
+        class="w-[40vw] h-auto scale-70"
       />
     </div>
     <!-- Background Images -->
