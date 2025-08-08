@@ -89,7 +89,7 @@ const applyPriorities = () => {
       class="bg-white rounded-lg p-6 max-w-md w-full mx-4 max-h-[80vh] overflow-y-auto border-2 shadow-md"
     >
       <div class="flex justify-between items-center mb-4">
-        <h4 class="text-lg font-bold">設定優先順序</h4>
+        <h4 class="text-lg font-bold">設定志願序</h4>
         <button
           @click="closeModal"
           class="text-gray-500 hover:text-gray-700 text-xl cursor-pointer"
@@ -124,20 +124,57 @@ const applyPriorities = () => {
         </div>
       </div>
 
-      <div class="flex gap-2 mt-6">
-        <button
-          @click="applyPriorities"
-          class="flex-1 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer"
-        >
-          確認設定
+      <div class="flex gap-12 mt-6 mx-6">
+        <button @click="closeModal" class="flex-1 py-2 cursor-pointer action-button cancel-button">
+          取消
         </button>
         <button
-          @click="closeModal"
-          class="flex-1 px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-colors cursor-pointer"
+          @click="applyPriorities"
+          class="flex-1 py-2 cursor-pointer action-button confirm-button"
         >
-          取消
+          確定
         </button>
       </div>
     </div>
   </div>
 </template>
+<style scoped>
+.action-button {
+  border-radius: 30px;
+  border: 1px solid #fff;
+  box-shadow:
+    0 0.9px 1.08px 0 rgba(255, 255, 255, 0.87) inset,
+    0 0 2px 0 rgba(255, 255, 255, 0.7) inset,
+    0 0 16.19px 0 rgba(255, 255, 255, 0.2) inset,
+    0 16.19px 32.39px 0 rgba(255, 255, 255, 0.13) inset,
+    0 3px 15.8px 7px rgba(76, 103, 171, 0.15);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+.cancel-button {
+  background: rgba(219, 131, 150, 0.05);
+  color: #374151;
+}
+.cancel-button:hover {
+  background: rgba(219, 131, 150, 0.15);
+  transform: translateY(-1px);
+}
+.cancel-button:active {
+  transform: translateY(0);
+}
+.confirm-button {
+  background: #2d3e63;
+  color: #ffffff;
+  border: 0px;
+}
+.confirm-button:hover {
+  background: #253650;
+  transform: translateY(-1px);
+}
+.confirm-button:active {
+  transform: translateY(0);
+}
+</style>
