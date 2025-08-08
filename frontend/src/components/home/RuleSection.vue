@@ -15,31 +15,34 @@
       <!-- Card : 比賽規則 -->
       <div class="w-[80vw] relative mx-auto select-none">
         <!-- tab ! -->
-        <div
-          :class="[
-            activeTab === '黑客組'
-              ? 'bg-[#db8396] left-[7vw] active'
-              : 'bg-[#F4DAE1] left-[7vw] inactive',
-            'target-area pt-[1vh] w-[12vw] h-[9vh] absolute tab cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
-          ]"
-          @click="activeTab = '黑客組'"
-          @mouseenter="showCursor = true"
-          @mouseleave="showCursor = false"
-        >
-          黑客組
-        </div>
 
-        <!-- tab 創客 -->
-        <div
-          :class="[
-            activeTab === '創客' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
-            'target-area pt-[1vh] left-[19vw] w-[16vw] h-[9vh] absolute tab cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
-          ]"
-          @click="activeTab = '創客'"
-          @mouseenter="showCursor = true"
-          @mouseleave="showCursor = false"
-        >
-          創客交流組
+        <div class="tab-list flex flex-row items-end">
+          <div
+            :class="[
+              activeTab === '黑客組'
+                ? 'bg-[#db8396] left-[7vw] active'
+                : 'bg-[#F4DAE1] left-[7vw] inactive',
+              'target-area pt-[1vh] w-[12vw] tab cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            ]"
+            @click="activeTab = '黑客組'"
+            @mouseenter="showCursor = true"
+            @mouseleave="showCursor = false"
+          >
+            黑客組
+          </div>
+
+          <!-- tab 創客 -->
+          <div
+            :class="[
+              activeTab === '創客' ? 'bg-[#db8396] active' : 'bg-[#F4DAE1] inactive',
+              'target-area pt-[1vh] left-[19vw] w-[16vw] tab cursor-pointer flex items-center justify-center text-white font-black font-[\'Chiron_Hei_HK\']',
+            ]"
+            @click="activeTab = '創客'"
+            @mouseenter="showCursor = true"
+            @mouseleave="showCursor = false"
+          >
+            創客交流組
+          </div>
         </div>
 
         <!-- 卡片背景 -->
@@ -47,7 +50,7 @@
         <!-- 要使用 mt 才可以撐開距離 !! 如果只使用 top 的話只是離父容器 top 多少，但超過的部分部會有撐開的功能 ! -->
         <!-- 為了讓切換 tag 的時候大小不變 => 設 vh -->
         <div
-          class="target-area w-[66vw] mt-[9vh] ml-[7vw] relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
+          class="target-area w-[66vw] ml-[7vw] relative bg-neutral-100 rounded-tr-2xl rounded-bl-2xl rounded-br-2xl"
           @mouseenter="showCursor = true"
           @mouseleave="showCursor = false"
         >
@@ -175,7 +178,7 @@
     <!-- Card 組別介紹 -->
     <div class="w-[80vw] relative mx-auto select-none">
       <!-- tab ! -->
-      <div class="tab-list flex flex-row">
+      <div class="tab-list flex flex-row items-end">
         <!-- tab 黑客組 -->
         <div
           :class="[
@@ -289,7 +292,7 @@
       </div>
     </div>
 
-    <!-- moving star => 原本被-->
+    <!-- moving star => 原本被父元素套到樣式所以才不能跑去最左-->
     <div
       v-if="activeTabPhone === '創客組'"
       class="w-[110vw] relative flex flex-col px-0 ml-0 mr-0 pl-[0]"
@@ -374,14 +377,27 @@ onUnmounted(() => {
   border: red solid 3px;
 }
 
+.tab-list {
+  margin-left: 7vw;
+  height: 15vh;
+}
+
 .active {
   /* font-size: 22px; */
   font-size: clamp(20px, 1.6vw, 26px);
+  height: 9vh;
 }
 
 .inactive {
   /* font-size: 18px; */
   font-size: clamp(16px, 1.4vw, 22px);
+  font-weight: 500; /* font-medium */
+  height: 7.3vh;
+}
+
+.inactive:hover {
+  color: #2d3e63;
+  /* 用 .inactive :hover 會套用的是 class inactive 的後代元素，所以不要有空格 */
 }
 
 .content {
@@ -467,18 +483,24 @@ onUnmounted(() => {
 
   .active {
     font-size: clamp(11px, 1vw, 12px);
+    height: 4vh;
     /* font-size: 16px; */
   }
 
   .inactive {
     font-size: clamp(9px, 0.8vw, 10px);
+    height: 3.3vh;
     /* font-size: 14px; */
+  }
+
+  .inactive:hover {
+    color: #5b74b0;
   }
 
   .tab {
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
-    min-height: 3.8vh;
+    min-height: 3.3vh;
     max-height: 5vh;
     /* height:7vh; */
     /* padding: 1.5rem 1rem; */
