@@ -2,10 +2,10 @@
   <div class="border-b-3 pb-6" style="border-color: #2d3e63">
     <button
       @click="toggleExpanded"
-      class="w-full flex justify-between items-center text-left text-[#2D3E63] text-2xl font-bold font-['Chiron_Hei_HK_Text'] hover:text-[#2D3E63] transition-colors"
+      class="w-full flex justify-between items-center text-left text-[#2D3E63] text-2xl font-bold font-['Chiron_Hei_HK'] hover:text-[#2D3E63] transition-colors"
     >
       <div
-        class="w-40 h-12 flex items-center justify-start text-[#2D3E63] text-4xl font-bold whitespace-nowrap pl-3 mb-[2px] font-['Chiron_Hei_HK_Text',sans-serif]"
+        class="w-40 h-12 flex items-center justify-start text-[#2D3E63] text-3xl font-bold whitespace-nowrap pl-3 mb-[2px] font-['Chiron_Hei_HK',sans-serif]"
       >
         {{ title }}
       </div>
@@ -34,7 +34,7 @@
     </button>
     <div class="expandable-content" :class="{ expanded: expanded }">
       <div
-        class="content-wrapper mt-6 text-[#2D3E63] text-2xl font-['Chiron_Hei_HK_Text'] leading-relaxed"
+        class="content-wrapper mt-6 text-[#2D3E63] text-xl font-['Chiron_Hei_HK'] leading-relaxed"
       >
         <div class="font-['Chiron_Hei_HK_Text',sans-serif] pl-12">
           <slot></slot>

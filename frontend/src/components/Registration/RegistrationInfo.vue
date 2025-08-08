@@ -1,13 +1,13 @@
 <template>
   <!-- Info-->
   <div
-    class="w-full min-h-[1400px] bg-cover bg-center bg-no-repeat flex items-start justify-center pt-32"
+    class="w-full min-h-[1350px] bg-cover bg-center bg-no-repeat flex items-start justify-center pt-32"
     style="background-color: white; position: relative; overflow: hidden; height: 800px"
   >
     <!-- Meteor and Clouds-->
     <img
       src="/src/assets/Registration/meteor.svg"
-      class="absolute pointer-events-none z-20 h-auto scale-70 top-[12%] left-[4.5%] w-[20vw]"
+      class="absolute pointer-events-none z-20 h-auto scale-80 top-[14%] left-[9%] w-[20vw]"
     />
 
     <img
@@ -36,7 +36,7 @@
 
     <!-- Notice Container -->
     <div
-      class="w-[80vw] h-[1400px] bg-zinc-300/25 rounded-[40px] shadow-[0px_4px_20px_-1px_rgba(0,0,0,0.25)] pt-32 p-16 relative z-40"
+      class="w-[70vw] h-[1300px] bg-zinc-300/25 rounded-[40px] shadow-[0px_4px_20px_-1px_rgba(0,0,0,0.25)] pt-32 p-16 relative z-40"
     >
       <!-- Notice Items -->
       <div class="space-y-8">
@@ -126,7 +126,7 @@
           :expanded="expandedItems.others"
           @toggle="handleItemToggle"
         >
-          <ul class="list-disc mt-2">
+          <ul class="list-disc mt-2 pl-6">
             <li>
               報名之隊伍需在報名手續最末同意「<strong>智慧財產權聲明暨肖像授權</strong>」相關條款。
             </li>
