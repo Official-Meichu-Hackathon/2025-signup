@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onUnmounted } from 'vue'
 import '../assets/css/signup.css'
 import TitleHeader from '../components/signup/TitleHeader.vue'
 import StepCardsHeader from '../components/signup/StepCardsHeader.vue'
@@ -26,6 +26,10 @@ watch(
   },
   { deep: true }
 )
+
+onUnmounted(() => {
+  window.onbeforeunload = null
+})
 
 const playerCount = ref(null)
 const currentStepOrder = ref(1)
