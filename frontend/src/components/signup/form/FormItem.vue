@@ -102,7 +102,7 @@ watch(
         <slot></slot>
         <NextStepButton
           @click="handleNextStep"
-          :disabled="!allRequiredFilled"
+          :disabled="!allRequiredFilled || isSubmitting"
           :isLastStep="isLastStep"
           :isSubmitting="isSubmitting"
         ></NextStepButton>
