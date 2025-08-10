@@ -396,7 +396,7 @@ window.onbeforeunload = () => ''
       <ChoiceQuestion
         title="個人資料搜集、處理及利用之告知暨同意書"
         description="*我已詳細閱讀，並同意以上內容"
-        pdf="1EJVi43Y9UDYwsnNVUaS4hCmnMa0KLQS5"
+        pdf="1qOU_i84n4zvPeWUJ3n3I_Nx0YbHyVr4g"
         :options="['是', '否']"
         v-model="assentFirst"
       ></ChoiceQuestion>
