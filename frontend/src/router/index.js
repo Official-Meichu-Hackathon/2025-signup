@@ -36,6 +36,10 @@ const routes = [
     name: 'SuccessSignup',
     component: () => import('../views/SuccessSignup.vue'),
   },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/',
+  },
 ]
 
 const router = createRouter({
