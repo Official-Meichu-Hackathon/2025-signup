@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch, onUnmounted } from 'vue'
+import { ref, computed, watch, onUnmounted, onDeactivated } from 'vue'
 import '../assets/css/signup.css'
 import TitleHeader from '../components/signup/TitleHeader.vue'
 import StepCardsHeader from '../components/signup/StepCardsHeader.vue'
@@ -26,6 +26,10 @@ watch(
   },
   { deep: true }
 )
+
+onDeactivated(() => {
+  window.onbeforeunload = null
+})
 
 onUnmounted(() => {
   window.onbeforeunload = null
