@@ -1,0 +1,14 @@
+#    _____
+#   | o o |
+#  (|  ^  |)
+#   |  -  |
+#   | [_] |
+#   |     |
+#   |_____|
+#    |   | 
+
+User-agent: *
+Disallow: /signup/
+Disallow: /success-signup/
+
+Sitemap: https://2025.meichuhackathon.org/sitemap.xml
