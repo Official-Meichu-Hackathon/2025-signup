@@ -22,7 +22,9 @@ watch(
   () => route.query,
   (newQuery) => {
     isMaker.value = newQuery.ref === 'maker'
-    priorityOrder.value = null
+    priorityOrder.value = isMaker.value
+      ? ['創客交流組']
+      : ['AMD', 'CloudMosa', 'Google', '恩智浦半導體', '台積電', '羅技', '創客交流組']
   },
   { deep: true }
 )
