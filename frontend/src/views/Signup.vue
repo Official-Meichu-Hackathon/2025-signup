@@ -21,8 +21,15 @@ const isMaker = ref(route.query.ref === 'maker')
 watch(
   () => route.query,
   (newQuery) => {
-    isMaker.value = newQuery.ref === 'maker'
-    priorityOrder.value = null
+    if (route.path === '/signup') {
+      const newIsMaker = newQuery.ref === 'maker'
+      if (newIsMaker != isMaker.value) {
+        priorityOrder.value = newIsMaker
+          ? ['創客交流組']
+          : ['AMD', 'CloudMosa', 'Google', '恩智浦半導體', '台積電', '羅技', '創客交流組']
+        isMaker.value = newIsMaker
+      }
+    }
   },
   { deep: true }
 )
