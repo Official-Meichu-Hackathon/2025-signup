@@ -6,11 +6,11 @@ const routes = [
     name: 'Home',
     component: () => import('../views/Home.vue'),
   },
-  {
-    path: '/signup',
-    name: 'Signup',
-    component: () => import('../views/Signup.vue'),
-  },
+  // {
+  //   path: '/signup',
+  //   name: 'Signup',
+  //   component: () => import('../views/Signup.vue'),
+  // },
   {
     path: '/registration',
     name: 'Registration',
@@ -31,11 +31,11 @@ const routes = [
     name: 'Data',
     component: () => import('../views/Data.vue'),
   },
-  {
-    path: '/success-signup',
-    name: 'SuccessSignup',
-    component: () => import('../views/SuccessSignup.vue'),
-  },
+  // {
+  //   path: '/success-signup',
+  //   name: 'SuccessSignup',
+  //   component: () => import('../views/SuccessSignup.vue'),
+  // },
   {
     path: '/:pathMatch(.*)*',
     redirect: '/',
