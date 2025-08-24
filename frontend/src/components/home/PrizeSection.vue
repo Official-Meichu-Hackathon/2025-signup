@@ -191,10 +191,9 @@
 
       <div class="h-[45vh]">
         <div
-          class="relative flex justify-center items-center sign-up opacity-[0.8] mb-[8vh] mt-[22vh] cursor-pointer mx-auto w-[21.5vw] h-[10.5vh] relative z-8 bg-slate-400/20 rounded-[20px] shadow-[0px_4px_20px_-1px_rgba(28,27,31,0.60)] outline outline-1 outline-offset-[-1px] outline-blue-100/80 overflow-hidden"
-          @click="showOptions = true"
+          class="relative flex justify-center items-center sign-up opacity-50 mb-[8vh] mt-[22vh] cursor-not-allowed mx-auto w-[21.5vw] h-[10.5vh] z-8 bg-slate-400/20 rounded-[20px] shadow-[0px_4px_20px_-1px_rgba(28,27,31,0.60)] outline-1 outline-offset-[-1px] outline-blue-100/80 overflow-hidden"
         >
-          <div class="z-2 flex font-black text-[#F4F5F5] font-['Chiron_Hei_HK']">點我報名</div>
+          <div class="z-2 flex font-black text-[#F4F5F5] font-['Chiron_Hei_HK']">報名結束</div>
           <img class="btn2 absolute z-1" src="../../assets/Home/btn2.svg" alt="btn2" />
           <img class="btn1 absolute z-1" src="../../assets/Home/btn1.svg" alt="btn1" />
         </div>
@@ -202,7 +201,7 @@
 
       <!-- hover => w-[25vw] h-[12vh] -->
 
-      <SignUpGroup v-if="showOptions" @close="showOptions = false"> </SignUpGroup>
+      <!-- <SignUpGroup v-if="showOptions" @close="showOptions = false"> </SignUpGroup> -->
     </div>
   </div>
 
@@ -312,7 +311,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
-import SignUpGroup from './SignUpGroup.vue'
+// import SignUpGroup from './SignUpGroup.vue'
 
 defineOptions({
   name: 'PrizeSection',
@@ -492,14 +491,13 @@ onUnmounted(() => {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease, ease;
 }
 
-.sign-up:hover {
+/* .sign-up:hover {
   opacity: 1;
-  /* <!-- hover => w-[25vw] h-[12vh] --> */
   width: 25vw;
   height: 12vh;
   font-size: 2.5vw;
   border: 3px solid rgba(191, 219, 254, 0.8);
-}
+} */
 
 .btn1 {
   opacity: 0;
@@ -515,20 +513,17 @@ onUnmounted(() => {
   animation: none; */
 }
 
-.sign-up:hover .btn1 {
-  /* 一定要先調回 1 才可以被觸發動畫 !!!!!! */
+/* .sign-up:hover .btn1 {
   opacity: 1;
   animation: showbg1 4s infinite;
   animation-fill-mode: forwards;
 }
 
 .sign-up:hover .btn2 {
-  /* 一定要先調回 1 才可以被觸發動畫 !!!!!! */
   opacity: 1;
   animation: showbg2 4s infinite;
-  /* animation-delay: 2s; */
   animation-fill-mode: forwards;
-}
+} */
 
 @keyframes moveRight {
   0% {

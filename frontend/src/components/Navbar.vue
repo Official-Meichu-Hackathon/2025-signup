@@ -14,17 +14,12 @@
     <div class="navbar-right h-full flex items-center md:gap-4 gap-2">
       <!-- <router-link to="/signup-group"> -->
       <button
-        class="relative bg-[#F4F5F533] rounded-[30px] border border-[rgba(211,228,252,0.80)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base md:h-11 md:px-6 h-10 px-4 flex items-center justify-center transition-all duration-300 hover:scale-105 hover:bg-[#F4F5F5] hover:border-white overflow-hidden group"
-        @click="showOptions = true"
+        disabled
+        class="relative bg-[#F4F5F533] rounded-[30px] border border-[rgba(211,228,252,0.80)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#9CA3AF] font-bold text-base md:h-11 md:px-6 h-10 px-4 flex items-center justify-center cursor-not-allowed opacity-50"
       >
-        <div
-          class="absolute inset-0 bg-gradient-to-tr from-[#F4DAE1] to-[#7B8EBF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-[rgba(211,228,252,0.80)]"
-        ></div>
-        <span class="relative z-10 group-hover:text-white transition-colors duration-300"
-          >點我報名</span
-        >
+        <span class="relative z-10">報名結束</span>
       </button>
-      <SignUpGroup v-if="showOptions" @close="showOptions = false"> </SignUpGroup>
+      <!-- <SignUpGroup v-if="showOptions" @close="showOptions = false"> </SignUpGroup> -->
       <!-- </router-link> -->
       <button
         class="menu-btn bg-none border-none h-14 w-14 flex items-center justify-center p-0 cursor-pointer"
@@ -110,7 +105,7 @@
 
 <script setup>
 import { ref, watch, defineEmits } from 'vue'
-import SignUpGroup from './home/SignUpGroup.vue'
+// import SignUpGroup from './home/SignUpGroup.vue'
 
 defineOptions({
   name: 'NavbarComponent',
