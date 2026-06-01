@@ -26,6 +26,14 @@
         <img src="../assets/Footer/gmail.svg" alt="Email" width="50" height="50" />
       </a>
     </div>
+    <a
+      href="https://blog.meichuhackathon.org/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-[#656565] text-center font-['Chiron_Hei_HK',sans-serif] text-lg font-bold underline underline-offset-4 hover:opacity-80 mb-1"
+    >
+      2026 梅竹黑客松活動部落格
+    </a>
     <div class="text-[#656565] text-center font-['Chiron_Hei_HK',sans-serif] text-lg font-bold">
       Copyright © 2025 Meichu Hackathon
     </div>
