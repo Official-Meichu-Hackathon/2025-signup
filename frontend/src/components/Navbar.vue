@@ -13,12 +13,12 @@
     </div>
     <div class="navbar-right h-full flex items-center md:gap-4 gap-2">
       <!-- <router-link to="/signup-group"> -->
-      <button
-        disabled
-        class="relative bg-[#F4F5F533] rounded-[30px] border border-[rgba(211,228,252,0.80)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#9CA3AF] font-bold text-base md:h-11 md:px-6 h-10 px-4 flex items-center justify-center cursor-not-allowed opacity-50"
+      <a
+        href="https://2026.meichuhackathon.org/"
+        class="relative bg-[#F4F5F533] rounded-[30px] border border-[rgba(211,228,252,0.80)] shadow-[2px_2px_4px_-1px_rgba(0,0,0,0.25)] text-[#656565] font-bold text-base md:h-11 md:px-6 h-10 px-4 flex items-center justify-center hover:opacity-80"
       >
-        <span class="relative z-10">報名結束</span>
-      </button>
+        <span class="relative z-10">前往 2026 梅竹黑客松</span>
+      </a>
       <!-- <SignUpGroup v-if="showOptions" @close="showOptions = false"> </SignUpGroup> -->
       <!-- </router-link> -->
       <button

@@ -27,6 +27,12 @@
       </a>
     </div>
     <a
+      href="https://2026.meichuhackathon.org/"
+      class="text-[#656565] text-center font-['Chiron_Hei_HK',sans-serif] text-lg font-bold underline underline-offset-4 hover:opacity-80 mb-1"
+    >
+      2026 梅竹黑客松官方網站
+    </a>
+    <a
       href="https://blog.meichuhackathon.org/"
       target="_blank"
       rel="noopener noreferrer"
